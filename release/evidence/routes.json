@@ -1,0 +1,322 @@
+{
+  "generatedAt": "2026-06-09T18:24:30.565Z",
+  "status": "READY",
+  "matrixRoutes": 32,
+  "runtimeRoutes": [
+    "/cad/editor"
+  ],
+  "totalPreviewRoutes": 33,
+  "publicRoutes": [
+    "/",
+    "/about",
+    "/pricing",
+    "/features",
+    "/gallery",
+    "/templates",
+    "/venues",
+    "/vendors",
+    "/contact",
+    "/support",
+    "/blog"
+  ],
+  "wildcardRoutes": [
+    "/auth/*",
+    "/dashboard/*",
+    "/projects/*",
+    "/venue-designer/*",
+    "/mandap/*",
+    "/layouts/*",
+    "/cad/*",
+    "/assets/*",
+    "/floral/*",
+    "/lighting/*",
+    "/guests/*",
+    "/vendors/*",
+    "/budget/*",
+    "/production/*",
+    "/drone/*",
+    "/vr/*",
+    "/ai/*",
+    "/exports/*",
+    "/marketplace/*",
+    "/admin/*",
+    "/observatory/*"
+  ],
+  "statusRules": {
+    "allRoutesShowStatus": true,
+    "allowedStatuses": [
+      "READY",
+      "PARTIAL",
+      "BLOCKED"
+    ],
+    "previewRoutesReady": true,
+    "allRoutesHaveDemoData": true,
+    "allRoutesHaveLocalRuntimeCoverage": true,
+    "blockedRoutes": [],
+    "productionBlockedCapabilities": [
+      "native-dwg-export",
+      "production-dxf-export",
+      "payments",
+      "live-vendors",
+      "marketplace-commerce",
+      "structural-validation",
+      "electrical-validation",
+      "fire-safety-validation",
+      "engineering-compliance"
+    ]
+  },
+  "previewFrameRuntime": {
+    "status": "READY",
+    "routeFrames": 32,
+    "routeFramesReady": 32,
+    "routeFramesWithDemoData": 32,
+    "routeFramesWithLocalCoverage": 32,
+    "totalDemoDataPoints": 208,
+    "totalLocalCoveragePoints": 139,
+    "uiFrames": 25,
+    "uiFramesReady": 25,
+    "routes": [
+      {
+        "path": "/",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/about",
+        "status": "READY",
+        "demoDataPoints": 6,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/pricing",
+        "status": "READY",
+        "demoDataPoints": 6,
+        "localCoverageChecks": 4,
+        "blockerCount": 1
+      },
+      {
+        "path": "/features",
+        "status": "READY",
+        "demoDataPoints": 5,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/gallery",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 6,
+        "blockerCount": 0
+      },
+      {
+        "path": "/templates",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 6,
+        "blockerCount": 0
+      },
+      {
+        "path": "/venues",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 4
+      },
+      {
+        "path": "/vendors",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 3
+      },
+      {
+        "path": "/contact",
+        "status": "READY",
+        "demoDataPoints": 5,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/support",
+        "status": "READY",
+        "demoDataPoints": 6,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/blog",
+        "status": "READY",
+        "demoDataPoints": 5,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/auth/*",
+        "status": "READY",
+        "demoDataPoints": 5,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/dashboard/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/projects/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/venue-designer/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 4
+      },
+      {
+        "path": "/mandap/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 4
+      },
+      {
+        "path": "/layouts/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 4
+      },
+      {
+        "path": "/cad/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 7,
+        "blockerCount": 3
+      },
+      {
+        "path": "/assets/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/floral/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/lighting/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 4
+      },
+      {
+        "path": "/guests/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/vendors/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 3
+      },
+      {
+        "path": "/budget/*",
+        "status": "READY",
+        "demoDataPoints": 6,
+        "localCoverageChecks": 4,
+        "blockerCount": 1
+      },
+      {
+        "path": "/production/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 6,
+        "blockerCount": 6
+      },
+      {
+        "path": "/drone/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 4
+      },
+      {
+        "path": "/vr/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 6,
+        "blockerCount": 0
+      },
+      {
+        "path": "/ai/*",
+        "status": "READY",
+        "demoDataPoints": 5,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/exports/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 3
+      },
+      {
+        "path": "/marketplace/*",
+        "status": "READY",
+        "demoDataPoints": 7,
+        "localCoverageChecks": 4,
+        "blockerCount": 3
+      },
+      {
+        "path": "/admin/*",
+        "status": "READY",
+        "demoDataPoints": 6,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/observatory/*",
+        "status": "READY",
+        "demoDataPoints": 6,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      }
+    ],
+    "uiFrameRuntimeCount": 25
+  },
+  "absorbedRouteWorkspaces": {
+    "floral": {
+      "route": "/floral",
+      "status": "READY",
+      "productionReady": false,
+      "kpiWidgets": 6,
+      "tabs": 9,
+      "numberedPanels": 14,
+      "visualAssets": 12,
+      "spacePoints": 91,
+      "flowers": 12,
+      "palettes": 5,
+      "attachments": 3,
+      "localRuntimeCoverage": 6
+    }
+  }
+}

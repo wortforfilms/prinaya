@@ -1,0 +1,829 @@
+{
+  "generatedAt": "2026-06-09T18:24:30.565Z",
+  "verdict": "CONTROLLED_PREVIEW_READY",
+  "productionReady": false,
+  "routeCoverage": {
+    "matrixRoutes": 32,
+    "runtimeRoutes": [
+      "/cad/editor"
+    ],
+    "totalPreviewRoutes": 33,
+    "wildcardFamilies": 21,
+    "allRouteFramesReady": true
+  },
+  "schemaCoverage": {
+    "requiredModels": 31,
+    "zodSchemas": 31,
+    "typescriptTypes": 31
+  },
+  "cadRuntime": {
+    "status": "READY",
+    "starterObjects": 18,
+    "features": [
+      "3D scene canvas",
+      "grid floor",
+      "top/front/side/perspective camera modes",
+      "object insertion",
+      "object selection",
+      "transform controls",
+      "scene hierarchy",
+      "scene hierarchy panel",
+      "object tree",
+      "layer tree",
+      "layer tree with lock/hide",
+      "selection manager",
+      "search",
+      "grouping",
+      "object/layer lock and hide controls",
+      "layer visibility",
+      "material assignment",
+      "object inspector",
+      "material inspector",
+      "asset browser",
+      "measurement tool",
+      "annotation tool",
+      "template loader",
+      "scene statistics",
+      "save/load validation",
+      "save/load scene JSON",
+      "download scene JSON",
+      "local GLB mesh asset evidence",
+      "binary PDF board package generation",
+      "preview ASCII DXF footprint export",
+      "preview CAD round-trip fixtures",
+      "printable board HTML export",
+      "local structural/electrical/fire validators"
+    ]
+  },
+  "runtimeMaturity": {
+    "heroBanners": {
+      "status": "READY",
+      "count": 21,
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceSize": {
+        "width": 1536,
+        "height": 1024
+      },
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routeBindings": 34,
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    "tlpsWeddingOsHomepage": {
+      "status": "READY",
+      "route": "/wedding-os",
+      "sourceSize": {
+        "width": 864,
+        "height": 1821
+      },
+      "sectionCount": 10,
+      "destinationCount": 7,
+      "designStudioCardCount": 4,
+      "filmCardCount": 8,
+      "ecosystemModuleCount": 12,
+      "statCount": 6,
+      "productionReady": false,
+      "evidenceRef": "release/evidence/tlps-wedding-os-homepage.json"
+    },
+    "tlpsUniqueExtractions": {
+      "status": "READY",
+      "verdict": "CONTROLLED_PREVIEW_READY",
+      "productionReady": false,
+      "sourceCount": 31,
+      "uniqueSourceCount": 30,
+      "duplicateSourceCount": 1,
+      "duplicateSourceGroups": 1,
+      "uniqueFrameCount": 591,
+      "duplicateFrameCount": 0,
+      "frameKinds": {
+        "source": 30,
+        "ui-shell": 51,
+        "ui-kpi": 17,
+        "ui-workspace": 17,
+        "ui-panel": 272,
+        "vedi-workflow": 1,
+        "vedi-panel": 8,
+        "vedi-map": 1,
+        "filmy-hero-banner": 12,
+        "homepage-section": 10,
+        "homepage-card": 19,
+        "hero-banner": 21,
+        "board-panel": 2,
+        "cad-elevation": 1,
+        "render-frame": 1,
+        "cad-plan": 1,
+        "cad-detail": 1,
+        "cad-section": 2,
+        "lighting-plan": 1,
+        "board-page": 20,
+        "design-option": 39,
+        "technical-panel": 34,
+        "material-strip": 23,
+        "brand-footer": 1,
+        "dashboard-shell": 2,
+        "dashboard-hero": 1,
+        "dashboard-actions": 1,
+        "dashboard-modules": 1,
+        "dashboard-widgets": 1
+      },
+      "evidenceRef": "release/evidence/tlps-unique-extractions.json"
+    },
+    "sceneGraph": {
+      "status": "READY",
+      "branches": [
+        "venue",
+        "mandap",
+        "stage",
+        "seating",
+        "lighting",
+        "decor"
+      ]
+    },
+    "cadEditorTools": {
+      "status": "READY",
+      "tools": 10,
+      "readyTools": 10,
+      "labels": [
+        "Scene hierarchy panel",
+        "Layer tree with lock/hide",
+        "Object inspector",
+        "Material inspector",
+        "Asset browser",
+        "Measurement tool",
+        "Annotation tool",
+        "Template loader",
+        "Scene statistics",
+        "Save/load validation"
+      ]
+    },
+    "weddingAssetLibrary": {
+      "status": "READY",
+      "totalAssets": 648,
+      "categoryCount": 27,
+      "statusCounts": {
+        "READY": 432,
+        "PARTIAL": 160,
+        "BLOCKED": 56
+      },
+      "cadInsertable": 592,
+      "byCategory": [
+        {
+          "category": "Mandaps",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Structural Elements",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Pillars",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Gates & Arches",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Backdrops",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Decor Props",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Floral Installations",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Flower Types",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Furniture",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Seating",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Tables",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Lighting Fixtures",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Decorative Lighting",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Effects",
+          "count": 24,
+          "ready": 0,
+          "partial": 20,
+          "blocked": 4
+        },
+        {
+          "category": "Truss & Rigging",
+          "count": 24,
+          "ready": 0,
+          "partial": 20,
+          "blocked": 4
+        },
+        {
+          "category": "LED & Screens",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Audio",
+          "count": 24,
+          "ready": 0,
+          "partial": 20,
+          "blocked": 4
+        },
+        {
+          "category": "Venue Zones",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Utilities",
+          "count": 24,
+          "ready": 0,
+          "partial": 20,
+          "blocked": 4
+        },
+        {
+          "category": "Guest Planning",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Vendor Documents",
+          "count": 24,
+          "ready": 0,
+          "partial": 0,
+          "blocked": 24
+        },
+        {
+          "category": "Production Planning",
+          "count": 24,
+          "ready": 0,
+          "partial": 20,
+          "blocked": 4
+        },
+        {
+          "category": "Drone Planning",
+          "count": 24,
+          "ready": 0,
+          "partial": 20,
+          "blocked": 4
+        },
+        {
+          "category": "VR Walkthrough",
+          "count": 24,
+          "ready": 0,
+          "partial": 20,
+          "blocked": 4
+        },
+        {
+          "category": "Boards",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "Templates",
+          "count": 24,
+          "ready": 24,
+          "partial": 0,
+          "blocked": 0
+        },
+        {
+          "category": "AI Outputs",
+          "count": 24,
+          "ready": 0,
+          "partial": 20,
+          "blocked": 4
+        }
+      ]
+    },
+    "assetRegistry": {
+      "status": "READY",
+      "totalAssets": 648,
+      "categoryCount": 27,
+      "statusCounts": {
+        "READY": 432,
+        "PARTIAL": 160,
+        "BLOCKED": 56
+      },
+      "cadInsertCoverage": {
+        "cadInsertable": 592,
+        "readyInsertable": 432,
+        "partialInsertable": 160
+      },
+      "missingMeshFileBlockers": {
+        "glbMeshFiles": 592,
+        "missingRealMeshes": 0
+      }
+    },
+    "boardComposer": {
+      "status": "READY",
+      "pipeline": [
+        "Scene",
+        "Render",
+        "Board Composer",
+        "PDF Package"
+      ],
+      "pages": [
+        "Cover",
+        "Concept",
+        "Site Plan",
+        "Mandap Plan",
+        "Lighting Plan",
+        "Floral Plan",
+        "Budget",
+        "BOM",
+        "Render Gallery"
+      ],
+      "exportFormats": [
+        "printable-html",
+        "binary-pdf",
+        "scene-json",
+        "preview-dxf"
+      ]
+    },
+    "pdfBoardPackage": {
+      "status": "READY",
+      "productionReady": false,
+      "file": "release/board-packages/hemant-samwat-board-package.pdf",
+      "pageCount": 9,
+      "sourceData": [
+        "scene objects",
+        "render jobs",
+        "budget items",
+        "asset registry",
+        "board page bindings"
+      ],
+      "note": "A local binary PDF package is generated from scene/render data. Production print QA remains unclaimed.",
+      "exists": true,
+      "bytes": 8084,
+      "evidence": {
+        "generatedAt": "2026-06-09T09:36:58.290Z",
+        "verdict": "CONTROLLED_PREVIEW_READY",
+        "productionReady": false,
+        "status": "READY",
+        "output": "release/board-packages/hemant-samwat-board-package.pdf",
+        "bytes": 8084,
+        "sha256": "c89625ced92cd3d5be34c3e19a3014f24d70467b72964dfff11fc4351f708f14",
+        "pageCount": 9,
+        "runtime": {
+          "status": "READY",
+          "productionReady": false,
+          "file": "release/board-packages/hemant-samwat-board-package.pdf",
+          "pageCount": 9,
+          "sourceData": [
+            "scene objects",
+            "render jobs",
+            "budget items",
+            "asset registry",
+            "board page bindings"
+          ],
+          "note": "A local binary PDF package is generated from scene/render data. Production print QA remains unclaimed."
+        },
+        "pages": [
+          {
+            "pageNumber": 1,
+            "title": "Cover",
+            "source": "scene",
+            "lineCount": 9
+          },
+          {
+            "pageNumber": 2,
+            "title": "Concept",
+            "source": "template",
+            "lineCount": 9
+          },
+          {
+            "pageNumber": 3,
+            "title": "Site Plan",
+            "source": "scene",
+            "lineCount": 9
+          },
+          {
+            "pageNumber": 4,
+            "title": "Mandap Plan",
+            "source": "scene",
+            "lineCount": 9
+          },
+          {
+            "pageNumber": 5,
+            "title": "Lighting Plan",
+            "source": "scene",
+            "lineCount": 9
+          },
+          {
+            "pageNumber": 6,
+            "title": "Floral Plan",
+            "source": "template",
+            "lineCount": 9
+          },
+          {
+            "pageNumber": 7,
+            "title": "Budget",
+            "source": "budget",
+            "lineCount": 9
+          },
+          {
+            "pageNumber": 8,
+            "title": "BOM",
+            "source": "production",
+            "lineCount": 9
+          },
+          {
+            "pageNumber": 9,
+            "title": "Render Gallery",
+            "source": "render",
+            "lineCount": 9
+          }
+        ],
+        "note": "Generated binary PDF package from local scene, render, budget, board, and asset registry data. Production print certification is not claimed."
+      }
+    },
+    "cadRoundTripFixtures": {
+      "status": "READY",
+      "productionReady": false,
+      "previewDxf": "READY",
+      "nativeDwg": "BLOCKED",
+      "productionDxf": "BLOCKED",
+      "objectCount": 18,
+      "lineEntityCount": 216,
+      "layerCount": 5,
+      "evidence": {
+        "generatedAt": "2026-06-09T09:37:03.821Z",
+        "verdict": "CONTROLLED_PREVIEW_READY",
+        "productionReady": false,
+        "projectId": "demo-wedding-project",
+        "status": "READY",
+        "previewDxf": "READY",
+        "nativeDwg": "BLOCKED",
+        "productionDxf": "BLOCKED",
+        "files": [
+          "fixtures/cad-roundtrip/hemant-samwat-scene.json",
+          "fixtures/cad-roundtrip/hemant-samwat-preview-footprint.dxf"
+        ],
+        "objectCount": 18,
+        "lineEntityCount": 216,
+        "layerCount": 5,
+        "note": "Round-trip fixtures cover local preview DXF parsing. Native DWG export and production DXF remain BLOCKED."
+      }
+    },
+    "complianceRuntime": {
+      "status": "READY",
+      "productionReady": false,
+      "certified": false,
+      "validators": 3,
+      "domains": [
+        "structural",
+        "electrical",
+        "fire"
+      ],
+      "reviewRequired": 3,
+      "blocker": "Local rule-based validators are implemented for preview review. Certified structural, electrical, fire, and engineering compliance remains BLOCKED.",
+      "reports": [
+        {
+          "domain": "structural",
+          "status": "READY",
+          "certified": false,
+          "verdict": "REVIEW_REQUIRED",
+          "findings": [
+            {
+              "id": "structural-mandap-pillars",
+              "domain": "structural",
+              "severity": "PASS",
+              "label": "Mandap pillar count",
+              "evidence": "8 mandap pillars declared; 1 pillar preview object groups in scene."
+            },
+            {
+              "id": "structural-stage-height",
+              "domain": "structural",
+              "severity": "PASS",
+              "label": "Stage deck height",
+              "evidence": "1.2m stage height checked against local 1.5m preview threshold."
+            },
+            {
+              "id": "structural-truss-span",
+              "domain": "structural",
+              "severity": "PASS",
+              "label": "Truss span preview",
+              "evidence": "1 truss object(s), max span 20m."
+            },
+            {
+              "id": "structural-certified-calcs",
+              "domain": "structural",
+              "severity": "FAIL",
+              "label": "Certified structural calculations",
+              "evidence": "No stamped load, wind, ballast, anchoring, or temporary-structure engineering certificate exists."
+            }
+          ],
+          "blocker": "Certified structural validation remains BLOCKED."
+        },
+        {
+          "domain": "electrical",
+          "status": "READY",
+          "certified": false,
+          "verdict": "REVIEW_REQUIRED",
+          "findings": [
+            {
+              "id": "electrical-load-schedule",
+              "domain": "electrical",
+              "severity": "PASS",
+              "label": "Preview load schedule",
+              "evidence": "4 fixture families, 16260W estimated local preview load, 68A at 240V."
+            },
+            {
+              "id": "electrical-emergency-circuits",
+              "domain": "electrical",
+              "severity": "PASS",
+              "label": "Emergency lighting coverage",
+              "evidence": "6 emergency exits available for emergency-light planning."
+            },
+            {
+              "id": "electrical-certified-safety",
+              "domain": "electrical",
+              "severity": "FAIL",
+              "label": "Certified electrical safety",
+              "evidence": "No licensed electrical load schedule, phase balancing, cabling, earthing, generator sizing, or inspection certificate exists."
+            }
+          ],
+          "blocker": "Certified electrical validation remains BLOCKED."
+        },
+        {
+          "domain": "fire",
+          "status": "READY",
+          "certified": false,
+          "verdict": "REVIEW_REQUIRED",
+          "findings": [
+            {
+              "id": "fire-exit-capacity",
+              "domain": "fire",
+              "severity": "PASS",
+              "label": "Exit capacity proxy",
+              "evidence": "6 exits x 120 preview capacity = 720 for 620 guests."
+            },
+            {
+              "id": "fire-accessible-seating",
+              "domain": "fire",
+              "severity": "PASS",
+              "label": "Accessible and clear seating",
+              "evidence": "24 accessible seats reserved in preview seating data."
+            },
+            {
+              "id": "fire-material-certificates",
+              "domain": "fire",
+              "severity": "FAIL",
+              "label": "Flame-retardant certificates",
+              "evidence": "No flame-retardant fabric, extinguisher placement, evacuation-width, or authority approval evidence exists."
+            }
+          ],
+          "blocker": "Certified fire safety validation remains BLOCKED."
+        }
+      ]
+    },
+    "liveIntegrationGates": {
+      "status": "BLOCKED",
+      "productionReady": false,
+      "gates": [
+        {
+          "id": "payments",
+          "label": "Payments",
+          "status": "BLOCKED",
+          "requiredEvidence": [
+            "payment provider credentials",
+            "checkout session creation",
+            "webhook signature verification",
+            "test transaction receipt"
+          ],
+          "reason": "No payment provider credentials, checkout runtime, webhook verification, or transaction evidence exists in this repo."
+        },
+        {
+          "id": "vendors",
+          "label": "Live vendor network",
+          "status": "BLOCKED",
+          "requiredEvidence": [
+            "vendor API base URL",
+            "authenticated vendor sync",
+            "booking/availability response",
+            "audit log"
+          ],
+          "reason": "Vendor data is local demo data only; no live vendor API or booking flow is configured."
+        },
+        {
+          "id": "marketplace",
+          "label": "Marketplace commerce",
+          "status": "BLOCKED",
+          "requiredEvidence": [
+            "seller account evidence",
+            "live listing sync",
+            "order creation",
+            "fulfillment or payout event"
+          ],
+          "reason": "Marketplace route is a preview shell; no live listing, order, seller, fulfillment, or payout runtime exists."
+        }
+      ],
+      "blocked": 3,
+      "note": "Real vendor, payment, and marketplace integrations are allowed only when provider/API evidence is present."
+    },
+    "templateRuntime": {
+      "status": "READY",
+      "templates": 8,
+      "readyTemplates": 8,
+      "totalGeneratedObjects": 48,
+      "totalAssetLinks": 41
+    },
+    "productionRuntime": {
+      "status": "READY",
+      "vendorAssignments": 5,
+      "crewAssignments": 5,
+      "transportPlans": 3,
+      "accommodationPlans": 3,
+      "scheduleItems": 5,
+      "workOrders": 5,
+      "callSheets": 3
+    },
+    "floralDesignerWorkspace": {
+      "route": "/floral",
+      "status": "READY",
+      "productionReady": false,
+      "kpiWidgets": 6,
+      "tabs": 9,
+      "numberedPanels": 14,
+      "visualAssets": 12,
+      "spacePoints": 91,
+      "flowers": 12,
+      "palettes": 5,
+      "attachments": 3,
+      "localRuntimeCoverage": 6
+    }
+  },
+  "sourceImageExtraction": {
+    "status": "READY",
+    "boards": 9,
+    "frames": 63,
+    "panels": 38,
+    "uniqueSourceImages": 30,
+    "suppliedSourceImages": 31,
+    "duplicateSourceImages": 1,
+    "uniqueSourceFrames": 591,
+    "note": "Nine generated design-board PNG assets are imported into public/extracted-boards and rendered in /vr with typed extraction data."
+  },
+  "previewCompletion": {
+    "routeFrames": "READY",
+    "heroBanners": "READY",
+    "tlpsWeddingOsHomepage": "READY",
+    "tlpsUniqueExtractions": "READY",
+    "uiFrames": "READY",
+    "unifiedPremiumTheme": "READY",
+    "floralDesignerWorkspace": "READY",
+    "assetRegistry": "READY",
+    "glbMeshes": "READY",
+    "pdfBoardPackage": "READY",
+    "cadRoundTripFixtures": "READY",
+    "complianceValidators": "READY",
+    "liveIntegrations": "BLOCKED",
+    "previewRouteRuntime": {
+      "status": "READY",
+      "routeFrames": 32,
+      "routeFramesReady": 32,
+      "routeFramesWithDemoData": 32,
+      "routeFramesWithLocalCoverage": 32,
+      "uiFrames": 25,
+      "uiFramesReady": 25,
+      "totalDemoDataPoints": 208,
+      "totalLocalCoveragePoints": 139
+    },
+    "extractedBoardFrames": "READY",
+    "localExports": [
+      {
+        "id": "export-json",
+        "format": "json",
+        "status": "READY"
+      },
+      {
+        "id": "export-pdf",
+        "format": "pdf-board",
+        "status": "READY"
+      },
+      {
+        "id": "export-dwg",
+        "format": "dwg",
+        "status": "BLOCKED"
+      },
+      {
+        "id": "export-dxf",
+        "format": "dxf",
+        "status": "READY"
+      }
+    ],
+    "renderJobs": [
+      {
+        "id": "render-day",
+        "status": "READY"
+      },
+      {
+        "id": "render-night",
+        "status": "READY"
+      }
+    ]
+  },
+  "blockers": [
+    {
+      "id": "native-dwg-export",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "production-dxf-export",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "payments",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "live-vendors",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "marketplace-commerce",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "structural-validation",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "electrical-validation",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "fire-safety-validation",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "engineering-compliance",
+      "status": "BLOCKED"
+    }
+  ]
+}

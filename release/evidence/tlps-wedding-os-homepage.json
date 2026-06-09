@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-06-09T00:00:00.000Z",
+  "status": "READY",
+  "verdict": "CONTROLLED_PREVIEW_READY",
+  "productionReady": false,
+  "source": "/Users/vesahe/Downloads/TLPS_All_Generated_Images_Descriptive/TLPS_Wedding_OS_Homepage.png",
+  "sourceSize": {
+    "width": 864,
+    "height": 1821
+  },
+  "route": "/wedding-os",
+  "assetTruth": "Local preview extraction from a supplied PNG reference. This does not prove live marketplace, live vendor, payment, or production compliance capabilities.",
+  "counts": {
+    "sections": 10,
+    "destinationCards": 7,
+    "designStudioCards": 4,
+    "filmCards": 8,
+    "ecosystemModules": 12,
+    "stats": 6
+  },
+  "outputDir": "public/tlps-wedding-os/homepage",
+  "dataRef": "data/tlps-wedding-os-homepage.json"
+}

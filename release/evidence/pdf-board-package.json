@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-06-09T09:36:58.290Z",
+  "verdict": "CONTROLLED_PREVIEW_READY",
+  "productionReady": false,
+  "status": "READY",
+  "output": "release/board-packages/hemant-samwat-board-package.pdf",
+  "bytes": 8084,
+  "sha256": "c89625ced92cd3d5be34c3e19a3014f24d70467b72964dfff11fc4351f708f14",
+  "pageCount": 9,
+  "runtime": {
+    "status": "READY",
+    "productionReady": false,
+    "file": "release/board-packages/hemant-samwat-board-package.pdf",
+    "pageCount": 9,
+    "sourceData": [
+      "scene objects",
+      "render jobs",
+      "budget items",
+      "asset registry",
+      "board page bindings"
+    ],
+    "note": "A local binary PDF package is generated from scene/render data. Production print QA remains unclaimed."
+  },
+  "pages": [
+    {
+      "pageNumber": 1,
+      "title": "Cover",
+      "source": "scene",
+      "lineCount": 9
+    },
+    {
+      "pageNumber": 2,
+      "title": "Concept",
+      "source": "template",
+      "lineCount": 9
+    },
+    {
+      "pageNumber": 3,
+      "title": "Site Plan",
+      "source": "scene",
+      "lineCount": 9
+    },
+    {
+      "pageNumber": 4,
+      "title": "Mandap Plan",
+      "source": "scene",
+      "lineCount": 9
+    },
+    {
+      "pageNumber": 5,
+      "title": "Lighting Plan",
+      "source": "scene",
+      "lineCount": 9
+    },
+    {
+      "pageNumber": 6,
+      "title": "Floral Plan",
+      "source": "template",
+      "lineCount": 9
+    },
+    {
+      "pageNumber": 7,
+      "title": "Budget",
+      "source": "budget",
+      "lineCount": 9
+    },
+    {
+      "pageNumber": 8,
+      "title": "BOM",
+      "source": "production",
+      "lineCount": 9
+    },
+    {
+      "pageNumber": 9,
+      "title": "Render Gallery",
+      "source": "render",
+      "lineCount": 9
+    }
+  ],
+  "note": "Generated binary PDF package from local scene, render, budget, board, and asset registry data. Production print certification is not claimed."
+}

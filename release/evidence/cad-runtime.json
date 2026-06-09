@@ -1,0 +1,773 @@
+{
+  "generatedAt": "2026-06-09T18:24:30.565Z",
+  "status": "READY",
+  "route": "/cad/editor",
+  "sceneCanvas": true,
+  "gridFloor": true,
+  "cameraModes": [
+    "perspective",
+    "top",
+    "front",
+    "side"
+  ],
+  "objectInsertion": true,
+  "objectSelection": true,
+  "transformControls": true,
+  "layerVisibility": true,
+  "materialAssignment": true,
+  "saveLoadSceneJson": true,
+  "saveLoadValidation": true,
+  "sprint04Tools": {
+    "status": "READY",
+    "tools": 10,
+    "readyTools": 10,
+    "labels": [
+      "Scene hierarchy panel",
+      "Layer tree with lock/hide",
+      "Object inspector",
+      "Material inspector",
+      "Asset browser",
+      "Measurement tool",
+      "Annotation tool",
+      "Template loader",
+      "Scene statistics",
+      "Save/load validation"
+    ]
+  },
+  "localExports": [
+    {
+      "id": "export-json",
+      "label": "Scene JSON",
+      "format": "json",
+      "status": "READY",
+      "evidence": "Local scene serialization is implemented in /cad/editor."
+    },
+    {
+      "id": "export-pdf",
+      "label": "Printable board package",
+      "format": "pdf-board",
+      "status": "READY",
+      "evidence": "Local binary PDF board package generation writes release/board-packages/hemant-samwat-board-package.pdf from scene/render data."
+    },
+    {
+      "id": "export-dwg",
+      "label": "DWG export",
+      "format": "dwg",
+      "status": "BLOCKED",
+      "evidence": "No real DWG exporter exists."
+    },
+    {
+      "id": "export-dxf",
+      "label": "Preview DXF footprint export",
+      "format": "dxf",
+      "status": "READY",
+      "evidence": "Local ASCII DXF footprint export is implemented for preview geometry; production CAD handoff remains blocked by DWG/compliance gaps."
+    }
+  ],
+  "sceneGraph": {
+    "status": "READY",
+    "branches": [
+      "venue",
+      "mandap",
+      "stage",
+      "seating",
+      "lighting",
+      "decor"
+    ],
+    "controls": [
+      "Scene Hierarchy Panel",
+      "Object Tree",
+      "Layer Tree with Lock/Hide",
+      "Object Inspector",
+      "Material Inspector",
+      "Asset Browser",
+      "Measurement Tool",
+      "Annotation Tool",
+      "Template Loader",
+      "Scene Statistics",
+      "Save/Load Validation",
+      "Selection Manager",
+      "Search",
+      "Grouping"
+    ]
+  },
+  "assetLibrary": {
+    "status": "READY",
+    "totalAssets": 648,
+    "categoryCount": 27,
+    "statusCounts": {
+      "READY": 432,
+      "PARTIAL": 160,
+      "BLOCKED": 56
+    },
+    "cadInsertable": 592,
+    "missingMeshFileBlockers": {
+      "glbMeshFiles": 592,
+      "missingRealMeshes": 0
+    },
+    "byCategory": [
+      {
+        "category": "Mandaps",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Structural Elements",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Pillars",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Gates & Arches",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Backdrops",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Decor Props",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Floral Installations",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Flower Types",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Furniture",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Seating",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Tables",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Lighting Fixtures",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Decorative Lighting",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Effects",
+        "count": 24,
+        "ready": 0,
+        "partial": 20,
+        "blocked": 4
+      },
+      {
+        "category": "Truss & Rigging",
+        "count": 24,
+        "ready": 0,
+        "partial": 20,
+        "blocked": 4
+      },
+      {
+        "category": "LED & Screens",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Audio",
+        "count": 24,
+        "ready": 0,
+        "partial": 20,
+        "blocked": 4
+      },
+      {
+        "category": "Venue Zones",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Utilities",
+        "count": 24,
+        "ready": 0,
+        "partial": 20,
+        "blocked": 4
+      },
+      {
+        "category": "Guest Planning",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Vendor Documents",
+        "count": 24,
+        "ready": 0,
+        "partial": 0,
+        "blocked": 24
+      },
+      {
+        "category": "Production Planning",
+        "count": 24,
+        "ready": 0,
+        "partial": 20,
+        "blocked": 4
+      },
+      {
+        "category": "Drone Planning",
+        "count": 24,
+        "ready": 0,
+        "partial": 20,
+        "blocked": 4
+      },
+      {
+        "category": "VR Walkthrough",
+        "count": 24,
+        "ready": 0,
+        "partial": 20,
+        "blocked": 4
+      },
+      {
+        "category": "Boards",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "Templates",
+        "count": 24,
+        "ready": 24,
+        "partial": 0,
+        "blocked": 0
+      },
+      {
+        "category": "AI Outputs",
+        "count": 24,
+        "ready": 0,
+        "partial": 20,
+        "blocked": 4
+      }
+    ]
+  },
+  "boardComposer": {
+    "status": "READY",
+    "pipeline": [
+      "Scene",
+      "Render",
+      "Board Composer",
+      "PDF Package"
+    ],
+    "pageCount": 9,
+    "pages": [
+      {
+        "id": "cover",
+        "title": "Cover",
+        "source": "scene",
+        "bindings": [
+          "project summary",
+          "release verdict",
+          "hero render"
+        ],
+        "status": "READY"
+      },
+      {
+        "id": "concept",
+        "title": "Concept",
+        "source": "template",
+        "bindings": [
+          "design language",
+          "palette",
+          "mood notes"
+        ],
+        "status": "READY"
+      },
+      {
+        "id": "site-plan",
+        "title": "Site Plan",
+        "source": "scene",
+        "bindings": [
+          "venue zones",
+          "entry axis",
+          "parking",
+          "service lanes"
+        ],
+        "status": "READY"
+      },
+      {
+        "id": "mandap-plan",
+        "title": "Mandap Plan",
+        "source": "scene",
+        "bindings": [
+          "mandap geometry",
+          "ritual zone",
+          "pillar callouts"
+        ],
+        "status": "READY"
+      },
+      {
+        "id": "lighting-plan",
+        "title": "Lighting Plan",
+        "source": "scene",
+        "bindings": [
+          "fixtures",
+          "truss",
+          "night render"
+        ],
+        "status": "READY"
+      },
+      {
+        "id": "floral-plan",
+        "title": "Floral Plan",
+        "source": "template",
+        "bindings": [
+          "garland meters",
+          "floral set",
+          "decor placements"
+        ],
+        "status": "READY"
+      },
+      {
+        "id": "budget",
+        "title": "Budget",
+        "source": "budget",
+        "bindings": [
+          "budget items",
+          "category totals",
+          "blocked payment note"
+        ],
+        "status": "READY"
+      },
+      {
+        "id": "bom",
+        "title": "BOM",
+        "source": "production",
+        "bindings": [
+          "asset list",
+          "vendor assignments",
+          "work orders"
+        ],
+        "status": "READY"
+      },
+      {
+        "id": "render-gallery",
+        "title": "Render Gallery",
+        "source": "render",
+        "bindings": [
+          "day preview",
+          "night preview",
+          "extracted board references"
+        ],
+        "status": "READY"
+      }
+    ],
+    "exportFormats": [
+      "printable-html",
+      "binary-pdf",
+      "scene-json",
+      "preview-dxf"
+    ]
+  },
+  "pdfBoardPackage": {
+    "status": "READY",
+    "productionReady": false,
+    "file": "release/board-packages/hemant-samwat-board-package.pdf",
+    "pageCount": 9,
+    "sourceData": [
+      "scene objects",
+      "render jobs",
+      "budget items",
+      "asset registry",
+      "board page bindings"
+    ],
+    "note": "A local binary PDF package is generated from scene/render data. Production print QA remains unclaimed.",
+    "exists": true,
+    "bytes": 8084,
+    "evidence": {
+      "generatedAt": "2026-06-09T09:36:58.290Z",
+      "verdict": "CONTROLLED_PREVIEW_READY",
+      "productionReady": false,
+      "status": "READY",
+      "output": "release/board-packages/hemant-samwat-board-package.pdf",
+      "bytes": 8084,
+      "sha256": "c89625ced92cd3d5be34c3e19a3014f24d70467b72964dfff11fc4351f708f14",
+      "pageCount": 9,
+      "runtime": {
+        "status": "READY",
+        "productionReady": false,
+        "file": "release/board-packages/hemant-samwat-board-package.pdf",
+        "pageCount": 9,
+        "sourceData": [
+          "scene objects",
+          "render jobs",
+          "budget items",
+          "asset registry",
+          "board page bindings"
+        ],
+        "note": "A local binary PDF package is generated from scene/render data. Production print QA remains unclaimed."
+      },
+      "pages": [
+        {
+          "pageNumber": 1,
+          "title": "Cover",
+          "source": "scene",
+          "lineCount": 9
+        },
+        {
+          "pageNumber": 2,
+          "title": "Concept",
+          "source": "template",
+          "lineCount": 9
+        },
+        {
+          "pageNumber": 3,
+          "title": "Site Plan",
+          "source": "scene",
+          "lineCount": 9
+        },
+        {
+          "pageNumber": 4,
+          "title": "Mandap Plan",
+          "source": "scene",
+          "lineCount": 9
+        },
+        {
+          "pageNumber": 5,
+          "title": "Lighting Plan",
+          "source": "scene",
+          "lineCount": 9
+        },
+        {
+          "pageNumber": 6,
+          "title": "Floral Plan",
+          "source": "template",
+          "lineCount": 9
+        },
+        {
+          "pageNumber": 7,
+          "title": "Budget",
+          "source": "budget",
+          "lineCount": 9
+        },
+        {
+          "pageNumber": 8,
+          "title": "BOM",
+          "source": "production",
+          "lineCount": 9
+        },
+        {
+          "pageNumber": 9,
+          "title": "Render Gallery",
+          "source": "render",
+          "lineCount": 9
+        }
+      ],
+      "note": "Generated binary PDF package from local scene, render, budget, board, and asset registry data. Production print certification is not claimed."
+    }
+  },
+  "cadRoundTripFixtures": {
+    "status": "READY",
+    "productionReady": false,
+    "previewDxf": "READY",
+    "nativeDwg": "BLOCKED",
+    "productionDxf": "BLOCKED",
+    "objectCount": 18,
+    "lineEntityCount": 216,
+    "layerCount": 5,
+    "evidence": {
+      "generatedAt": "2026-06-09T09:37:03.821Z",
+      "verdict": "CONTROLLED_PREVIEW_READY",
+      "productionReady": false,
+      "projectId": "demo-wedding-project",
+      "status": "READY",
+      "previewDxf": "READY",
+      "nativeDwg": "BLOCKED",
+      "productionDxf": "BLOCKED",
+      "files": [
+        "fixtures/cad-roundtrip/hemant-samwat-scene.json",
+        "fixtures/cad-roundtrip/hemant-samwat-preview-footprint.dxf"
+      ],
+      "objectCount": 18,
+      "lineEntityCount": 216,
+      "layerCount": 5,
+      "note": "Round-trip fixtures cover local preview DXF parsing. Native DWG export and production DXF remain BLOCKED."
+    }
+  },
+  "complianceRuntime": {
+    "status": "READY",
+    "productionReady": false,
+    "certified": false,
+    "validators": 3,
+    "domains": [
+      "structural",
+      "electrical",
+      "fire"
+    ],
+    "reviewRequired": 3,
+    "blocker": "Local rule-based validators are implemented for preview review. Certified structural, electrical, fire, and engineering compliance remains BLOCKED.",
+    "reports": [
+      {
+        "domain": "structural",
+        "status": "READY",
+        "certified": false,
+        "verdict": "REVIEW_REQUIRED",
+        "findings": [
+          {
+            "id": "structural-mandap-pillars",
+            "domain": "structural",
+            "severity": "PASS",
+            "label": "Mandap pillar count",
+            "evidence": "8 mandap pillars declared; 1 pillar preview object groups in scene."
+          },
+          {
+            "id": "structural-stage-height",
+            "domain": "structural",
+            "severity": "PASS",
+            "label": "Stage deck height",
+            "evidence": "1.2m stage height checked against local 1.5m preview threshold."
+          },
+          {
+            "id": "structural-truss-span",
+            "domain": "structural",
+            "severity": "PASS",
+            "label": "Truss span preview",
+            "evidence": "1 truss object(s), max span 20m."
+          },
+          {
+            "id": "structural-certified-calcs",
+            "domain": "structural",
+            "severity": "FAIL",
+            "label": "Certified structural calculations",
+            "evidence": "No stamped load, wind, ballast, anchoring, or temporary-structure engineering certificate exists."
+          }
+        ],
+        "blocker": "Certified structural validation remains BLOCKED."
+      },
+      {
+        "domain": "electrical",
+        "status": "READY",
+        "certified": false,
+        "verdict": "REVIEW_REQUIRED",
+        "findings": [
+          {
+            "id": "electrical-load-schedule",
+            "domain": "electrical",
+            "severity": "PASS",
+            "label": "Preview load schedule",
+            "evidence": "4 fixture families, 16260W estimated local preview load, 68A at 240V."
+          },
+          {
+            "id": "electrical-emergency-circuits",
+            "domain": "electrical",
+            "severity": "PASS",
+            "label": "Emergency lighting coverage",
+            "evidence": "6 emergency exits available for emergency-light planning."
+          },
+          {
+            "id": "electrical-certified-safety",
+            "domain": "electrical",
+            "severity": "FAIL",
+            "label": "Certified electrical safety",
+            "evidence": "No licensed electrical load schedule, phase balancing, cabling, earthing, generator sizing, or inspection certificate exists."
+          }
+        ],
+        "blocker": "Certified electrical validation remains BLOCKED."
+      },
+      {
+        "domain": "fire",
+        "status": "READY",
+        "certified": false,
+        "verdict": "REVIEW_REQUIRED",
+        "findings": [
+          {
+            "id": "fire-exit-capacity",
+            "domain": "fire",
+            "severity": "PASS",
+            "label": "Exit capacity proxy",
+            "evidence": "6 exits x 120 preview capacity = 720 for 620 guests."
+          },
+          {
+            "id": "fire-accessible-seating",
+            "domain": "fire",
+            "severity": "PASS",
+            "label": "Accessible and clear seating",
+            "evidence": "24 accessible seats reserved in preview seating data."
+          },
+          {
+            "id": "fire-material-certificates",
+            "domain": "fire",
+            "severity": "FAIL",
+            "label": "Flame-retardant certificates",
+            "evidence": "No flame-retardant fabric, extinguisher placement, evacuation-width, or authority approval evidence exists."
+          }
+        ],
+        "blocker": "Certified fire safety validation remains BLOCKED."
+      }
+    ]
+  },
+  "liveIntegrationGates": {
+    "status": "BLOCKED",
+    "productionReady": false,
+    "gates": [
+      {
+        "id": "payments",
+        "label": "Payments",
+        "status": "BLOCKED",
+        "requiredEvidence": [
+          "payment provider credentials",
+          "checkout session creation",
+          "webhook signature verification",
+          "test transaction receipt"
+        ],
+        "reason": "No payment provider credentials, checkout runtime, webhook verification, or transaction evidence exists in this repo."
+      },
+      {
+        "id": "vendors",
+        "label": "Live vendor network",
+        "status": "BLOCKED",
+        "requiredEvidence": [
+          "vendor API base URL",
+          "authenticated vendor sync",
+          "booking/availability response",
+          "audit log"
+        ],
+        "reason": "Vendor data is local demo data only; no live vendor API or booking flow is configured."
+      },
+      {
+        "id": "marketplace",
+        "label": "Marketplace commerce",
+        "status": "BLOCKED",
+        "requiredEvidence": [
+          "seller account evidence",
+          "live listing sync",
+          "order creation",
+          "fulfillment or payout event"
+        ],
+        "reason": "Marketplace route is a preview shell; no live listing, order, seller, fulfillment, or payout runtime exists."
+      }
+    ],
+    "blocked": 3,
+    "note": "Real vendor, payment, and marketplace integrations are allowed only when provider/API evidence is present."
+  },
+  "templateRuntime": {
+    "status": "READY",
+    "templates": 8,
+    "readyTemplates": 8,
+    "totalGeneratedObjects": 48,
+    "totalAssetLinks": 41
+  },
+  "productionRuntime": {
+    "status": "READY",
+    "vendorAssignments": 5,
+    "crewAssignments": 5,
+    "transportPlans": 3,
+    "accommodationPlans": 3,
+    "scheduleItems": 5,
+    "workOrders": 5,
+    "callSheets": 3
+  },
+  "visualVerification": {
+    "script": "npm run verify:cad:visual",
+    "desktop": {
+      "viewport": "1280x720",
+      "canvas": "300x1084",
+      "sampleColors": 109,
+      "nonBackgroundSamples": 195
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "canvas": "390x469",
+      "sampleColors": 129,
+      "nonBackgroundSamples": 152
+    }
+  },
+  "starterObjects": [
+    "mandap",
+    "stage",
+    "pillar",
+    "arch",
+    "chair",
+    "sofa",
+    "table",
+    "gate",
+    "floral-garland",
+    "kalash",
+    "diya",
+    "chandelier",
+    "truss",
+    "led-wall",
+    "water-pool",
+    "tree",
+    "parking-block",
+    "drone-path-marker"
+  ],
+  "blockedCadFeatures": [
+    {
+      "feature": "Native DWG export",
+      "status": "BLOCKED",
+      "reason": "No native DWG writer, round-trip compatibility, AutoCAD validation, or DWG fixture evidence exists."
+    },
+    {
+      "feature": "Production DXF export",
+      "status": "BLOCKED",
+      "reason": "Preview ASCII DXF footprint export is implemented. Production DXF with dimensions, sheets, blocks, CAD QA, and venue handoff remains unavailable."
+    },
+    {
+      "feature": "Engineering compliance",
+      "status": "BLOCKED",
+      "reason": "No municipal, engineering, accessibility, fire, electrical, or venue-authority compliance rules engine is implemented."
+    },
+    {
+      "feature": "Structural validation",
+      "status": "BLOCKED",
+      "reason": "No load, wind, rigging, or electrical safety calculation exists."
+    }
+  ]
+}

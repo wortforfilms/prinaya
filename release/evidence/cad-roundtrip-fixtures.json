@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-06-09T09:37:03.821Z",
+  "verdict": "CONTROLLED_PREVIEW_READY",
+  "productionReady": false,
+  "projectId": "demo-wedding-project",
+  "status": "READY",
+  "previewDxf": "READY",
+  "nativeDwg": "BLOCKED",
+  "productionDxf": "BLOCKED",
+  "files": [
+    "fixtures/cad-roundtrip/hemant-samwat-scene.json",
+    "fixtures/cad-roundtrip/hemant-samwat-preview-footprint.dxf"
+  ],
+  "objectCount": 18,
+  "lineEntityCount": 216,
+  "layerCount": 5,
+  "note": "Round-trip fixtures cover local preview DXF parsing. Native DWG export and production DXF remain BLOCKED."
+}

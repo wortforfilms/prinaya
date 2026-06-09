@@ -1,0 +1,483 @@
+{
+  "version": 1,
+  "name": "TLP Wedding CAD Demo Scene",
+  "layers": [
+    {
+      "id": "site",
+      "label": "Site Plan",
+      "visible": true,
+      "color": "#36715d",
+      "locked": false
+    },
+    {
+      "id": "mandap",
+      "label": "Mandap",
+      "visible": true,
+      "color": "#b7375f",
+      "locked": false
+    },
+    {
+      "id": "seating",
+      "label": "Seating",
+      "visible": true,
+      "color": "#176f8f",
+      "locked": false
+    },
+    {
+      "id": "lighting",
+      "label": "Lighting",
+      "visible": true,
+      "color": "#d08b1f",
+      "locked": false
+    },
+    {
+      "id": "decor",
+      "label": "Decor & Floral",
+      "visible": true,
+      "color": "#a85f37",
+      "locked": false
+    },
+    {
+      "id": "exports",
+      "label": "Exports",
+      "visible": true,
+      "color": "#25313a",
+      "locked": true
+    }
+  ],
+  "materials": [
+    {
+      "id": "brass",
+      "label": "Brushed Brass",
+      "finish": "satin",
+      "color": "#b88945",
+      "usage": "pillars, kalash, diya"
+    },
+    {
+      "id": "lotus-fabric",
+      "label": "Lotus Silk",
+      "finish": "soft textile",
+      "color": "#b7375f",
+      "usage": "canopy, stage trim"
+    },
+    {
+      "id": "ivory-stone",
+      "label": "Ivory Stone",
+      "finish": "matte",
+      "color": "#f8f3e7",
+      "usage": "floor inlay, plinth"
+    },
+    {
+      "id": "neem-greenery",
+      "label": "Neem Greenery",
+      "finish": "organic",
+      "color": "#36715d",
+      "usage": "floral foliage"
+    },
+    {
+      "id": "night-led",
+      "label": "Night LED Diffuser",
+      "finish": "glow acrylic",
+      "color": "#176f8f",
+      "usage": "sci-fi portal lighting"
+    }
+  ],
+  "objects": [
+    {
+      "id": "obj-mandap",
+      "kind": "mandap",
+      "label": "Lotus mandap",
+      "layerId": "mandap",
+      "materialId": "lotus-fabric",
+      "position": [
+        0,
+        0.25,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        12,
+        0.5,
+        12
+      ]
+    },
+    {
+      "id": "obj-stage",
+      "kind": "stage",
+      "label": "Reception stage",
+      "layerId": "site",
+      "materialId": "ivory-stone",
+      "position": [
+        0,
+        0.6,
+        -22
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        18,
+        1.2,
+        7
+      ]
+    },
+    {
+      "id": "obj-pillar-1",
+      "kind": "pillar",
+      "label": "Mandap pillar A",
+      "layerId": "mandap",
+      "materialId": "brass",
+      "position": [
+        -5,
+        3,
+        -5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.7,
+        6,
+        0.7
+      ]
+    },
+    {
+      "id": "obj-arch",
+      "kind": "arch",
+      "label": "Entry arch",
+      "layerId": "decor",
+      "materialId": "night-led",
+      "position": [
+        0,
+        3,
+        28
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        9,
+        6,
+        1
+      ]
+    },
+    {
+      "id": "obj-chair",
+      "kind": "chair",
+      "label": "Guest chair row",
+      "layerId": "seating",
+      "materialId": "ivory-stone",
+      "position": [
+        -18,
+        0.5,
+        7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "obj-sofa",
+      "kind": "sofa",
+      "label": "Couple sofa",
+      "layerId": "site",
+      "materialId": "lotus-fabric",
+      "position": [
+        0,
+        1.2,
+        -24
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        5,
+        1.4,
+        1.6
+      ]
+    },
+    {
+      "id": "obj-table",
+      "kind": "table",
+      "label": "Family table",
+      "layerId": "seating",
+      "materialId": "ivory-stone",
+      "position": [
+        18,
+        0.6,
+        7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2.8,
+        1.1,
+        2.8
+      ]
+    },
+    {
+      "id": "obj-gate",
+      "kind": "gate",
+      "label": "North gate",
+      "layerId": "site",
+      "materialId": "night-led",
+      "position": [
+        0,
+        3,
+        33
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        12,
+        6,
+        1
+      ]
+    },
+    {
+      "id": "obj-garland",
+      "kind": "floral-garland",
+      "label": "Canopy garland",
+      "layerId": "decor",
+      "materialId": "neem-greenery",
+      "position": [
+        0,
+        6.6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        8,
+        0.4,
+        8
+      ]
+    },
+    {
+      "id": "obj-kalash",
+      "kind": "kalash",
+      "label": "Kalash pair",
+      "layerId": "decor",
+      "materialId": "brass",
+      "position": [
+        -2.5,
+        0.8,
+        2.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.8,
+        1.2,
+        0.8
+      ]
+    },
+    {
+      "id": "obj-diya",
+      "kind": "diya",
+      "label": "Diya ring",
+      "layerId": "decor",
+      "materialId": "brass",
+      "position": [
+        2.8,
+        0.2,
+        2.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.4,
+        0.2,
+        0.4
+      ]
+    },
+    {
+      "id": "obj-chandelier",
+      "kind": "chandelier",
+      "label": "Mandap chandelier",
+      "layerId": "lighting",
+      "materialId": "brass",
+      "position": [
+        0,
+        6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2.4,
+        1.2,
+        2.4
+      ]
+    },
+    {
+      "id": "obj-truss",
+      "kind": "truss",
+      "label": "Lighting truss",
+      "layerId": "lighting",
+      "materialId": "night-led",
+      "position": [
+        0,
+        5,
+        -16
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        20,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "obj-led-wall",
+      "kind": "led-wall",
+      "label": "LED wall",
+      "layerId": "lighting",
+      "materialId": "night-led",
+      "position": [
+        0,
+        3,
+        -26
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        14,
+        5,
+        0.35
+      ]
+    },
+    {
+      "id": "obj-water",
+      "kind": "water-pool",
+      "label": "Reflecting pool",
+      "layerId": "site",
+      "materialId": "night-led",
+      "position": [
+        0,
+        0.08,
+        14
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        12,
+        0.12,
+        3
+      ]
+    },
+    {
+      "id": "obj-tree",
+      "kind": "tree",
+      "label": "Existing tree",
+      "layerId": "site",
+      "materialId": "neem-greenery",
+      "position": [
+        -28,
+        4,
+        -8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        4,
+        8,
+        4
+      ]
+    },
+    {
+      "id": "obj-parking",
+      "kind": "parking-block",
+      "label": "Parking block A",
+      "layerId": "site",
+      "materialId": "ivory-stone",
+      "position": [
+        32,
+        0.1,
+        18
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        12,
+        0.2,
+        8
+      ]
+    },
+    {
+      "id": "obj-drone",
+      "kind": "drone-path-marker",
+      "label": "Drone path marker",
+      "layerId": "site",
+      "materialId": "night-led",
+      "position": [
+        -32,
+        6,
+        24
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}

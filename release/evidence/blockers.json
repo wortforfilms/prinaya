@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-06-09T18:24:30.565Z",
+  "status": "BLOCKED",
+  "blockedCapabilities": [
+    {
+      "id": "native-dwg-export",
+      "label": "Native DWG export",
+      "status": "BLOCKED",
+      "reason": "No native DWG writer, round-trip compatibility, AutoCAD validation, or DWG fixture evidence exists."
+    },
+    {
+      "id": "production-dxf-export",
+      "label": "Production DXF export",
+      "status": "BLOCKED",
+      "reason": "Preview ASCII DXF footprint export exists. Production DXF with layers, dimensions, units, blocks, title sheets, and CAD QA evidence is not implemented."
+    },
+    {
+      "id": "payments",
+      "label": "Payments",
+      "status": "BLOCKED",
+      "reason": "No payment processor credentials, checkout runtime, or transaction evidence exists."
+    },
+    {
+      "id": "live-vendors",
+      "label": "Live vendor network",
+      "status": "BLOCKED",
+      "reason": "Vendor records are seeded demo data; no live marketplace or vendor API is connected."
+    },
+    {
+      "id": "marketplace-commerce",
+      "label": "Marketplace commerce",
+      "status": "BLOCKED",
+      "reason": "Marketplace pages are preview shells without live listing, order, fulfillment, or seller flows."
+    },
+    {
+      "id": "structural-validation",
+      "label": "Structural validation",
+      "status": "BLOCKED",
+      "reason": "Local preview checks exist, but no stamped load, wind, truss, rigging, anchoring, or temporary-structure safety certification exists."
+    },
+    {
+      "id": "electrical-validation",
+      "label": "Electrical validation",
+      "status": "BLOCKED",
+      "reason": "Local preview checks exist, but no licensed load schedule, phase balancing, cabling, earthing, generator sizing, or certified electrical safety evidence exists."
+    },
+    {
+      "id": "fire-safety-validation",
+      "label": "Fire safety validation",
+      "status": "BLOCKED",
+      "reason": "Local preview checks exist, but no certified fire exit, extinguisher, flame-retardant material, evacuation-width, or authority approval evidence exists."
+    },
+    {
+      "id": "engineering-compliance",
+      "label": "Engineering compliance",
+      "status": "BLOCKED",
+      "reason": "Local validators are not a municipal, engineering, accessibility, fire, electrical, or venue-authority compliance signoff."
+    }
+  ]
+}

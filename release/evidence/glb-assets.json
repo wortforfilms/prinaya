@@ -1,0 +1,4157 @@
+{
+  "generatedAt": "2026-06-09T00:00:00.000Z",
+  "verdict": "CONTROLLED_PREVIEW_READY",
+  "productionReady": false,
+  "outputDir": "public/generated-assets/glb",
+  "meshFileCount": 592,
+  "readyMeshes": 432,
+  "partialMeshes": 160,
+  "blockedMeshes": 0,
+  "note": "Generated GLB files are deterministic primitive preview meshes. They are real local GLB files, but not certified vendor production models.",
+  "files": [
+    {
+      "assetId": "mandaps-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/mandaps-vedic-lotus-001.glb",
+      "bytes": 988,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-royal-palace-002",
+      "mesh": "/generated-assets/glb/mandaps-royal-palace-002.glb",
+      "bytes": 1008,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-temple-mandap-003",
+      "mesh": "/generated-assets/glb/mandaps-temple-mandap-003.glb",
+      "bytes": 1008,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/mandaps-sci-fi-galactic-portal-004.glb",
+      "bytes": 1020,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-garden-mandap-005",
+      "mesh": "/generated-assets/glb/mandaps-garden-mandap-005.glb",
+      "bytes": 1000,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/mandaps-navagraha-grid-006.glb",
+      "bytes": 1008,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-panch-tatva-007",
+      "mesh": "/generated-assets/glb/mandaps-panch-tatva-007.glb",
+      "bytes": 996,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/mandaps-hemant-samwat-008.glb",
+      "bytes": 1008,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-raj-darbar-009",
+      "mesh": "/generated-assets/glb/mandaps-raj-darbar-009.glb",
+      "bytes": 996,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/mandaps-circular-saptapadi-010.glb",
+      "bytes": 1012,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/mandaps-floating-floral-cloud-011.glb",
+      "bytes": 1020,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-sacred-agni-012",
+      "mesh": "/generated-assets/glb/mandaps-sacred-agni-012.glb",
+      "bytes": 1004,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-kalash-court-013",
+      "mesh": "/generated-assets/glb/mandaps-kalash-court-013.glb",
+      "bytes": 992,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-nagara-temple-014",
+      "mesh": "/generated-assets/glb/mandaps-nagara-temple-014.glb",
+      "bytes": 1008,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/mandaps-south-indian-brass-015.glb",
+      "bytes": 1016,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-celestial-garden-016",
+      "mesh": "/generated-assets/glb/mandaps-celestial-garden-016.glb",
+      "bytes": 1008,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-mystic-forest-017",
+      "mesh": "/generated-assets/glb/mandaps-mystic-forest-017.glb",
+      "bytes": 1000,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-moroccan-night-018",
+      "mesh": "/generated-assets/glb/mandaps-moroccan-night-018.glb",
+      "bytes": 1012,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-beach-bliss-019",
+      "mesh": "/generated-assets/glb/mandaps-beach-bliss-019.glb",
+      "bytes": 996,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/mandaps-minimal-ivory-020.glb",
+      "bytes": 1008,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-grand-heritage-021",
+      "mesh": "/generated-assets/glb/mandaps-grand-heritage-021.glb",
+      "bytes": 1000,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-cyber-neon-022",
+      "mesh": "/generated-assets/glb/mandaps-cyber-neon-022.glb",
+      "bytes": 996,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-quantum-garden-023",
+      "mesh": "/generated-assets/glb/mandaps-quantum-garden-023.glb",
+      "bytes": 1008,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "mandaps-starship-command-024",
+      "mesh": "/generated-assets/glb/mandaps-starship-command-024.glb",
+      "bytes": 1016,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/structural-elements-vedic-lotus-001.glb",
+      "bytes": 1012,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-royal-palace-002",
+      "mesh": "/generated-assets/glb/structural-elements-royal-palace-002.glb",
+      "bytes": 1032,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-temple-mandap-003",
+      "mesh": "/generated-assets/glb/structural-elements-temple-mandap-003.glb",
+      "bytes": 1032,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/structural-elements-sci-fi-galactic-portal-004.glb",
+      "bytes": 1044,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-garden-mandap-005",
+      "mesh": "/generated-assets/glb/structural-elements-garden-mandap-005.glb",
+      "bytes": 1024,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/structural-elements-navagraha-grid-006.glb",
+      "bytes": 1032,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-panch-tatva-007",
+      "mesh": "/generated-assets/glb/structural-elements-panch-tatva-007.glb",
+      "bytes": 1020,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/structural-elements-hemant-samwat-008.glb",
+      "bytes": 1032,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-raj-darbar-009",
+      "mesh": "/generated-assets/glb/structural-elements-raj-darbar-009.glb",
+      "bytes": 1020,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/structural-elements-circular-saptapadi-010.glb",
+      "bytes": 1036,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/structural-elements-floating-floral-cloud-011.glb",
+      "bytes": 1044,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-sacred-agni-012",
+      "mesh": "/generated-assets/glb/structural-elements-sacred-agni-012.glb",
+      "bytes": 1028,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-kalash-court-013",
+      "mesh": "/generated-assets/glb/structural-elements-kalash-court-013.glb",
+      "bytes": 1016,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-nagara-temple-014",
+      "mesh": "/generated-assets/glb/structural-elements-nagara-temple-014.glb",
+      "bytes": 1032,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/structural-elements-south-indian-brass-015.glb",
+      "bytes": 1040,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-celestial-garden-016",
+      "mesh": "/generated-assets/glb/structural-elements-celestial-garden-016.glb",
+      "bytes": 1032,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-mystic-forest-017",
+      "mesh": "/generated-assets/glb/structural-elements-mystic-forest-017.glb",
+      "bytes": 1024,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-moroccan-night-018",
+      "mesh": "/generated-assets/glb/structural-elements-moroccan-night-018.glb",
+      "bytes": 1036,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-beach-bliss-019",
+      "mesh": "/generated-assets/glb/structural-elements-beach-bliss-019.glb",
+      "bytes": 1020,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/structural-elements-minimal-ivory-020.glb",
+      "bytes": 1032,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-grand-heritage-021",
+      "mesh": "/generated-assets/glb/structural-elements-grand-heritage-021.glb",
+      "bytes": 1024,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-cyber-neon-022",
+      "mesh": "/generated-assets/glb/structural-elements-cyber-neon-022.glb",
+      "bytes": 1020,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-quantum-garden-023",
+      "mesh": "/generated-assets/glb/structural-elements-quantum-garden-023.glb",
+      "bytes": 1032,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "structural-elements-starship-command-024",
+      "mesh": "/generated-assets/glb/structural-elements-starship-command-024.glb",
+      "bytes": 1040,
+      "primitiveKind": "stage",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/pillars-vedic-lotus-001.glb",
+      "bytes": 996,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-royal-palace-002",
+      "mesh": "/generated-assets/glb/pillars-royal-palace-002.glb",
+      "bytes": 1008,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-temple-mandap-003",
+      "mesh": "/generated-assets/glb/pillars-temple-mandap-003.glb",
+      "bytes": 1008,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/pillars-sci-fi-galactic-portal-004.glb",
+      "bytes": 1024,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-garden-mandap-005",
+      "mesh": "/generated-assets/glb/pillars-garden-mandap-005.glb",
+      "bytes": 1004,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/pillars-navagraha-grid-006.glb",
+      "bytes": 1008,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-panch-tatva-007",
+      "mesh": "/generated-assets/glb/pillars-panch-tatva-007.glb",
+      "bytes": 1000,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/pillars-hemant-samwat-008.glb",
+      "bytes": 1008,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-raj-darbar-009",
+      "mesh": "/generated-assets/glb/pillars-raj-darbar-009.glb",
+      "bytes": 1000,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/pillars-circular-saptapadi-010.glb",
+      "bytes": 1016,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/pillars-floating-floral-cloud-011.glb",
+      "bytes": 1020,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-sacred-agni-012",
+      "mesh": "/generated-assets/glb/pillars-sacred-agni-012.glb",
+      "bytes": 1004,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-kalash-court-013",
+      "mesh": "/generated-assets/glb/pillars-kalash-court-013.glb",
+      "bytes": 1000,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-nagara-temple-014",
+      "mesh": "/generated-assets/glb/pillars-nagara-temple-014.glb",
+      "bytes": 1008,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/pillars-south-indian-brass-015.glb",
+      "bytes": 1016,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-celestial-garden-016",
+      "mesh": "/generated-assets/glb/pillars-celestial-garden-016.glb",
+      "bytes": 1012,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-mystic-forest-017",
+      "mesh": "/generated-assets/glb/pillars-mystic-forest-017.glb",
+      "bytes": 1004,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-moroccan-night-018",
+      "mesh": "/generated-assets/glb/pillars-moroccan-night-018.glb",
+      "bytes": 1012,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-beach-bliss-019",
+      "mesh": "/generated-assets/glb/pillars-beach-bliss-019.glb",
+      "bytes": 1000,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/pillars-minimal-ivory-020.glb",
+      "bytes": 1008,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-grand-heritage-021",
+      "mesh": "/generated-assets/glb/pillars-grand-heritage-021.glb",
+      "bytes": 1004,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-cyber-neon-022",
+      "mesh": "/generated-assets/glb/pillars-cyber-neon-022.glb",
+      "bytes": 1000,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-quantum-garden-023",
+      "mesh": "/generated-assets/glb/pillars-quantum-garden-023.glb",
+      "bytes": 1008,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "pillars-starship-command-024",
+      "mesh": "/generated-assets/glb/pillars-starship-command-024.glb",
+      "bytes": 1016,
+      "primitiveKind": "pillar",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/gates-and-arches-vedic-lotus-001.glb",
+      "bytes": 1012,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-royal-palace-002",
+      "mesh": "/generated-assets/glb/gates-and-arches-royal-palace-002.glb",
+      "bytes": 1020,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-temple-mandap-003",
+      "mesh": "/generated-assets/glb/gates-and-arches-temple-mandap-003.glb",
+      "bytes": 1020,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/gates-and-arches-sci-fi-galactic-portal-004.glb",
+      "bytes": 1040,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-garden-mandap-005",
+      "mesh": "/generated-assets/glb/gates-and-arches-garden-mandap-005.glb",
+      "bytes": 1020,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/gates-and-arches-navagraha-grid-006.glb",
+      "bytes": 1024,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-panch-tatva-007",
+      "mesh": "/generated-assets/glb/gates-and-arches-panch-tatva-007.glb",
+      "bytes": 1016,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/gates-and-arches-hemant-samwat-008.glb",
+      "bytes": 1024,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-raj-darbar-009",
+      "mesh": "/generated-assets/glb/gates-and-arches-raj-darbar-009.glb",
+      "bytes": 1012,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/gates-and-arches-circular-saptapadi-010.glb",
+      "bytes": 1032,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/gates-and-arches-floating-floral-cloud-011.glb",
+      "bytes": 1036,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-sacred-agni-012",
+      "mesh": "/generated-assets/glb/gates-and-arches-sacred-agni-012.glb",
+      "bytes": 1020,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-kalash-court-013",
+      "mesh": "/generated-assets/glb/gates-and-arches-kalash-court-013.glb",
+      "bytes": 1016,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-nagara-temple-014",
+      "mesh": "/generated-assets/glb/gates-and-arches-nagara-temple-014.glb",
+      "bytes": 1024,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/gates-and-arches-south-indian-brass-015.glb",
+      "bytes": 1032,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-celestial-garden-016",
+      "mesh": "/generated-assets/glb/gates-and-arches-celestial-garden-016.glb",
+      "bytes": 1024,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-mystic-forest-017",
+      "mesh": "/generated-assets/glb/gates-and-arches-mystic-forest-017.glb",
+      "bytes": 1020,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-moroccan-night-018",
+      "mesh": "/generated-assets/glb/gates-and-arches-moroccan-night-018.glb",
+      "bytes": 1024,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-beach-bliss-019",
+      "mesh": "/generated-assets/glb/gates-and-arches-beach-bliss-019.glb",
+      "bytes": 1016,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/gates-and-arches-minimal-ivory-020.glb",
+      "bytes": 1024,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-grand-heritage-021",
+      "mesh": "/generated-assets/glb/gates-and-arches-grand-heritage-021.glb",
+      "bytes": 1020,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-cyber-neon-022",
+      "mesh": "/generated-assets/glb/gates-and-arches-cyber-neon-022.glb",
+      "bytes": 1016,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-quantum-garden-023",
+      "mesh": "/generated-assets/glb/gates-and-arches-quantum-garden-023.glb",
+      "bytes": 1024,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "gates-and-arches-starship-command-024",
+      "mesh": "/generated-assets/glb/gates-and-arches-starship-command-024.glb",
+      "bytes": 1028,
+      "primitiveKind": "gate",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/backdrops-vedic-lotus-001.glb",
+      "bytes": 996,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-royal-palace-002",
+      "mesh": "/generated-assets/glb/backdrops-royal-palace-002.glb",
+      "bytes": 1012,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-temple-mandap-003",
+      "mesh": "/generated-assets/glb/backdrops-temple-mandap-003.glb",
+      "bytes": 1012,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/backdrops-sci-fi-galactic-portal-004.glb",
+      "bytes": 1028,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-garden-mandap-005",
+      "mesh": "/generated-assets/glb/backdrops-garden-mandap-005.glb",
+      "bytes": 1004,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/backdrops-navagraha-grid-006.glb",
+      "bytes": 1012,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-panch-tatva-007",
+      "mesh": "/generated-assets/glb/backdrops-panch-tatva-007.glb",
+      "bytes": 1004,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/backdrops-hemant-samwat-008.glb",
+      "bytes": 1012,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-raj-darbar-009",
+      "mesh": "/generated-assets/glb/backdrops-raj-darbar-009.glb",
+      "bytes": 1000,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/backdrops-circular-saptapadi-010.glb",
+      "bytes": 1020,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/backdrops-floating-floral-cloud-011.glb",
+      "bytes": 1024,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-sacred-agni-012",
+      "mesh": "/generated-assets/glb/backdrops-sacred-agni-012.glb",
+      "bytes": 1008,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-kalash-court-013",
+      "mesh": "/generated-assets/glb/backdrops-kalash-court-013.glb",
+      "bytes": 1000,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-nagara-temple-014",
+      "mesh": "/generated-assets/glb/backdrops-nagara-temple-014.glb",
+      "bytes": 1012,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/backdrops-south-indian-brass-015.glb",
+      "bytes": 1020,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-celestial-garden-016",
+      "mesh": "/generated-assets/glb/backdrops-celestial-garden-016.glb",
+      "bytes": 1016,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-mystic-forest-017",
+      "mesh": "/generated-assets/glb/backdrops-mystic-forest-017.glb",
+      "bytes": 1004,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-moroccan-night-018",
+      "mesh": "/generated-assets/glb/backdrops-moroccan-night-018.glb",
+      "bytes": 1016,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-beach-bliss-019",
+      "mesh": "/generated-assets/glb/backdrops-beach-bliss-019.glb",
+      "bytes": 1004,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/backdrops-minimal-ivory-020.glb",
+      "bytes": 1012,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-grand-heritage-021",
+      "mesh": "/generated-assets/glb/backdrops-grand-heritage-021.glb",
+      "bytes": 1004,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-cyber-neon-022",
+      "mesh": "/generated-assets/glb/backdrops-cyber-neon-022.glb",
+      "bytes": 1004,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-quantum-garden-023",
+      "mesh": "/generated-assets/glb/backdrops-quantum-garden-023.glb",
+      "bytes": 1012,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "backdrops-starship-command-024",
+      "mesh": "/generated-assets/glb/backdrops-starship-command-024.glb",
+      "bytes": 1020,
+      "primitiveKind": "arch",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/decor-props-vedic-lotus-001.glb",
+      "bytes": 1004,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-royal-palace-002",
+      "mesh": "/generated-assets/glb/decor-props-royal-palace-002.glb",
+      "bytes": 1016,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-temple-mandap-003",
+      "mesh": "/generated-assets/glb/decor-props-temple-mandap-003.glb",
+      "bytes": 1016,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/decor-props-sci-fi-galactic-portal-004.glb",
+      "bytes": 1032,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-garden-mandap-005",
+      "mesh": "/generated-assets/glb/decor-props-garden-mandap-005.glb",
+      "bytes": 1012,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/decor-props-navagraha-grid-006.glb",
+      "bytes": 1016,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-panch-tatva-007",
+      "mesh": "/generated-assets/glb/decor-props-panch-tatva-007.glb",
+      "bytes": 1008,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/decor-props-hemant-samwat-008.glb",
+      "bytes": 1016,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-raj-darbar-009",
+      "mesh": "/generated-assets/glb/decor-props-raj-darbar-009.glb",
+      "bytes": 1008,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/decor-props-circular-saptapadi-010.glb",
+      "bytes": 1024,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/decor-props-floating-floral-cloud-011.glb",
+      "bytes": 1028,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-sacred-agni-012",
+      "mesh": "/generated-assets/glb/decor-props-sacred-agni-012.glb",
+      "bytes": 1012,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-kalash-court-013",
+      "mesh": "/generated-assets/glb/decor-props-kalash-court-013.glb",
+      "bytes": 1008,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-nagara-temple-014",
+      "mesh": "/generated-assets/glb/decor-props-nagara-temple-014.glb",
+      "bytes": 1016,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/decor-props-south-indian-brass-015.glb",
+      "bytes": 1024,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-celestial-garden-016",
+      "mesh": "/generated-assets/glb/decor-props-celestial-garden-016.glb",
+      "bytes": 1020,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-mystic-forest-017",
+      "mesh": "/generated-assets/glb/decor-props-mystic-forest-017.glb",
+      "bytes": 1012,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-moroccan-night-018",
+      "mesh": "/generated-assets/glb/decor-props-moroccan-night-018.glb",
+      "bytes": 1020,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-beach-bliss-019",
+      "mesh": "/generated-assets/glb/decor-props-beach-bliss-019.glb",
+      "bytes": 1008,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/decor-props-minimal-ivory-020.glb",
+      "bytes": 1016,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-grand-heritage-021",
+      "mesh": "/generated-assets/glb/decor-props-grand-heritage-021.glb",
+      "bytes": 1012,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-cyber-neon-022",
+      "mesh": "/generated-assets/glb/decor-props-cyber-neon-022.glb",
+      "bytes": 1008,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-quantum-garden-023",
+      "mesh": "/generated-assets/glb/decor-props-quantum-garden-023.glb",
+      "bytes": 1016,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "decor-props-starship-command-024",
+      "mesh": "/generated-assets/glb/decor-props-starship-command-024.glb",
+      "bytes": 1024,
+      "primitiveKind": "kalash",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/floral-installations-vedic-lotus-001.glb",
+      "bytes": 1024,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-royal-palace-002",
+      "mesh": "/generated-assets/glb/floral-installations-royal-palace-002.glb",
+      "bytes": 1032,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-temple-mandap-003",
+      "mesh": "/generated-assets/glb/floral-installations-temple-mandap-003.glb",
+      "bytes": 1032,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/floral-installations-sci-fi-galactic-portal-004.glb",
+      "bytes": 1052,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-garden-mandap-005",
+      "mesh": "/generated-assets/glb/floral-installations-garden-mandap-005.glb",
+      "bytes": 1032,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/floral-installations-navagraha-grid-006.glb",
+      "bytes": 1036,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-panch-tatva-007",
+      "mesh": "/generated-assets/glb/floral-installations-panch-tatva-007.glb",
+      "bytes": 1028,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/floral-installations-hemant-samwat-008.glb",
+      "bytes": 1036,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-raj-darbar-009",
+      "mesh": "/generated-assets/glb/floral-installations-raj-darbar-009.glb",
+      "bytes": 1024,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/floral-installations-circular-saptapadi-010.glb",
+      "bytes": 1044,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/floral-installations-floating-floral-cloud-011.glb",
+      "bytes": 1048,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-sacred-agni-012",
+      "mesh": "/generated-assets/glb/floral-installations-sacred-agni-012.glb",
+      "bytes": 1032,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-kalash-court-013",
+      "mesh": "/generated-assets/glb/floral-installations-kalash-court-013.glb",
+      "bytes": 1028,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-nagara-temple-014",
+      "mesh": "/generated-assets/glb/floral-installations-nagara-temple-014.glb",
+      "bytes": 1036,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/floral-installations-south-indian-brass-015.glb",
+      "bytes": 1044,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-celestial-garden-016",
+      "mesh": "/generated-assets/glb/floral-installations-celestial-garden-016.glb",
+      "bytes": 1036,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-mystic-forest-017",
+      "mesh": "/generated-assets/glb/floral-installations-mystic-forest-017.glb",
+      "bytes": 1032,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-moroccan-night-018",
+      "mesh": "/generated-assets/glb/floral-installations-moroccan-night-018.glb",
+      "bytes": 1036,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-beach-bliss-019",
+      "mesh": "/generated-assets/glb/floral-installations-beach-bliss-019.glb",
+      "bytes": 1028,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/floral-installations-minimal-ivory-020.glb",
+      "bytes": 1036,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-grand-heritage-021",
+      "mesh": "/generated-assets/glb/floral-installations-grand-heritage-021.glb",
+      "bytes": 1032,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-cyber-neon-022",
+      "mesh": "/generated-assets/glb/floral-installations-cyber-neon-022.glb",
+      "bytes": 1028,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-quantum-garden-023",
+      "mesh": "/generated-assets/glb/floral-installations-quantum-garden-023.glb",
+      "bytes": 1036,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "floral-installations-starship-command-024",
+      "mesh": "/generated-assets/glb/floral-installations-starship-command-024.glb",
+      "bytes": 1040,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/flower-types-vedic-lotus-001.glb",
+      "bytes": 1012,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-royal-palace-002",
+      "mesh": "/generated-assets/glb/flower-types-royal-palace-002.glb",
+      "bytes": 1016,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-temple-mandap-003",
+      "mesh": "/generated-assets/glb/flower-types-temple-mandap-003.glb",
+      "bytes": 1016,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/flower-types-sci-fi-galactic-portal-004.glb",
+      "bytes": 1036,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-garden-mandap-005",
+      "mesh": "/generated-assets/glb/flower-types-garden-mandap-005.glb",
+      "bytes": 1016,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/flower-types-navagraha-grid-006.glb",
+      "bytes": 1020,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-panch-tatva-007",
+      "mesh": "/generated-assets/glb/flower-types-panch-tatva-007.glb",
+      "bytes": 1012,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/flower-types-hemant-samwat-008.glb",
+      "bytes": 1020,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-raj-darbar-009",
+      "mesh": "/generated-assets/glb/flower-types-raj-darbar-009.glb",
+      "bytes": 1012,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/flower-types-circular-saptapadi-010.glb",
+      "bytes": 1028,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/flower-types-floating-floral-cloud-011.glb",
+      "bytes": 1028,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-sacred-agni-012",
+      "mesh": "/generated-assets/glb/flower-types-sacred-agni-012.glb",
+      "bytes": 1016,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-kalash-court-013",
+      "mesh": "/generated-assets/glb/flower-types-kalash-court-013.glb",
+      "bytes": 1016,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-nagara-temple-014",
+      "mesh": "/generated-assets/glb/flower-types-nagara-temple-014.glb",
+      "bytes": 1020,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/flower-types-south-indian-brass-015.glb",
+      "bytes": 1024,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-celestial-garden-016",
+      "mesh": "/generated-assets/glb/flower-types-celestial-garden-016.glb",
+      "bytes": 1024,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-mystic-forest-017",
+      "mesh": "/generated-assets/glb/flower-types-mystic-forest-017.glb",
+      "bytes": 1016,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-moroccan-night-018",
+      "mesh": "/generated-assets/glb/flower-types-moroccan-night-018.glb",
+      "bytes": 1020,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-beach-bliss-019",
+      "mesh": "/generated-assets/glb/flower-types-beach-bliss-019.glb",
+      "bytes": 1012,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/flower-types-minimal-ivory-020.glb",
+      "bytes": 1020,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-grand-heritage-021",
+      "mesh": "/generated-assets/glb/flower-types-grand-heritage-021.glb",
+      "bytes": 1016,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-cyber-neon-022",
+      "mesh": "/generated-assets/glb/flower-types-cyber-neon-022.glb",
+      "bytes": 1012,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-quantum-garden-023",
+      "mesh": "/generated-assets/glb/flower-types-quantum-garden-023.glb",
+      "bytes": 1016,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "flower-types-starship-command-024",
+      "mesh": "/generated-assets/glb/flower-types-starship-command-024.glb",
+      "bytes": 1024,
+      "primitiveKind": "floral-garland",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/furniture-vedic-lotus-001.glb",
+      "bytes": 1000,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-royal-palace-002",
+      "mesh": "/generated-assets/glb/furniture-royal-palace-002.glb",
+      "bytes": 1012,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-temple-mandap-003",
+      "mesh": "/generated-assets/glb/furniture-temple-mandap-003.glb",
+      "bytes": 1012,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/furniture-sci-fi-galactic-portal-004.glb",
+      "bytes": 1028,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-garden-mandap-005",
+      "mesh": "/generated-assets/glb/furniture-garden-mandap-005.glb",
+      "bytes": 1008,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/furniture-navagraha-grid-006.glb",
+      "bytes": 1012,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-panch-tatva-007",
+      "mesh": "/generated-assets/glb/furniture-panch-tatva-007.glb",
+      "bytes": 1004,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/furniture-hemant-samwat-008.glb",
+      "bytes": 1012,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-raj-darbar-009",
+      "mesh": "/generated-assets/glb/furniture-raj-darbar-009.glb",
+      "bytes": 1004,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/furniture-circular-saptapadi-010.glb",
+      "bytes": 1020,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/furniture-floating-floral-cloud-011.glb",
+      "bytes": 1024,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-sacred-agni-012",
+      "mesh": "/generated-assets/glb/furniture-sacred-agni-012.glb",
+      "bytes": 1008,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-kalash-court-013",
+      "mesh": "/generated-assets/glb/furniture-kalash-court-013.glb",
+      "bytes": 1004,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-nagara-temple-014",
+      "mesh": "/generated-assets/glb/furniture-nagara-temple-014.glb",
+      "bytes": 1012,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/furniture-south-indian-brass-015.glb",
+      "bytes": 1020,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-celestial-garden-016",
+      "mesh": "/generated-assets/glb/furniture-celestial-garden-016.glb",
+      "bytes": 1016,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-mystic-forest-017",
+      "mesh": "/generated-assets/glb/furniture-mystic-forest-017.glb",
+      "bytes": 1008,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-moroccan-night-018",
+      "mesh": "/generated-assets/glb/furniture-moroccan-night-018.glb",
+      "bytes": 1016,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-beach-bliss-019",
+      "mesh": "/generated-assets/glb/furniture-beach-bliss-019.glb",
+      "bytes": 1004,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/furniture-minimal-ivory-020.glb",
+      "bytes": 1012,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-grand-heritage-021",
+      "mesh": "/generated-assets/glb/furniture-grand-heritage-021.glb",
+      "bytes": 1008,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-cyber-neon-022",
+      "mesh": "/generated-assets/glb/furniture-cyber-neon-022.glb",
+      "bytes": 1004,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-quantum-garden-023",
+      "mesh": "/generated-assets/glb/furniture-quantum-garden-023.glb",
+      "bytes": 1012,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "furniture-starship-command-024",
+      "mesh": "/generated-assets/glb/furniture-starship-command-024.glb",
+      "bytes": 1020,
+      "primitiveKind": "sofa",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/seating-vedic-lotus-001.glb",
+      "bytes": 996,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-royal-palace-002",
+      "mesh": "/generated-assets/glb/seating-royal-palace-002.glb",
+      "bytes": 1008,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-temple-mandap-003",
+      "mesh": "/generated-assets/glb/seating-temple-mandap-003.glb",
+      "bytes": 1008,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/seating-sci-fi-galactic-portal-004.glb",
+      "bytes": 1024,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-garden-mandap-005",
+      "mesh": "/generated-assets/glb/seating-garden-mandap-005.glb",
+      "bytes": 1004,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/seating-navagraha-grid-006.glb",
+      "bytes": 1008,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-panch-tatva-007",
+      "mesh": "/generated-assets/glb/seating-panch-tatva-007.glb",
+      "bytes": 1000,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/seating-hemant-samwat-008.glb",
+      "bytes": 1008,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-raj-darbar-009",
+      "mesh": "/generated-assets/glb/seating-raj-darbar-009.glb",
+      "bytes": 1000,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/seating-circular-saptapadi-010.glb",
+      "bytes": 1016,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/seating-floating-floral-cloud-011.glb",
+      "bytes": 1020,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-sacred-agni-012",
+      "mesh": "/generated-assets/glb/seating-sacred-agni-012.glb",
+      "bytes": 1004,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-kalash-court-013",
+      "mesh": "/generated-assets/glb/seating-kalash-court-013.glb",
+      "bytes": 1000,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-nagara-temple-014",
+      "mesh": "/generated-assets/glb/seating-nagara-temple-014.glb",
+      "bytes": 1008,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/seating-south-indian-brass-015.glb",
+      "bytes": 1016,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-celestial-garden-016",
+      "mesh": "/generated-assets/glb/seating-celestial-garden-016.glb",
+      "bytes": 1012,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-mystic-forest-017",
+      "mesh": "/generated-assets/glb/seating-mystic-forest-017.glb",
+      "bytes": 1004,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-moroccan-night-018",
+      "mesh": "/generated-assets/glb/seating-moroccan-night-018.glb",
+      "bytes": 1012,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-beach-bliss-019",
+      "mesh": "/generated-assets/glb/seating-beach-bliss-019.glb",
+      "bytes": 1000,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/seating-minimal-ivory-020.glb",
+      "bytes": 1008,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-grand-heritage-021",
+      "mesh": "/generated-assets/glb/seating-grand-heritage-021.glb",
+      "bytes": 1004,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-cyber-neon-022",
+      "mesh": "/generated-assets/glb/seating-cyber-neon-022.glb",
+      "bytes": 1000,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-quantum-garden-023",
+      "mesh": "/generated-assets/glb/seating-quantum-garden-023.glb",
+      "bytes": 1008,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "seating-starship-command-024",
+      "mesh": "/generated-assets/glb/seating-starship-command-024.glb",
+      "bytes": 1016,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/tables-vedic-lotus-001.glb",
+      "bytes": 996,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-royal-palace-002",
+      "mesh": "/generated-assets/glb/tables-royal-palace-002.glb",
+      "bytes": 1004,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-temple-mandap-003",
+      "mesh": "/generated-assets/glb/tables-temple-mandap-003.glb",
+      "bytes": 1004,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/tables-sci-fi-galactic-portal-004.glb",
+      "bytes": 1024,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-garden-mandap-005",
+      "mesh": "/generated-assets/glb/tables-garden-mandap-005.glb",
+      "bytes": 1004,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/tables-navagraha-grid-006.glb",
+      "bytes": 1008,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-panch-tatva-007",
+      "mesh": "/generated-assets/glb/tables-panch-tatva-007.glb",
+      "bytes": 1000,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/tables-hemant-samwat-008.glb",
+      "bytes": 1008,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-raj-darbar-009",
+      "mesh": "/generated-assets/glb/tables-raj-darbar-009.glb",
+      "bytes": 996,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/tables-circular-saptapadi-010.glb",
+      "bytes": 1016,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/tables-floating-floral-cloud-011.glb",
+      "bytes": 1020,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-sacred-agni-012",
+      "mesh": "/generated-assets/glb/tables-sacred-agni-012.glb",
+      "bytes": 1004,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-kalash-court-013",
+      "mesh": "/generated-assets/glb/tables-kalash-court-013.glb",
+      "bytes": 1000,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-nagara-temple-014",
+      "mesh": "/generated-assets/glb/tables-nagara-temple-014.glb",
+      "bytes": 1008,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/tables-south-indian-brass-015.glb",
+      "bytes": 1016,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-celestial-garden-016",
+      "mesh": "/generated-assets/glb/tables-celestial-garden-016.glb",
+      "bytes": 1008,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-mystic-forest-017",
+      "mesh": "/generated-assets/glb/tables-mystic-forest-017.glb",
+      "bytes": 1004,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-moroccan-night-018",
+      "mesh": "/generated-assets/glb/tables-moroccan-night-018.glb",
+      "bytes": 1008,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-beach-bliss-019",
+      "mesh": "/generated-assets/glb/tables-beach-bliss-019.glb",
+      "bytes": 1000,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/tables-minimal-ivory-020.glb",
+      "bytes": 1008,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-grand-heritage-021",
+      "mesh": "/generated-assets/glb/tables-grand-heritage-021.glb",
+      "bytes": 1004,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-cyber-neon-022",
+      "mesh": "/generated-assets/glb/tables-cyber-neon-022.glb",
+      "bytes": 1000,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-quantum-garden-023",
+      "mesh": "/generated-assets/glb/tables-quantum-garden-023.glb",
+      "bytes": 1008,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "tables-starship-command-024",
+      "mesh": "/generated-assets/glb/tables-starship-command-024.glb",
+      "bytes": 1012,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/lighting-fixtures-vedic-lotus-001.glb",
+      "bytes": 1008,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-royal-palace-002",
+      "mesh": "/generated-assets/glb/lighting-fixtures-royal-palace-002.glb",
+      "bytes": 1028,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-temple-mandap-003",
+      "mesh": "/generated-assets/glb/lighting-fixtures-temple-mandap-003.glb",
+      "bytes": 1028,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/lighting-fixtures-sci-fi-galactic-portal-004.glb",
+      "bytes": 1040,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-garden-mandap-005",
+      "mesh": "/generated-assets/glb/lighting-fixtures-garden-mandap-005.glb",
+      "bytes": 1020,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/lighting-fixtures-navagraha-grid-006.glb",
+      "bytes": 1028,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-panch-tatva-007",
+      "mesh": "/generated-assets/glb/lighting-fixtures-panch-tatva-007.glb",
+      "bytes": 1016,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/lighting-fixtures-hemant-samwat-008.glb",
+      "bytes": 1028,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-raj-darbar-009",
+      "mesh": "/generated-assets/glb/lighting-fixtures-raj-darbar-009.glb",
+      "bytes": 1016,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/lighting-fixtures-circular-saptapadi-010.glb",
+      "bytes": 1032,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/lighting-fixtures-floating-floral-cloud-011.glb",
+      "bytes": 1040,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-sacred-agni-012",
+      "mesh": "/generated-assets/glb/lighting-fixtures-sacred-agni-012.glb",
+      "bytes": 1024,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-kalash-court-013",
+      "mesh": "/generated-assets/glb/lighting-fixtures-kalash-court-013.glb",
+      "bytes": 1012,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-nagara-temple-014",
+      "mesh": "/generated-assets/glb/lighting-fixtures-nagara-temple-014.glb",
+      "bytes": 1028,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/lighting-fixtures-south-indian-brass-015.glb",
+      "bytes": 1036,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-celestial-garden-016",
+      "mesh": "/generated-assets/glb/lighting-fixtures-celestial-garden-016.glb",
+      "bytes": 1028,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-mystic-forest-017",
+      "mesh": "/generated-assets/glb/lighting-fixtures-mystic-forest-017.glb",
+      "bytes": 1020,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-moroccan-night-018",
+      "mesh": "/generated-assets/glb/lighting-fixtures-moroccan-night-018.glb",
+      "bytes": 1032,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-beach-bliss-019",
+      "mesh": "/generated-assets/glb/lighting-fixtures-beach-bliss-019.glb",
+      "bytes": 1016,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/lighting-fixtures-minimal-ivory-020.glb",
+      "bytes": 1028,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-grand-heritage-021",
+      "mesh": "/generated-assets/glb/lighting-fixtures-grand-heritage-021.glb",
+      "bytes": 1020,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-cyber-neon-022",
+      "mesh": "/generated-assets/glb/lighting-fixtures-cyber-neon-022.glb",
+      "bytes": 1016,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-quantum-garden-023",
+      "mesh": "/generated-assets/glb/lighting-fixtures-quantum-garden-023.glb",
+      "bytes": 1028,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "lighting-fixtures-starship-command-024",
+      "mesh": "/generated-assets/glb/lighting-fixtures-starship-command-024.glb",
+      "bytes": 1036,
+      "primitiveKind": "chandelier",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/decorative-lighting-vedic-lotus-001.glb",
+      "bytes": 1020,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-royal-palace-002",
+      "mesh": "/generated-assets/glb/decorative-lighting-royal-palace-002.glb",
+      "bytes": 1032,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-temple-mandap-003",
+      "mesh": "/generated-assets/glb/decorative-lighting-temple-mandap-003.glb",
+      "bytes": 1032,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/decorative-lighting-sci-fi-galactic-portal-004.glb",
+      "bytes": 1048,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-garden-mandap-005",
+      "mesh": "/generated-assets/glb/decorative-lighting-garden-mandap-005.glb",
+      "bytes": 1028,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/decorative-lighting-navagraha-grid-006.glb",
+      "bytes": 1032,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-panch-tatva-007",
+      "mesh": "/generated-assets/glb/decorative-lighting-panch-tatva-007.glb",
+      "bytes": 1024,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/decorative-lighting-hemant-samwat-008.glb",
+      "bytes": 1032,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-raj-darbar-009",
+      "mesh": "/generated-assets/glb/decorative-lighting-raj-darbar-009.glb",
+      "bytes": 1024,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/decorative-lighting-circular-saptapadi-010.glb",
+      "bytes": 1040,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/decorative-lighting-floating-floral-cloud-011.glb",
+      "bytes": 1044,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-sacred-agni-012",
+      "mesh": "/generated-assets/glb/decorative-lighting-sacred-agni-012.glb",
+      "bytes": 1028,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-kalash-court-013",
+      "mesh": "/generated-assets/glb/decorative-lighting-kalash-court-013.glb",
+      "bytes": 1024,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-nagara-temple-014",
+      "mesh": "/generated-assets/glb/decorative-lighting-nagara-temple-014.glb",
+      "bytes": 1032,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/decorative-lighting-south-indian-brass-015.glb",
+      "bytes": 1040,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-celestial-garden-016",
+      "mesh": "/generated-assets/glb/decorative-lighting-celestial-garden-016.glb",
+      "bytes": 1036,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-mystic-forest-017",
+      "mesh": "/generated-assets/glb/decorative-lighting-mystic-forest-017.glb",
+      "bytes": 1028,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-moroccan-night-018",
+      "mesh": "/generated-assets/glb/decorative-lighting-moroccan-night-018.glb",
+      "bytes": 1036,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-beach-bliss-019",
+      "mesh": "/generated-assets/glb/decorative-lighting-beach-bliss-019.glb",
+      "bytes": 1024,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/decorative-lighting-minimal-ivory-020.glb",
+      "bytes": 1032,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-grand-heritage-021",
+      "mesh": "/generated-assets/glb/decorative-lighting-grand-heritage-021.glb",
+      "bytes": 1028,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-cyber-neon-022",
+      "mesh": "/generated-assets/glb/decorative-lighting-cyber-neon-022.glb",
+      "bytes": 1024,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-quantum-garden-023",
+      "mesh": "/generated-assets/glb/decorative-lighting-quantum-garden-023.glb",
+      "bytes": 1032,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "decorative-lighting-starship-command-024",
+      "mesh": "/generated-assets/glb/decorative-lighting-starship-command-024.glb",
+      "bytes": 1040,
+      "primitiveKind": "diya",
+      "status": "READY"
+    },
+    {
+      "assetId": "effects-royal-palace-002",
+      "mesh": "/generated-assets/glb/effects-royal-palace-002.glb",
+      "bytes": 1008,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-temple-mandap-003",
+      "mesh": "/generated-assets/glb/effects-temple-mandap-003.glb",
+      "bytes": 1008,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/effects-sci-fi-galactic-portal-004.glb",
+      "bytes": 1024,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-garden-mandap-005",
+      "mesh": "/generated-assets/glb/effects-garden-mandap-005.glb",
+      "bytes": 1004,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/effects-navagraha-grid-006.glb",
+      "bytes": 1008,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/effects-hemant-samwat-008.glb",
+      "bytes": 1008,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-raj-darbar-009",
+      "mesh": "/generated-assets/glb/effects-raj-darbar-009.glb",
+      "bytes": 1000,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/effects-circular-saptapadi-010.glb",
+      "bytes": 1016,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/effects-floating-floral-cloud-011.glb",
+      "bytes": 1020,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-sacred-agni-012",
+      "mesh": "/generated-assets/glb/effects-sacred-agni-012.glb",
+      "bytes": 1004,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-nagara-temple-014",
+      "mesh": "/generated-assets/glb/effects-nagara-temple-014.glb",
+      "bytes": 1008,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/effects-south-indian-brass-015.glb",
+      "bytes": 1016,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-celestial-garden-016",
+      "mesh": "/generated-assets/glb/effects-celestial-garden-016.glb",
+      "bytes": 1008,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-mystic-forest-017",
+      "mesh": "/generated-assets/glb/effects-mystic-forest-017.glb",
+      "bytes": 1004,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-moroccan-night-018",
+      "mesh": "/generated-assets/glb/effects-moroccan-night-018.glb",
+      "bytes": 1012,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/effects-minimal-ivory-020.glb",
+      "bytes": 1008,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-grand-heritage-021",
+      "mesh": "/generated-assets/glb/effects-grand-heritage-021.glb",
+      "bytes": 1004,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-cyber-neon-022",
+      "mesh": "/generated-assets/glb/effects-cyber-neon-022.glb",
+      "bytes": 1000,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-quantum-garden-023",
+      "mesh": "/generated-assets/glb/effects-quantum-garden-023.glb",
+      "bytes": 1008,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "effects-starship-command-024",
+      "mesh": "/generated-assets/glb/effects-starship-command-024.glb",
+      "bytes": 1016,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-royal-palace-002",
+      "mesh": "/generated-assets/glb/truss-and-rigging-royal-palace-002.glb",
+      "bytes": 1024,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-temple-mandap-003",
+      "mesh": "/generated-assets/glb/truss-and-rigging-temple-mandap-003.glb",
+      "bytes": 1024,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/truss-and-rigging-sci-fi-galactic-portal-004.glb",
+      "bytes": 1040,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-garden-mandap-005",
+      "mesh": "/generated-assets/glb/truss-and-rigging-garden-mandap-005.glb",
+      "bytes": 1016,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/truss-and-rigging-navagraha-grid-006.glb",
+      "bytes": 1024,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/truss-and-rigging-hemant-samwat-008.glb",
+      "bytes": 1024,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-raj-darbar-009",
+      "mesh": "/generated-assets/glb/truss-and-rigging-raj-darbar-009.glb",
+      "bytes": 1012,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/truss-and-rigging-circular-saptapadi-010.glb",
+      "bytes": 1032,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/truss-and-rigging-floating-floral-cloud-011.glb",
+      "bytes": 1036,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-sacred-agni-012",
+      "mesh": "/generated-assets/glb/truss-and-rigging-sacred-agni-012.glb",
+      "bytes": 1020,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-nagara-temple-014",
+      "mesh": "/generated-assets/glb/truss-and-rigging-nagara-temple-014.glb",
+      "bytes": 1024,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/truss-and-rigging-south-indian-brass-015.glb",
+      "bytes": 1032,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-celestial-garden-016",
+      "mesh": "/generated-assets/glb/truss-and-rigging-celestial-garden-016.glb",
+      "bytes": 1028,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-mystic-forest-017",
+      "mesh": "/generated-assets/glb/truss-and-rigging-mystic-forest-017.glb",
+      "bytes": 1016,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-moroccan-night-018",
+      "mesh": "/generated-assets/glb/truss-and-rigging-moroccan-night-018.glb",
+      "bytes": 1028,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/truss-and-rigging-minimal-ivory-020.glb",
+      "bytes": 1024,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-grand-heritage-021",
+      "mesh": "/generated-assets/glb/truss-and-rigging-grand-heritage-021.glb",
+      "bytes": 1016,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-cyber-neon-022",
+      "mesh": "/generated-assets/glb/truss-and-rigging-cyber-neon-022.glb",
+      "bytes": 1016,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-quantum-garden-023",
+      "mesh": "/generated-assets/glb/truss-and-rigging-quantum-garden-023.glb",
+      "bytes": 1024,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "truss-and-rigging-starship-command-024",
+      "mesh": "/generated-assets/glb/truss-and-rigging-starship-command-024.glb",
+      "bytes": 1032,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "led-and-screens-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/led-and-screens-vedic-lotus-001.glb",
+      "bytes": 1004,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-royal-palace-002",
+      "mesh": "/generated-assets/glb/led-and-screens-royal-palace-002.glb",
+      "bytes": 1020,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-temple-mandap-003",
+      "mesh": "/generated-assets/glb/led-and-screens-temple-mandap-003.glb",
+      "bytes": 1020,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/led-and-screens-sci-fi-galactic-portal-004.glb",
+      "bytes": 1036,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-garden-mandap-005",
+      "mesh": "/generated-assets/glb/led-and-screens-garden-mandap-005.glb",
+      "bytes": 1012,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/led-and-screens-navagraha-grid-006.glb",
+      "bytes": 1020,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-panch-tatva-007",
+      "mesh": "/generated-assets/glb/led-and-screens-panch-tatva-007.glb",
+      "bytes": 1012,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/led-and-screens-hemant-samwat-008.glb",
+      "bytes": 1020,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-raj-darbar-009",
+      "mesh": "/generated-assets/glb/led-and-screens-raj-darbar-009.glb",
+      "bytes": 1008,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/led-and-screens-circular-saptapadi-010.glb",
+      "bytes": 1028,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/led-and-screens-floating-floral-cloud-011.glb",
+      "bytes": 1032,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-sacred-agni-012",
+      "mesh": "/generated-assets/glb/led-and-screens-sacred-agni-012.glb",
+      "bytes": 1016,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-kalash-court-013",
+      "mesh": "/generated-assets/glb/led-and-screens-kalash-court-013.glb",
+      "bytes": 1008,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-nagara-temple-014",
+      "mesh": "/generated-assets/glb/led-and-screens-nagara-temple-014.glb",
+      "bytes": 1020,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/led-and-screens-south-indian-brass-015.glb",
+      "bytes": 1028,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-celestial-garden-016",
+      "mesh": "/generated-assets/glb/led-and-screens-celestial-garden-016.glb",
+      "bytes": 1020,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-mystic-forest-017",
+      "mesh": "/generated-assets/glb/led-and-screens-mystic-forest-017.glb",
+      "bytes": 1012,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-moroccan-night-018",
+      "mesh": "/generated-assets/glb/led-and-screens-moroccan-night-018.glb",
+      "bytes": 1024,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-beach-bliss-019",
+      "mesh": "/generated-assets/glb/led-and-screens-beach-bliss-019.glb",
+      "bytes": 1012,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/led-and-screens-minimal-ivory-020.glb",
+      "bytes": 1020,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-grand-heritage-021",
+      "mesh": "/generated-assets/glb/led-and-screens-grand-heritage-021.glb",
+      "bytes": 1012,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-cyber-neon-022",
+      "mesh": "/generated-assets/glb/led-and-screens-cyber-neon-022.glb",
+      "bytes": 1012,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-quantum-garden-023",
+      "mesh": "/generated-assets/glb/led-and-screens-quantum-garden-023.glb",
+      "bytes": 1020,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "led-and-screens-starship-command-024",
+      "mesh": "/generated-assets/glb/led-and-screens-starship-command-024.glb",
+      "bytes": 1028,
+      "primitiveKind": "led-wall",
+      "status": "READY"
+    },
+    {
+      "assetId": "audio-royal-palace-002",
+      "mesh": "/generated-assets/glb/audio-royal-palace-002.glb",
+      "bytes": 1004,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-temple-mandap-003",
+      "mesh": "/generated-assets/glb/audio-temple-mandap-003.glb",
+      "bytes": 1004,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/audio-sci-fi-galactic-portal-004.glb",
+      "bytes": 1020,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-garden-mandap-005",
+      "mesh": "/generated-assets/glb/audio-garden-mandap-005.glb",
+      "bytes": 1000,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/audio-navagraha-grid-006.glb",
+      "bytes": 1004,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/audio-hemant-samwat-008.glb",
+      "bytes": 1004,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-raj-darbar-009",
+      "mesh": "/generated-assets/glb/audio-raj-darbar-009.glb",
+      "bytes": 996,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/audio-circular-saptapadi-010.glb",
+      "bytes": 1012,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/audio-floating-floral-cloud-011.glb",
+      "bytes": 1016,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-sacred-agni-012",
+      "mesh": "/generated-assets/glb/audio-sacred-agni-012.glb",
+      "bytes": 1000,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-nagara-temple-014",
+      "mesh": "/generated-assets/glb/audio-nagara-temple-014.glb",
+      "bytes": 1004,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/audio-south-indian-brass-015.glb",
+      "bytes": 1012,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-celestial-garden-016",
+      "mesh": "/generated-assets/glb/audio-celestial-garden-016.glb",
+      "bytes": 1008,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-mystic-forest-017",
+      "mesh": "/generated-assets/glb/audio-mystic-forest-017.glb",
+      "bytes": 1000,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-moroccan-night-018",
+      "mesh": "/generated-assets/glb/audio-moroccan-night-018.glb",
+      "bytes": 1008,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/audio-minimal-ivory-020.glb",
+      "bytes": 1004,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-grand-heritage-021",
+      "mesh": "/generated-assets/glb/audio-grand-heritage-021.glb",
+      "bytes": 1000,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-cyber-neon-022",
+      "mesh": "/generated-assets/glb/audio-cyber-neon-022.glb",
+      "bytes": 996,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-quantum-garden-023",
+      "mesh": "/generated-assets/glb/audio-quantum-garden-023.glb",
+      "bytes": 1004,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "audio-starship-command-024",
+      "mesh": "/generated-assets/glb/audio-starship-command-024.glb",
+      "bytes": 1012,
+      "primitiveKind": "truss",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "venue-zones-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/venue-zones-vedic-lotus-001.glb",
+      "bytes": 996,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-royal-palace-002",
+      "mesh": "/generated-assets/glb/venue-zones-royal-palace-002.glb",
+      "bytes": 1016,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-temple-mandap-003",
+      "mesh": "/generated-assets/glb/venue-zones-temple-mandap-003.glb",
+      "bytes": 1016,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/venue-zones-sci-fi-galactic-portal-004.glb",
+      "bytes": 1028,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-garden-mandap-005",
+      "mesh": "/generated-assets/glb/venue-zones-garden-mandap-005.glb",
+      "bytes": 1008,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/venue-zones-navagraha-grid-006.glb",
+      "bytes": 1016,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-panch-tatva-007",
+      "mesh": "/generated-assets/glb/venue-zones-panch-tatva-007.glb",
+      "bytes": 1004,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/venue-zones-hemant-samwat-008.glb",
+      "bytes": 1016,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-raj-darbar-009",
+      "mesh": "/generated-assets/glb/venue-zones-raj-darbar-009.glb",
+      "bytes": 1004,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/venue-zones-circular-saptapadi-010.glb",
+      "bytes": 1020,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/venue-zones-floating-floral-cloud-011.glb",
+      "bytes": 1028,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-sacred-agni-012",
+      "mesh": "/generated-assets/glb/venue-zones-sacred-agni-012.glb",
+      "bytes": 1012,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-kalash-court-013",
+      "mesh": "/generated-assets/glb/venue-zones-kalash-court-013.glb",
+      "bytes": 1000,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-nagara-temple-014",
+      "mesh": "/generated-assets/glb/venue-zones-nagara-temple-014.glb",
+      "bytes": 1016,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/venue-zones-south-indian-brass-015.glb",
+      "bytes": 1024,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-celestial-garden-016",
+      "mesh": "/generated-assets/glb/venue-zones-celestial-garden-016.glb",
+      "bytes": 1016,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-mystic-forest-017",
+      "mesh": "/generated-assets/glb/venue-zones-mystic-forest-017.glb",
+      "bytes": 1008,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-moroccan-night-018",
+      "mesh": "/generated-assets/glb/venue-zones-moroccan-night-018.glb",
+      "bytes": 1020,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-beach-bliss-019",
+      "mesh": "/generated-assets/glb/venue-zones-beach-bliss-019.glb",
+      "bytes": 1004,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/venue-zones-minimal-ivory-020.glb",
+      "bytes": 1016,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-grand-heritage-021",
+      "mesh": "/generated-assets/glb/venue-zones-grand-heritage-021.glb",
+      "bytes": 1008,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-cyber-neon-022",
+      "mesh": "/generated-assets/glb/venue-zones-cyber-neon-022.glb",
+      "bytes": 1004,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-quantum-garden-023",
+      "mesh": "/generated-assets/glb/venue-zones-quantum-garden-023.glb",
+      "bytes": 1016,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "venue-zones-starship-command-024",
+      "mesh": "/generated-assets/glb/venue-zones-starship-command-024.glb",
+      "bytes": 1024,
+      "primitiveKind": "parking-block",
+      "status": "READY"
+    },
+    {
+      "assetId": "utilities-royal-palace-002",
+      "mesh": "/generated-assets/glb/utilities-royal-palace-002.glb",
+      "bytes": 1012,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-temple-mandap-003",
+      "mesh": "/generated-assets/glb/utilities-temple-mandap-003.glb",
+      "bytes": 1012,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/utilities-sci-fi-galactic-portal-004.glb",
+      "bytes": 1028,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-garden-mandap-005",
+      "mesh": "/generated-assets/glb/utilities-garden-mandap-005.glb",
+      "bytes": 1004,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/utilities-navagraha-grid-006.glb",
+      "bytes": 1012,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/utilities-hemant-samwat-008.glb",
+      "bytes": 1012,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-raj-darbar-009",
+      "mesh": "/generated-assets/glb/utilities-raj-darbar-009.glb",
+      "bytes": 1000,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/utilities-circular-saptapadi-010.glb",
+      "bytes": 1020,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/utilities-floating-floral-cloud-011.glb",
+      "bytes": 1024,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-sacred-agni-012",
+      "mesh": "/generated-assets/glb/utilities-sacred-agni-012.glb",
+      "bytes": 1008,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-nagara-temple-014",
+      "mesh": "/generated-assets/glb/utilities-nagara-temple-014.glb",
+      "bytes": 1012,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/utilities-south-indian-brass-015.glb",
+      "bytes": 1020,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-celestial-garden-016",
+      "mesh": "/generated-assets/glb/utilities-celestial-garden-016.glb",
+      "bytes": 1016,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-mystic-forest-017",
+      "mesh": "/generated-assets/glb/utilities-mystic-forest-017.glb",
+      "bytes": 1004,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-moroccan-night-018",
+      "mesh": "/generated-assets/glb/utilities-moroccan-night-018.glb",
+      "bytes": 1016,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/utilities-minimal-ivory-020.glb",
+      "bytes": 1012,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-grand-heritage-021",
+      "mesh": "/generated-assets/glb/utilities-grand-heritage-021.glb",
+      "bytes": 1004,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-cyber-neon-022",
+      "mesh": "/generated-assets/glb/utilities-cyber-neon-022.glb",
+      "bytes": 1004,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-quantum-garden-023",
+      "mesh": "/generated-assets/glb/utilities-quantum-garden-023.glb",
+      "bytes": 1012,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "utilities-starship-command-024",
+      "mesh": "/generated-assets/glb/utilities-starship-command-024.glb",
+      "bytes": 1020,
+      "primitiveKind": "parking-block",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "guest-planning-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/guest-planning-vedic-lotus-001.glb",
+      "bytes": 1004,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-royal-palace-002",
+      "mesh": "/generated-assets/glb/guest-planning-royal-palace-002.glb",
+      "bytes": 1020,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-temple-mandap-003",
+      "mesh": "/generated-assets/glb/guest-planning-temple-mandap-003.glb",
+      "bytes": 1020,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/guest-planning-sci-fi-galactic-portal-004.glb",
+      "bytes": 1036,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-garden-mandap-005",
+      "mesh": "/generated-assets/glb/guest-planning-garden-mandap-005.glb",
+      "bytes": 1016,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/guest-planning-navagraha-grid-006.glb",
+      "bytes": 1024,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-panch-tatva-007",
+      "mesh": "/generated-assets/glb/guest-planning-panch-tatva-007.glb",
+      "bytes": 1012,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/guest-planning-hemant-samwat-008.glb",
+      "bytes": 1024,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-raj-darbar-009",
+      "mesh": "/generated-assets/glb/guest-planning-raj-darbar-009.glb",
+      "bytes": 1008,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/guest-planning-circular-saptapadi-010.glb",
+      "bytes": 1028,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/guest-planning-floating-floral-cloud-011.glb",
+      "bytes": 1036,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-sacred-agni-012",
+      "mesh": "/generated-assets/glb/guest-planning-sacred-agni-012.glb",
+      "bytes": 1020,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-kalash-court-013",
+      "mesh": "/generated-assets/glb/guest-planning-kalash-court-013.glb",
+      "bytes": 1008,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-nagara-temple-014",
+      "mesh": "/generated-assets/glb/guest-planning-nagara-temple-014.glb",
+      "bytes": 1024,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/guest-planning-south-indian-brass-015.glb",
+      "bytes": 1032,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-celestial-garden-016",
+      "mesh": "/generated-assets/glb/guest-planning-celestial-garden-016.glb",
+      "bytes": 1020,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-mystic-forest-017",
+      "mesh": "/generated-assets/glb/guest-planning-mystic-forest-017.glb",
+      "bytes": 1016,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-moroccan-night-018",
+      "mesh": "/generated-assets/glb/guest-planning-moroccan-night-018.glb",
+      "bytes": 1024,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-beach-bliss-019",
+      "mesh": "/generated-assets/glb/guest-planning-beach-bliss-019.glb",
+      "bytes": 1012,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/guest-planning-minimal-ivory-020.glb",
+      "bytes": 1024,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-grand-heritage-021",
+      "mesh": "/generated-assets/glb/guest-planning-grand-heritage-021.glb",
+      "bytes": 1016,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-cyber-neon-022",
+      "mesh": "/generated-assets/glb/guest-planning-cyber-neon-022.glb",
+      "bytes": 1012,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-quantum-garden-023",
+      "mesh": "/generated-assets/glb/guest-planning-quantum-garden-023.glb",
+      "bytes": 1024,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "guest-planning-starship-command-024",
+      "mesh": "/generated-assets/glb/guest-planning-starship-command-024.glb",
+      "bytes": 1028,
+      "primitiveKind": "chair",
+      "status": "READY"
+    },
+    {
+      "assetId": "production-planning-royal-palace-002",
+      "mesh": "/generated-assets/glb/production-planning-royal-palace-002.glb",
+      "bytes": 1032,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-temple-mandap-003",
+      "mesh": "/generated-assets/glb/production-planning-temple-mandap-003.glb",
+      "bytes": 1032,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/production-planning-sci-fi-galactic-portal-004.glb",
+      "bytes": 1048,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-garden-mandap-005",
+      "mesh": "/generated-assets/glb/production-planning-garden-mandap-005.glb",
+      "bytes": 1028,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/production-planning-navagraha-grid-006.glb",
+      "bytes": 1032,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/production-planning-hemant-samwat-008.glb",
+      "bytes": 1032,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-raj-darbar-009",
+      "mesh": "/generated-assets/glb/production-planning-raj-darbar-009.glb",
+      "bytes": 1024,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/production-planning-circular-saptapadi-010.glb",
+      "bytes": 1040,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/production-planning-floating-floral-cloud-011.glb",
+      "bytes": 1044,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-sacred-agni-012",
+      "mesh": "/generated-assets/glb/production-planning-sacred-agni-012.glb",
+      "bytes": 1028,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-nagara-temple-014",
+      "mesh": "/generated-assets/glb/production-planning-nagara-temple-014.glb",
+      "bytes": 1032,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/production-planning-south-indian-brass-015.glb",
+      "bytes": 1040,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-celestial-garden-016",
+      "mesh": "/generated-assets/glb/production-planning-celestial-garden-016.glb",
+      "bytes": 1036,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-mystic-forest-017",
+      "mesh": "/generated-assets/glb/production-planning-mystic-forest-017.glb",
+      "bytes": 1028,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-moroccan-night-018",
+      "mesh": "/generated-assets/glb/production-planning-moroccan-night-018.glb",
+      "bytes": 1036,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/production-planning-minimal-ivory-020.glb",
+      "bytes": 1032,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-grand-heritage-021",
+      "mesh": "/generated-assets/glb/production-planning-grand-heritage-021.glb",
+      "bytes": 1028,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-cyber-neon-022",
+      "mesh": "/generated-assets/glb/production-planning-cyber-neon-022.glb",
+      "bytes": 1024,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-quantum-garden-023",
+      "mesh": "/generated-assets/glb/production-planning-quantum-garden-023.glb",
+      "bytes": 1032,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "production-planning-starship-command-024",
+      "mesh": "/generated-assets/glb/production-planning-starship-command-024.glb",
+      "bytes": 1040,
+      "primitiveKind": "table",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-royal-palace-002",
+      "mesh": "/generated-assets/glb/drone-planning-royal-palace-002.glb",
+      "bytes": 1020,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-temple-mandap-003",
+      "mesh": "/generated-assets/glb/drone-planning-temple-mandap-003.glb",
+      "bytes": 1020,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/drone-planning-sci-fi-galactic-portal-004.glb",
+      "bytes": 1040,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-garden-mandap-005",
+      "mesh": "/generated-assets/glb/drone-planning-garden-mandap-005.glb",
+      "bytes": 1020,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/drone-planning-navagraha-grid-006.glb",
+      "bytes": 1020,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/drone-planning-hemant-samwat-008.glb",
+      "bytes": 1024,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-raj-darbar-009",
+      "mesh": "/generated-assets/glb/drone-planning-raj-darbar-009.glb",
+      "bytes": 1012,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/drone-planning-circular-saptapadi-010.glb",
+      "bytes": 1032,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/drone-planning-floating-floral-cloud-011.glb",
+      "bytes": 1032,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-sacred-agni-012",
+      "mesh": "/generated-assets/glb/drone-planning-sacred-agni-012.glb",
+      "bytes": 1020,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-nagara-temple-014",
+      "mesh": "/generated-assets/glb/drone-planning-nagara-temple-014.glb",
+      "bytes": 1024,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/drone-planning-south-indian-brass-015.glb",
+      "bytes": 1032,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-celestial-garden-016",
+      "mesh": "/generated-assets/glb/drone-planning-celestial-garden-016.glb",
+      "bytes": 1024,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-mystic-forest-017",
+      "mesh": "/generated-assets/glb/drone-planning-mystic-forest-017.glb",
+      "bytes": 1020,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-moroccan-night-018",
+      "mesh": "/generated-assets/glb/drone-planning-moroccan-night-018.glb",
+      "bytes": 1024,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/drone-planning-minimal-ivory-020.glb",
+      "bytes": 1024,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-grand-heritage-021",
+      "mesh": "/generated-assets/glb/drone-planning-grand-heritage-021.glb",
+      "bytes": 1016,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-cyber-neon-022",
+      "mesh": "/generated-assets/glb/drone-planning-cyber-neon-022.glb",
+      "bytes": 1016,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-quantum-garden-023",
+      "mesh": "/generated-assets/glb/drone-planning-quantum-garden-023.glb",
+      "bytes": 1024,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "drone-planning-starship-command-024",
+      "mesh": "/generated-assets/glb/drone-planning-starship-command-024.glb",
+      "bytes": 1028,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-royal-palace-002",
+      "mesh": "/generated-assets/glb/vr-walkthrough-royal-palace-002.glb",
+      "bytes": 1020,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-temple-mandap-003",
+      "mesh": "/generated-assets/glb/vr-walkthrough-temple-mandap-003.glb",
+      "bytes": 1020,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/vr-walkthrough-sci-fi-galactic-portal-004.glb",
+      "bytes": 1040,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-garden-mandap-005",
+      "mesh": "/generated-assets/glb/vr-walkthrough-garden-mandap-005.glb",
+      "bytes": 1020,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/vr-walkthrough-navagraha-grid-006.glb",
+      "bytes": 1020,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/vr-walkthrough-hemant-samwat-008.glb",
+      "bytes": 1024,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-raj-darbar-009",
+      "mesh": "/generated-assets/glb/vr-walkthrough-raj-darbar-009.glb",
+      "bytes": 1012,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/vr-walkthrough-circular-saptapadi-010.glb",
+      "bytes": 1032,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/vr-walkthrough-floating-floral-cloud-011.glb",
+      "bytes": 1032,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-sacred-agni-012",
+      "mesh": "/generated-assets/glb/vr-walkthrough-sacred-agni-012.glb",
+      "bytes": 1020,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-nagara-temple-014",
+      "mesh": "/generated-assets/glb/vr-walkthrough-nagara-temple-014.glb",
+      "bytes": 1024,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/vr-walkthrough-south-indian-brass-015.glb",
+      "bytes": 1032,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-celestial-garden-016",
+      "mesh": "/generated-assets/glb/vr-walkthrough-celestial-garden-016.glb",
+      "bytes": 1024,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-mystic-forest-017",
+      "mesh": "/generated-assets/glb/vr-walkthrough-mystic-forest-017.glb",
+      "bytes": 1020,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-moroccan-night-018",
+      "mesh": "/generated-assets/glb/vr-walkthrough-moroccan-night-018.glb",
+      "bytes": 1024,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/vr-walkthrough-minimal-ivory-020.glb",
+      "bytes": 1024,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-grand-heritage-021",
+      "mesh": "/generated-assets/glb/vr-walkthrough-grand-heritage-021.glb",
+      "bytes": 1016,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-cyber-neon-022",
+      "mesh": "/generated-assets/glb/vr-walkthrough-cyber-neon-022.glb",
+      "bytes": 1016,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-quantum-garden-023",
+      "mesh": "/generated-assets/glb/vr-walkthrough-quantum-garden-023.glb",
+      "bytes": 1024,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "vr-walkthrough-starship-command-024",
+      "mesh": "/generated-assets/glb/vr-walkthrough-starship-command-024.glb",
+      "bytes": 1028,
+      "primitiveKind": "drone-path-marker",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "boards-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/boards-vedic-lotus-001.glb",
+      "bytes": 996,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-royal-palace-002",
+      "mesh": "/generated-assets/glb/boards-royal-palace-002.glb",
+      "bytes": 1004,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-temple-mandap-003",
+      "mesh": "/generated-assets/glb/boards-temple-mandap-003.glb",
+      "bytes": 1004,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/boards-sci-fi-galactic-portal-004.glb",
+      "bytes": 1024,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-garden-mandap-005",
+      "mesh": "/generated-assets/glb/boards-garden-mandap-005.glb",
+      "bytes": 1004,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/boards-navagraha-grid-006.glb",
+      "bytes": 1008,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-panch-tatva-007",
+      "mesh": "/generated-assets/glb/boards-panch-tatva-007.glb",
+      "bytes": 1000,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/boards-hemant-samwat-008.glb",
+      "bytes": 1008,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-raj-darbar-009",
+      "mesh": "/generated-assets/glb/boards-raj-darbar-009.glb",
+      "bytes": 996,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/boards-circular-saptapadi-010.glb",
+      "bytes": 1016,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/boards-floating-floral-cloud-011.glb",
+      "bytes": 1020,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-sacred-agni-012",
+      "mesh": "/generated-assets/glb/boards-sacred-agni-012.glb",
+      "bytes": 1004,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-kalash-court-013",
+      "mesh": "/generated-assets/glb/boards-kalash-court-013.glb",
+      "bytes": 1000,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-nagara-temple-014",
+      "mesh": "/generated-assets/glb/boards-nagara-temple-014.glb",
+      "bytes": 1008,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/boards-south-indian-brass-015.glb",
+      "bytes": 1016,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-celestial-garden-016",
+      "mesh": "/generated-assets/glb/boards-celestial-garden-016.glb",
+      "bytes": 1012,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-mystic-forest-017",
+      "mesh": "/generated-assets/glb/boards-mystic-forest-017.glb",
+      "bytes": 1004,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-moroccan-night-018",
+      "mesh": "/generated-assets/glb/boards-moroccan-night-018.glb",
+      "bytes": 1008,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-beach-bliss-019",
+      "mesh": "/generated-assets/glb/boards-beach-bliss-019.glb",
+      "bytes": 1000,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/boards-minimal-ivory-020.glb",
+      "bytes": 1008,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-grand-heritage-021",
+      "mesh": "/generated-assets/glb/boards-grand-heritage-021.glb",
+      "bytes": 1004,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-cyber-neon-022",
+      "mesh": "/generated-assets/glb/boards-cyber-neon-022.glb",
+      "bytes": 1000,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-quantum-garden-023",
+      "mesh": "/generated-assets/glb/boards-quantum-garden-023.glb",
+      "bytes": 1008,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "boards-starship-command-024",
+      "mesh": "/generated-assets/glb/boards-starship-command-024.glb",
+      "bytes": 1012,
+      "primitiveKind": "table",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-vedic-lotus-001",
+      "mesh": "/generated-assets/glb/templates-vedic-lotus-001.glb",
+      "bytes": 992,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-royal-palace-002",
+      "mesh": "/generated-assets/glb/templates-royal-palace-002.glb",
+      "bytes": 1012,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-temple-mandap-003",
+      "mesh": "/generated-assets/glb/templates-temple-mandap-003.glb",
+      "bytes": 1012,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/templates-sci-fi-galactic-portal-004.glb",
+      "bytes": 1024,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-garden-mandap-005",
+      "mesh": "/generated-assets/glb/templates-garden-mandap-005.glb",
+      "bytes": 1004,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/templates-navagraha-grid-006.glb",
+      "bytes": 1012,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-panch-tatva-007",
+      "mesh": "/generated-assets/glb/templates-panch-tatva-007.glb",
+      "bytes": 1000,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/templates-hemant-samwat-008.glb",
+      "bytes": 1012,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-raj-darbar-009",
+      "mesh": "/generated-assets/glb/templates-raj-darbar-009.glb",
+      "bytes": 1000,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/templates-circular-saptapadi-010.glb",
+      "bytes": 1016,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/templates-floating-floral-cloud-011.glb",
+      "bytes": 1024,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-sacred-agni-012",
+      "mesh": "/generated-assets/glb/templates-sacred-agni-012.glb",
+      "bytes": 1008,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-kalash-court-013",
+      "mesh": "/generated-assets/glb/templates-kalash-court-013.glb",
+      "bytes": 996,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-nagara-temple-014",
+      "mesh": "/generated-assets/glb/templates-nagara-temple-014.glb",
+      "bytes": 1012,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/templates-south-indian-brass-015.glb",
+      "bytes": 1020,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-celestial-garden-016",
+      "mesh": "/generated-assets/glb/templates-celestial-garden-016.glb",
+      "bytes": 1008,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-mystic-forest-017",
+      "mesh": "/generated-assets/glb/templates-mystic-forest-017.glb",
+      "bytes": 1004,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-moroccan-night-018",
+      "mesh": "/generated-assets/glb/templates-moroccan-night-018.glb",
+      "bytes": 1016,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-beach-bliss-019",
+      "mesh": "/generated-assets/glb/templates-beach-bliss-019.glb",
+      "bytes": 1000,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/templates-minimal-ivory-020.glb",
+      "bytes": 1012,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-grand-heritage-021",
+      "mesh": "/generated-assets/glb/templates-grand-heritage-021.glb",
+      "bytes": 1004,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-cyber-neon-022",
+      "mesh": "/generated-assets/glb/templates-cyber-neon-022.glb",
+      "bytes": 1000,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-quantum-garden-023",
+      "mesh": "/generated-assets/glb/templates-quantum-garden-023.glb",
+      "bytes": 1012,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "templates-starship-command-024",
+      "mesh": "/generated-assets/glb/templates-starship-command-024.glb",
+      "bytes": 1020,
+      "primitiveKind": "mandap",
+      "status": "READY"
+    },
+    {
+      "assetId": "ai-outputs-royal-palace-002",
+      "mesh": "/generated-assets/glb/ai-outputs-royal-palace-002.glb",
+      "bytes": 1012,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-temple-mandap-003",
+      "mesh": "/generated-assets/glb/ai-outputs-temple-mandap-003.glb",
+      "bytes": 1012,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-sci-fi-galactic-portal-004",
+      "mesh": "/generated-assets/glb/ai-outputs-sci-fi-galactic-portal-004.glb",
+      "bytes": 1032,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-garden-mandap-005",
+      "mesh": "/generated-assets/glb/ai-outputs-garden-mandap-005.glb",
+      "bytes": 1012,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-navagraha-grid-006",
+      "mesh": "/generated-assets/glb/ai-outputs-navagraha-grid-006.glb",
+      "bytes": 1012,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-hemant-samwat-008",
+      "mesh": "/generated-assets/glb/ai-outputs-hemant-samwat-008.glb",
+      "bytes": 1016,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-raj-darbar-009",
+      "mesh": "/generated-assets/glb/ai-outputs-raj-darbar-009.glb",
+      "bytes": 1004,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-circular-saptapadi-010",
+      "mesh": "/generated-assets/glb/ai-outputs-circular-saptapadi-010.glb",
+      "bytes": 1024,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-floating-floral-cloud-011",
+      "mesh": "/generated-assets/glb/ai-outputs-floating-floral-cloud-011.glb",
+      "bytes": 1024,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-sacred-agni-012",
+      "mesh": "/generated-assets/glb/ai-outputs-sacred-agni-012.glb",
+      "bytes": 1012,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-nagara-temple-014",
+      "mesh": "/generated-assets/glb/ai-outputs-nagara-temple-014.glb",
+      "bytes": 1016,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-south-indian-brass-015",
+      "mesh": "/generated-assets/glb/ai-outputs-south-indian-brass-015.glb",
+      "bytes": 1024,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-celestial-garden-016",
+      "mesh": "/generated-assets/glb/ai-outputs-celestial-garden-016.glb",
+      "bytes": 1016,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-mystic-forest-017",
+      "mesh": "/generated-assets/glb/ai-outputs-mystic-forest-017.glb",
+      "bytes": 1012,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-moroccan-night-018",
+      "mesh": "/generated-assets/glb/ai-outputs-moroccan-night-018.glb",
+      "bytes": 1016,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-minimal-ivory-020",
+      "mesh": "/generated-assets/glb/ai-outputs-minimal-ivory-020.glb",
+      "bytes": 1016,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-grand-heritage-021",
+      "mesh": "/generated-assets/glb/ai-outputs-grand-heritage-021.glb",
+      "bytes": 1008,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-cyber-neon-022",
+      "mesh": "/generated-assets/glb/ai-outputs-cyber-neon-022.glb",
+      "bytes": 1008,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-quantum-garden-023",
+      "mesh": "/generated-assets/glb/ai-outputs-quantum-garden-023.glb",
+      "bytes": 1016,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    },
+    {
+      "assetId": "ai-outputs-starship-command-024",
+      "mesh": "/generated-assets/glb/ai-outputs-starship-command-024.glb",
+      "bytes": 1020,
+      "primitiveKind": "arch",
+      "status": "PARTIAL"
+    }
+  ]
+}

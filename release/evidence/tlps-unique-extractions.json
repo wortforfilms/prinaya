@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-06-09T00:00:00.000Z",
+  "status": "READY",
+  "verdict": "CONTROLLED_PREVIEW_READY",
+  "productionReady": false,
+  "sourceDirectory": "/Users/vesahe/Downloads/TLPS_All_Generated_Images_Descriptive",
+  "sourceCount": 31,
+  "uniqueSourceCount": 30,
+  "duplicateSourceCount": 1,
+  "duplicateSourceGroups": [
+    {
+      "canonical": "TLP_Wedding_CAD_All_Hero_Banners.png",
+      "duplicates": [
+        "TLP_Wedding_CAD_All_Hero_Banners_With_Cutting_Guides.png"
+      ],
+      "reason": "Exact or perceptual duplicate; cutting-guide overlays are retained as evidence but excluded from unique frame extraction.",
+      "distances": [
+        {
+          "file": "TLP_Wedding_CAD_All_Hero_Banners_With_Cutting_Guides.png",
+          "averageHashDistance": 27,
+          "differenceHashDistance": 57
+        }
+      ]
+    }
+  ],
+  "uniqueFrameCount": 591,
+  "duplicateFrameCount": 0,
+  "outputDir": "public/tlps-unique-extractions",
+  "dataRef": "data/tlps-unique-extractions.json",
+  "assetTruth": "Local preview extraction from supplied PNG references. Duplicate detection is exact plus conservative perceptual matching. No live vendor, payment, marketplace, safety compliance, or production CAD capability is implied."
+}

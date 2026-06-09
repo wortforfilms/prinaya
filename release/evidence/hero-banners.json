@@ -1,0 +1,245 @@
+{
+  "generatedAt": "2026-06-09T00:00:00.000Z",
+  "verdict": "CONTROLLED_PREVIEW_READY",
+  "productionReady": false,
+  "status": "READY",
+  "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+  "assetTruth": "Generated high-res local preview raster banners based on the supplied board reference. These are not live marketplace assets, stock photographs, or production-certified CAD deliverables.",
+  "source": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+  "sourceSize": {
+    "width": 1536,
+    "height": 1024
+  },
+  "heroBannerCount": 21,
+  "rawOutputDir": "public/hero-banners/raw",
+  "hiresOutputDir": "public/hero-banners/hires",
+  "hiresSize": {
+    "width": 1920,
+    "height": 580
+  },
+  "records": [
+    {
+      "id": "hero-dashboard",
+      "title": "Dashboard",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/dashboard.png",
+      "hiresImage": "/hero-banners/hires/dashboard.webp",
+      "routes": [
+        "/",
+        "/dashboard"
+      ]
+    },
+    {
+      "id": "hero-venue-designer",
+      "title": "Venue Designer",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/venue-designer.png",
+      "hiresImage": "/hero-banners/hires/venue-designer.webp",
+      "routes": [
+        "/venue-designer",
+        "/venues"
+      ]
+    },
+    {
+      "id": "hero-mandap-designer",
+      "title": "Mandap Designer",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/mandap-designer.png",
+      "hiresImage": "/hero-banners/hires/mandap-designer.webp",
+      "routes": [
+        "/mandap"
+      ]
+    },
+    {
+      "id": "hero-layout-generator",
+      "title": "Layout Generator",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/layout-generator.png",
+      "hiresImage": "/hero-banners/hires/layout-generator.webp",
+      "routes": [
+        "/layouts"
+      ]
+    },
+    {
+      "id": "hero-floral-designer",
+      "title": "Floral Designer",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/floral-designer.png",
+      "hiresImage": "/hero-banners/hires/floral-designer.webp",
+      "routes": [
+        "/floral"
+      ]
+    },
+    {
+      "id": "hero-lighting-designer",
+      "title": "Lighting Designer",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/lighting-designer.png",
+      "hiresImage": "/hero-banners/hires/lighting-designer.webp",
+      "routes": [
+        "/lighting"
+      ]
+    },
+    {
+      "id": "hero-budget-planner",
+      "title": "Budget Planner",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/budget-planner.png",
+      "hiresImage": "/hero-banners/hires/budget-planner.webp",
+      "routes": [
+        "/budget",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "hero-guest-seating",
+      "title": "Guest & Seating",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/guest-seating.png",
+      "hiresImage": "/hero-banners/hires/guest-seating.webp",
+      "routes": [
+        "/guests"
+      ]
+    },
+    {
+      "id": "hero-vendor-manager",
+      "title": "Vendor Manager",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/vendor-manager.png",
+      "hiresImage": "/hero-banners/hires/vendor-manager.webp",
+      "routes": [
+        "/vendors",
+        "/marketplace"
+      ]
+    },
+    {
+      "id": "hero-production-planner",
+      "title": "Production Planner",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/production-planner.png",
+      "hiresImage": "/hero-banners/hires/production-planner.webp",
+      "routes": [
+        "/production"
+      ]
+    },
+    {
+      "id": "hero-drone-aerial",
+      "title": "Drone & Aerial",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/drone-aerial.png",
+      "hiresImage": "/hero-banners/hires/drone-aerial.webp",
+      "routes": [
+        "/drone"
+      ]
+    },
+    {
+      "id": "hero-vr-walkthrough",
+      "title": "VR Walkthrough",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/vr-walkthrough.png",
+      "hiresImage": "/hero-banners/hires/vr-walkthrough.webp",
+      "routes": [
+        "/vr"
+      ]
+    },
+    {
+      "id": "hero-exports-boards",
+      "title": "Exports & Boards",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/exports-boards.png",
+      "hiresImage": "/hero-banners/hires/exports-boards.webp",
+      "routes": [
+        "/exports"
+      ]
+    },
+    {
+      "id": "hero-observatory",
+      "title": "Observatory",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/observatory.png",
+      "hiresImage": "/hero-banners/hires/observatory.webp",
+      "routes": [
+        "/observatory",
+        "/support"
+      ]
+    },
+    {
+      "id": "hero-ai-co-pilot",
+      "title": "AI Co-Pilot",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/ai-co-pilot.png",
+      "hiresImage": "/hero-banners/hires/ai-co-pilot.webp",
+      "routes": [
+        "/ai"
+      ]
+    },
+    {
+      "id": "hero-assets-library",
+      "title": "Assets Library",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/assets-library.png",
+      "hiresImage": "/hero-banners/hires/assets-library.webp",
+      "routes": [
+        "/assets",
+        "/gallery"
+      ]
+    },
+    {
+      "id": "hero-templates",
+      "title": "Templates",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/templates.png",
+      "hiresImage": "/hero-banners/hires/templates.webp",
+      "routes": [
+        "/templates"
+      ]
+    },
+    {
+      "id": "hero-admin-panel",
+      "title": "Admin Panel",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/admin-panel.png",
+      "hiresImage": "/hero-banners/hires/admin-panel.webp",
+      "routes": [
+        "/admin",
+        "/auth"
+      ]
+    },
+    {
+      "id": "hero-settings",
+      "title": "Settings",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/settings.png",
+      "hiresImage": "/hero-banners/hires/settings.webp",
+      "routes": [
+        "/dashboard/settings",
+        "/admin/settings"
+      ]
+    },
+    {
+      "id": "hero-cad-editor",
+      "title": "CAD Editor",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/cad-editor.png",
+      "hiresImage": "/hero-banners/hires/cad-editor.webp",
+      "routes": [
+        "/cad",
+        "/cad/editor"
+      ]
+    },
+    {
+      "id": "hero-board-composer",
+      "title": "Board Composer",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "rawImage": "/hero-banners/raw/board-composer.png",
+      "hiresImage": "/hero-banners/hires/board-composer.webp",
+      "routes": [
+        "/exports/boards",
+        "/contact",
+        "/about",
+        "/blog",
+        "/features"
+      ]
+    }
+  ]
+}

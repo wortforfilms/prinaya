@@ -1,0 +1,114 @@
+{
+  "generatedAt": "2026-06-09T18:24:30.565Z",
+  "verdict": "CONTROLLED_PREVIEW_READY",
+  "status": "READY",
+  "productionReady": false,
+  "certified": false,
+  "validators": 3,
+  "domains": [
+    "structural",
+    "electrical",
+    "fire"
+  ],
+  "reviewRequired": 3,
+  "blocker": "Local rule-based validators are implemented for preview review. Certified structural, electrical, fire, and engineering compliance remains BLOCKED.",
+  "reports": [
+    {
+      "domain": "structural",
+      "status": "READY",
+      "certified": false,
+      "verdict": "REVIEW_REQUIRED",
+      "findings": [
+        {
+          "id": "structural-mandap-pillars",
+          "domain": "structural",
+          "severity": "PASS",
+          "label": "Mandap pillar count",
+          "evidence": "8 mandap pillars declared; 1 pillar preview object groups in scene."
+        },
+        {
+          "id": "structural-stage-height",
+          "domain": "structural",
+          "severity": "PASS",
+          "label": "Stage deck height",
+          "evidence": "1.2m stage height checked against local 1.5m preview threshold."
+        },
+        {
+          "id": "structural-truss-span",
+          "domain": "structural",
+          "severity": "PASS",
+          "label": "Truss span preview",
+          "evidence": "1 truss object(s), max span 20m."
+        },
+        {
+          "id": "structural-certified-calcs",
+          "domain": "structural",
+          "severity": "FAIL",
+          "label": "Certified structural calculations",
+          "evidence": "No stamped load, wind, ballast, anchoring, or temporary-structure engineering certificate exists."
+        }
+      ],
+      "blocker": "Certified structural validation remains BLOCKED."
+    },
+    {
+      "domain": "electrical",
+      "status": "READY",
+      "certified": false,
+      "verdict": "REVIEW_REQUIRED",
+      "findings": [
+        {
+          "id": "electrical-load-schedule",
+          "domain": "electrical",
+          "severity": "PASS",
+          "label": "Preview load schedule",
+          "evidence": "4 fixture families, 16260W estimated local preview load, 68A at 240V."
+        },
+        {
+          "id": "electrical-emergency-circuits",
+          "domain": "electrical",
+          "severity": "PASS",
+          "label": "Emergency lighting coverage",
+          "evidence": "6 emergency exits available for emergency-light planning."
+        },
+        {
+          "id": "electrical-certified-safety",
+          "domain": "electrical",
+          "severity": "FAIL",
+          "label": "Certified electrical safety",
+          "evidence": "No licensed electrical load schedule, phase balancing, cabling, earthing, generator sizing, or inspection certificate exists."
+        }
+      ],
+      "blocker": "Certified electrical validation remains BLOCKED."
+    },
+    {
+      "domain": "fire",
+      "status": "READY",
+      "certified": false,
+      "verdict": "REVIEW_REQUIRED",
+      "findings": [
+        {
+          "id": "fire-exit-capacity",
+          "domain": "fire",
+          "severity": "PASS",
+          "label": "Exit capacity proxy",
+          "evidence": "6 exits x 120 preview capacity = 720 for 620 guests."
+        },
+        {
+          "id": "fire-accessible-seating",
+          "domain": "fire",
+          "severity": "PASS",
+          "label": "Accessible and clear seating",
+          "evidence": "24 accessible seats reserved in preview seating data."
+        },
+        {
+          "id": "fire-material-certificates",
+          "domain": "fire",
+          "severity": "FAIL",
+          "label": "Flame-retardant certificates",
+          "evidence": "No flame-retardant fabric, extinguisher placement, evacuation-width, or authority approval evidence exists."
+        }
+      ],
+      "blocker": "Certified fire safety validation remains BLOCKED."
+    }
+  ]
+}
