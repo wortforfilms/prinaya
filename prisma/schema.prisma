@@ -1,0 +1,433 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Organization {
+  id                 String             @id @default(cuid())
+  name               String
+  slug               String             @unique
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  users              User[]
+  roles              Role[]
+  projects           Project[]
+  materials          Material[]
+  assets             Asset[]
+  vendors            Vendor[]
+  marketplaceItems   MarketplaceItem[]
+  observatoryEvents  ObservatoryEvent[]
+  evidence           Evidence[]
+  releaseGates       ReleaseGate[]
+}
+
+model User {
+  id             String     @id @default(cuid())
+  organizationId String
+  email          String     @unique
+  name           String
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  userRoles      UserRole[]
+  ownedProjects  Project[]  @relation("ProjectOwner")
+}
+
+model Role {
+  id              String           @id @default(cuid())
+  organizationId  String
+  name            String
+  description     String?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  organization    Organization     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  userRoles       UserRole[]
+  rolePermissions RolePermission[]
+
+  @@unique([organizationId, name])
+}
+
+model Permission {
+  id              String           @id @default(cuid())
+  key             String           @unique
+  label           String
+  createdAt       DateTime         @default(now())
+  rolePermissions RolePermission[]
+}
+
+model UserRole {
+  id        String @id @default(cuid())
+  userId    String
+  roleId    String
+  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role      Role   @relation(fields: [roleId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, roleId])
+}
+
+model RolePermission {
+  id           String     @id @default(cuid())
+  roleId       String
+  permissionId String
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@unique([roleId, permissionId])
+}
+
+model Project {
+  id                 String             @id @default(cuid())
+  organizationId     String
+  ownerId            String?
+  name               String
+  clientName         String
+  eventDate          DateTime
+  status             String             @default("CONTROLLED_PREVIEW_READY")
+  productionReady    Boolean            @default(false)
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  organization       Organization       @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  owner              User?              @relation("ProjectOwner", fields: [ownerId], references: [id], onDelete: SetNull)
+  venue              Venue?
+  scenes             Scene[]
+  layout             Layout?
+  mandaps            Mandap[]
+  floralDesigns      FloralDesign[]
+  lightingPlans      LightingPlan[]
+  seatingPlans       SeatingPlan[]
+  guests             Guest[]
+  vendors            Vendor[]
+  tasks              Task[]
+  budget             Budget?
+  renderJobs         RenderJob[]
+  cameras            Camera[]
+  walkthroughs       Walkthrough[]
+  exports            Export[]
+  observatoryEvents  ObservatoryEvent[]
+  aiGenerations      AIGeneration[]
+  evidence           Evidence[]
+  releaseGates       ReleaseGate[]
+}
+
+model Venue {
+  id             String   @id @default(cuid())
+  projectId      String   @unique
+  name           String
+  lengthM        Float
+  widthM         Float
+  clearHeightM   Float
+  entries        Int
+  emergencyExits Int
+  parkingBlocks  Int
+  metadata       Json?
+  project        Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model Scene {
+  id          String      @id @default(cuid())
+  projectId   String
+  name        String
+  status      String      @default("READY")
+  worldUnits  String      @default("meters")
+  metadata    Json?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  project     Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  layers      Layer[]
+  cadObjects  CADObject[]
+  cameras     Camera[]
+}
+
+model Layer {
+  id          String      @id @default(cuid())
+  sceneId     String
+  name        String
+  visible     Boolean     @default(true)
+  locked      Boolean     @default(false)
+  color       String
+  sortOrder   Int         @default(0)
+  scene       Scene       @relation(fields: [sceneId], references: [id], onDelete: Cascade)
+  cadObjects  CADObject[]
+}
+
+model CADObject {
+  id          String    @id @default(cuid())
+  sceneId     String
+  layerId     String
+  materialId  String?
+  kind        String
+  label       String
+  position    Json
+  rotation    Json
+  scale       Json
+  metadata    Json?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  scene       Scene     @relation(fields: [sceneId], references: [id], onDelete: Cascade)
+  layer       Layer     @relation(fields: [layerId], references: [id], onDelete: Cascade)
+  material    Material? @relation(fields: [materialId], references: [id], onDelete: SetNull)
+}
+
+model Material {
+  id             String      @id @default(cuid())
+  organizationId String
+  name           String
+  finish         String
+  color          String
+  usage          String
+  metadata       Json?
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  cadObjects     CADObject[]
+  assets         Asset[]
+}
+
+model Asset {
+  id             String      @id @default(cuid())
+  organizationId String
+  materialId     String?
+  category       String
+  kind           String
+  label          String
+  geometry       Json
+  status         String      @default("READY")
+  createdAt      DateTime    @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  material       Material?   @relation(fields: [materialId], references: [id], onDelete: SetNull)
+  marketplaceItems MarketplaceItem[]
+}
+
+model Layout {
+  id          String   @id @default(cuid())
+  projectId   String   @unique
+  name        String
+  planJson    Json
+  capacity    Int
+  status      String   @default("READY")
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model Mandap {
+  id                 String   @id @default(cuid())
+  projectId          String
+  name               String
+  footprint          Json
+  pillarCount        Int
+  canopyHeightM      Float
+  saptapadiDiameterM Float
+  materials          Json?
+  project            Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model FloralDesign {
+  id             String   @id @default(cuid())
+  projectId      String
+  name           String
+  palette        Json
+  garlandMeters  Float
+  decorItems     Json
+  status         String   @default("READY")
+  project        Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model LightingPlan {
+  id          String    @id @default(cuid())
+  projectId   String
+  name        String
+  status      String    @default("READY")
+  nightMode   Boolean   @default(true)
+  metadata    Json?
+  project     Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  fixtures    Fixture[]
+}
+
+model Fixture {
+  id              String       @id @default(cuid())
+  lightingPlanId  String
+  label           String
+  type            String
+  count           Int
+  colorTemperatureK Int
+  position        Json?
+  lightingPlan    LightingPlan @relation(fields: [lightingPlanId], references: [id], onDelete: Cascade)
+}
+
+model SeatingPlan {
+  id          String   @id @default(cuid())
+  projectId   String
+  name        String
+  totalSeats  Int
+  sections    Json
+  status      String   @default("READY")
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  guests      Guest[]
+}
+
+model Guest {
+  id            String       @id @default(cuid())
+  projectId     String
+  seatingPlanId String?
+  name          String
+  groupName     String
+  section       String
+  status        String       @default("invited")
+  project       Project      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  seatingPlan   SeatingPlan? @relation(fields: [seatingPlanId], references: [id], onDelete: SetNull)
+}
+
+model Vendor {
+  id             String       @id @default(cuid())
+  organizationId String
+  projectId      String?
+  name           String
+  category       String
+  city           String
+  status         String       @default("demo")
+  notes          String?
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  project        Project?     @relation(fields: [projectId], references: [id], onDelete: SetNull)
+}
+
+model Task {
+  id          String   @id @default(cuid())
+  projectId   String
+  title       String
+  category    String
+  status      String
+  dueAt       DateTime?
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model Budget {
+  id          String       @id @default(cuid())
+  projectId   String       @unique
+  currency    String       @default("INR")
+  estimate    Float
+  status      String       @default("READY")
+  project     Project      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  items       BudgetItem[]
+}
+
+model BudgetItem {
+  id           String  @id @default(cuid())
+  budgetId     String
+  label        String
+  category     String
+  estimated    Float
+  actual       Float?
+  status       String
+  budget       Budget  @relation(fields: [budgetId], references: [id], onDelete: Cascade)
+}
+
+model RenderJob {
+  id          String   @id @default(cuid())
+  projectId   String
+  cameraId    String?
+  label       String
+  status      String
+  outputPath  String?
+  createdAt   DateTime @default(now())
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  camera      Camera?  @relation(fields: [cameraId], references: [id], onDelete: SetNull)
+}
+
+model Camera {
+  id          String      @id @default(cuid())
+  projectId   String
+  sceneId     String?
+  name        String
+  mode        String
+  position    Json
+  target      Json
+  project     Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  scene       Scene?      @relation(fields: [sceneId], references: [id], onDelete: SetNull)
+  renderJobs  RenderJob[]
+}
+
+model Walkthrough {
+  id          String   @id @default(cuid())
+  projectId   String
+  name        String
+  status      String
+  path        Json
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model Export {
+  id          String   @id @default(cuid())
+  projectId   String
+  label       String
+  format      String
+  status      String
+  evidence    String
+  createdAt   DateTime @default(now())
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model MarketplaceItem {
+  id             String       @id @default(cuid())
+  organizationId String
+  assetId        String?
+  title          String
+  category       String
+  priceEstimate  Float?
+  status         String       @default("BLOCKED")
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  asset          Asset?       @relation(fields: [assetId], references: [id], onDelete: SetNull)
+}
+
+model ObservatoryEvent {
+  id             String       @id @default(cuid())
+  organizationId String
+  projectId      String?
+  category       String
+  label          String
+  status         String
+  metadata       Json?
+  createdAt      DateTime     @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  project        Project?     @relation(fields: [projectId], references: [id], onDelete: SetNull)
+}
+
+model AIGeneration {
+  id          String   @id @default(cuid())
+  projectId   String
+  prompt      String
+  model       String
+  status      String
+  output      Json?
+  createdAt   DateTime @default(now())
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model Evidence {
+  id             String       @id @default(cuid())
+  organizationId String
+  projectId      String?
+  releaseGateId  String?
+  kind           String
+  path           String
+  status         String
+  summary        String
+  createdAt      DateTime     @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  project        Project?     @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  releaseGate    ReleaseGate? @relation(fields: [releaseGateId], references: [id], onDelete: SetNull)
+}
+
+model ReleaseGate {
+  id              String       @id @default(cuid())
+  organizationId  String
+  projectId       String?
+  verdict         String       @default("CONTROLLED_PREVIEW_READY")
+  productionReady Boolean      @default(false)
+  blockers        Json
+  evidenceSummary Json
+  createdAt       DateTime     @default(now())
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  project         Project?     @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  evidence        Evidence[]
+}
