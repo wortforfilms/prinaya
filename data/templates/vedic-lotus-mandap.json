@@ -1,0 +1,30 @@
+{
+  "id": "vedic-lotus-mandap",
+  "name": "Vedic Lotus Mandap",
+  "status": "READY",
+  "route": "/mandap/vedic-lotus",
+  "designLanguage": "lotus canopy, brass pillars, jasmine-marigold garlands",
+  "objects": [
+    "mandap",
+    "pillar",
+    "floral-garland",
+    "kalash",
+    "diya",
+    "chandelier"
+  ],
+  "palette": [
+    "lotus pink",
+    "brushed brass",
+    "jasmine white",
+    "neem green"
+  ],
+  "notes": "Preview-ready mandap and ritual geometry. Structural safety remains blocked.",
+  "assetIds": [
+    "mandaps-vedic-lotus-001",
+    "pillars-vedic-lotus-001",
+    "floral-installations-vedic-lotus-001",
+    "decorative-lighting-sacred-agni-012",
+    "boards-vedic-lotus-001"
+  ],
+  "assetEvidenceRef": "release/evidence/assets-library.json#template-asset-references"
+}

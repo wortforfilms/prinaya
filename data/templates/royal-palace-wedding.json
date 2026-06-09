@@ -1,0 +1,30 @@
+{
+  "id": "royal-palace-wedding",
+  "name": "Royal Palace Wedding",
+  "status": "READY",
+  "route": "/layouts/royal-palace",
+  "designLanguage": "palace arches, raised reception stage, symmetrical guest courts",
+  "objects": [
+    "stage",
+    "arch",
+    "sofa",
+    "chair",
+    "table",
+    "gate"
+  ],
+  "palette": [
+    "ivory stone",
+    "brushed brass",
+    "deep lotus",
+    "warm amber"
+  ],
+  "notes": "Preview layout for palace-style venue planning.",
+  "assetIds": [
+    "mandaps-royal-palace-002",
+    "gates-and-arches-royal-palace-002",
+    "furniture-royal-palace-002",
+    "lighting-fixtures-grand-heritage-021",
+    "templates-royal-palace-002"
+  ],
+  "assetEvidenceRef": "release/evidence/assets-library.json#template-asset-references"
+}

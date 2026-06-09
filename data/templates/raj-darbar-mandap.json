@@ -1,0 +1,10 @@
+{
+  "id": "raj-darbar-mandap",
+  "name": "Raj Darbar Mandap",
+  "status": "READY",
+  "route": "/mandap/raj-darbar",
+  "designLanguage": "courtly arches, ornate sofa platform, brass and textile detailing",
+  "objects": ["mandap", "arch", "sofa", "pillar", "chandelier", "gate"],
+  "palette": ["brushed brass", "lotus silk", "ivory stone", "marigold"],
+  "notes": "Ceremonial court preview template."
+}

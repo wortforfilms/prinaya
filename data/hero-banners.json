@@ -1,0 +1,555 @@
+{
+  "generatedAt": "2026-06-09T00:00:00.000Z",
+  "status": "READY",
+  "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+  "source": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+  "sourceSize": {
+    "width": 1536,
+    "height": 1024
+  },
+  "count": 21,
+  "hiresSize": {
+    "width": 1920,
+    "height": 580
+  },
+  "records": [
+    {
+      "id": "hero-dashboard",
+      "slug": "dashboard",
+      "title": "Dashboard",
+      "category": "workspace",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 6,
+        "y": 53,
+        "width": 505,
+        "height": 153
+      },
+      "rawImage": "/hero-banners/raw/dashboard.png",
+      "hiresImage": "/hero-banners/hires/dashboard.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/",
+        "/dashboard"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-venue-designer",
+      "slug": "venue-designer",
+      "title": "Venue Designer",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 516,
+        "y": 53,
+        "width": 504,
+        "height": 153
+      },
+      "rawImage": "/hero-banners/raw/venue-designer.png",
+      "hiresImage": "/hero-banners/hires/venue-designer.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/venue-designer",
+        "/venues"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-mandap-designer",
+      "slug": "mandap-designer",
+      "title": "Mandap Designer",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 1025,
+        "y": 53,
+        "width": 505,
+        "height": 153
+      },
+      "rawImage": "/hero-banners/raw/mandap-designer.png",
+      "hiresImage": "/hero-banners/hires/mandap-designer.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/mandap"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-layout-generator",
+      "slug": "layout-generator",
+      "title": "Layout Generator",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 6,
+        "y": 210,
+        "width": 505,
+        "height": 152
+      },
+      "rawImage": "/hero-banners/raw/layout-generator.png",
+      "hiresImage": "/hero-banners/hires/layout-generator.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/layouts"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-floral-designer",
+      "slug": "floral-designer",
+      "title": "Floral Designer",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 516,
+        "y": 210,
+        "width": 504,
+        "height": 152
+      },
+      "rawImage": "/hero-banners/raw/floral-designer.png",
+      "hiresImage": "/hero-banners/hires/floral-designer.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/floral"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-lighting-designer",
+      "slug": "lighting-designer",
+      "title": "Lighting Designer",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 1025,
+        "y": 210,
+        "width": 505,
+        "height": 152
+      },
+      "rawImage": "/hero-banners/raw/lighting-designer.png",
+      "hiresImage": "/hero-banners/hires/lighting-designer.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/lighting"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-budget-planner",
+      "slug": "budget-planner",
+      "title": "Budget Planner",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 6,
+        "y": 367,
+        "width": 505,
+        "height": 148
+      },
+      "rawImage": "/hero-banners/raw/budget-planner.png",
+      "hiresImage": "/hero-banners/hires/budget-planner.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/budget",
+        "/pricing"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-guest-seating",
+      "slug": "guest-seating",
+      "title": "Guest & Seating",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 516,
+        "y": 367,
+        "width": 504,
+        "height": 148
+      },
+      "rawImage": "/hero-banners/raw/guest-seating.png",
+      "hiresImage": "/hero-banners/hires/guest-seating.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/guests"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-vendor-manager",
+      "slug": "vendor-manager",
+      "title": "Vendor Manager",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 1025,
+        "y": 367,
+        "width": 505,
+        "height": 148
+      },
+      "rawImage": "/hero-banners/raw/vendor-manager.png",
+      "hiresImage": "/hero-banners/hires/vendor-manager.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/vendors",
+        "/marketplace"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-production-planner",
+      "slug": "production-planner",
+      "title": "Production Planner",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 6,
+        "y": 519,
+        "width": 505,
+        "height": 140
+      },
+      "rawImage": "/hero-banners/raw/production-planner.png",
+      "hiresImage": "/hero-banners/hires/production-planner.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/production"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-drone-aerial",
+      "slug": "drone-aerial",
+      "title": "Drone & Aerial",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 516,
+        "y": 519,
+        "width": 504,
+        "height": 140
+      },
+      "rawImage": "/hero-banners/raw/drone-aerial.png",
+      "hiresImage": "/hero-banners/hires/drone-aerial.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/drone"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-vr-walkthrough",
+      "slug": "vr-walkthrough",
+      "title": "VR Walkthrough",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 1025,
+        "y": 519,
+        "width": 505,
+        "height": 140
+      },
+      "rawImage": "/hero-banners/raw/vr-walkthrough.png",
+      "hiresImage": "/hero-banners/hires/vr-walkthrough.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/vr"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-exports-boards",
+      "slug": "exports-boards",
+      "title": "Exports & Boards",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 6,
+        "y": 661,
+        "width": 505,
+        "height": 132
+      },
+      "rawImage": "/hero-banners/raw/exports-boards.png",
+      "hiresImage": "/hero-banners/hires/exports-boards.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/exports"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-observatory",
+      "slug": "observatory",
+      "title": "Observatory",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 516,
+        "y": 661,
+        "width": 504,
+        "height": 132
+      },
+      "rawImage": "/hero-banners/raw/observatory.png",
+      "hiresImage": "/hero-banners/hires/observatory.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/observatory",
+        "/support"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-ai-co-pilot",
+      "slug": "ai-co-pilot",
+      "title": "AI Co-Pilot",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 1025,
+        "y": 661,
+        "width": 505,
+        "height": 132
+      },
+      "rawImage": "/hero-banners/raw/ai-co-pilot.png",
+      "hiresImage": "/hero-banners/hires/ai-co-pilot.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/ai"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-assets-library",
+      "slug": "assets-library",
+      "title": "Assets Library",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 6,
+        "y": 797,
+        "width": 505,
+        "height": 127
+      },
+      "rawImage": "/hero-banners/raw/assets-library.png",
+      "hiresImage": "/hero-banners/hires/assets-library.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/assets",
+        "/gallery"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-templates",
+      "slug": "templates",
+      "title": "Templates",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 516,
+        "y": 797,
+        "width": 504,
+        "height": 127
+      },
+      "rawImage": "/hero-banners/raw/templates.png",
+      "hiresImage": "/hero-banners/hires/templates.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/templates"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-admin-panel",
+      "slug": "admin-panel",
+      "title": "Admin Panel",
+      "category": "module",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 1025,
+        "y": 797,
+        "width": 505,
+        "height": 127
+      },
+      "rawImage": "/hero-banners/raw/admin-panel.png",
+      "hiresImage": "/hero-banners/hires/admin-panel.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/admin",
+        "/auth"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-settings",
+      "slug": "settings",
+      "title": "Settings",
+      "category": "workspace",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 6,
+        "y": 927,
+        "width": 505,
+        "height": 95
+      },
+      "rawImage": "/hero-banners/raw/settings.png",
+      "hiresImage": "/hero-banners/hires/settings.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/dashboard/settings",
+        "/admin/settings"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-cad-editor",
+      "slug": "cad-editor",
+      "title": "CAD Editor",
+      "category": "runtime",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 516,
+        "y": 927,
+        "width": 504,
+        "height": 95
+      },
+      "rawImage": "/hero-banners/raw/cad-editor.png",
+      "hiresImage": "/hero-banners/hires/cad-editor.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/cad",
+        "/cad/editor"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    },
+    {
+      "id": "hero-board-composer",
+      "slug": "board-composer",
+      "title": "Board Composer",
+      "category": "runtime",
+      "status": "READY",
+      "generationMode": "GENERATED_HIRES_FROM_REFERENCE",
+      "sourceBoard": "/Users/vesahe/Downloads/ChatGPT Image Jun 9, 2026, 04_07_00 PM.png",
+      "sourceCrop": {
+        "x": 1025,
+        "y": 927,
+        "width": 505,
+        "height": 95
+      },
+      "rawImage": "/hero-banners/raw/board-composer.png",
+      "hiresImage": "/hero-banners/hires/board-composer.webp",
+      "hiresSize": {
+        "width": 1920,
+        "height": 580
+      },
+      "routes": [
+        "/exports/boards",
+        "/contact",
+        "/about",
+        "/blog",
+        "/features"
+      ],
+      "evidenceRef": "release/evidence/hero-banners.json"
+    }
+  ]
+}

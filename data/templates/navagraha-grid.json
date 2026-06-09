@@ -1,0 +1,29 @@
+{
+  "id": "navagraha-grid",
+  "name": "Navagraha Grid",
+  "status": "READY",
+  "route": "/layouts/navagraha-grid",
+  "designLanguage": "nine-zone sacred grid with material and lighting symbolism",
+  "objects": [
+    "mandap",
+    "pillar",
+    "diya",
+    "table",
+    "chandelier"
+  ],
+  "palette": [
+    "brass",
+    "ivory",
+    "lotus",
+    "signal cyan"
+  ],
+  "notes": "Grid-based preview template for symbolic layout experiments.",
+  "assetIds": [
+    "mandaps-navagraha-grid-006",
+    "decor-props-navagraha-grid-006",
+    "seating-navagraha-grid-006",
+    "boards-navagraha-grid-006",
+    "templates-navagraha-grid-006"
+  ],
+  "assetEvidenceRef": "release/evidence/assets-library.json#template-asset-references"
+}

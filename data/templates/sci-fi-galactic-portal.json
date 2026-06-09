@@ -1,0 +1,30 @@
+{
+  "id": "sci-fi-galactic-portal",
+  "name": "Sci-Fi Galactic Portal",
+  "status": "PARTIAL",
+  "route": "/lighting/galactic-portal",
+  "designLanguage": "LED portal ribs, night-view lighting, reflective water axis",
+  "objects": [
+    "gate",
+    "arch",
+    "led-wall",
+    "water-pool",
+    "truss",
+    "drone-path-marker"
+  ],
+  "palette": [
+    "night LED",
+    "signal cyan",
+    "ivory",
+    "brass"
+  ],
+  "notes": "Preview lighting design. Flight approval and electrical compliance remain blocked.",
+  "assetIds": [
+    "gates-and-arches-sci-fi-galactic-portal-004",
+    "led-and-screens-sci-fi-galactic-portal-004",
+    "truss-and-rigging-sci-fi-galactic-portal-004",
+    "lighting-fixtures-cyber-neon-022",
+    "drone-planning-sci-fi-galactic-portal-004"
+  ],
+  "assetEvidenceRef": "release/evidence/assets-library.json#template-asset-references"
+}

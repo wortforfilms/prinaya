@@ -1,0 +1,31 @@
+{
+  "id": "panch-tatva-mandap",
+  "name": "Panch Tatva Mandap",
+  "status": "READY",
+  "route": "/mandap/panch-tatva",
+  "designLanguage": "earth, water, fire, air, and space zones around the mandap",
+  "objects": [
+    "mandap",
+    "water-pool",
+    "diya",
+    "tree",
+    "floral-garland",
+    "chandelier"
+  ],
+  "palette": [
+    "ivory earth",
+    "signal water",
+    "brass fire",
+    "neem air",
+    "night space"
+  ],
+  "notes": "Symbolic preview template with primitive object mapping.",
+  "assetIds": [
+    "mandaps-panch-tatva-007",
+    "venue-zones-panch-tatva-007",
+    "decorative-lighting-panch-tatva-007",
+    "floral-installations-panch-tatva-007",
+    "templates-panch-tatva-007"
+  ],
+  "assetEvidenceRef": "release/evidence/assets-library.json#template-asset-references"
+}

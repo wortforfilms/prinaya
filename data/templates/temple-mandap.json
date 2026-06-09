@@ -1,0 +1,29 @@
+{
+  "id": "temple-mandap",
+  "name": "Temple Mandap",
+  "status": "READY",
+  "route": "/mandap/temple",
+  "designLanguage": "temple geometry, layered plinths, diyas, and sacred axis",
+  "objects": [
+    "mandap",
+    "pillar",
+    "diya",
+    "kalash",
+    "floral-garland"
+  ],
+  "palette": [
+    "ivory stone",
+    "brass",
+    "marigold",
+    "jasmine"
+  ],
+  "notes": "Ritual-focused preview template with clear saptapadi zone.",
+  "assetIds": [
+    "mandaps-temple-mandap-003",
+    "pillars-temple-mandap-003",
+    "decor-props-kalash-court-013",
+    "decorative-lighting-sacred-agni-012",
+    "templates-temple-mandap-003"
+  ],
+  "assetEvidenceRef": "release/evidence/assets-library.json#template-asset-references"
+}

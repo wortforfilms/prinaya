@@ -1,0 +1,10 @@
+{
+  "id": "circular-saptapadi",
+  "name": "Circular Saptapadi",
+  "status": "READY",
+  "route": "/layouts/circular-saptapadi",
+  "designLanguage": "ceremonial circle, radial guest seating, clear ritual center",
+  "objects": ["mandap", "chair", "diya", "floral-garland"],
+  "palette": ["marigold", "brass", "ivory", "lotus"],
+  "notes": "Radial seating and ritual movement preview."
+}

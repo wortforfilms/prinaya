@@ -1,0 +1,29 @@
+{
+  "id": "garden-mandap",
+  "name": "Garden Mandap",
+  "status": "READY",
+  "route": "/venue-designer/garden",
+  "designLanguage": "open lawn, tree canopy, floral aisle, natural textures",
+  "objects": [
+    "tree",
+    "mandap",
+    "chair",
+    "floral-garland",
+    "water-pool"
+  ],
+  "palette": [
+    "neem green",
+    "lotus pink",
+    "jasmine white",
+    "ivory"
+  ],
+  "notes": "Outdoor preview template with landscaping and guest flow.",
+  "assetIds": [
+    "mandaps-garden-mandap-005",
+    "venue-zones-garden-mandap-005",
+    "floral-installations-garden-mandap-005",
+    "flower-types-garden-mandap-005",
+    "templates-garden-mandap-005"
+  ],
+  "assetEvidenceRef": "release/evidence/assets-library.json#template-asset-references"
+}

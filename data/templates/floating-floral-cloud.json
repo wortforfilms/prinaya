@@ -1,0 +1,10 @@
+{
+  "id": "floating-floral-cloud",
+  "name": "Floating Floral Cloud",
+  "status": "PARTIAL",
+  "route": "/floral/floating-cloud",
+  "designLanguage": "suspended floral volume over stage and mandap",
+  "objects": ["floral-garland", "truss", "chandelier", "stage"],
+  "palette": ["jasmine", "lotus pink", "neem green", "warm amber"],
+  "notes": "Visual preview only. Rigging and structural safety are blocked."
+}

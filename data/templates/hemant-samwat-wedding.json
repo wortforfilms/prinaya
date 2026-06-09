@@ -1,0 +1,31 @@
+{
+  "id": "hemant-samwat-wedding",
+  "name": "Hemant Samwat Wedding",
+  "status": "READY",
+  "route": "/projects/hemant-samwat",
+  "designLanguage": "Vedic lotus, royal palace symmetry, floral canopy, warm amber lighting",
+  "objects": [
+    "mandap",
+    "stage",
+    "gate",
+    "floral-garland",
+    "chandelier",
+    "chair"
+  ],
+  "palette": [
+    "lotus pink",
+    "brushed brass",
+    "jasmine white",
+    "neem green"
+  ],
+  "notes": "Local preview template for Hemant Samwat Wedding. Production compliance remains blocked.",
+  "assetIds": [
+    "mandaps-hemant-samwat-008",
+    "floral-installations-vedic-lotus-001",
+    "lighting-fixtures-royal-palace-002",
+    "venue-zones-garden-mandap-005",
+    "boards-hemant-samwat-008",
+    "production-planning-hemant-samwat-008"
+  ],
+  "assetEvidenceRef": "release/evidence/assets-library.json#template-asset-references"
+}

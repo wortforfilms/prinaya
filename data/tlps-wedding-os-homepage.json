@@ -1,0 +1,609 @@
+{
+  "generatedAt": "2026-06-09T00:00:00.000Z",
+  "status": "READY",
+  "verdict": "CONTROLLED_PREVIEW_READY",
+  "productionReady": false,
+  "source": "/Users/vesahe/Downloads/TLPS_All_Generated_Images_Descriptive/TLPS_Wedding_OS_Homepage.png",
+  "sourceSize": {
+    "width": 864,
+    "height": 1821
+  },
+  "route": "/wedding-os",
+  "fullPageImage": "/tlps-wedding-os/homepage/full-page.png",
+  "sections": [
+    {
+      "id": "hero",
+      "label": "Hero Header",
+      "image": "/tlps-wedding-os/homepage/sections/hero.png",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 864,
+        "height": 386
+      },
+      "status": "READY"
+    },
+    {
+      "id": "ecosystem",
+      "label": "Complete Wedding Ecosystem",
+      "image": "/tlps-wedding-os/homepage/sections/ecosystem.png",
+      "crop": {
+        "x": 0,
+        "y": 386,
+        "width": 864,
+        "height": 123
+      },
+      "status": "READY"
+    },
+    {
+      "id": "destinations",
+      "label": "Destination Weddings",
+      "image": "/tlps-wedding-os/homepage/sections/destinations.png",
+      "crop": {
+        "x": 0,
+        "y": 509,
+        "width": 864,
+        "height": 211
+      },
+      "status": "READY"
+    },
+    {
+      "id": "design-studio",
+      "label": "Wedding Design Studio",
+      "image": "/tlps-wedding-os/homepage/sections/design-studio.png",
+      "crop": {
+        "x": 0,
+        "y": 720,
+        "width": 864,
+        "height": 205
+      },
+      "status": "READY"
+    },
+    {
+      "id": "film-studio",
+      "label": "Wedding Filmy Studio",
+      "image": "/tlps-wedding-os/homepage/sections/film-studio.png",
+      "crop": {
+        "x": 0,
+        "y": 925,
+        "width": 864,
+        "height": 210
+      },
+      "status": "READY"
+    },
+    {
+      "id": "signature-experiences",
+      "label": "Signature Experiences",
+      "image": "/tlps-wedding-os/homepage/sections/signature-experiences.png",
+      "crop": {
+        "x": 0,
+        "y": 1135,
+        "width": 864,
+        "height": 138
+      },
+      "status": "READY"
+    },
+    {
+      "id": "stats-band",
+      "label": "Stats Band",
+      "image": "/tlps-wedding-os/homepage/sections/stats-band.png",
+      "crop": {
+        "x": 0,
+        "y": 1273,
+        "width": 864,
+        "height": 75
+      },
+      "status": "READY"
+    },
+    {
+      "id": "why-ai",
+      "label": "Why Choose and AI Co-Pilot",
+      "image": "/tlps-wedding-os/homepage/sections/why-ai.png",
+      "crop": {
+        "x": 0,
+        "y": 1348,
+        "width": 864,
+        "height": 204
+      },
+      "status": "READY"
+    },
+    {
+      "id": "cta",
+      "label": "Love Story CTA",
+      "image": "/tlps-wedding-os/homepage/sections/cta.png",
+      "crop": {
+        "x": 0,
+        "y": 1552,
+        "width": 864,
+        "height": 103
+      },
+      "status": "READY"
+    },
+    {
+      "id": "footer",
+      "label": "Footer",
+      "image": "/tlps-wedding-os/homepage/sections/footer.png",
+      "crop": {
+        "x": 0,
+        "y": 1655,
+        "width": 864,
+        "height": 166
+      },
+      "status": "READY"
+    }
+  ],
+  "destinationCards": [
+    {
+      "id": "udaipur",
+      "label": "Udaipur",
+      "image": "/tlps-wedding-os/homepage/destinations/udaipur.png",
+      "crop": {
+        "x": 28,
+        "y": 558,
+        "width": 110,
+        "height": 138
+      },
+      "status": "READY"
+    },
+    {
+      "id": "jaipur",
+      "label": "Jaipur",
+      "image": "/tlps-wedding-os/homepage/destinations/jaipur.png",
+      "crop": {
+        "x": 145,
+        "y": 558,
+        "width": 110,
+        "height": 138
+      },
+      "status": "READY"
+    },
+    {
+      "id": "goa",
+      "label": "Goa",
+      "image": "/tlps-wedding-os/homepage/destinations/goa.png",
+      "crop": {
+        "x": 262,
+        "y": 558,
+        "width": 110,
+        "height": 138
+      },
+      "status": "READY"
+    },
+    {
+      "id": "bali",
+      "label": "Bali",
+      "image": "/tlps-wedding-os/homepage/destinations/bali.png",
+      "crop": {
+        "x": 379,
+        "y": 558,
+        "width": 110,
+        "height": 138
+      },
+      "status": "READY"
+    },
+    {
+      "id": "dubai",
+      "label": "Dubai",
+      "image": "/tlps-wedding-os/homepage/destinations/dubai.png",
+      "crop": {
+        "x": 496,
+        "y": 558,
+        "width": 110,
+        "height": 138
+      },
+      "status": "READY"
+    },
+    {
+      "id": "santorini",
+      "label": "Santorini",
+      "image": "/tlps-wedding-os/homepage/destinations/santorini.png",
+      "crop": {
+        "x": 613,
+        "y": 558,
+        "width": 110,
+        "height": 138
+      },
+      "status": "READY"
+    },
+    {
+      "id": "italy",
+      "label": "Italy",
+      "image": "/tlps-wedding-os/homepage/destinations/italy.png",
+      "crop": {
+        "x": 730,
+        "y": 558,
+        "width": 110,
+        "height": 138
+      },
+      "status": "READY"
+    }
+  ],
+  "designStudioCards": [
+    {
+      "id": "two-d-plans",
+      "label": "2D Plans",
+      "image": "/tlps-wedding-os/homepage/design-studio/two-d-plans.png",
+      "crop": {
+        "x": 151,
+        "y": 762,
+        "width": 166,
+        "height": 136
+      },
+      "status": "READY"
+    },
+    {
+      "id": "three-d-visuals",
+      "label": "3D Visuals",
+      "image": "/tlps-wedding-os/homepage/design-studio/three-d-visuals.png",
+      "crop": {
+        "x": 326,
+        "y": 762,
+        "width": 166,
+        "height": 136
+      },
+      "status": "READY"
+    },
+    {
+      "id": "vr-walkthroughs",
+      "label": "VR Walkthroughs",
+      "image": "/tlps-wedding-os/homepage/design-studio/vr-walkthroughs.png",
+      "crop": {
+        "x": 501,
+        "y": 762,
+        "width": 166,
+        "height": 136
+      },
+      "status": "READY"
+    },
+    {
+      "id": "board-generation",
+      "label": "Board Generation",
+      "image": "/tlps-wedding-os/homepage/design-studio/board-generation.png",
+      "crop": {
+        "x": 676,
+        "y": 762,
+        "width": 164,
+        "height": 136
+      },
+      "status": "READY"
+    }
+  ],
+  "filmCards": [
+    {
+      "id": "pre-wedding-films",
+      "label": "Pre Wedding Films",
+      "image": "/tlps-wedding-os/homepage/film-studio/pre-wedding-films.png",
+      "crop": {
+        "x": 28,
+        "y": 967,
+        "width": 94,
+        "height": 126
+      },
+      "status": "READY"
+    },
+    {
+      "id": "wedding-teasers",
+      "label": "Wedding Teasers",
+      "image": "/tlps-wedding-os/homepage/film-studio/wedding-teasers.png",
+      "crop": {
+        "x": 129,
+        "y": 967,
+        "width": 94,
+        "height": 126
+      },
+      "status": "READY"
+    },
+    {
+      "id": "highlights",
+      "label": "Highlights",
+      "image": "/tlps-wedding-os/homepage/film-studio/highlights.png",
+      "crop": {
+        "x": 230,
+        "y": 967,
+        "width": 94,
+        "height": 126
+      },
+      "status": "READY"
+    },
+    {
+      "id": "full-wedding-films",
+      "label": "Full Wedding Films",
+      "image": "/tlps-wedding-os/homepage/film-studio/full-wedding-films.png",
+      "crop": {
+        "x": 331,
+        "y": 967,
+        "width": 94,
+        "height": 126
+      },
+      "status": "READY"
+    },
+    {
+      "id": "wedding-reels",
+      "label": "Wedding Reels",
+      "image": "/tlps-wedding-os/homepage/film-studio/wedding-reels.png",
+      "crop": {
+        "x": 432,
+        "y": 967,
+        "width": 94,
+        "height": 126
+      },
+      "status": "READY"
+    },
+    {
+      "id": "drone-films",
+      "label": "Drone Films",
+      "image": "/tlps-wedding-os/homepage/film-studio/drone-films.png",
+      "crop": {
+        "x": 534,
+        "y": 967,
+        "width": 94,
+        "height": 126
+      },
+      "status": "READY"
+    },
+    {
+      "id": "destination-films",
+      "label": "Destination Films",
+      "image": "/tlps-wedding-os/homepage/film-studio/destination-films.png",
+      "crop": {
+        "x": 636,
+        "y": 967,
+        "width": 94,
+        "height": 126
+      },
+      "status": "READY"
+    },
+    {
+      "id": "celebrity-style-films",
+      "label": "Celebrity Style Films",
+      "image": "/tlps-wedding-os/homepage/film-studio/celebrity-style-films.png",
+      "crop": {
+        "x": 738,
+        "y": 967,
+        "width": 94,
+        "height": 126
+      },
+      "status": "READY"
+    }
+  ],
+  "navigation": [
+    "Home",
+    "Experiences",
+    "Destinations",
+    "Design Studio",
+    "Wedding Films",
+    "Services",
+    "Marketplace",
+    "About Us",
+    "Contact"
+  ],
+  "hero": {
+    "brand": "TLPS Wedding OS",
+    "headline": "From destination scouting to wedding films.",
+    "subcopy": "One platform. One production team. One unforgettable experience.",
+    "tagline": "Plan \u00b7 Design \u00b7 Film \u00b7 Execute",
+    "actions": [
+      "Plan My Wedding",
+      "Explore Experiences",
+      "Watch Wedding Films"
+    ]
+  },
+  "floatingActions": [
+    "WhatsApp",
+    "Call Us",
+    "Enquire",
+    "Brochure"
+  ],
+  "ecosystemModules": [
+    "Destination Weddings",
+    "Venue Design",
+    "Mandap Design",
+    "Wedding Decor",
+    "Flowers & Florals",
+    "Lighting Design",
+    "Guest Management",
+    "Production Planning",
+    "Drone Cinematography",
+    "Wedding Films",
+    "Artist & Entertainment",
+    "Hospitality & Logistics"
+  ],
+  "destinations": [
+    {
+      "label": "Udaipur",
+      "subtitle": "The City of Lakes",
+      "assetId": "udaipur"
+    },
+    {
+      "label": "Jaipur",
+      "subtitle": "The Pink City",
+      "assetId": "jaipur"
+    },
+    {
+      "label": "Goa",
+      "subtitle": "Beach Bliss",
+      "assetId": "goa"
+    },
+    {
+      "label": "Bali",
+      "subtitle": "Tropical Paradise",
+      "assetId": "bali"
+    },
+    {
+      "label": "Dubai",
+      "subtitle": "Luxury Redefined",
+      "assetId": "dubai"
+    },
+    {
+      "label": "Santorini",
+      "subtitle": "Greek Romance",
+      "assetId": "santorini"
+    },
+    {
+      "label": "Italy",
+      "subtitle": "Timeless Beauty",
+      "assetId": "italy"
+    }
+  ],
+  "designStudio": {
+    "tools": [
+      "Venue Designer",
+      "Mandap Designer",
+      "Layout Generator",
+      "Floral Designer",
+      "Lighting Designer",
+      "Budget Planner"
+    ],
+    "cards": [
+      {
+        "label": "2D Plans",
+        "assetId": "two-d-plans"
+      },
+      {
+        "label": "3D Visuals",
+        "assetId": "three-d-visuals"
+      },
+      {
+        "label": "VR Walkthroughs",
+        "assetId": "vr-walkthroughs"
+      },
+      {
+        "label": "Board Generation",
+        "assetId": "board-generation"
+      }
+    ]
+  },
+  "filmStudio": [
+    {
+      "label": "Pre Wedding Films",
+      "assetId": "pre-wedding-films"
+    },
+    {
+      "label": "Wedding Teasers",
+      "assetId": "wedding-teasers"
+    },
+    {
+      "label": "Highlights",
+      "assetId": "highlights"
+    },
+    {
+      "label": "Full Wedding Films",
+      "assetId": "full-wedding-films"
+    },
+    {
+      "label": "Wedding Reels",
+      "assetId": "wedding-reels"
+    },
+    {
+      "label": "Drone Films",
+      "assetId": "drone-films"
+    },
+    {
+      "label": "Destination Films",
+      "assetId": "destination-films"
+    },
+    {
+      "label": "Celebrity Style Films",
+      "assetId": "celebrity-style-films"
+    }
+  ],
+  "signatureExperiences": [
+    "Proposal Planning",
+    "Mehendi",
+    "Haldi",
+    "Sangeet",
+    "Wedding Ceremony",
+    "Reception",
+    "After Party"
+  ],
+  "stats": [
+    {
+      "value": "750+",
+      "label": "Weddings Planned"
+    },
+    {
+      "value": "15+",
+      "label": "Years of Experience"
+    },
+    {
+      "value": "50+",
+      "label": "Destinations Worldwide"
+    },
+    {
+      "value": "250+",
+      "label": "In-House Experts"
+    },
+    {
+      "value": "1000+",
+      "label": "Happy Families"
+    },
+    {
+      "value": "24/7",
+      "label": "Dedicated Support"
+    }
+  ],
+  "whyChoose": [
+    "End-to-end wedding planning & execution",
+    "In-house design, decor & production team",
+    "Award winning wedding filmmakers",
+    "Advanced wedding CAD & 3D visualization",
+    "Global network & local expertise",
+    "24/7 personal wedding concierge"
+  ],
+  "aiCoPilot": [
+    "Suggest theme",
+    "Suggest venue",
+    "Estimate budget",
+    "Generate seating plan",
+    "Generate timeline",
+    "Generate decor ideas"
+  ],
+  "cta": {
+    "headline": "Let's create your love story",
+    "subcopy": "From dreams to reality, we make every detail magical.",
+    "tags": [
+      "Destination Wedding",
+      "Traditional Wedding",
+      "Luxury Wedding",
+      "Wedding Film",
+      "Proposal Planning",
+      "Complete Wedding Production"
+    ],
+    "actions": [
+      "Book Consultation",
+      "Schedule Discovery Call"
+    ]
+  },
+  "footer": {
+    "brand": "TLPS Wedding OS",
+    "contact": [
+      "+91 98765 43210",
+      "hello@tlpswedding.com",
+      "Mumbai \u00b7 Delhi \u00b7 Jaipur \u00b7 Udaipur \u00b7 Goa \u00b7 Dubai \u00b7 Bali"
+    ],
+    "links": [
+      "Experiences",
+      "Destinations",
+      "Design Studio",
+      "Wedding Films",
+      "Services",
+      "Marketplace"
+    ],
+    "services": [
+      "Venue Selection",
+      "Mandap & Decor",
+      "Floral & Lighting",
+      "Guest Management",
+      "Production Planning",
+      "Hospitality & Logistics"
+    ],
+    "resources": [
+      "Wedding Guide",
+      "Budget Calculator",
+      "Checklist",
+      "Blog",
+      "FAQs",
+      "Contact Us"
+    ]
+  }
+}
