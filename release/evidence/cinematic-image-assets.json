@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-06-09T23:34:30.509197+00:00",
+  "status": "READY",
+  "verdict": "CONTROLLED_PREVIEW_READY",
+  "productionReady": false,
+  "generationMode": "CINEMATIC_LOCAL_DERIVATIVE",
+  "sourceCount": 703,
+  "uniqueSourceCount": 651,
+  "duplicateSourceCount": 52,
+  "aspectVariantCount": 5,
+  "totalVariantCount": 3255,
+  "totalBytes": 141641672,
+  "sourceClassCounts": {
+    "design-board": 9,
+    "extracted-frame": 591,
+    "hero-banner": 42,
+    "homepage": 8,
+    "public-image": 1
+  },
+  "assetTruth": "These are local high-resolution cinematic WebP derivatives generated from existing supplied/extracted preview sources. They are not claimed as new photography, live vendor inventory, or production-certified media.",
+  "blockers": [
+    {
+      "id": "new-ai-native-photo-generation",
+      "status": "BLOCKED",
+      "reason": "This run generated deterministic local derivatives only; it did not call an image model or create new photographic concepts."
+    },
+    {
+      "id": "production-certified-image-pack",
+      "status": "BLOCKED",
+      "reason": "No brand/legal/print-color approval workflow is implemented for production delivery."
+    }
+  ]
+}

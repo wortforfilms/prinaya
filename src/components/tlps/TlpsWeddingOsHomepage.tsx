@@ -12,6 +12,7 @@ import {
   Gem,
   Headphones,
   Landmark,
+  Languages,
   Lightbulb,
   MapPin,
   Menu,
@@ -26,9 +27,10 @@ import {
   Video,
   WandSparkles
 } from "lucide-react";
-import type { ComponentType } from "react";
+import { useState, type ComponentType, type CSSProperties } from "react";
 import { StatusBadge } from "@/components/layout/StatusBadge";
 import { blockedCapabilities, releaseStatus, type CapabilityStatus } from "@/lib/status";
+import { getCinematicImageForSource, type CinematicAspectId } from "@/lib/cinematic-image-assets";
 import { getTlpsHomepageAsset, tlpsWeddingOsHomepage as page } from "@/lib/tlps-wedding-os-homepage";
 
 type IconType = ComponentType<{ className?: string; "aria-hidden"?: boolean }>;
@@ -161,19 +163,198 @@ const sovereignPillars: Array<{
   }
 ];
 
+const landingThemes = [
+  {
+    id: "maharaja-noir",
+    label: "Maharaja Noir",
+    tone: "Black, gold, emerald",
+    className: "tlps-theme-maharaja",
+    accent: "#d8a84a",
+    accentStrong: "#f3cc7a",
+    page: "#050504",
+    band: "#080705",
+    panel: "rgba(255,255,255,0.04)",
+    imageFilter: "saturate(1.02) contrast(1.05)"
+  },
+  {
+    id: "vedic-lotus",
+    label: "Vedic Lotus",
+    tone: "Lotus, gold, deep green",
+    className: "tlps-theme-lotus",
+    accent: "#f2b7c8",
+    accentStrong: "#f8d78b",
+    page: "#070606",
+    band: "#0b0b07",
+    panel: "rgba(242,183,200,0.055)",
+    imageFilter: "saturate(1.08) contrast(1.03) sepia(0.08)"
+  },
+  {
+    id: "galactic-teal",
+    label: "Galactic Teal",
+    tone: "Teal, gold, royal blue",
+    className: "tlps-theme-galactic",
+    accent: "#5ce7e7",
+    accentStrong: "#f3cc7a",
+    page: "#03090d",
+    band: "#041013",
+    panel: "rgba(92,231,231,0.055)",
+    imageFilter: "saturate(1.16) contrast(1.08) hue-rotate(4deg)"
+  }
+] as const;
+
+const landingLayouts = [
+  {
+    id: "cinematic",
+    label: "Cinematic Landing",
+    shortLabel: "Cinematic",
+    className: "tlps-layout-cinematic",
+    status: "READY",
+    note: "Hero-first storytelling with destination, design, film, and consultation flow.",
+    highlights: ["Immersive hero", "Story sections", "Consultation CTA"]
+  },
+  {
+    id: "command",
+    label: "Command Center",
+    shortLabel: "Command",
+    className: "tlps-layout-command",
+    status: "READY",
+    note: "Dashboard-forward layout for executive review, status, budgets, and risk signals.",
+    highlights: ["KPI stack", "Risk posture", "Decision view"]
+  },
+  {
+    id: "board-gallery",
+    label: "Board Gallery",
+    shortLabel: "Boards",
+    className: "tlps-layout-board",
+    status: "READY",
+    note: "Presentation-board layout for CAD concepts, hero banners, and generated previews.",
+    highlights: ["Board frames", "Asset previews", "Export context"]
+  }
+] as const satisfies ReadonlyArray<{
+  id: string;
+  label: string;
+  shortLabel: string;
+  className: string;
+  status: CapabilityStatus;
+  note: string;
+  highlights: string[];
+}>;
+
+const landingLanguageCopy = {
+  english: {
+    label: "English",
+    shortLabel: "EN",
+    bookConsultation: "Book Consultation",
+    menuLabel: "Menu",
+    heroHeadline: "The Operating System for ultra-luxury weddings, destination events, celebrity productions, and multi-country celebrations.",
+    heroSupport: "One platform. One production team. One unforgettable experience.",
+    vediNote:
+      "Hemant Samwat Vedi Position Finder is a feature. The flagship offer is the full Wedding OS, Digital Twin, Command Center, Filmy Studio, AI Producer, and Global Operations Layer.",
+    heroActions: ["Plan My Wedding", "Open Command Center", "Explore Sovereign Intelligence"],
+    statusNote: "Extracted from supplied PNG into local preview assets. Live marketplace, vendor booking, payments, and compliance remain blocked.",
+    valueEyebrow: "What They Are Really Buying",
+    valueHeadline: "Confidence, control, prestige, execution, and reduced failure risk.",
+    valueBody:
+      "A premium wedding office is not sold as software alone. It is sold as risk reduction, decision authority, execution capability, access, and time compression for complex luxury events.",
+    vediFinderNote:
+      "Hemant Samwat Vedi Position Finder is a placement and timing intelligence feature. It is not the $99,999/month product by itself.",
+    productSubtitle: "Software at the base. Managed wedding intelligence at the top.",
+    ecosystemTitle: "Plan, design, film, and execute from one preview surface",
+    ctaHeadline: "Let's create your love story",
+    ctaSubcopy: "From dreams to reality, we make every detail magical.",
+    ctaActions: ["Book Consultation", "Schedule Discovery Call"],
+    footerDescription:
+      "India's advanced wedding planning, design, and filmmaking studio. We plan, design, manage, film, and create magic."
+  },
+  hindi: {
+    label: "Hindi",
+    shortLabel: "HI",
+    bookConsultation: "परामर्श बुक करें",
+    menuLabel: "मेन्यू",
+    heroHeadline: "अल्ट्रा-लक्जरी शादियों, डेस्टिनेशन इवेंट्स, सेलिब्रिटी प्रोडक्शन्स और मल्टी-कंट्री समारोहों के लिए ऑपरेटिंग सिस्टम.",
+    heroSupport: "एक प्लेटफॉर्म. एक प्रोडक्शन टीम. एक अविस्मरणीय अनुभव.",
+    vediNote:
+      "Hemant Samwat Vedi Position Finder एक फीचर है. मुख्य ऑफर Wedding OS, Digital Twin, Command Center, Filmy Studio, AI Producer और Global Operations Layer है.",
+    heroActions: ["मेरी शादी प्लान करें", "कमांड सेंटर खोलें", "Sovereign Intelligence देखें"],
+    statusNote: "दिए गए PNG से local preview assets निकाले गए हैं. Live marketplace, vendor booking, payments और compliance अभी blocked हैं.",
+    valueEyebrow: "ग्राहक असल में क्या खरीदता है",
+    valueHeadline: "विश्वास, नियंत्रण, प्रतिष्ठा, execution और failure risk में कमी.",
+    valueBody:
+      "Premium wedding office सिर्फ software नहीं है. यह risk reduction, decision authority, execution capability, access और time compression बेचता है.",
+    vediFinderNote:
+      "Hemant Samwat Vedi Position Finder placement और timing intelligence feature है. यह अकेला $99,999/month product नहीं है.",
+    productSubtitle: "नीचे software. ऊपर managed wedding intelligence.",
+    ecosystemTitle: "एक ही preview surface से plan, design, film और execute करें",
+    ctaHeadline: "आपकी शाही wedding command story बनाते हैं",
+    ctaSubcopy: "Dream से execution तक, हर detail controlled और memorable.",
+    ctaActions: ["परामर्श बुक करें", "Discovery Call Schedule करें"],
+    footerDescription:
+      "India का advanced wedding planning, design और filmmaking studio. हम plan, design, manage, film और execute करते हैं."
+  },
+  hinglish: {
+    label: "Hinglish",
+    shortLabel: "HG",
+    bookConsultation: "Book Karna Hai",
+    menuLabel: "Menu",
+    heroHeadline: "Ultra-luxury weddings, destination events aur celebrity productions ke liye complete Wedding OS.",
+    heroSupport: "One platform. One production team. Full control, zero confusion.",
+    vediNote:
+      "Hemant Samwat Vedi Position Finder ek feature hai. Real offer hai Wedding OS + Digital Twin + Command Center + Filmy Studio + AI Producer.",
+    heroActions: ["Wedding Plan Karo", "Command Center Kholo", "Sovereign Layer Dekho"],
+    statusNote: "PNG references se local preview assets ready hain. Live vendors, payments, marketplace aur compliance abhi blocked hain.",
+    valueEyebrow: "Customer Actually Kya Kharidta Hai",
+    valueHeadline: "Confidence, control, prestige, execution aur risk kam karna.",
+    valueBody:
+      "Yeh sirf software nahi hai. Yeh decision authority, execution capability, access aur time compression ka managed wedding office hai.",
+    vediFinderNote:
+      "Vedi Position Finder placement aur timing intelligence hai. Yeh akela $99,999/month product nahi hai.",
+    productSubtitle: "Base par SaaS. Top par managed sovereign wedding intelligence.",
+    ecosystemTitle: "Plan, design, film aur execute ek hi surface se",
+    ctaHeadline: "Chaliye aapki wedding command story banate hain",
+    ctaSubcopy: "Dream se delivery tak, every detail under control.",
+    ctaActions: ["Consultation Book Karo", "Discovery Call Schedule Karo"],
+    footerDescription:
+      "Advanced wedding planning, design aur filmmaking studio. Hum plan, design, manage, film aur execute karte hain."
+  }
+} as const;
+
+type LandingThemeId = (typeof landingThemes)[number]["id"];
+type LandingLayoutId = (typeof landingLayouts)[number]["id"];
+type LandingLanguageId = keyof typeof landingLanguageCopy;
+type LandingLanguageCopy = (typeof landingLanguageCopy)[LandingLanguageId];
+
 export function TlpsWeddingOsHomepage() {
   const hero = getTlpsHomepageAsset("hero");
   const whyAi = getTlpsHomepageAsset("why-ai");
+  const [themeId, setThemeId] = useState<LandingThemeId>("maharaja-noir");
+  const [layoutId, setLayoutId] = useState<LandingLayoutId>("cinematic");
+  const [languageId, setLanguageId] = useState<LandingLanguageId>("english");
+  const theme = landingThemes.find((option) => option.id === themeId) ?? landingThemes[0];
+  const layout = landingLayouts.find((option) => option.id === layoutId) ?? landingLayouts[0];
+  const copy = landingLanguageCopy[languageId];
+  const themeStyle = {
+    "--tlps-accent": theme.accent,
+    "--tlps-accent-strong": theme.accentStrong,
+    "--tlps-page": theme.page,
+    "--tlps-band": theme.band,
+    "--tlps-panel": theme.panel,
+    "--tlps-image-filter": theme.imageFilter
+  } as CSSProperties;
 
   return (
-    <div className="min-h-screen bg-[#050504] text-[#f7ead2]">
-      <section className="relative min-h-[680px] overflow-hidden border-b border-[#d8a84a]/25">
-        <img src={hero?.image ?? page.fullPageImage} alt="" className="absolute inset-0 h-full w-full object-cover" />
+    <div
+      className={`tlps-landing ${theme.className} ${layout.className} min-h-screen bg-[#050504] text-[#f7ead2]`}
+      data-language={languageId}
+      data-layout={layoutId}
+      style={themeStyle}
+    >
+      <section className="relative min-h-[700px] overflow-hidden border-b border-[#d8a84a]/25">
+        <img src={cinematicImage(hero?.image ?? page.fullPageImage, "cinematic-21x9")} alt="" className="tlps-hero-image absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,3,3,0.96)_0%,rgba(3,3,3,0.68)_42%,rgba(3,3,3,0.15)_78%,rgba(3,3,3,0.7)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#050504] to-transparent" />
 
         <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-5 lg:px-8">
-          <a href="/" className="text-[#e3b259]">
+          <a href="/" className="tlps-accent-text text-[#e3b259]">
             <span className="block font-serif text-4xl font-semibold leading-8">TLPS</span>
             <span className="text-xs font-bold uppercase tracking-[0.28em] text-white">Wedding OS</span>
           </a>
@@ -185,74 +366,217 @@ export function TlpsWeddingOsHomepage() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <a href="#consultation" className="rounded-md border border-[#d8a84a]/65 bg-black/20 px-4 py-2 text-xs font-bold uppercase tracking-[0.08em] text-[#f0c76d]">
-              Book Consultation
+            <ThemeLanguageControls themeId={themeId} languageId={languageId} onThemeChange={setThemeId} onLanguageChange={setLanguageId} />
+            <a href="#consultation" className="tlps-accent-border rounded-md border border-[#d8a84a]/65 bg-black/20 px-4 py-2 text-xs font-bold uppercase tracking-[0.08em] text-[#f0c76d]">
+              {copy.bookConsultation}
             </a>
-            <button className="grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-black/25" aria-label="Menu">
+            <button className="grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-black/25" aria-label={copy.menuLabel}>
               <Menu aria-hidden className="h-5 w-5" />
             </button>
           </div>
         </header>
 
-        <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-5 py-16 lg:px-8 xl:grid-cols-[minmax(0,0.7fr)_minmax(280px,0.3fr)]">
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-5 py-12 lg:px-8 xl:grid-cols-[minmax(0,0.7fr)_minmax(320px,0.3fr)]">
           <div className="max-w-2xl">
-            <p className="font-serif text-7xl font-semibold leading-none text-[#d8a84a] md:text-8xl">TLPS</p>
+            <p className="tlps-accent-text font-serif text-7xl font-semibold leading-none text-[#d8a84a] md:text-8xl">TLPS</p>
             <h1 className="mt-1 font-serif text-4xl font-semibold uppercase tracking-[0.16em] text-white md:text-5xl">
               Wedding OS
             </h1>
-            <p className="mt-5 text-sm font-bold uppercase tracking-[0.24em] text-[#f3cc7a]">{page.hero.tagline}</p>
+            <p className="tlps-accent-strong mt-5 text-sm font-bold uppercase tracking-[0.24em] text-[#f3cc7a]">{page.hero.tagline}</p>
             <p className="mt-5 max-w-2xl font-serif text-3xl leading-tight text-white md:text-4xl">
-              The Operating System for ultra-luxury weddings, destination events, celebrity productions, and multi-country celebrations.
+              {copy.heroHeadline}
             </p>
-            <p className="mt-5 max-w-md text-base leading-7 text-white/82">{page.hero.subcopy}</p>
-            <p className="mt-4 max-w-xl text-sm leading-6 text-[#f3cc7a]/82">
-              Hemant Samwat Vedi Position Finder is a feature. The flagship offer is the full Wedding OS, Digital Twin, Command Center, Filmy Studio, AI Producer, and Global Operations Layer.
+            <p className="mt-5 max-w-md text-base leading-7 text-white/82">{copy.heroSupport}</p>
+            <p className="tlps-accent-strong mt-4 max-w-xl text-sm leading-6 text-[#f3cc7a]/82">
+              {copy.vediNote}
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              {["Plan My Wedding", "Open Command Center", "Explore Sovereign Intelligence"].map((action, index) => (
+              {copy.heroActions.map((action, index) => (
                 <a
                   key={action}
                   href={index === 0 ? "#consultation" : index === 1 ? "#product-ladder" : "#sovereign-intelligence"}
-                  className={index === 0 ? "rounded-md bg-[#d8a84a] px-5 py-3 text-xs font-bold uppercase tracking-[0.08em] text-[#120d05]" : "rounded-md border border-[#d8a84a]/45 bg-black/32 px-5 py-3 text-xs font-bold uppercase tracking-[0.08em] text-white"}
+                  className={index === 0 ? "tlps-primary-button rounded-md bg-[#d8a84a] px-5 py-3 text-xs font-bold uppercase tracking-[0.08em] text-[#120d05]" : "tlps-accent-border rounded-md border border-[#d8a84a]/45 bg-black/32 px-5 py-3 text-xs font-bold uppercase tracking-[0.08em] text-white"}
                 >
                   {action}
                 </a>
               ))}
             </div>
+            <LayoutOptionsPanel layoutId={layoutId} onLayoutChange={setLayoutId} />
           </div>
 
           <aside className="hidden content-center justify-self-end xl:grid">
-            <div className="rounded-md border border-[#d8a84a]/45 bg-black/42 p-3 backdrop-blur">
-              {page.floatingActions.map((action, index) => {
-                const Icon = actionIcons[index] ?? Sparkles;
-                return (
-                  <a key={action} href="#contact" className="flex w-24 flex-col items-center gap-2 border-b border-[#d8a84a]/18 py-3 text-[11px] font-semibold text-[#f3cc7a] last:border-b-0">
-                    <Icon aria-hidden className="h-5 w-5" />
-                    {action}
-                  </a>
-                );
-              })}
-            </div>
+            <HeroLayoutPreview layout={layout} />
           </aside>
         </div>
       </section>
 
-      <ExtractedStatusStrip />
-      <SovereignPositioningSection />
-      <ProductLadderSection />
-      <EcosystemSection />
+      <ExtractedStatusStrip copy={copy} />
+      <SovereignPositioningSection copy={copy} />
+      <ProductLadderSection copy={copy} />
+      <EcosystemSection copy={copy} />
       <DestinationSection />
       <DesignStudioSection />
       <FilmStudioSection />
       <SignatureExperiencesSection />
       <WhyAiSection background={whyAi?.image} />
-      <ConsultationSection />
-      <FooterSection />
+      <ConsultationSection copy={copy} />
+      <FooterSection copy={copy} />
     </div>
   );
 }
 
-function ExtractedStatusStrip() {
+function LayoutOptionsPanel({
+  layoutId,
+  onLayoutChange
+}: {
+  layoutId: LandingLayoutId;
+  onLayoutChange: (layout: LandingLayoutId) => void;
+}) {
+  return (
+    <div className="tlps-layout-options mt-8 rounded-md border border-[#d8a84a]/24 bg-black/30 p-3 backdrop-blur">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <p className="tlps-accent-text text-[11px] font-bold uppercase tracking-[0.18em] text-[#d8a84a]">Layout Options</p>
+          <p className="mt-1 text-xs text-white/58">Preview how the landing page can present the same honest runtime data.</p>
+        </div>
+        <StatusBadge status="READY" />
+      </div>
+      <div className="mt-3 grid gap-2 md:grid-cols-3">
+        {landingLayouts.map((layout) => (
+          <button
+            key={layout.id}
+            type="button"
+            aria-pressed={layoutId === layout.id}
+            onClick={() => onLayoutChange(layout.id)}
+            className={`tlps-layout-option-card rounded-md border p-3 text-left transition ${
+              layoutId === layout.id
+                ? "is-active border-[#d8a84a]/65 bg-[#d8a84a]/14"
+                : "border-white/12 bg-white/[0.035] hover:border-[#d8a84a]/35 hover:bg-white/[0.055]"
+            }`}
+          >
+            <span className="flex items-center justify-between gap-2">
+              <span className="text-xs font-bold uppercase tracking-[0.12em] text-white">{layout.shortLabel}</span>
+              <StatusBadge status={layout.status} />
+            </span>
+            <span className="mt-2 block text-[11px] leading-5 text-white/58">{layout.note}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function HeroLayoutPreview({ layout }: { layout: (typeof landingLayouts)[number] }) {
+  if (layout.id === "command") {
+    return (
+      <div className="tlps-hero-preview w-[360px] rounded-md border border-[#d8a84a]/28 bg-black/42 p-4 backdrop-blur">
+        <p className="tlps-accent-text text-xs font-bold uppercase tracking-[0.16em] text-[#d8a84a]">Command Preview</p>
+        <div className="mt-4 grid grid-cols-2 gap-2">
+          {[
+            ["92", "Readiness"],
+            ["₹1.28Cr", "Budget"],
+            ["18", "Open Issues"],
+            ["245", "Vendors"]
+          ].map(([value, label]) => (
+            <div key={label} className="rounded-md border border-white/10 bg-white/[0.045] p-3">
+              <p className="text-2xl font-semibold text-white">{value}</p>
+              <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.1em] text-white/52">{label}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-4 rounded-md border border-emerald-300/18 bg-emerald-300/[0.08] p-3 text-xs leading-5 text-emerald-100">
+          Local preview command posture only. Live tracking integrations remain blocked without provider evidence.
+        </div>
+      </div>
+    );
+  }
+
+  if (layout.id === "board-gallery") {
+    return (
+      <div className="tlps-hero-preview w-[380px] rounded-md border border-[#d8a84a]/28 bg-black/42 p-4 backdrop-blur">
+        <p className="tlps-accent-text text-xs font-bold uppercase tracking-[0.16em] text-[#d8a84a]">Board Gallery Preview</p>
+        <div className="mt-4 grid grid-cols-2 gap-2">
+          {page.designStudio.cards.slice(0, 4).map((card) => {
+            const asset = getTlpsHomepageAsset(card.assetId);
+            return (
+              <div key={card.label} className="overflow-hidden rounded-md border border-white/10 bg-white/[0.045]">
+                <img src={cinematicImage(asset?.image ?? page.fullPageImage, "desktop-16x9")} alt="" className="h-24 w-full object-cover" />
+                <p className="px-2 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-white/72">{card.label}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="rounded-md border border-[#d8a84a]/45 bg-black/42 p-3 backdrop-blur">
+      {page.floatingActions.map((action, index) => {
+        const Icon = actionIcons[index] ?? Sparkles;
+        return (
+          <a key={action} href="#contact" className="flex w-24 flex-col items-center gap-2 border-b border-[#d8a84a]/18 py-3 text-[11px] font-semibold text-[#f3cc7a] last:border-b-0">
+            <Icon aria-hidden className="h-5 w-5" />
+            {action}
+          </a>
+        );
+      })}
+    </div>
+  );
+}
+
+function ThemeLanguageControls({
+  themeId,
+  languageId,
+  onThemeChange,
+  onLanguageChange
+}: {
+  themeId: LandingThemeId;
+  languageId: LandingLanguageId;
+  onThemeChange: (theme: LandingThemeId) => void;
+  onLanguageChange: (language: LandingLanguageId) => void;
+}) {
+  return (
+    <div className="hidden items-center gap-2 lg:flex">
+      <div className="tlps-control-panel flex items-center gap-1 rounded-full border border-white/14 bg-black/28 p-1 backdrop-blur">
+        <Palette aria-hidden className="ml-2 h-4 w-4 text-[#f3cc7a]" />
+        {landingThemes.map((theme) => (
+          <button
+            key={theme.id}
+            type="button"
+            title={`${theme.label}: ${theme.tone}`}
+            aria-pressed={themeId === theme.id}
+            onClick={() => onThemeChange(theme.id)}
+            className={`tlps-control-button rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.1em] transition ${
+              themeId === theme.id ? "is-active text-[#100b05]" : "text-white/66 hover:text-white"
+            }`}
+          >
+            {theme.label}
+          </button>
+        ))}
+      </div>
+      <div className="tlps-control-panel flex items-center gap-1 rounded-full border border-white/14 bg-black/28 p-1 backdrop-blur">
+        <Languages aria-hidden className="ml-2 h-4 w-4 text-[#f3cc7a]" />
+        {Object.entries(landingLanguageCopy).map(([id, language]) => (
+          <button
+            key={id}
+            type="button"
+            aria-label={`Switch language to ${language.label}`}
+            aria-pressed={languageId === id}
+            onClick={() => onLanguageChange(id as LandingLanguageId)}
+            className={`tlps-control-button rounded-full px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.1em] transition ${
+              languageId === id ? "is-active text-[#100b05]" : "text-white/66 hover:text-white"
+            }`}
+          >
+            {language.shortLabel}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ExtractedStatusStrip({ copy }: { copy: LandingLanguageCopy }) {
   return (
     <section className="border-y border-[#d8a84a]/18 bg-[#090806] px-5 py-4 lg:px-8">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3">
@@ -266,14 +590,14 @@ function ExtractedStatusStrip() {
           </span>
         </div>
         <p className="text-xs leading-5 text-white/58">
-          Extracted from supplied PNG into local preview assets. Live marketplace, vendor booking, payments, and compliance remain blocked.
+          {copy.statusNote}
         </p>
       </div>
     </section>
   );
 }
 
-function SovereignPositioningSection() {
+function SovereignPositioningSection({ copy }: { copy: LandingLanguageCopy }) {
   return (
     <section id="sovereign-intelligence" className="border-b border-[#d8a84a]/18 bg-[#050504] px-5 py-9 lg:px-8">
       <div className="mx-auto max-w-7xl">
@@ -285,12 +609,12 @@ function SovereignPositioningSection() {
                 Managed-service preview
               </span>
             </div>
-            <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#d8a84a]">What They Are Really Buying</p>
+            <p className="tlps-accent-text mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#d8a84a]">{copy.valueEyebrow}</p>
             <h2 className="mt-3 font-serif text-4xl leading-tight text-white">
-              Confidence, control, prestige, execution, and reduced failure risk.
+              {copy.valueHeadline}
             </h2>
             <p className="mt-4 text-sm leading-7 text-white/68">
-              A premium wedding office is not sold as software alone. It is sold as risk reduction, decision authority, execution capability, access, and time compression for complex luxury events.
+              {copy.valueBody}
             </p>
             <div className="mt-6 grid gap-2 sm:grid-cols-2">
               {buyerValues.map((value) => (
@@ -300,7 +624,7 @@ function SovereignPositioningSection() {
               ))}
             </div>
             <p className="mt-5 rounded-md border border-[#d8a84a]/18 bg-black/24 p-4 text-sm leading-6 text-white/68">
-              Hemant Samwat Vedi Position Finder is a placement and timing intelligence feature. It is not the $99,999/month product by itself.
+              {copy.vediFinderNote}
             </p>
           </article>
 
@@ -334,11 +658,11 @@ function SovereignPositioningSection() {
   );
 }
 
-function ProductLadderSection() {
+function ProductLadderSection({ copy }: { copy: LandingLanguageCopy }) {
   return (
     <section id="product-ladder" className="border-b border-[#d8a84a]/18 bg-[#080705] px-5 py-9 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <SectionTop title="Product Ladder" subtitle="Software at the base. Managed wedding intelligence at the top." cta="Open Pricing" />
+        <SectionTop title="Product Ladder" subtitle={copy.productSubtitle} cta="Open Pricing" />
         <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           {productLadder.map((tier) => (
             <article key={tier.tier} className="flex min-h-[420px] flex-col rounded-md border border-[#d8a84a]/20 bg-[linear-gradient(180deg,rgba(255,255,255,0.055),rgba(255,255,255,0.025))] p-5">
@@ -373,10 +697,10 @@ function ProductLadderSection() {
   );
 }
 
-function EcosystemSection() {
+function EcosystemSection({ copy }: { copy: LandingLanguageCopy }) {
   return (
     <section id="services" className="border-b border-[#d8a84a]/18 bg-[#080705] px-5 py-8 lg:px-8">
-      <SectionHeading eyebrow="The Complete Wedding Ecosystem" title="Plan, design, film, and execute from one preview surface" center />
+      <SectionHeading eyebrow="The Complete Wedding Ecosystem" title={copy.ecosystemTitle} center />
       <div className="mx-auto mt-6 grid max-w-7xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-12">
         {page.ecosystemModules.map((module, index) => {
           const Icon = ecosystemIcons[index] ?? Sparkles;
@@ -405,7 +729,7 @@ function DestinationSection() {
             return (
               <a key={destination.label} href="/venues" className="group overflow-hidden rounded-md border border-[#d8a84a]/22 bg-white/[0.035]">
                 <div className="relative h-44 overflow-hidden">
-                  <img src={asset?.image} alt={destination.label} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                  <img src={cinematicImage(asset?.image, "square-1x1")} alt={destination.label} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3 text-center">
                     <p className="text-sm font-bold uppercase tracking-[0.08em] text-white">{destination.label}</p>
@@ -500,7 +824,7 @@ function WhyAiSection({ background }: { background?: string }) {
     <section id="about-us" className="border-b border-[#d8a84a]/18 bg-[#050504] px-5 py-9 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-4 lg:grid-cols-[0.72fr_1fr_1fr]">
         <div className="min-h-72 overflow-hidden rounded-md border border-[#d8a84a]/18 bg-black/25">
-          <img src={background ?? page.fullPageImage} alt="" className="h-full w-full object-cover" />
+          <img src={cinematicImage(background ?? page.fullPageImage, "board-4x3")} alt="" className="h-full w-full object-cover" />
         </div>
         <article className="rounded-md border border-[#d8a84a]/18 bg-white/[0.04] p-5">
           <h2 className="font-serif text-2xl uppercase tracking-[0.08em] text-[#f3cc7a]">Why Choose TLPS Wedding OS?</h2>
@@ -536,14 +860,14 @@ function WhyAiSection({ background }: { background?: string }) {
   );
 }
 
-function ConsultationSection() {
+function ConsultationSection({ copy }: { copy: LandingLanguageCopy }) {
   return (
     <section id="consultation" className="bg-[#070506] px-5 py-6 lg:px-8">
       <div className="mx-auto max-w-7xl rounded-md border border-[#d8a84a]/30 bg-[linear-gradient(90deg,rgba(70,20,45,0.34),rgba(216,168,74,0.08),rgba(17,8,20,0.6))] p-6">
         <div className="grid gap-5 lg:grid-cols-[1fr_1.25fr]">
           <div>
-            <h2 className="font-serif text-3xl uppercase text-[#e3b259]">{page.cta.headline}</h2>
-            <p className="mt-2 text-sm text-white/72">{page.cta.subcopy}</p>
+            <h2 className="tlps-accent-text font-serif text-3xl uppercase text-[#e3b259]">{copy.ctaHeadline}</h2>
+            <p className="mt-2 text-sm text-white/72">{copy.ctaSubcopy}</p>
           </div>
           <div>
             <div className="grid gap-2 sm:grid-cols-3">
@@ -554,8 +878,8 @@ function ConsultationSection() {
               ))}
             </div>
             <div className="mt-4 flex flex-wrap gap-3">
-              {page.cta.actions.map((action, index) => (
-                <a key={action} href="/contact" className={index === 0 ? "rounded-md bg-[#d8a84a] px-12 py-3 text-xs font-bold uppercase tracking-[0.08em] text-[#150f06]" : "rounded-md border border-white/30 bg-black/20 px-12 py-3 text-xs font-bold uppercase tracking-[0.08em] text-white"}>
+              {copy.ctaActions.map((action, index) => (
+                <a key={action} href="/contact" className={index === 0 ? "tlps-primary-button rounded-md bg-[#d8a84a] px-12 py-3 text-xs font-bold uppercase tracking-[0.08em] text-[#150f06]" : "rounded-md border border-white/30 bg-black/20 px-12 py-3 text-xs font-bold uppercase tracking-[0.08em] text-white"}>
                   {action}
                 </a>
               ))}
@@ -567,14 +891,14 @@ function ConsultationSection() {
   );
 }
 
-function FooterSection() {
+function FooterSection({ copy }: { copy: LandingLanguageCopy }) {
   return (
     <footer id="contact" className="border-t border-[#d8a84a]/16 bg-[#050504] px-5 py-8 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-7 md:grid-cols-2 xl:grid-cols-[1.2fr_1fr_1fr_1fr_1.2fr]">
         <div>
-          <p className="font-serif text-4xl text-[#d8a84a]">TLPS</p>
+          <p className="tlps-accent-text font-serif text-4xl text-[#d8a84a]">TLPS</p>
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-white">Wedding OS</p>
-          <p className="mt-4 max-w-xs text-sm leading-6 text-white/58">India's advanced wedding planning, design, and filmmaking studio. We plan, design, manage, film, and create magic.</p>
+          <p className="mt-4 max-w-xs text-sm leading-6 text-white/58">{copy.footerDescription}</p>
         </div>
         <FooterList title="Quick Links" items={page.footer.links} />
         <FooterList title="Our Services" items={page.footer.services} />
@@ -589,7 +913,7 @@ function FooterSection() {
               </p>
             ))}
           </div>
-          <a href="/contact" className="mt-5 inline-flex rounded-md bg-[#d8a84a] px-10 py-3 text-xs font-bold uppercase tracking-[0.08em] text-[#150f06]">Enquire Now</a>
+          <a href="/contact" className="tlps-primary-button mt-5 inline-flex rounded-md bg-[#d8a84a] px-10 py-3 text-xs font-bold uppercase tracking-[0.08em] text-[#150f06]">Enquire Now</a>
         </div>
       </div>
       <div className="mx-auto mt-8 flex max-w-7xl flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-5 text-xs text-white/42">
@@ -627,7 +951,7 @@ function ImageCard({ label, image, href, compact }: { label: string; image?: str
   return (
     <a href={href} className="group overflow-hidden rounded-md border border-[#d8a84a]/20 bg-white/[0.035]">
       <div className={compact ? "relative h-40" : "relative h-44"}>
-        <img src={image ?? page.fullPageImage} alt={label} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+        <img src={cinematicImage(image ?? page.fullPageImage, compact ? "portrait-4x5" : "desktop-16x9")} alt={label} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
         <p className="absolute bottom-3 left-3 right-3 text-center text-xs font-bold uppercase leading-4 tracking-[0.08em] text-white">{label}</p>
       </div>
@@ -652,4 +976,8 @@ function FooterList({ title, items }: { title: string; items: string[] }) {
 
 function slug(value: string) {
   return value.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+function cinematicImage(source: string | undefined, aspectId: CinematicAspectId) {
+  return getCinematicImageForSource(source ?? page.fullPageImage, aspectId);
 }

@@ -28,6 +28,12 @@ import {
 } from "../src/lib/compliance-runtime";
 import { liveIntegrationGates, liveIntegrationSummary } from "../src/lib/live-integration-runtime";
 import { getHeroBannerForRoute, heroBanners, heroBannerSummary } from "../src/lib/hero-banner-registry";
+import {
+  cinematicImageAssets,
+  cinematicImageAssetSummary,
+  cinematicImageRegistry,
+  getCinematicVariantForSource
+} from "../src/lib/cinematic-image-assets";
 import { tlpsWeddingOsHomepage, tlpsWeddingOsHomepageSummary } from "../src/lib/tlps-wedding-os-homepage";
 import {
   getTlpsUniqueFramesByKind,
@@ -88,6 +94,11 @@ describe("TLP Wedding CAD preview coverage", () => {
     expect(globals).toContain(".premium-theme");
     expect(globals).toContain("radial-gradient");
     expect(globals).toContain(".premium-theme .bg-white");
+    expect(globals).toContain("@keyframes tlps-gold-border-pulse");
+    expect(globals).toContain("@keyframes tlps-gold-border-sweep");
+    expect(globals).toContain("[class*=\"border-white\"]");
+    expect(globals).toContain(":is(:hover, :focus-visible, :focus-within, :active)");
+    expect(globals).toContain("animation: tlps-gold-border-sweep 1.7s linear infinite");
   });
 
   it("absorbs the floral reference into a dedicated preview route workspace", () => {
@@ -166,6 +177,25 @@ describe("TLP Wedding CAD preview coverage", () => {
         .filter((source) => source.status === "READY")
         .every((source) => Boolean(source.sourceImage) && existsSync(new URL(`../public${source.sourceImage}`, import.meta.url)))
     ).toBe(true);
+  });
+
+  it("regenerates local cinematic image assets with honest aspect variants", () => {
+    expect(cinematicImageRegistry.status).toBe("READY");
+    expect(cinematicImageRegistry.verdict).toBe("CONTROLLED_PREVIEW_READY");
+    expect(cinematicImageRegistry.productionReady).toBe(false);
+    expect(cinematicImageRegistry.generationMode).toBe("CINEMATIC_LOCAL_DERIVATIVE");
+    expect(cinematicImageAssets.length).toBeGreaterThanOrEqual(650);
+    expect(cinematicImageAssetSummary.aspectVariantCount).toBe(5);
+    expect(cinematicImageAssetSummary.totalVariantCount).toBe(cinematicImageAssets.length * 5);
+    expect(cinematicImageRegistry.duplicateSourceCount).toBeGreaterThan(0);
+    expect(cinematicImageRegistry.sourceClassCounts["extracted-frame"]).toBeGreaterThanOrEqual(590);
+    const homepageHero = getCinematicVariantForSource(tlpsWeddingOsHomepage.fullPageImage, "cinematic-21x9");
+    const routeHero = getCinematicVariantForSource(getHeroBannerForRoute("/mandap").hiresImage, "cinematic-21x9");
+    expect(homepageHero?.image).toMatch(/^\/cinematic-assets\/.+\.webp$/);
+    expect(routeHero?.image).toMatch(/^\/cinematic-assets\/.+\.webp$/);
+    expect(homepageHero && existsSync(new URL(`../public${homepageHero.image}`, import.meta.url))).toBe(true);
+    expect(routeHero && existsSync(new URL(`../public${routeHero.image}`, import.meta.url))).toBe(true);
+    expect(cinematicImageAssets.every((asset) => asset.variants.length === cinematicImageAssetSummary.aspectVariantCount)).toBe(true);
   });
 
   it("keeps extracted UI and data frames available", () => {

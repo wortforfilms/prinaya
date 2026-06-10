@@ -16,6 +16,7 @@ import { getPreviewRouteFrame, type PreviewRouteFrameRuntime } from "@/lib/previ
 import { routeMatrix, type RouteDefinition } from "@/lib/route-matrix";
 import { blockedCapabilities, statusCopy } from "@/lib/status";
 import { getHeroBannerForRoute } from "@/lib/hero-banner-registry";
+import { getCinematicImageForSource } from "@/lib/cinematic-image-assets";
 
 export function RoutePage({ route, slug = [] }: { route: RouteDefinition; slug?: string[] }) {
   const nestedPath = slug.length ? `/${slug.join("/")}` : "";
@@ -25,7 +26,7 @@ export function RoutePage({ route, slug = [] }: { route: RouteDefinition; slug?:
     <StudioShell>
       <div className="px-4 py-6 lg:px-8">
         <section className="relative overflow-hidden rounded-md border border-[#d9aa46]/22 bg-[#04110f] p-5 shadow-studio">
-          <img src={hero.hiresImage} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={getCinematicImageForSource(hero.hiresImage, "cinematic-21x9")} alt="" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,9,8,0.92),rgba(2,9,8,0.66)_48%,rgba(2,9,8,0.25))]" />
           <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#03110f] to-transparent" />
           <div className="relative flex min-h-[250px] flex-wrap items-start justify-between gap-4">
