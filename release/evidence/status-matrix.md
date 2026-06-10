@@ -1,6 +1,6 @@
 # TLP Wedding CAD Status Matrix
 
-Generated: 2026-06-09T18:24:30.565Z
+Generated: 2026-06-09T23:58:49.372Z
 
 Final verdict: CONTROLLED_PREVIEW_READY  
 PRODUCTION_READY=false
@@ -13,6 +13,7 @@ PRODUCTION_READY=false
 | Hero banner generation | READY | 21 hero banners were generated as 1920x580 high-res local preview WebP assets from the supplied board reference and mapped across 34 route bindings. |
 | TLPS Wedding OS homepage extraction | READY | 10 full-page sections, 7 destination cards, 4 design studio cards, and 8 film cards were extracted into local preview assets for `/wedding-os`. |
 | TLPS unique source extraction | READY | 591 unique source/frame crops were extracted from 30/31 supplied PNG sources; 1 related duplicate source was recorded and skipped. |
+| Cinematic image asset regeneration | READY | 651/703 unique local image sources were regenerated into 3255 high-resolution cinematic WebP variants across 5 aspects using CINEMATIC_LOCAL_DERIVATIVE; these are local derivatives, not new live photography or production-certified media. |
 | Preview frame runtime | READY | 32/32 route frames have typed demo data and local runtime coverage; 208 demo data points and 139 local coverage checks are generated from code. |
 | UI frame extraction | READY | Reusable UI frame definitions are complete and all frame statuses are READY. |
 | Generated board extraction | READY | 9 PNG boards, 63 extracted frames/options, and 38 technical panels render in `/vr`. |

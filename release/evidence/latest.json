@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-09T18:24:30.565Z",
+  "generatedAt": "2026-06-09T23:58:49.372Z",
   "verdict": "CONTROLLED_PREVIEW_READY",
   "productionReady": false,
   "routeCoverage": {
@@ -129,6 +129,26 @@
         "dashboard-widgets": 1
       },
       "evidenceRef": "release/evidence/tlps-unique-extractions.json"
+    },
+    "cinematicImageAssets": {
+      "status": "READY",
+      "verdict": "CONTROLLED_PREVIEW_READY",
+      "productionReady": false,
+      "generationMode": "CINEMATIC_LOCAL_DERIVATIVE",
+      "sourceCount": 703,
+      "uniqueSourceCount": 651,
+      "duplicateSourceCount": 52,
+      "aspectVariantCount": 5,
+      "totalVariantCount": 3255,
+      "totalBytes": 141641672,
+      "sourceClassCounts": {
+        "design-board": 9,
+        "extracted-frame": 591,
+        "hero-banner": 42,
+        "homepage": 8,
+        "public-image": 1
+      },
+      "evidenceRef": "release/evidence/cinematic-image-assets.json"
     },
     "sceneGraph": {
       "status": "READY",
@@ -727,6 +747,13 @@
     "suppliedSourceImages": 31,
     "duplicateSourceImages": 1,
     "uniqueSourceFrames": 591,
+    "cinematicImageAssets": {
+      "generationMode": "CINEMATIC_LOCAL_DERIVATIVE",
+      "uniqueSourceImages": 651,
+      "aspectVariants": 5,
+      "generatedVariants": 3255,
+      "totalBytes": 141641672
+    },
     "note": "Nine generated design-board PNG assets are imported into public/extracted-boards and rendered in /vr with typed extraction data."
   },
   "previewCompletion": {
@@ -734,6 +761,7 @@
     "heroBanners": "READY",
     "tlpsWeddingOsHomepage": "READY",
     "tlpsUniqueExtractions": "READY",
+    "cinematicImageAssets": "READY",
     "uiFrames": "READY",
     "unifiedPremiumTheme": "READY",
     "floralDesignerWorkspace": "READY",

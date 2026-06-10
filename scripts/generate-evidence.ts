@@ -17,6 +17,7 @@ import { createCadRoundTripSummary } from "../src/lib/cad-roundtrip-runtime";
 import { heroBannerSummary } from "../src/lib/hero-banner-registry";
 import { tlpsWeddingOsHomepageSummary } from "../src/lib/tlps-wedding-os-homepage";
 import { tlpsUniqueExtractionSummary } from "../src/lib/tlps-unique-extractions";
+import { cinematicImageAssetSummary } from "../src/lib/cinematic-image-assets";
 import {
   complianceRuntimeSummary,
   electricalComplianceReport,
@@ -106,6 +107,9 @@ const latest = {
     tlpsUniqueExtractions: {
       ...tlpsUniqueExtractionSummary
     },
+    cinematicImageAssets: {
+      ...cinematicImageAssetSummary
+    },
     sceneGraph: {
       status: "READY",
       branches: sceneBranches
@@ -179,6 +183,13 @@ const latest = {
     suppliedSourceImages: tlpsUniqueExtractionSummary.sourceCount,
     duplicateSourceImages: tlpsUniqueExtractionSummary.duplicateSourceCount,
     uniqueSourceFrames: tlpsUniqueExtractionSummary.uniqueFrameCount,
+    cinematicImageAssets: {
+      generationMode: cinematicImageAssetSummary.generationMode,
+      uniqueSourceImages: cinematicImageAssetSummary.uniqueSourceCount,
+      aspectVariants: cinematicImageAssetSummary.aspectVariantCount,
+      generatedVariants: cinematicImageAssetSummary.totalVariantCount,
+      totalBytes: cinematicImageAssetSummary.totalBytes
+    },
     note: "Nine generated design-board PNG assets are imported into public/extracted-boards and rendered in /vr with typed extraction data."
   },
   previewCompletion: {
@@ -186,6 +197,7 @@ const latest = {
     heroBanners: "READY",
     tlpsWeddingOsHomepage: "READY",
     tlpsUniqueExtractions: "READY",
+    cinematicImageAssets: "READY",
     uiFrames: "READY",
     unifiedPremiumTheme: "READY",
     floralDesignerWorkspace: "READY",
@@ -413,6 +425,7 @@ PRODUCTION_READY=false
 | Hero banner generation | READY | ${heroBannerSummary.count} hero banners were generated as ${heroBannerSummary.hiresSize.width}x${heroBannerSummary.hiresSize.height} high-res local preview WebP assets from the supplied board reference and mapped across ${heroBannerSummary.routeBindings} route bindings. |
 | TLPS Wedding OS homepage extraction | READY | ${tlpsWeddingOsHomepageSummary.sectionCount} full-page sections, ${tlpsWeddingOsHomepageSummary.destinationCount} destination cards, ${tlpsWeddingOsHomepageSummary.designStudioCardCount} design studio cards, and ${tlpsWeddingOsHomepageSummary.filmCardCount} film cards were extracted into local preview assets for \`${tlpsWeddingOsHomepageSummary.route}\`. |
 | TLPS unique source extraction | READY | ${tlpsUniqueExtractionSummary.uniqueFrameCount} unique source/frame crops were extracted from ${tlpsUniqueExtractionSummary.uniqueSourceCount}/${tlpsUniqueExtractionSummary.sourceCount} supplied PNG sources; ${tlpsUniqueExtractionSummary.duplicateSourceCount} related duplicate source was recorded and skipped. |
+| Cinematic image asset regeneration | READY | ${cinematicImageAssetSummary.uniqueSourceCount}/${cinematicImageAssetSummary.sourceCount} unique local image sources were regenerated into ${cinematicImageAssetSummary.totalVariantCount} high-resolution cinematic WebP variants across ${cinematicImageAssetSummary.aspectVariantCount} aspects using ${cinematicImageAssetSummary.generationMode}; these are local derivatives, not new live photography or production-certified media. |
 | Preview frame runtime | READY | ${previewFrameRuntimeSummary.routeFramesReady}/${previewFrameRuntimeSummary.routeFrames} route frames have typed demo data and local runtime coverage; ${previewFrameRuntimeSummary.totalDemoDataPoints} demo data points and ${previewFrameRuntimeSummary.totalLocalCoveragePoints} local coverage checks are generated from code. |
 | UI frame extraction | READY | Reusable UI frame definitions are complete and all frame statuses are READY. |
 | Generated board extraction | READY | ${extractedBoardSummary.boardCount} PNG boards, ${extractedBoardSummary.optionCount} extracted frames/options, and ${extractedBoardSummary.panelCount} technical panels render in \`/vr\`. |
