@@ -26,6 +26,7 @@ import yogaJson from "../../../data/kbs/yoga.json";
 import karanaJson from "../../../data/kbs/karana.json";
 import rashiJson from "../../../data/kbs/rashi.json";
 import grahaJson from "../../../data/kbs/graha.json";
+import boardsJson from "../../../data/kbs/boards.json";
 
 import {
   KnowledgeGraph,
@@ -127,7 +128,12 @@ export function buildKbsGraph(): KnowledgeGraph {
   }
 
   // --- Assets --------------------------------------------------------------
+  const validRouteIds = new Set(routeMatrix.map((route) => id.route(routePath(route.path))));
   for (const asset of weddingAssets) {
+    const routeLinks = asset.usableInRoutes
+      .map((path) => id.route(routePath(path)))
+      .filter((routeId) => validRouteIds.has(routeId))
+      .map((routeId) => linkedTo(routeId));
     add(
       normalizeNode({
         id: id.asset(asset.id),
@@ -144,7 +150,7 @@ export function buildKbsGraph(): KnowledgeGraph {
           previewType: asset.previewType,
           dimensions: asset.dimensions
         },
-        relations: [uses(id.material(asset.materialId))],
+        relations: [uses(id.material(asset.materialId)), ...routeLinks],
         evidence: [asset.evidenceRef, ASSET_EVIDENCE]
       })
     );
@@ -162,6 +168,24 @@ export function buildKbsGraph(): KnowledgeGraph {
         status: route.status,
         metadata: { path: routePath(route.path), primaryFrame: route.primaryFrame, capabilities: route.capabilities }
       }, "src/lib/route-matrix.ts")
+    );
+  }
+
+  // Standalone runtime routes (not in the matrix, but real pages referenced by screens/use cases).
+  for (const runtime of [
+    { path: "/cad/editor", title: "CAD Editor", caps: ["scene canvas", "layers", "insertion", "preview DXF"] },
+    { path: "/hemant-samwat-vedi", title: "Vedi Intelligence", caps: ["orientation", "vastu grid", "vedi", "muhurat lookup"] }
+  ]) {
+    add(
+      normalizeNode({
+        id: id.route(runtime.path),
+        type: "Route",
+        category: "runtime",
+        name: runtime.title,
+        description: `${runtime.title} runtime route.`,
+        status: "READY",
+        metadata: { path: runtime.path, capabilities: runtime.caps }
+      }, "src/app")
     );
   }
 
@@ -259,7 +283,8 @@ export function buildKbsGraph(): KnowledgeGraph {
     muhuratJson,
     ritualsJson,
     filmsJson,
-    vendorsJson
+    vendorsJson,
+    boardsJson
   ] as CuratedFile[];
   for (const file of curatedFiles) {
     for (const node of curatedNodes(file)) add(node);

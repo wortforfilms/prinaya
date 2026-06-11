@@ -6,6 +6,7 @@
 import { kbs } from "./registry";
 import { recommendForNode, type KbsRecommendation } from "./recommendations";
 import type { KbsEntityType, KbsNode, KnowledgeGraph } from "./graph";
+import { blockedCapabilities } from "../status";
 
 function routeNodeId(routePath: string): string {
   return `route:${routePath.replace("/*", "") || "/"}`;
@@ -26,15 +27,87 @@ const KNOWLEDGE_TYPES: ReadonlySet<KbsEntityType> = new Set<KbsEntityType>(["Rit
 
 export type KbsSurfaceNodeRef = { id: string; name: string; type: KbsEntityType; status: KbsNode["status"] };
 
+export type CopilotSuggestionItem = { label: string; detail: string; status: KbsNode["status"] };
+export type CopilotSuggestionGroup = { category: string; items: CopilotSuggestionItem[] };
+
 export type CopilotPanel = {
   routePath: string;
   status: "READY";
   seeds: KbsSurfaceNodeRef[];
   recommendations: KbsRecommendation[];
   relatedKnowledge: KbsSurfaceNodeRef[];
+  suggestions: CopilotSuggestionGroup[];
   summary: string;
   evidenceRef: string;
 };
+
+function buildCopilotSuggestions(graph: KnowledgeGraph, recommendations: KbsRecommendation[]): CopilotSuggestionGroup[] {
+  const take = <T,>(arr: T[], n: number) => arr.slice(0, n);
+
+  const mandaps = take(graph.nodesOfType("Mandap"), 3).map<CopilotSuggestionItem>((n) => ({
+    label: n.name,
+    detail: String(n.metadata.style ?? "mandap design"),
+    status: n.status
+  }));
+
+  const vedis = graph.nodesOfType("Vedi").map<CopilotSuggestionItem>((n) => ({
+    label: n.name,
+    detail: `vastu ${metaString(n, ["vastu", "direction"], "East")} · agni ${metaString(n, ["agni", "zone"], "SE")}`,
+    status: n.status
+  }));
+
+  const muhurats = take(
+    graph.nodesOfType("Muhurat").map((n) => muhuratEntry(graph, n)).sort((a, b) => b.score - a.score),
+    3
+  ).map<CopilotSuggestionItem>((m) => ({ label: m.name, detail: `${m.window} · ${Math.round(m.score * 100)}%`, status: "READY" }));
+
+  // Budget: estimated cost of the recommended asset set.
+  let budgetTotal = 0;
+  let budgetCount = 0;
+  for (const rec of recommendations) {
+    const node = graph.getNode(rec.recommendation);
+    const inr = node && typeof node.metadata.estimatedInr === "number" ? node.metadata.estimatedInr : 0;
+    if (inr > 0) {
+      budgetTotal += inr;
+      budgetCount += 1;
+    }
+  }
+  const budget: CopilotSuggestionItem[] = [
+    {
+      label: budgetCount > 0 ? `≈ ₹${budgetTotal.toLocaleString("en-IN")}` : "Awaiting recommendations",
+      detail: budgetCount > 0 ? `estimated across ${budgetCount} recommended asset(s)` : "no priced assets in current recommendations",
+      status: "PARTIAL"
+    }
+  ];
+
+  const vendors = take(graph.nodesOfType("Vendor"), 4).map<CopilotSuggestionItem>((n) => ({
+    label: n.name,
+    detail: `${String(n.metadata.city ?? "")} · live booking blocked`,
+    status: n.status
+  }));
+
+  const layouts = take(graph.nodesOfType("Template"), 4).map<CopilotSuggestionItem>((n) => ({
+    label: n.name,
+    detail: `${String(n.metadata.assetCount ?? 0)} bound assets`,
+    status: n.status
+  }));
+
+  const risk = blockedCapabilities.map<CopilotSuggestionItem>((cap) => ({
+    label: cap.label,
+    detail: cap.reason,
+    status: "BLOCKED"
+  }));
+
+  return [
+    { category: "Mandap", items: mandaps },
+    { category: "Vedi", items: vedis },
+    { category: "Muhurat", items: muhurats },
+    { category: "Budget", items: budget },
+    { category: "Vendor", items: vendors },
+    { category: "Layout", items: layouts },
+    { category: "Risk", items: risk }
+  ].filter((group) => group.items.length > 0);
+}
 
 function toRef(node: KbsNode): KbsSurfaceNodeRef {
   return { id: node.id, name: node.name, type: node.type, status: node.status };
@@ -83,6 +156,7 @@ export function buildCopilotPanel(routePath: string, graph: KnowledgeGraph = kbs
     seeds: seeds.slice(0, 8).map(toRef),
     recommendations,
     relatedKnowledge: relatedKnowledge.slice(0, 8),
+    suggestions: buildCopilotSuggestions(graph, recommendations),
     summary: `${recommendations.length} graph-derived recommendations from ${seeds.length} seed node(s). Rule-based preview heuristics — no live AI model.`,
     evidenceRef: "release/evidence/kbs.json"
   };
@@ -108,24 +182,67 @@ export type BoardComposerPanel = {
   evidenceRef: string;
 };
 
-/** Board Composer: each board page with its KBS-linked templates and asset reach. */
+// Canonical Board Composer page order (17 pages). Each maps to a Board node id.
+const BOARD_PAGE_ORDER: { slug: string; title: string }[] = [
+  { slug: "cover", title: "Cover" },
+  { slug: "concept", title: "Concept" },
+  { slug: "venue", title: "Venue" },
+  { slug: "layout", title: "Layout" },
+  { slug: "mandap", title: "Mandap" },
+  { slug: "vedi", title: "Vedi" },
+  { slug: "ritual-flow", title: "Ritual Flow" },
+  { slug: "floral", title: "Floral" },
+  { slug: "lighting", title: "Lighting" },
+  { slug: "budget", title: "Budget" },
+  { slug: "guest", title: "Guest" },
+  { slug: "vendor", title: "Vendor" },
+  { slug: "production", title: "Production" },
+  { slug: "drone", title: "Drone" },
+  { slug: "vr", title: "VR" },
+  { slug: "render-gallery", title: "Render Gallery" },
+  { slug: "evidence", title: "Evidence" }
+];
+
+const BOARD_ASSET_TYPES: ReadonlySet<KbsEntityType> = new Set<KbsEntityType>([
+  "Asset",
+  "Mandap",
+  "Floral",
+  "Lighting",
+  "Venue"
+]);
+
+/** Board Composer: the canonical 17 pages, each with KBS-linked templates and asset reach. */
 export function buildBoardComposerPanel(graph: KnowledgeGraph = kbs()): BoardComposerPanel {
-  const boards: BoardComposerEntry[] = graph.nodesOfType("Board").map((board) => {
-    const linkedTemplates = graph.inboundNodes(board.id, "references").filter((node) => node.type === "Template");
+  const boards: BoardComposerEntry[] = [];
+  for (const page of BOARD_PAGE_ORDER) {
+    const board = graph.getNode(`board:${page.slug}`);
+    if (!board) continue;
+
+    // Templates linked either direction (board -> template references, or template -> board references).
+    const templateMap = new Map<string, KbsNode>();
+    for (const node of [...graph.neighbors(board.id, "references"), ...graph.inboundNodes(board.id, "references")]) {
+      if (node.type === "Template") templateMap.set(node.id, node);
+    }
+    const linkedTemplates = Array.from(templateMap.values());
+
     const assetIds = new Set<string>();
+    for (const node of graph.neighbors(board.id, "references")) {
+      if (BOARD_ASSET_TYPES.has(node.type)) assetIds.add(node.id);
+    }
     for (const template of linkedTemplates) {
       for (const asset of graph.neighbors(template.id, "uses")) assetIds.add(asset.id);
     }
-    return {
+
+    boards.push({
       boardId: board.id,
-      title: board.name,
+      title: page.title,
       status: board.status,
       source: String(board.metadata.source ?? ""),
       bindings: Array.isArray(board.metadata.bindings) ? (board.metadata.bindings as string[]) : [],
       linkedTemplates: linkedTemplates.map(toRef),
       linkedAssetCount: assetIds.size
-    };
-  });
+    });
+  }
 
   const stats = graph.stats();
   const assetCount = ["Asset", "Mandap", "Floral", "Lighting", "Venue", "Stage"].reduce(
@@ -224,10 +341,80 @@ export function buildVediFinderPanel(graph: KnowledgeGraph = kbs()): VediFinderP
   return {
     status: "READY",
     vedis,
-    auspiciousNakshatras: graph.nodesOfType("Nakshatra").map(toRef),
-    auspiciousTithis: graph.nodesOfType("Tithi").map(toRef),
+    auspiciousNakshatras: graph.nodesOfType("Nakshatra").filter((n) => n.metadata.auspiciousForMarriage).map(toRef),
+    auspiciousTithis: graph.nodesOfType("Tithi").filter((t) => t.metadata.auspiciousForMarriage).map(toRef),
     topMuhurat,
     summary: `${vedis.length} vedi configurations, ${allMuhurats.length} muhurat windows, ${graph.nodesOfType("Nakshatra").length} auspicious nakshatras. Preview reference — not a certified panchang.`,
+    evidenceRef: "release/evidence/kbs.json"
+  };
+}
+
+export type VastuCell = { direction: string; lord: string; use: string; favored: boolean };
+
+export type LookupRow = { id: string; name: string; detail: string; auspicious: boolean };
+
+export type VediIntelligence = {
+  status: "READY";
+  finder: VediFinderPanel;
+  vastuGrid: VastuCell[];
+  nakshatras: LookupRow[];
+  tithis: LookupRow[];
+  muhurats: MuhuratEntry[];
+  evidenceRef: string;
+};
+
+// Ashtadik vastu zones (3x3 grid, Brahmasthan at centre).
+const VASTU_GRID: VastuCell[] = [
+  { direction: "NW", lord: "Vayu", use: "Storage / guest staging", favored: false },
+  { direction: "N", lord: "Kubera", use: "Treasury / gifts table", favored: true },
+  { direction: "NE", lord: "Ishanya", use: "Kalash, prayer, water", favored: true },
+  { direction: "W", lord: "Varuna", use: "Dining / catering", favored: false },
+  { direction: "Center", lord: "Brahma", use: "Open Brahmasthan — keep clear", favored: true },
+  { direction: "E", lord: "Indra", use: "Vedi facing, entry axis", favored: true },
+  { direction: "SW", lord: "Nairutya", use: "Heavy structure / stage anchor", favored: false },
+  { direction: "S", lord: "Yama", use: "Service / back-of-house", favored: false },
+  { direction: "SE", lord: "Agni", use: "Sacred fire (agni kund)", favored: true }
+];
+
+function metaBool(node: KbsNode, key: string): boolean {
+  return node.metadata[key] === true;
+}
+
+function metaNumberOrString(node: KbsNode, key: string): string {
+  const value = node.metadata[key];
+  return value === undefined || value === null ? "" : String(value);
+}
+
+/** Full Vedi Intelligence surface for /hemant-samwat-vedi. */
+export function buildVediIntelligence(graph: KnowledgeGraph = kbs()): VediIntelligence {
+  const nakshatras: LookupRow[] = graph
+    .nodesOfType("Nakshatra")
+    .map((node) => ({
+      id: node.id,
+      name: node.name,
+      detail: `Lord ${metaNumberOrString(node, "lord")} · ${metaNumberOrString(node, "primaryRashi")}`,
+      auspicious: metaBool(node, "auspiciousForMarriage")
+    }));
+
+  const tithis: LookupRow[] = graph.nodesOfType("Tithi").map((node) => ({
+    id: node.id,
+    name: node.name,
+    detail: `${metaNumberOrString(node, "paksha")} Paksha · day ${metaNumberOrString(node, "number")}`,
+    auspicious: metaBool(node, "auspiciousForMarriage")
+  }));
+
+  const muhurats = graph
+    .nodesOfType("Muhurat")
+    .map((node) => muhuratEntry(graph, node))
+    .sort((a, b) => b.score - a.score);
+
+  return {
+    status: "READY",
+    finder: buildVediFinderPanel(graph),
+    vastuGrid: VASTU_GRID,
+    nakshatras,
+    tithis,
+    muhurats,
     evidenceRef: "release/evidence/kbs.json"
   };
 }

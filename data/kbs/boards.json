@@ -1,0 +1,333 @@
+{
+  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "status": "READY",
+  "evidence": "data/kbs/boards.json",
+  "note": "Curated Board Composer pages beyond the derived board-runtime set. Cover/Concept/Budget/Render Gallery come from board-runtime.",
+  "nodes": [
+    {
+      "id": "board:venue",
+      "type": "Board",
+      "category": "Board",
+      "name": "Venue Board",
+      "description": "Venue Board composer page.",
+      "status": "READY",
+      "metadata": {
+        "source": "scene",
+        "bindings": [
+          "site zones",
+          "entry axis",
+          "capacity"
+        ]
+      },
+      "relations": [
+        {
+          "kind": "references",
+          "to": "route:/venues"
+        },
+        {
+          "kind": "references",
+          "to": "template:royal-palace-wedding"
+        }
+      ]
+    },
+    {
+      "id": "board:layout",
+      "type": "Board",
+      "category": "Board",
+      "name": "Layout Board",
+      "description": "Layout Board composer page.",
+      "status": "READY",
+      "metadata": {
+        "source": "scene",
+        "bindings": [
+          "2d plan",
+          "seating zones",
+          "flow"
+        ]
+      },
+      "relations": [
+        {
+          "kind": "references",
+          "to": "route:/layouts"
+        },
+        {
+          "kind": "references",
+          "to": "template:hemant-samwat-wedding"
+        }
+      ]
+    },
+    {
+      "id": "board:mandap",
+      "type": "Board",
+      "category": "Board",
+      "name": "Mandap Board",
+      "description": "Mandap Board composer page.",
+      "status": "READY",
+      "metadata": {
+        "source": "scene",
+        "bindings": [
+          "mandap geometry",
+          "pillars",
+          "canopy"
+        ]
+      },
+      "relations": [
+        {
+          "kind": "references",
+          "to": "route:/mandap"
+        },
+        {
+          "kind": "references",
+          "to": "asset:mandaps-vedic-lotus-001"
+        },
+        {
+          "kind": "references",
+          "to": "template:vedic-lotus-mandap"
+        }
+      ]
+    },
+    {
+      "id": "board:vedi",
+      "type": "Board",
+      "category": "Board",
+      "name": "Vedi Board",
+      "description": "Vedi Board composer page.",
+      "status": "READY",
+      "metadata": {
+        "source": "scene",
+        "bindings": [
+          "vedi placement",
+          "agni zone",
+          "phera path"
+        ]
+      },
+      "relations": [
+        {
+          "kind": "references",
+          "to": "vedi:square-east-001"
+        },
+        {
+          "kind": "references",
+          "to": "vedi:circular-saptapadi-001"
+        },
+        {
+          "kind": "references",
+          "to": "ritual:saptapadi"
+        }
+      ]
+    },
+    {
+      "id": "board:ritual-flow",
+      "type": "Board",
+      "category": "Board",
+      "name": "Ritual Flow Board",
+      "description": "Ritual Flow Board composer page.",
+      "status": "READY",
+      "metadata": {
+        "source": "scene",
+        "bindings": [
+          "ritual sequence",
+          "muhurat windows"
+        ]
+      },
+      "relations": [
+        {
+          "kind": "references",
+          "to": "ritual:ganesh-poojan"
+        },
+        {
+          "kind": "references",
+          "to": "ritual:kanyadaan"
+        },
+        {
+          "kind": "references",
+          "to": "ritual:saptapadi"
+        },
+        {
+          "kind": "references",
+          "to": "ritual:ashirvad"
+        }
+      ]
+    },
+    {
+      "id": "board:floral",
+      "type": "Board",
+      "category": "Board",
+      "name": "Floral Board",
+      "description": "Floral Board composer page.",
+      "status": "READY",
+      "metadata": {
+        "source": "template",
+        "bindings": [
+          "garland meters",
+          "floral set",
+          "palette"
+        ]
+      },
+      "relations": [
+        {
+          "kind": "references",
+          "to": "route:/floral"
+        }
+      ]
+    },
+    {
+      "id": "board:lighting",
+      "type": "Board",
+      "category": "Board",
+      "name": "Lighting Board",
+      "description": "Lighting Board composer page.",
+      "status": "READY",
+      "metadata": {
+        "source": "scene",
+        "bindings": [
+          "fixtures",
+          "truss",
+          "night render"
+        ]
+      },
+      "relations": [
+        {
+          "kind": "references",
+          "to": "route:/lighting"
+        }
+      ]
+    },
+    {
+      "id": "board:guest",
+      "type": "Board",
+      "category": "Board",
+      "name": "Guest Board",
+      "description": "Guest Board composer page.",
+      "status": "READY",
+      "metadata": {
+        "source": "scene",
+        "bindings": [
+          "guest distribution",
+          "seating",
+          "VIP"
+        ]
+      },
+      "relations": [
+        {
+          "kind": "references",
+          "to": "route:/guests"
+        }
+      ]
+    },
+    {
+      "id": "board:vendor",
+      "type": "Board",
+      "category": "Board",
+      "name": "Vendor Board",
+      "description": "Vendor Board composer page.",
+      "status": "READY",
+      "metadata": {
+        "source": "production",
+        "bindings": [
+          "vendor assignments",
+          "deliverables"
+        ]
+      },
+      "relations": [
+        {
+          "kind": "references",
+          "to": "route:/vendors"
+        },
+        {
+          "kind": "references",
+          "to": "vendor:lotus-decor-studio"
+        },
+        {
+          "kind": "references",
+          "to": "vendor:royal-lighting-co"
+        }
+      ]
+    },
+    {
+      "id": "board:production",
+      "type": "Board",
+      "category": "Board",
+      "name": "Production Board",
+      "description": "Production Board composer page.",
+      "status": "READY",
+      "metadata": {
+        "source": "production",
+        "bindings": [
+          "timeline",
+          "work orders",
+          "logistics"
+        ]
+      },
+      "relations": [
+        {
+          "kind": "references",
+          "to": "route:/production"
+        }
+      ]
+    },
+    {
+      "id": "board:drone",
+      "type": "Board",
+      "category": "Board",
+      "name": "Drone Board",
+      "description": "Drone Board composer page.",
+      "status": "READY",
+      "metadata": {
+        "source": "render",
+        "bindings": [
+          "flight zones",
+          "aerial shots"
+        ]
+      },
+      "relations": [
+        {
+          "kind": "references",
+          "to": "route:/drone"
+        },
+        {
+          "kind": "references",
+          "to": "film:drone"
+        }
+      ]
+    },
+    {
+      "id": "board:vr",
+      "type": "Board",
+      "category": "Board",
+      "name": "VR Board",
+      "description": "VR Board composer page.",
+      "status": "READY",
+      "metadata": {
+        "source": "render",
+        "bindings": [
+          "360 scenes",
+          "hotspots"
+        ]
+      },
+      "relations": [
+        {
+          "kind": "references",
+          "to": "route:/vr"
+        }
+      ]
+    },
+    {
+      "id": "board:evidence",
+      "type": "Board",
+      "category": "Board",
+      "name": "Evidence Board",
+      "description": "Evidence Board composer page.",
+      "status": "READY",
+      "metadata": {
+        "source": "production",
+        "bindings": [
+          "release verdict",
+          "blocker registry",
+          "verifier reports"
+        ]
+      },
+      "relations": []
+    }
+  ]
+}
