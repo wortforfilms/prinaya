@@ -4,8 +4,8 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>TLPS CAD Studio — Three.js Wedding Layout Editor</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!-- No external dependencies: styling is custom CSS below; three.js is vendored locally. -->
+<script type="importmap">{"imports":{"three":"/vendor/three.module.js"}}</script>
 <style>
 :root{--bg:#040706;--panel:#081112;--gold:#d9a84a;--gold2:#ffd789;--line:rgba(217,168,74,.32);--magenta:#ff39d4}
 *{box-sizing:border-box} body{margin:0;background:#030606;color:#f8ecd7;font-family:Inter,system-ui,Arial,sans-serif;overflow:hidden}
@@ -62,7 +62,8 @@
 </div>
 <footer class="statusbar"><span id="coords">45'-6 1/2", 23'-4 3/8", 0'-0"</span><span>SNAP</span><span>GRID</span><span>ORTHO</span><span>OSNAP</span><span>MODEL</span><span>100%</span></footer>
 </div>
-<script>
+<script type="module">
+import * as THREE from "three";
 let scene,camera,renderer,root,raycaster,mouse,selected=null; const objects=[];
 const layerData=[['0','#fff'],['Stage','#ff39d4'],['Mandap','#f1d83b'],['Seating','#3cc7ff'],['Decor','#37e0d6'],['Lighting','#ff4658'],['Floral','#ff75d6'],['Furniture','#f28a2e'],['Dimensions','#fff'],['Text','#ddd']];
 function init(){const mount=document.getElementById('three');scene=new THREE.Scene();scene.background=new THREE.Color(0x061012);camera=new THREE.PerspectiveCamera(45,mount.clientWidth/mount.clientHeight,1,5000);camera.position.set(0,850,0);camera.up.set(0,0,-1);camera.lookAt(0,0,0);renderer=new THREE.WebGLRenderer({antialias:true});renderer.setSize(mount.clientWidth,mount.clientHeight);renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));mount.appendChild(renderer.domElement);raycaster=new THREE.Raycaster();mouse=new THREE.Vector2();root=new THREE.Group();scene.add(root);scene.add(new THREE.AmbientLight(0xffffff,.75));const light=new THREE.DirectionalLight(0xffd08a,.8);light.position.set(100,300,100);scene.add(light);buildGrid();buildLayerPanel();buildBasePlan();renderer.domElement.addEventListener('pointerdown',onPick);renderer.domElement.addEventListener('pointermove',onMove);window.addEventListener('resize',resize);animate()}
@@ -90,7 +91,10 @@ function select(obj){selected=obj;document.getElementById('selection').innerHTML
 function onMove(e){document.getElementById('coords').textContent=`${(e.offsetX/10).toFixed(1)}', ${(e.offsetY/10).toFixed(1)}', 0'-0"`}
 function downloadScene(){const data={project:'Royal Heritage Wedding',status:'CONTROLLED_PREVIEW_READY',productionReady:false,objects:objects.map(o=>({name:o.userData.name,layer:o.userData.layer,position:o.position}))};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='tlps-cad-scene-preview.json';a.click();URL.revokeObjectURL(url)}
 function resize(){const mount=document.getElementById('three');if(!renderer)return;camera.aspect=mount.clientWidth/mount.clientHeight;camera.updateProjectionMatrix();renderer.setSize(mount.clientWidth,mount.clientHeight)}
-function animate(){requestAnimationFrame(animate);renderer.render(scene,camera)} init();
+function animate(){requestAnimationFrame(animate);renderer.render(scene,camera)}
+// Expose handlers referenced by inline onclick= attributes (module scope is not global).
+Object.assign(window,{setView,downloadScene,resetScene,duplicateSelected,addRect,addCircle,addLine,addStage,addMandap,addChairRows,addRooms,addTrees,addLights});
+init();
 </script>
 </body>
 </html>
