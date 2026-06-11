@@ -53,7 +53,7 @@ export function FeaturesDemoDataPage() {
               </div>
               <StatusBadge status="READY" />
             </div>
-            <div className="mt-4 grid gap-3 md:grid-cols-4">
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 2xl:grid-cols-4">
               <SummaryTile icon={Boxes} label="Minimum per category" value={categoryDemoUseCaseSummary.minUseCasesPerCategory} />
               <SummaryTile icon={PackageCheck} label="Maximum per category" value={categoryDemoUseCaseSummary.maxUseCasesPerCategory} />
               <SummaryTile icon={Monitor} label="Screen routes" value={categoryDemoUseCaseSummary.routeCount} />
@@ -198,9 +198,9 @@ function SummaryTile({
   value: string | number;
 }) {
   return (
-    <div className="rounded-md border border-ink/10 bg-ivory p-3">
+    <div className="min-w-0 rounded-md border border-ink/10 bg-ivory p-3">
       <Icon aria-hidden className="h-5 w-5 text-[#d9aa46]" />
-      <p className="mt-3 text-xl font-semibold text-ink">{value}</p>
+      <p className="mt-3 break-words text-lg font-semibold leading-tight text-ink [overflow-wrap:anywhere] sm:text-xl">{value}</p>
       <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-basalt/55">{label}</p>
     </div>
   );
