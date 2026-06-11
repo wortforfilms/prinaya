@@ -10,6 +10,7 @@
 import { buildKbsGraph } from "../src/lib/kbs/registry";
 import { searchKbs } from "../src/lib/kbs/search";
 import { recommendForNode } from "../src/lib/kbs/recommendations";
+import { buildBoardComposerPanel, buildCopilotPanel, buildVediIntelligence } from "../src/lib/kbs/surfaces";
 
 const graph = buildKbsGraph();
 const stats = graph.stats();
@@ -27,9 +28,15 @@ assert(stats.relationCount > 0, "graph has no relations");
 assert(errors.length === 0, `graph has ${errors.length} structural errors`);
 
 // Every core entity layer must be represented.
-for (const type of ["Asset", "Route", "UseCase", "Screen", "Template", "Board", "Material", "Ritual", "Vedi", "Film", "Vendor", "Nakshatra", "Tithi", "Muhurat"] as const) {
+for (const type of ["Asset", "Route", "UseCase", "Screen", "Template", "Board", "Material", "Ritual", "Vedi", "Film", "Vendor", "Nakshatra", "Tithi", "Muhurat", "Yoga", "Karana", "Paksha", "Rashi", "Graha"] as const) {
   assert((stats.byType[type] ?? 0) > 0, `missing nodes of type ${type}`);
 }
+
+// v2 knowledge completeness.
+assert((stats.byType.Nakshatra ?? 0) === 27, `expected 27 nakshatras, got ${stats.byType.Nakshatra ?? 0}`);
+assert((stats.byType.Tithi ?? 0) === 30, `expected 30 tithis, got ${stats.byType.Tithi ?? 0}`);
+assert((stats.byType.Rashi ?? 0) === 12, `expected 12 rashis, got ${stats.byType.Rashi ?? 0}`);
+assert((stats.byType.Graha ?? 0) === 9, `expected 9 grahas, got ${stats.byType.Graha ?? 0}`);
 
 // Search works.
 assert(searchKbs(graph, "mandap").length > 0, "search returned no results for 'mandap'");
@@ -40,6 +47,11 @@ assert(Boolean(mandap), "no Mandap node to recommend from");
 if (mandap) {
   assert(recommendForNode(graph, mandap.id).length >= 0, "recommendation engine threw");
 }
+
+// Surfaces.
+assert(buildCopilotPanel("/ai", graph).suggestions.length > 0, "co-pilot produced no suggestion groups");
+assert(buildBoardComposerPanel(graph).boards.length === 17, "board composer is not 17 pages");
+assert(buildVediIntelligence(graph).muhurats.length > 0, "vedi intelligence has no muhurats");
 
 console.log("KBS verification");
 console.log(`  nodes: ${stats.nodeCount}, relations: ${stats.relationCount}`);

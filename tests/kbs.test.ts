@@ -3,7 +3,7 @@ import { KnowledgeGraph, normalizeNode, type KbsNode } from "@/lib/kbs/graph";
 import { buildKbsGraph } from "@/lib/kbs/registry";
 import { searchKbs } from "@/lib/kbs/search";
 import { recommendForNode } from "@/lib/kbs/recommendations";
-import { buildBoardComposerPanel, buildCopilotPanel, buildVediFinderPanel } from "@/lib/kbs/surfaces";
+import { buildBoardComposerPanel, buildCopilotPanel, buildVediFinderPanel, buildVediIntelligence } from "@/lib/kbs/surfaces";
 
 function node(id: string, partial: Partial<KbsNode> = {}): KbsNode {
   return normalizeNode({ id, type: partial.type ?? "Asset", name: partial.name ?? id, ...partial });
@@ -76,9 +76,24 @@ describe("KBS runtime graph (built from registries + curated layers)", () => {
   });
 
   it("represents every core entity layer", () => {
-    for (const type of ["Asset", "Route", "UseCase", "Screen", "Template", "Board", "Material", "Ritual", "Vedi", "Film", "Vendor", "Nakshatra", "Tithi", "Muhurat"] as const) {
+    for (const type of ["Asset", "Route", "UseCase", "Screen", "Template", "Board", "Material", "Ritual", "Vedi", "Film", "Vendor", "Nakshatra", "Tithi", "Muhurat", "Yoga", "Karana", "Paksha", "Rashi", "Graha"] as const) {
       expect(stats.byType[type] ?? 0, `expected ${type} nodes`).toBeGreaterThan(0);
     }
+  });
+
+  it("has the full panchanga knowledge (v2 targets)", () => {
+    expect(stats.byType.Nakshatra).toBe(27);
+    expect(stats.byType.Tithi).toBe(30);
+    expect(stats.byType.Yoga).toBe(27);
+    expect(stats.byType.Karana).toBe(11);
+    expect(stats.byType.Paksha).toBe(2);
+    expect(stats.byType.Rashi).toBe(12);
+    expect(stats.byType.Graha).toBe(9);
+  });
+
+  it("meets the v2 scale targets (500+ nodes, 3000+ relations)", () => {
+    expect(stats.nodeCount).toBeGreaterThanOrEqual(500);
+    expect(stats.relationCount).toBeGreaterThanOrEqual(3000);
   });
 
   it("wires curated ritual -> vedi requirements", () => {
@@ -134,5 +149,32 @@ describe("KBS surfaces (AI Co-Pilot + Board Composer)", () => {
     // At least one vedi has a muhurat window that resolved both a nakshatra and a tithi.
     const resolved = panel.vedis.flatMap((v) => v.muhurats).filter((m) => m.nakshatra && m.tithi);
     expect(resolved.length).toBeGreaterThan(0);
+  });
+
+  it("Board Composer exposes the canonical 17 pages", () => {
+    const panel = buildBoardComposerPanel();
+    expect(panel.boards).toHaveLength(17);
+    expect(panel.boards.map((b) => b.title)).toEqual([
+      "Cover", "Concept", "Venue", "Layout", "Mandap", "Vedi", "Ritual Flow", "Floral",
+      "Lighting", "Budget", "Guest", "Vendor", "Production", "Drone", "VR", "Render Gallery", "Evidence"
+    ]);
+  });
+
+  it("Co-Pilot produces categorized suggestion groups including Risk (blockers)", () => {
+    const panel = buildCopilotPanel("/ai");
+    const categories = panel.suggestions.map((g) => g.category);
+    expect(categories).toContain("Mandap");
+    expect(categories).toContain("Muhurat");
+    expect(categories).toContain("Risk");
+    const risk = panel.suggestions.find((g) => g.category === "Risk");
+    expect(risk?.items.every((i) => i.status === "BLOCKED")).toBe(true);
+  });
+
+  it("Vedi Intelligence surface exposes full panchanga lookups + vastu grid", () => {
+    const intel = buildVediIntelligence();
+    expect(intel.nakshatras).toHaveLength(27);
+    expect(intel.tithis).toHaveLength(30);
+    expect(intel.vastuGrid).toHaveLength(9);
+    expect(intel.muhurats.length).toBeGreaterThan(0);
   });
 });

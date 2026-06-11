@@ -1,4 +1,13 @@
-# KBS v1.0 — Knowledge Base System
+# KBS v2 — Knowledge Base System
+
+**v2 scale (verified):** 1,406 nodes · 4,539 relations · 23 entity types · 0 dangling
+relations. Full Vedic panchanga (27 nakshatras, 30 tithis, 27 yogas, 11 karanas,
+2 paksha, 12 rashis, 9 grahas), a 12-window wedding muhurat registry, a 17-page
+Board Composer, categorized AI Co-Pilot suggestions, and the
+`/hemant-samwat-vedi` Vedi Intelligence route. Release gate preserved:
+CONTROLLED_PREVIEW_READY, PRODUCTION_READY=false; all blockers intact.
+
+
 
 The KBS is a **first-class runtime knowledge graph**, not a flat asset catalog.
 Every domain entity is a typed node; typed edges connect them; and the graph is
@@ -100,6 +109,17 @@ recommendForNode(graph, "mandap-node-id");        // [{ recommendation, confiden
   and the auspicious `Muhurat` windows linked to it (each resolving its required
   `Nakshatra` + `Tithi`), plus the top-scoring muhurat overall. Preview reference
   data — not a certified panchang service.
+
+- **Vedi Intelligence** (`/hemant-samwat-vedi`) — `buildVediIntelligence()` powers a
+  standalone route (outside the matrix, like `/cad/editor`) with a client
+  `VediCompass` orientation input, the Ashtadik vastu grid, the full 27-nakshatra
+  / 30-tithi / muhurat lookups, and a board-export link.
+
+The Board Composer now renders the canonical **17 pages** (Cover, Concept, Venue,
+Layout, Mandap, Vedi, Ritual Flow, Floral, Lighting, Budget, Guest, Vendor,
+Production, Drone, VR, Render Gallery, Evidence). The Co-Pilot emits **7 suggestion
+groups** (Mandap, Vedi, Muhurat, Budget, Vendor, Layout, Risk — Risk surfaces the
+preserved blockers).
 
 All are server-safe (cached singleton graph) and stay within the preview gate.
 

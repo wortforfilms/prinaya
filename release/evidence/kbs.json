@@ -1,0 +1,131 @@
+{
+  "generatedAt": "2026-06-11T18:13:27.385Z",
+  "verdict": "CONTROLLED_PREVIEW_READY",
+  "productionReady": false,
+  "status": "READY",
+  "nodeCount": 1406,
+  "relationCount": 4539,
+  "stats": {
+    "nodeCount": 1406,
+    "relationCount": 4539,
+    "byType": {
+      "Material": 5,
+      "Mandap": 24,
+      "Asset": 504,
+      "Floral": 48,
+      "Lighting": 48,
+      "Venue": 24,
+      "Route": 34,
+      "Screen": 432,
+      "UseCase": 108,
+      "Template": 8,
+      "Board": 22,
+      "Graha": 9,
+      "Rashi": 12,
+      "Paksha": 2,
+      "Nakshatra": 27,
+      "Tithi": 30,
+      "Yoga": 27,
+      "Karana": 11,
+      "Vedi": 2,
+      "Muhurat": 12,
+      "Ritual": 6,
+      "Film": 8,
+      "Vendor": 3
+    },
+    "byStatus": {
+      "READY": 1150,
+      "PARTIAL": 193,
+      "BLOCKED": 63
+    },
+    "danglingRelations": 0
+  },
+  "coverage": {
+    "entityTypes": 23,
+    "boardComposerPages": 17,
+    "copilotSuggestionGroups": 7,
+    "nakshatras": 27,
+    "tithis": 30,
+    "muhurats": 12
+  },
+  "routeIntegration": [
+    {
+      "route": "/ai",
+      "surface": "AI Co-Pilot",
+      "status": "READY"
+    },
+    {
+      "route": "/exports",
+      "surface": "Board Composer",
+      "status": "READY"
+    },
+    {
+      "route": "/gallery",
+      "surface": "Board Composer",
+      "status": "READY"
+    },
+    {
+      "route": "/mandap",
+      "surface": "Vedi Finder",
+      "status": "READY"
+    },
+    {
+      "route": "/hemant-samwat-vedi",
+      "surface": "Vedi Intelligence",
+      "status": "READY"
+    }
+  ],
+  "validation": {
+    "errors": 0,
+    "warnings": 0,
+    "danglingRelations": 0
+  },
+  "blockers": [
+    {
+      "id": "native-dwg-export",
+      "label": "Native DWG export",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "production-dxf-export",
+      "label": "Production DXF export",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "payments",
+      "label": "Payments",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "live-vendors",
+      "label": "Live vendor network",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "marketplace-commerce",
+      "label": "Marketplace commerce",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "structural-validation",
+      "label": "Structural validation",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "electrical-validation",
+      "label": "Electrical validation",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "fire-safety-validation",
+      "label": "Fire safety validation",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "engineering-compliance",
+      "label": "Engineering compliance",
+      "status": "BLOCKED"
+    }
+  ],
+  "note": "KBS v2 runtime knowledge graph. Rule-based preview heuristics; no live AI/vendor/payment/panchang runtime. Blockers preserved."
+}

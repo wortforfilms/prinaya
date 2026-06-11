@@ -10,7 +10,8 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { buildKbsGraph } from "../src/lib/kbs/registry";
 import type { KbsEntityType, KbsNode } from "../src/lib/kbs/graph";
-import { releaseStatus } from "../src/lib/status";
+import { buildBoardComposerPanel, buildCopilotPanel, buildVediIntelligence } from "../src/lib/kbs/surfaces";
+import { blockedCapabilities, releaseStatus } from "../src/lib/status";
 
 const root = new URL("../", import.meta.url);
 const kbsDir = fileURLToPath(new URL("data/kbs/", root));
@@ -52,20 +53,45 @@ writeJson(fileURLToPath(new URL("data/kbs/graph.json", root)), {
   nodes: graph.nodes
 });
 
+// Surface integration coverage.
+const copilot = buildCopilotPanel("/ai", graph);
+const boardComposer = buildBoardComposerPanel(graph);
+const vedi = buildVediIntelligence(graph);
+
+const routeIntegration = [
+  { route: "/ai", surface: "AI Co-Pilot", nodes: copilot.recommendations.length + copilot.seeds.length, status: "READY" },
+  { route: "/exports", surface: "Board Composer", nodes: boardComposer.boards.length, status: "READY" },
+  { route: "/gallery", surface: "Board Composer", nodes: boardComposer.boards.length, status: "READY" },
+  { route: "/mandap", surface: "Vedi Finder", nodes: vedi.finder.vedis.length, status: "READY" },
+  { route: "/hemant-samwat-vedi", surface: "Vedi Intelligence", nodes: vedi.nakshatras.length + vedi.tithis.length + vedi.muhurats.length, status: "READY" }
+];
+
 writeJson(evidencePath, {
   generatedAt: new Date().toISOString(),
   verdict: releaseStatus.verdict,
   productionReady: false,
   status: errors.length > 0 ? "BLOCKED" : warnings.length > 0 ? "PARTIAL" : "READY",
+  nodeCount: stats.nodeCount,
+  relationCount: stats.relationCount,
   stats,
+  coverage: {
+    entityTypes: Object.keys(stats.byType).length,
+    boardComposerPages: boardComposer.boards.length,
+    copilotSuggestionGroups: copilot.suggestions.length,
+    nakshatras: vedi.nakshatras.length,
+    tithis: vedi.tithis.length,
+    muhurats: vedi.muhurats.length
+  },
+  routeIntegration,
   validation: {
     errors: errors.length,
     warnings: warnings.length,
     danglingRelations: stats.danglingRelations
   },
+  blockers: blockedCapabilities.map((cap) => ({ id: cap.id, label: cap.label, status: cap.status })),
   snapshots,
   note:
-    "KBS v1.0 runtime knowledge graph derived from local registries plus curated knowledge layers. Recommendations are rule-based preview heuristics; no live AI/vendor/payment runtime is claimed."
+    "KBS v2 runtime knowledge graph derived from local registries plus curated knowledge layers (panchanga, ritual, vedi, muhurat, film, vendor, board). Recommendations and muhurat scoring are rule-based preview heuristics; no live AI/vendor/payment/panchang runtime is claimed. Blockers preserved."
 });
 
 console.log(`KBS generated: ${stats.nodeCount} nodes, ${stats.relationCount} relations.`);
