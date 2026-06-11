@@ -40,4 +40,4 @@ git lfs track
 echo
 echo "Done. The binaries are now stored in LFS."
 echo "Next: push to your remote — LFS objects upload automatically."
-echo "  git push -u origin master"
+echo "  git push -u origin main --force   # remote main only has an auto-generated README"
