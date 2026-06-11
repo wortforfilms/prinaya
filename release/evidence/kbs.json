@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-06-11T20:31:53.559Z",
+  "generatedAt": "2026-06-11T23:39:15.505Z",
   "verdict": "CONTROLLED_PREVIEW_READY",
   "productionReady": false,
   "status": "READY",
-  "nodeCount": 1407,
+  "nodeCount": 1410,
   "relationCount": 4539,
   "stats": {
-    "nodeCount": 1407,
+    "nodeCount": 1410,
     "relationCount": 4539,
     "byType": {
       "Material": 5,
@@ -15,7 +15,7 @@
       "Floral": 48,
       "Lighting": 48,
       "Venue": 24,
-      "Route": 35,
+      "Route": 38,
       "Screen": 432,
       "UseCase": 108,
       "Template": 8,
@@ -34,7 +34,7 @@
       "Vendor": 3
     },
     "byStatus": {
-      "READY": 1151,
+      "READY": 1154,
       "PARTIAL": 193,
       "BLOCKED": 63
     },
@@ -61,8 +61,18 @@
       "status": "READY"
     },
     {
+      "route": "/ai/studio",
+      "surface": "AI Generator Studio",
+      "status": "READY"
+    },
+    {
       "route": "/exports",
       "surface": "Board Composer",
+      "status": "READY"
+    },
+    {
+      "route": "/exports/studio",
+      "surface": "Board Composer Studio",
       "status": "READY"
     },
     {
@@ -78,6 +88,11 @@
     {
       "route": "/cad/studio",
       "surface": "CAD Studio",
+      "status": "READY"
+    },
+    {
+      "route": "/cad/3d",
+      "surface": "3D Designer Studio",
       "status": "READY"
     },
     {
@@ -138,5 +153,5 @@
       "status": "BLOCKED"
     }
   ],
-  "note": "KBS v2 runtime knowledge graph powering homepage, Mandap Designer, CAD Studio, AI Co-Pilot, Board Composer, and Vedi Finder. Rule-based preview heuristics; no live AI/vendor/payment/panchang/CAD-export runtime. Blockers preserved."
+  "note": "KBS v2 runtime knowledge graph powering homepage, Mandap Designer, AI Generator Studio, Board Composer, 3D Designer, CAD Studio, AI Co-Pilot, and Vedi Finder. Rule-based preview heuristics; no live AI/vendor/payment/panchang/CAD-export runtime. Blockers preserved."
 }

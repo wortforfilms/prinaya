@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>TLPS AI Generator Studio</title>
+<style>
+:root{--bg:#030607;--panel:#081112;--gold:#d8a64a;--gold2:#ffdc91;--line:rgba(216,166,74,.28);--text:#f8ead0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#14231f,#030607 55%);color:var(--text);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif}
+.app{min-height:100vh;display:grid;grid-template-rows:76px 1fr}
+.top{display:flex;align-items:center;gap:24px;padding:0 22px;background:rgba(2,6,8,.95);border-bottom:1px solid var(--line)}
+.logo{font:900 34px Georgia,serif;color:var(--gold);letter-spacing:.08em}.sub{font-size:11px;letter-spacing:.28em}
+.tabs{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}.tab,.btn{border:1px solid var(--line);background:#071012;color:#f7e8cb;border-radius:8px;padding:10px 15px;font-weight:800}.tab.active,.btn.gold{background:linear-gradient(135deg,#e8b85a,#99641c);color:#130b02;border:0}
+.work{display:grid;grid-template-columns:270px 1fr 420px;gap:12px;padding:12px}
+.panel{border:1px solid rgba(216,166,74,.22);background:linear-gradient(145deg,rgba(12,23,25,.96),rgba(5,9,10,.96));border-radius:12px;padding:14px}
+.panel h3{margin:0 0 12px;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.tool{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:center;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px;margin-bottom:10px;cursor:pointer}.tool.active{border-color:var(--gold);background:rgba(216,166,74,.12);color:var(--gold2)}
+.preview{display:grid;grid-template-rows:auto 1fr 150px;gap:12px}
+.hero-img{min-height:560px;border:1px solid rgba(216,166,74,.25);border-radius:12px;background:radial-gradient(circle at 50% 35%,rgba(255,220,140,.65),transparent 32%),linear-gradient(135deg,#0b1418,#61340f 55%,#050607);position:relative;overflow:hidden}
+.hero-img:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.55)),radial-gradient(circle at 50% 60%,rgba(255,170,80,.7),transparent 18%)}
+.hero-title{position:absolute;left:30px;bottom:26px;font:500 48px Georgia,serif;color:var(--gold);z-index:2}
+.variations{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.var{border:1px solid rgba(255,255,255,.08);border-radius:10px;background:linear-gradient(135deg,#d8a64a,#251409);min-height:120px}.var.active{border-color:var(--gold)}
+textarea,input,select{width:100%;background:#071012;border:1px solid rgba(216,166,74,.22);border-radius:8px;color:#fff;padding:10px}
+textarea{height:150px;resize:vertical}.style-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.style{border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px;text-align:center}.style.active{border-color:var(--gold);background:rgba(216,166,74,.12);color:var(--gold2)}
+.row{display:grid;grid-template-columns:1fr 1.3fr;gap:10px;align-items:center;margin:10px 0;font-size:13px}
+.mood{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}.mood div{height:86px;border-radius:9px;background:linear-gradient(135deg,#d8a64a,#271509);border:1px solid rgba(255,255,255,.08)}
+.bottom{grid-column:1/-1;display:grid;grid-template-columns:1fr 260px 300px;gap:12px}
+.badge{font-size:11px;padding:4px 9px;border-radius:999px;border:1px solid rgba(98,223,130,.38);background:rgba(98,223,130,.1);color:#83f0a0}.blocked{border-color:rgba(255,95,95,.4);background:rgba(255,95,95,.1);color:#ff9f9f}
+.history{display:grid;grid-template-columns:70px 1fr auto;gap:8px;align-items:center;border-bottom:1px solid rgba(255,255,255,.07);padding:8px 0}.thumb{height:50px;border-radius:7px;background:linear-gradient(135deg,#d8a64a,#231207)}
+@media(max-width:1100px){.work,.bottom{grid-template-columns:1fr}.variations{grid-template-columns:repeat(2,1fr)}.top{height:auto;min-height:76px;flex-wrap:wrap;padding:14px 22px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+<div><div class="logo">TLPS</div><div class="sub">WEDDING OS</div></div>
+<div><b style="font-size:22px">AI GENERATOR STUDIO</b><br><span style="font-size:12px;color:#cbbfa8">Imagine. Generate. Curate.</span></div>
+<nav class="tabs"><button class="tab">IDEAS</button><button class="tab active">TEXT TO IMAGE</button><button class="tab">SKETCH TO IMAGE</button><button class="tab">MOOD TO DESIGN</button><button class="tab">3D CONCEPT</button><button class="tab">VARIATIONS</button></nav>
+<button class="btn">12,450 Credits</button><button class="btn gold" onclick="exportBoard()">Export Board</button>
+</header>
+
+<main class="work">
+<aside class="panel">
+<h3>Generate With AI</h3>
+<div class="tool active"><span>▧</span><div><b>Text to Image</b><br><small>Generate from text prompt</small></div></div>
+<div class="tool"><span>✎</span><div><b>Sketch to Image</b><br><small>Turn sketches into renders</small></div></div>
+<div class="tool"><span>♡</span><div><b>Mood to Design</b><br><small>Generate from moodboard</small></div></div>
+<div class="tool"><span>✧</span><div><b>3D Concept Generator</b><br><small>AI 3D scene generation</small></div></div>
+<div class="tool"><span>⟳</span><div><b>Smart Variations</b><br><small>Generate design variations</small></div></div>
+<div class="tool"><span>⤢</span><div><b>Upscale & Enhance</b><br><small>Enhance image quality</small></div></div>
+<div class="tool"><span>↺</span><div><b>Remove & Replace</b><br><small>AI remove and replace</small></div></div>
+<div class="tool"><span>☯</span><div><b>Style Transfer</b><br><small>Apply artistic styles</small></div></div>
+</aside>
+
+<section class="preview">
+<div class="panel"><h3>AI Generation Preview</h3></div>
+<div class="hero-img"><div class="hero-title">Royal Indian Wedding Mandap</div></div>
+<div class="panel"><h3>AI Variations</h3><div class="variations"><div class="var active"></div><div class="var"></div><div class="var"></div><div class="var"></div><div class="var"></div></div></div>
+</section>
+
+<aside class="panel">
+<h3>Prompt & Settings</h3>
+<label>Prompt</label>
+<textarea id="prompt">Royal Indian wedding mandap, luxury setup, flowers, chandeliers, palace background, night lighting, cinematic, ultra detailed</textarea>
+<div class="row"><span>Magic Enhance</span><span><input type="checkbox" checked></span></div>
+<h3 style="margin-top:20px">Style</h3>
+<div class="style-grid"><div class="style active">Photorealistic</div><div class="style">Cinematic</div><div class="style">Architectural</div><div class="style">Watercolor</div><div class="style">Sketch</div><div class="style">3D Render</div></div>
+<h3 style="margin-top:20px">Settings</h3>
+<div class="row"><span>Aspect Ratio</span><select><option>16:9 Landscape</option><option>1:1 Square</option></select></div>
+<div class="row"><span>Quality</span><select><option>Ultra HD</option><option>HD</option></select></div>
+<div class="row"><span>Lighting</span><select><option>Golden Night</option><option>Daylight</option></select></div>
+<div class="row"><span>Creativity</span><input type="range" value="75"></div>
+<div class="row"><span>Seed</span><input value="842671"></div>
+<button class="btn gold" style="width:100%;margin-top:20px" onclick="generate()">Generate (20 Credits)</button>
+<br><br><span class="badge">CONTROLLED_PREVIEW_READY</span> <span class="badge blocked">PRODUCTION_READY=false</span>
+</aside>
+
+<section class="bottom">
+<div class="panel"><h3>Inspiration Moodboard</h3><div class="mood"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div style="display:grid;place-items:center;background:#071012">+ Add</div></div></div>
+<div class="panel"><h3>AI Tools</h3><button class="btn">Remove Background</button><button class="btn">Replace Object</button><button class="btn">Expand Image</button><button class="btn">Color Grade</button></div>
+<div class="panel"><h3>History</h3><div class="history"><div class="thumb"></div><span>Royal Indian wedding mandap...</span><b>4K</b></div><div class="history"><div class="thumb"></div><span>Beachside wedding at sunset...</span><b>4K</b></div><div class="history"><div class="thumb"></div><span>Modern minimal wedding...</span><b>4K</b></div></div>
+</section>
+</main>
+</div>
+<script>
+function generate(){document.querySelector('.hero-title').textContent='Generating Preview...';setTimeout(()=>document.querySelector('.hero-title').textContent='Royal Indian Wedding Mandap',700)}
+function exportBoard(){const data={studio:'TLPS AI Generator Studio',status:'CONTROLLED_PREVIEW_READY',productionReady:false,prompt:document.getElementById('prompt').value};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='tlps-ai-generator-preview.json';a.click()}
+</script>
+</body>
+</html>

@@ -118,8 +118,11 @@ function RouteCapabilitySection({ activePage }: { activePage: ActiveRoutePage })
           <div className="mt-4 flex flex-wrap gap-2">
             <ModuleLinkButton href="/cad/editor" label="Open CAD editor" />
             <ModuleLinkButton href="/cad/studio" label="Open CAD Studio" />
+            <ModuleLinkButton href="/cad/3d" label="Open 3D Designer" />
           </div>
         )}
+        {route.path.includes("/ai") && <div className="mt-4"><ModuleLinkButton href="/ai/studio" label="Open AI Generator Studio" /></div>}
+        {route.path.includes("/exports") && <div className="mt-4"><ModuleLinkButton href="/exports/studio" label="Open Board Composer Studio" /></div>}
       </article>
 
       <article className="rounded-md border border-ink/10 bg-white p-4 shadow-sm">

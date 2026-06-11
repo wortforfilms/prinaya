@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TLPS Board Composer</title>
+<style>
+:root{--bg:#030607;--panel:#071112;--gold:#d8a64a;--gold2:#ffdc91;--line:rgba(216,166,74,.28);--text:#f8ead0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#14231f,#030607 55%);color:var(--text);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif}
+.app{min-height:100vh;display:grid;grid-template-rows:76px 1fr 42px}
+.top{display:flex;align-items:center;gap:24px;padding:0 22px;background:rgba(2,6,8,.95);border-bottom:1px solid var(--line)}
+.logo{font:900 34px Georgia,serif;color:var(--gold);letter-spacing:.08em}.sub{font-size:11px;letter-spacing:.28em}
+.meta{font-size:12px;color:#cbbfa8;border-left:1px solid rgba(255,255,255,.1);padding-left:18px}.meta b{color:white}
+.tabs{display:flex;gap:8px;margin-left:auto}.tab,.btn{border:1px solid var(--line);background:#071012;color:#f7e8cb;border-radius:8px;padding:10px 15px;font-weight:800}.tab.active,.btn.gold{background:linear-gradient(135deg,#e8b85a,#99641c);color:#130b02;border:0}
+.work{display:grid;grid-template-columns:260px 1fr 350px;min-height:0}
+.side{background:rgba(5,11,13,.94);padding:14px;overflow:auto;border-right:1px solid var(--line)}
+.right{border-left:1px solid var(--line);border-right:0}
+.panel{border:1px solid rgba(216,166,74,.22);background:linear-gradient(145deg,rgba(12,23,25,.96),rgba(5,9,10,.96));border-radius:12px;padding:14px;margin-bottom:12px}
+.panel h3{margin:0 0 12px;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.page{display:grid;grid-template-columns:54px 1fr;gap:10px;align-items:center;border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:8px;margin-bottom:8px}
+.page.active{border-color:var(--gold);background:rgba(216,166,74,.12)}
+.thumb{height:40px;border-radius:6px;background:linear-gradient(135deg,#d8a64a,#281508)}
+.center{display:grid;grid-template-rows:54px 1fr 122px;min-width:0}
+.toolbar{display:flex;gap:10px;align-items:center;background:#071012;border-bottom:1px solid rgba(216,166,74,.2);padding:10px 14px}
+.tool{border:1px solid rgba(255,255,255,.1);background:#0b1517;color:#ead9bd;border-radius:8px;padding:9px 12px}
+.canvas{padding:24px;overflow:auto;display:grid;place-items:center;background:#05090a}
+.board{width:min(1120px,96%);aspect-ratio:1.414/1;background:linear-gradient(145deg,#0d1110,#050606);border:2px solid var(--gold);padding:28px;display:grid;grid-template-rows:88px 1fr 110px;gap:14px;box-shadow:0 30px 90px rgba(0,0,0,.55)}
+.board h1{font:500 42px Georgia,serif;color:var(--gold);letter-spacing:.12em;margin:0;text-align:center}.tag{text-align:center;letter-spacing:.28em;color:#edd4a8}
+.body{display:grid;grid-template-columns:1fr 1.35fr .75fr;gap:12px}
+.photo,.main,.mini{border:1px solid rgba(216,166,74,.36);background:radial-gradient(circle at 50% 35%,rgba(255,222,150,.55),transparent 30%),linear-gradient(135deg,#101414,#47270b 60%,#050505);min-height:260px}
+.main{background:radial-gradient(circle at center,rgba(255,220,140,.85),transparent 34%),linear-gradient(135deg,#27160a,#090d0d)}
+.sidecard{border:1px solid rgba(216,166,74,.28);padding:18px;background:rgba(4,8,8,.75)}
+.palette{display:flex;gap:10px;margin:14px 0 26px}.dot{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.18)}
+.mood{display:grid;grid-template-columns:1fr 1fr;gap:8px}.mini{min-height:96px}
+.foot{display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:16px;border:1px solid rgba(216,166,74,.25);padding:16px;background:rgba(0,0,0,.28)}
+.gold{color:var(--gold);font-family:Georgia,serif}.icons{display:grid;grid-template-columns:repeat(5,1fr);text-align:center;font-size:12px}.icon{font-size:24px;color:var(--gold)}
+.strip{display:grid;grid-template-columns:repeat(10,minmax(120px,1fr));gap:10px;overflow:auto;background:#071012;border-top:1px solid rgba(216,166,74,.22);padding:12px}.strip-card{border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:7px;text-align:center;font-size:11px}.strip-card.active{border-color:var(--gold);color:var(--gold2)}.strip-img{height:64px;background:linear-gradient(135deg,#d8a64a,#221207);border-radius:6px;margin-bottom:6px}
+.row{display:grid;grid-template-columns:1fr 1.3fr;gap:8px;border-bottom:1px solid rgba(255,255,255,.07);padding:8px 0;font-size:12px}.row input,.row select,textarea{background:#071012;border:1px solid rgba(216,166,74,.22);border-radius:7px;color:white;padding:8px;width:100%}
+.kbs{display:grid;grid-template-columns:1fr auto;gap:8px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:12px}
+.badge{font-size:11px;padding:4px 9px;border-radius:999px;border:1px solid rgba(98,223,130,.38);background:rgba(98,223,130,.1);color:#83f0a0}.blocked{border-color:rgba(255,95,95,.4);background:rgba(255,95,95,.1);color:#ff9f9f}
+.status{display:flex;gap:24px;align-items:center;padding:0 18px;background:#071012;border-top:1px solid var(--line);font-size:12px;color:#cdbf9f}
+@media(max-width:1000px){.work{grid-template-columns:1fr}.board{width:1100px}.app{height:auto}.strip{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+<div><div class="logo">TLPS</div><div class="sub">WEDDING OS</div></div>
+<div><b style="font-size:22px">BOARD COMPOSER</b><br><span style="font-size:12px;color:#cbbfa8">Create. Compose. Present.</span></div>
+<div class="meta">PROJECT<br><b>Royal Heritage Wedding</b></div>
+<div class="meta">VENUE<br><b>Udaipur Palace</b></div>
+<nav class="tabs"><button class="tab active">DESIGN BOARDS</button><button class="tab">PRESENTATION</button><button class="tab">EXPORT</button></nav>
+<button class="btn">Preview</button><button class="btn gold" onclick="exportBoard()">Export PDF</button><button class="btn">Share</button>
+</header>
+
+<div class="work">
+<aside class="side"><div class="panel"><h3>Board Pages 17</h3><div id="pages"></div><button class="btn gold" style="width:100%;margin-top:12px" onclick="addPage()">+ Add Custom Page</button></div></aside>
+
+<main class="center">
+<div class="toolbar"><button class="tool">T Add Text</button><button class="tool">▧ Add Image</button><button class="tool">○ Add Shape</button><button class="tool">▦ Add Table</button><button class="tool" onclick="smartLayout()">Smart Layout</button><button class="tool">KBS Assets</button><span style="margin-left:auto">100%</span></div>
+<section class="canvas">
+<article class="board" id="board">
+<header><h1 id="boardTitle">ROYAL HERITAGE WEDDING</h1><div class="tag">A CELEBRATION OF LOVE, CULTURE & GRANDEUR</div></header>
+<section class="body">
+<div class="photo"></div><div class="main"></div>
+<div class="sidecard"><h3 class="gold">COLOR PALETTE</h3><div class="palette"><span class="dot" style="background:#c98b27"></span><span class="dot" style="background:#d8a098"></span><span class="dot" style="background:#f1eadb"></span><span class="dot" style="background:#071812"></span><span class="dot" style="background:#6b3c18"></span></div><h3 class="gold">MOOD & INSPIRATION</h3><div class="mood"><div class="mini"></div><div class="mini"></div><div class="mini"></div><div class="mini"></div></div></div>
+</section>
+<footer class="foot"><div><div class="gold">VENUE</div><p>Udaipur Palace</p><div style="font-size:34px;color:var(--gold)">♜</div></div><div><div class="gold">DESIGN HIGHLIGHTS</div><div class="icons"><div><div class="icon">♕</div>Royal</div><div><div class="icon">▥</div>Luxury</div><div><div class="icon">☙</div>Rituals</div><div><div class="icon">✤</div>Florals</div><div><div class="icon">☀</div>Lighting</div></div></div><div><div class="gold">EXPERIENCE</div><p style="font-size:14px;color:#d9c9a5">A timeless celebration with contemporary elegance.</p></div></footer>
+</article>
+</section>
+<section class="strip" id="strip"></section>
+</main>
+
+<aside class="side right">
+<div class="panel"><h3>Page</h3><div class="row"><span>Page Title</span><input id="pageTitle" value="Cover"/></div><div class="row"><span>Page Size</span><select><option>A3 Landscape</option><option>A4 Landscape</option></select></div><div class="row"><span>Background</span><input value="#0E0E0E"/></div></div>
+<div class="panel"><h3>KBS Connections</h3><div id="kbs"></div><button class="btn gold" style="width:100%;margin-top:12px">View All Connections</button></div>
+<div class="panel"><h3>Assets In This Page</h3><div style="display:flex;gap:8px"><div class="thumb" style="width:54px"></div><div class="thumb" style="width:54px"></div><div class="thumb" style="width:54px"></div><button class="btn">+14</button></div></div>
+<div class="panel"><h3>Notes</h3><textarea rows="5">Cover page introducing the overall vision, theme and experience.</textarea></div>
+</aside>
+</div>
+<footer class="status"><span>PROJECT STATUS <span class="badge">Saved</span></span><span>BOARDS 17</span><span>KBS NODES 1,406</span><span>ASSETS 648</span><span>RELATIONS 4,539</span><span><span class="badge">CONTROLLED_PREVIEW_READY</span> <span class="badge blocked">PRODUCTION_READY=false</span></span></footer>
+</div>
+<script>
+const boardPages=['Cover','Concept & Vision','Venue Overview','Master Layout Plan','Mandap Design','Vedi & Ritual Layout','Lighting Design','Floral Design','Decor & Styling','Guest Experience','Entertainment Plan','Culinary Experience','Budget Estimate','Timeline & Flow','Vendor & Team','Sustainability Plan','Evidence & References'];
+const connections=['Mandap Design','Venue','Theme','Color Palette','Lighting Setup','Vedi Finder','Use Case','Evidence'];
+function buildPages(){const box=document.getElementById('pages');box.innerHTML='';boardPages.forEach((p,i)=>{const d=document.createElement('div');d.className='page'+(i===0?' active':'');d.onclick=()=>selectPage(i);d.innerHTML='<div class="thumb"></div><span>'+String(i+1).padStart(2,'0')+' · '+p+'</span>';box.appendChild(d)})}
+function buildStrip(){const box=document.getElementById('strip');box.innerHTML='';boardPages.slice(0,12).forEach((p,i)=>{const d=document.createElement('div');d.className='strip-card'+(i===0?' active':'');d.onclick=()=>selectPage(i);d.innerHTML='<div class="strip-img"></div>'+String(i+1).padStart(2,'0')+' '+p;box.appendChild(d)})}
+function buildKbs(){document.getElementById('kbs').innerHTML=connections.map((c,i)=>'<div class="kbs"><span>'+c+'</span><b>'+c.toUpperCase().replaceAll(' ','-')+'-'+String(i+1).padStart(3,'0')+'</b></div>').join('')}
+function selectPage(i){document.querySelectorAll('.page').forEach((p,ix)=>p.classList.toggle('active',ix===i));document.querySelectorAll('.strip-card').forEach((p,ix)=>p.classList.toggle('active',ix===i));document.getElementById('pageTitle').value=boardPages[i];document.getElementById('boardTitle').textContent=i===0?'ROYAL HERITAGE WEDDING':boardPages[i].toUpperCase()}
+function addPage(){boardPages.push('Custom Page');buildPages();buildStrip()}
+function smartLayout(){document.getElementById('board').style.boxShadow='0 0 0 4px rgba(216,166,74,.35),0 30px 90px rgba(0,0,0,.55)'}
+function exportBoard(){const blob=new Blob([JSON.stringify({project:'Royal Heritage Wedding',status:'CONTROLLED_PREVIEW_READY',productionReady:false,pages:boardPages},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='tlps-board-composer-preview.json';a.click()}
+buildPages();buildStrip();buildKbs();
+</script>
+</body></html>

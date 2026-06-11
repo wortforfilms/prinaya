@@ -175,6 +175,9 @@ export function buildKbsGraph(): KnowledgeGraph {
   for (const runtime of [
     { path: "/cad/editor", title: "CAD Editor", caps: ["scene canvas", "layers", "insertion", "preview DXF"] },
     { path: "/cad/studio", title: "CAD Studio", caps: ["2D plan", "3D view", "elevation", "layers", "preview JSON export"] },
+    { path: "/cad/3d", title: "3D Designer Studio", caps: ["3D scene", "asset library", "materials", "presets", "preview render"] },
+    { path: "/ai/studio", title: "AI Generator Studio", caps: ["text-to-image preview", "moodboard", "variations", "preview only"] },
+    { path: "/exports/studio", title: "Board Composer Studio", caps: ["board pages", "KBS connections", "preview export"] },
     { path: "/hemant-samwat-vedi", title: "Vedi Intelligence", caps: ["orientation", "vastu grid", "vedi", "muhurat lookup"] }
   ]) {
     add(

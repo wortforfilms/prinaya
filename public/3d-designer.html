@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>TLPS 3D Designer Studio — Three.js</title>
+<!-- No external dependencies: custom CSS below; three.js vendored locally. -->
+<script type="importmap">{"imports":{"three":"/vendor/three.module.js"}}</script>
+<style>
+:root{--bg:#030607;--panel:#081112;--gold:#d7a348;--gold2:#ffd98d;--line:rgba(215,163,72,.28);--green:#62df82}
+*{box-sizing:border-box}body{margin:0;background:#030607;color:#f8ead0;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;overflow:hidden}
+.app{height:100vh;display:grid;grid-template-rows:72px 1fr 36px;background:radial-gradient(circle at 50% 0%,#16241f,#030607 50%)}
+.top{display:flex;align-items:center;gap:20px;padding:0 18px;border-bottom:1px solid var(--line);background:rgba(2,6,8,.92)}
+.logo{font-family:Georgia,serif;color:var(--gold);font-size:34px;font-weight:900;letter-spacing:.08em}.sub{letter-spacing:.28em;font-size:11px}
+.project{border-left:1px solid rgba(255,255,255,.08);padding-left:18px;font-size:12px;color:#baa}
+.tabs{display:flex;gap:8px;margin-left:20px}.tab{border:1px solid rgba(255,255,255,.08);background:#071012;color:#e5d6ba;border-radius:8px;padding:12px 20px;font-weight:800;cursor:pointer}.tab.active{background:linear-gradient(135deg,#d8a84c,#885b18);color:#160e03;border:0}
+.btn{border:1px solid var(--line);background:#071012;color:#f7e8cb;border-radius:8px;padding:10px 14px;font-weight:800;cursor:pointer}.btn.gold{background:linear-gradient(135deg,#e8b85a,#9a641b);color:#150d02;border:0}
+.work{display:grid;grid-template-columns:330px 1fr 340px;min-height:0}
+.left,.right{overflow:auto;background:rgba(5,11,13,.92);padding:14px}.left{border-right:1px solid var(--line)}.right{border-left:1px solid var(--line)}
+.center{display:grid;grid-template-rows:54px 1fr 220px;min-width:0}.toolbar{display:flex;gap:8px;align-items:center;padding:8px 12px;background:#071012;border-bottom:1px solid rgba(215,163,72,.2);overflow:auto}
+.tool{min-width:54px;height:38px;border:1px solid rgba(255,255,255,.08);background:#0b1517;color:#e7d6b9;border-radius:8px;cursor:pointer;font-size:12px}.tool.active{border-color:var(--gold);background:rgba(215,163,72,.14);color:var(--gold2)}
+.viewer{position:relative;min-height:0;background:#050909}#three{position:absolute;inset:0}
+.viewport-ui{position:absolute;z-index:4}.axis{right:28px;top:24px;background:rgba(0,0,0,.5);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:12px;color:#ddd}.camera{left:18px;top:18px;display:flex;gap:8px}.float{bottom:22px;left:22px;background:rgba(0,0,0,.58);border:1px solid var(--line);border-radius:16px;padding:12px;display:flex;gap:12px}
+.panel{border:1px solid rgba(215,163,72,.2);background:linear-gradient(145deg,rgba(12,23,25,.96),rgba(5,9,10,.96));border-radius:14px;margin-bottom:14px;padding:14px}.panel h3{margin:0 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:white}
+.search{width:100%;background:#061012;border:1px solid rgba(215,163,72,.22);color:#eee;border-radius:9px;padding:11px}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.cat{border:1px solid rgba(255,255,255,.08);border-radius:10px;background:#0b1517;min-height:66px;display:grid;place-items:center;color:#d8cab0;font-size:12px;cursor:pointer;text-align:center}.cat:hover,.cat.active{border-color:var(--gold);color:var(--gold2);background:rgba(215,163,72,.12)}
+.asset-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.asset{min-height:96px;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:linear-gradient(135deg,#26170b,#081112);padding:10px;cursor:pointer;position:relative;overflow:hidden}.asset:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 25%,rgba(255,214,120,.22),transparent 42%)}.asset>*{position:relative}.thumb{height:54px;border-radius:8px;background:linear-gradient(135deg,#e2b35c,#38200a);margin-bottom:7px;opacity:.9}
+.props .row{display:grid;grid-template-columns:1fr 1.3fr;gap:8px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:12px}.row input{background:#071012;border:1px solid rgba(215,163,72,.22);border-radius:7px;color:#eee;padding:8px;width:100%}
+.materials{display:grid;grid-template-columns:1fr;gap:8px}.mat{display:flex;gap:10px;align-items:center;border:1px solid rgba(255,255,255,.08);padding:9px;border-radius:9px}.sw{width:28px;height:28px;border-radius:6px;background:#d9a84a}
+.layers .layer{display:grid;grid-template-columns:24px 1fr 16px;gap:8px;align-items:center;padding:8px;border-bottom:1px solid rgba(255,255,255,.06);font-size:12px}
+.bottom-gallery{border-top:1px solid rgba(215,163,72,.22);background:#071012;padding:12px;display:grid;grid-template-columns:120px 1fr;gap:12px;min-height:0}.view-tabs{display:flex;flex-direction:column;gap:8px}.view-tab{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,.08);background:#0b1517;color:#ddd;cursor:pointer;text-align:left}.view-tab.active{border-color:var(--gold);color:var(--gold2)}
+.shots{display:grid;grid-template-columns:repeat(7,minmax(120px,1fr));gap:10px;overflow:auto}.shot{border:1px solid rgba(255,255,255,.08);border-radius:12px;background:linear-gradient(135deg,#221409,#071012);padding:8px;text-align:center;font-size:12px}.shot .img{height:110px;border-radius:9px;background:radial-gradient(circle,#d9a84a,#291607 65%,#050909)}
+.badge{font-size:11px;padding:4px 9px;border-radius:999px;border:1px solid rgba(98,223,130,.38);background:rgba(98,223,130,.1);color:#83f0a0}.blocked{border-color:rgba(255,95,95,.4);background:rgba(255,95,95,.1);color:#ff9f9f}
+.status{display:flex;gap:18px;align-items:center;padding:0 14px;background:#071012;border-top:1px solid var(--line);font-size:12px;color:#cdbf9f}
+@media(max-width:1050px){body{overflow:auto}.app{height:auto}.work{grid-template-columns:1fr}.center{height:950px}.shots{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div><div class="logo">TLPS</div><div class="sub">WEDDING OS</div></div>
+  <div><b style="font-size:23px">3D DESIGNER STUDIO</b><br><span style="font-size:12px;color:#cbbfa8">Design. Visualize. Experience.</span></div>
+  <div class="project">PROJECT<br><b style="color:#fff">Royal Heritage Wedding</b></div>
+  <div class="project">SCENE<br><b style="color:#fff">Main Mandap</b></div>
+  <nav class="tabs">
+    <button class="tab" onclick="setMode('plan',this)">2D PLAN</button>
+    <button class="tab active" onclick="setMode('designer',this)">3D DESIGNER</button>
+    <button class="tab" onclick="setMode('walk',this)">WALKTHROUGH</button>
+    <button class="tab" onclick="setMode('vr',this)">VR EXPERIENCE</button>
+    <button class="tab" onclick="setMode('board',this)">BOARD COMPOSER</button>
+  </nav>
+  <div style="margin-left:auto;display:flex;gap:10px;align-items:center"><button class="btn">Render</button><button class="btn">Share</button><button class="btn">Export</button><button class="btn gold" onclick="saveProject()">Save Project</button><span class="badge">HS</span></div>
+</header>
+<div class="work">
+<aside class="left">
+  <div class="panel">
+    <h3>Asset Library</h3><input class="search" placeholder="Search assets..."/>
+    <div class="cats">
+      <div class="cat active">All</div><div class="cat">Mandap</div><div class="cat">Stage</div><div class="cat">Decor</div>
+      <div class="cat">Floral</div><div class="cat">Lighting</div><div class="cat">Furniture</div><div class="cat">Plants</div>
+    </div>
+  </div>
+  <div class="panel"><h3>Mandap Designs <span style="float:right;color:#bfa66d">View all</span></h3><div class="asset-grid">
+    <div class="asset" onclick="applyPreset('Royal Heritage')"><div class="thumb"></div><b>Royal Heritage</b></div>
+    <div class="asset" onclick="applyPreset('Floral Royale')"><div class="thumb"></div><b>Floral Royale</b></div>
+    <div class="asset" onclick="applyPreset('Golden Classic')"><div class="thumb"></div><b>Golden Classic</b></div>
+    <div class="asset" onclick="applyPreset('Blush Mandap')"><div class="thumb"></div><b>Blush Mandap</b></div>
+  </div></div>
+  <div class="panel"><h3>Decor Elements</h3><div class="asset-grid">
+    <div class="asset" onclick="addChandelier()"><div class="thumb"></div><b>Chandelier</b></div>
+    <div class="asset" onclick="addFloralColumns()"><div class="thumb"></div><b>Floral Columns</b></div>
+    <div class="asset" onclick="addLanterns()"><div class="thumb"></div><b>Lantern Set</b></div>
+    <div class="asset" onclick="addWaterReflect()"><div class="thumb"></div><b>Reflective Path</b></div>
+  </div></div>
+</aside>
+<main class="center">
+  <div class="toolbar">
+    <button class="tool active">Select</button><button class="tool">Move</button><button class="tool">Rotate</button><button class="tool">Scale</button><button class="tool">Duplicate</button><button class="tool">Delete</button>
+    <span style="width:1px;height:26px;background:rgba(255,255,255,.14)"></span>
+    <button class="tool" onclick="toggleGrid()">Grid</button><button class="tool">Guides</button><button class="tool">Snap</button>
+    <select class="btn"><option>Perspective</option><option>Top</option><option>Front</option></select>
+    <select class="btn"><option>Quality: High</option></select>
+  </div>
+  <section class="viewer">
+    <div id="three"></div>
+    <div class="viewport-ui camera"><button class="btn">Camera</button><button class="btn">Visual</button></div>
+    <div class="viewport-ui axis">Y ↑<br>Z • X →</div>
+    <div class="viewport-ui float"><button class="btn">☀</button><button class="btn">Day</button><button class="btn gold" onclick="setNight()">Night</button><button class="btn">Orbit</button><button class="btn">Pan</button></div>
+  </section>
+  <section class="bottom-gallery">
+    <div class="view-tabs"><button class="view-tab active">Scene View</button><button class="view-tab">Materials</button><button class="view-tab">Lighting</button><button class="view-tab">Renders</button></div>
+    <div class="shots">
+      <div class="shot"><div class="img"></div>Front View</div><div class="shot"><div class="img"></div>Left View</div><div class="shot"><div class="img"></div>Right View</div><div class="shot"><div class="img"></div>Top View</div><div class="shot"><div class="img"></div>Isometric View</div><div class="shot"><div class="img"></div>Entry View</div><div class="shot"><div class="img"></div>Stage View</div>
+    </div>
+  </section>
+</main>
+<aside class="right">
+  <div class="panel props"><h3>Properties</h3>
+    <div class="row"><span>Object</span><input id="objName" value="Mandap Structure 01"/></div>
+    <div class="row"><span>Position</span><input value="X 0.00  Y 0.00  Z 0.00"/></div>
+    <div class="row"><span>Rotation</span><input value="0° 0° 0°"/></div>
+    <div class="row"><span>Scale</span><input value="1.00"/></div>
+    <div class="row"><span>Width</span><input value="40.00 ft"/></div>
+    <div class="row"><span>Depth</span><input value="30.00 ft"/></div>
+    <div class="row"><span>Height</span><input value="20.00 ft"/></div>
+  </div>
+  <div class="panel"><h3>Materials</h3><div class="materials">
+    <div class="mat"><span class="sw" style="background:#e7b8a8"></span><span>Fabric — Blush Pink</span></div>
+    <div class="mat"><span class="sw" style="background:#b8792a"></span><span>Wood — Carved Gold</span></div>
+    <div class="mat"><span class="sw" style="background:linear-gradient(45deg,#f6a,#fe8,#fff)"></span><span>Flowers — Mix</span></div>
+  </div></div>
+  <div class="panel"><h3>Visibility</h3><p><span class="badge">Visible</span> <span class="badge">Cast Shadow</span></p></div>
+  <div class="panel layers"><h3>Scene Layers</h3><div id="layers"></div></div>
+  <div class="panel"><h3>Honest Gate</h3><span class="badge">CONTROLLED_PREVIEW_READY</span><br><br><span class="badge blocked">PRODUCTION_READY=false</span></div>
+</aside>
+</div>
+<footer class="status"><span>SNAP: ON</span><span>GRID: ON</span><span>UNITS: FEET</span><span>POLYGONS: 2.4M preview</span><span>OBJECTS: <b id="objCount">0</b></span></footer>
+</div>
+<script type="module">
+import * as THREE from "three";
+let scene,camera,renderer,root,mandap,grid,night=false; const objs=[];
+function init(){
+ const mount=document.getElementById('three'); scene=new THREE.Scene(); scene.background=new THREE.Color(0x071018);
+ camera=new THREE.PerspectiveCamera(50,mount.clientWidth/mount.clientHeight,.1,2000); camera.position.set(10,6,12); camera.lookAt(0,2,0);
+ renderer=new THREE.WebGLRenderer({antialias:true}); renderer.setSize(mount.clientWidth,mount.clientHeight); renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.shadowMap.enabled=true; mount.appendChild(renderer.domElement);
+ root=new THREE.Group(); scene.add(root);
+ scene.add(new THREE.AmbientLight(0xffdfbc,.6)); const key=new THREE.PointLight(0xffb455,2.2,80); key.position.set(0,7,4); scene.add(key);
+ const back=new THREE.DirectionalLight(0x8cbcff,.7); back.position.set(-5,8,-8); scene.add(back);
+ grid=new THREE.GridHelper(30,30,0xd7a348,0x263d3b); root.add(grid);
+ buildMandap(); buildPalaceBackdrop(); addLanterns(); addFloralColumns(); buildLayers(); animate();
+ window.addEventListener('resize',resize);
+}
+function mat(c,metal=.2,rough=.5){return new THREE.MeshStandardMaterial({color:c,metalness:metal,roughness:rough})}
+function add(mesh,name){mesh.userData.name=name; root.add(mesh); objs.push(mesh); document.getElementById('objCount').textContent=objs.length; return mesh}
+function buildMandap(){
+ mandap=new THREE.Group(); root.add(mandap);
+ const gold=mat(0xd7a348,.7,.25), fabric=mat(0xe7b8a8,.05,.65), marble=mat(0xf1dfc8,.15,.35), green=mat(0x2f7d48,.1,.7);
+ const base=new THREE.Mesh(new THREE.BoxGeometry(8,.4,6),marble); base.position.y=.2; mandap.add(base); objs.push(base);
+ for(const x of [-3.5,3.5])for(const z of [-2.5,2.5]){const p=new THREE.Mesh(new THREE.CylinderGeometry(.18,.26,4.2,32),gold);p.position.set(x,2.3,z);mandap.add(p);objs.push(p)}
+ const canopy=new THREE.Mesh(new THREE.TorusGeometry(3.9,.09,18,160),gold); canopy.rotation.x=Math.PI/2; canopy.position.y=4.55; mandap.add(canopy); objs.push(canopy);
+ const flowerColors=[0xff9ab9,0xffd1dc,0xffffff,0xffc46b,0xb84963];
+ for(let i=0;i<90;i++){const a=i/90*Math.PI*2; const r=3.7+(Math.random()-.5)*.45; const f=new THREE.Mesh(new THREE.SphereGeometry(.12+Math.random()*.08,12,12),mat(flowerColors[i%flowerColors.length],0,.8)); f.position.set(Math.cos(a)*r,4.65+Math.random()*.45,Math.sin(a)*r); mandap.add(f); objs.push(f)}
+ for(const x of [-2.2,0,2.2]){const d=new THREE.Mesh(new THREE.BoxGeometry(.08,3,2.8),fabric);d.position.set(x,2.6,-2.62);mandap.add(d);objs.push(d)}
+ const sofa=new THREE.Mesh(new THREE.BoxGeometry(2.5,.7,.7),mat(0xf7e1bd,.2,.4)); sofa.position.set(0,.85,.5); mandap.add(sofa); objs.push(sofa);
+ const path=new THREE.Mesh(new THREE.BoxGeometry(4,.05,8),mat(0x111111,.8,.12));path.position.set(0,.05,5.5);mandap.add(path);objs.push(path);
+}
+function buildPalaceBackdrop(){
+ const palace=mat(0x8c6330,.25,.45);
+ for(let i=-5;i<=5;i++){const b=new THREE.Mesh(new THREE.BoxGeometry(1.4,2+Math.abs(i%3),.4),palace);b.position.set(i*1.6,1.2+Math.abs(i%3)*.5,-7);add(b,'Palace Arch')}
+ for(let i=-4;i<=4;i+=4){const dome=new THREE.Mesh(new THREE.SphereGeometry(.9,32,16),palace);dome.scale.y=.45;dome.position.set(i,3.5,-7);add(dome,'Palace Dome')}
+}
+function addChandelier(){const c=new THREE.Mesh(new THREE.SphereGeometry(.45,24,16),mat(0xd7a348,.8,.25));c.position.set(0,3.3,0);add(c,'Crystal Chandelier')}
+function addFloralColumns(){for(const x of [-4.2,4.2]){const col=new THREE.Mesh(new THREE.CylinderGeometry(.16,.22,2.5,24),mat(0x2f7d48));col.position.set(x,1.3,0);add(col,'Floral Column')}}
+function addLanterns(){for(let i=0;i<14;i++){const a=i/14*Math.PI*2;const l=new THREE.Mesh(new THREE.CylinderGeometry(.12,.12,.5,16),mat(0xffc76d,.3,.35));l.position.set(Math.cos(a)*5,.35,Math.sin(a)*4);add(l,'Lantern')}}
+function addWaterReflect(){const w=new THREE.Mesh(new THREE.BoxGeometry(4,.03,10),new THREE.MeshStandardMaterial({color:0x0a1620,metalness:.8,roughness:.1,transparent:true,opacity:.72}));w.position.set(0,.04,5);add(w,'Reflective Water Path')}
+function applyPreset(name){document.getElementById('objName').value=name+' Mandap'}
+function setNight(){night=!night;scene.background=new THREE.Color(night?0x020408:0x071018)}
+function toggleGrid(){grid.visible=!grid.visible}
+function setMode(m,btn){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active'); if(m==='plan'){camera.position.set(0,22,0);camera.up.set(0,0,-1)} else {camera.position.set(10,6,12);camera.up.set(0,1,0)} camera.lookAt(0,2,0)}
+function buildLayers(){const names=['Reference','Mandap','Stage','Floral','Lighting','Furniture','Decor','Plants'];const wrap=document.getElementById('layers');wrap.innerHTML='';names.forEach((n,i)=>{const d=document.createElement('div');d.className='layer';d.innerHTML=`<span>👁</span><span>${i} &nbsp; ${n}</span><span>🔒</span>`;wrap.appendChild(d)})}
+function saveProject(){const data={project:'Royal Heritage Wedding',status:'CONTROLLED_PREVIEW_READY',productionReady:false,objects:objs.length};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='tlps-3d-designer-preview.json';a.click()}
+function resize(){const m=document.getElementById('three');camera.aspect=m.clientWidth/m.clientHeight;camera.updateProjectionMatrix();renderer.setSize(m.clientWidth,m.clientHeight)}
+function animate(){requestAnimationFrame(animate); if(mandap)mandap.rotation.y+=0.0015; renderer.render(scene,camera)}
+// Expose handlers referenced by inline onclick= attributes (module scope is not global).
+Object.assign(window,{addChandelier,addFloralColumns,addLanterns,addWaterReflect,applyPreset,saveProject,setMode,setNight,toggleGrid});
+init();
+</script>
+</body>
+</html>
