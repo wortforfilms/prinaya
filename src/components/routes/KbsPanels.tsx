@@ -61,6 +61,30 @@ export function CopilotKnowledgePanel({ panel }: { panel: CopilotPanel }) {
           )}
         </div>
       </div>
+
+      {panel.suggestions.length > 0 && (
+        <div className="mt-5 border-t border-ink/10 pt-4">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-basalt/55">Suggestions by domain</p>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            {panel.suggestions.map((group) => (
+              <article key={group.category} className="rounded-md border border-ink/10 bg-mist p-3">
+                <h3 className="text-sm font-semibold text-ink">{group.category}</h3>
+                <ul className="mt-2 grid gap-1.5">
+                  {group.items.slice(0, 4).map((item, index) => (
+                    <li key={`${group.category}-${index}`} className="text-xs">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="font-semibold text-ink">{item.label}</span>
+                        <StatusBadge status={item.status} />
+                      </div>
+                      <p className="mt-0.5 text-basalt/60">{item.detail}</p>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
