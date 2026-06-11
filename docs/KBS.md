@@ -51,6 +51,7 @@ documents, derivedFrom, linkedTo`.
 | **Vedis** | `data/kbs/vedi.json` | curated |
 | **Films** | `data/kbs/films.json` | curated |
 | **Vendors** | `data/kbs/vendors.json` | curated (BLOCKED) |
+| **Muhurat** (Nakshatra/Tithi/Muhurat) | `data/kbs/muhurat.json` | curated |
 
 Derived nodes are computed live, so the runtime works without a build step.
 `kbs:generate` emits portable snapshots + evidence for inspection/CI.
@@ -94,7 +95,13 @@ recommendForNode(graph, "mandap-node-id");        // [{ recommendation, confiden
   templates use, rendering the `Scene → Render → Board Composer → PDF Package`
   pipeline with live template/asset/use-case counts.
 
-Both are server-safe (cached singleton graph) and stay within the preview gate.
+- **Vedi Finder** (`/mandap`) — `buildVediFinderPanel()` lists each `Vedi` with
+  its vastu direction, agni zone, and phera direction, the rituals it supports,
+  and the auspicious `Muhurat` windows linked to it (each resolving its required
+  `Nakshatra` + `Tithi`), plus the top-scoring muhurat overall. Preview reference
+  data — not a certified panchang service.
+
+All are server-safe (cached singleton graph) and stay within the preview gate.
 
 ## Scripts & evidence
 
@@ -125,7 +132,9 @@ Assets 2,000+ · Screens 432 · Use Cases 108 · Templates 200 · Boards 100
 Ritual 50 · Film 300 · Vendor 500   →  ~5,000+ nodes, ~25,000+ relations
 ```
 
-Growth path: expand the curated JSON layers (rituals, films, vedis, vendors),
-add `Nakshatra`/`Tithi`/`Muhurat` muhurat-engine nodes for the Vedi Finder, and
-generate `Shot`/`Drone` nodes from the film layer. The engine, schema, and
-verifier already scale to these without code changes.
+Growth path: expand the curated JSON layers (rituals, films, vedis, vendors,
+muhurat) and generate `Shot`/`Drone` nodes from the film layer. The
+`Nakshatra`/`Tithi`/`Muhurat` muhurat layer powering the Vedi Finder is in place
+(`data/kbs/muhurat.json`); growing it to the full 27 nakshatras / panchang tithis
+is pure data. The engine, schema, and verifier scale to these without code
+changes.

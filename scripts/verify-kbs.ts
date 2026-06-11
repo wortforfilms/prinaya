@@ -27,7 +27,7 @@ assert(stats.relationCount > 0, "graph has no relations");
 assert(errors.length === 0, `graph has ${errors.length} structural errors`);
 
 // Every core entity layer must be represented.
-for (const type of ["Asset", "Route", "UseCase", "Screen", "Template", "Board", "Material", "Ritual", "Vedi", "Film", "Vendor"] as const) {
+for (const type of ["Asset", "Route", "UseCase", "Screen", "Template", "Board", "Material", "Ritual", "Vedi", "Film", "Vendor", "Nakshatra", "Tithi", "Muhurat"] as const) {
   assert((stats.byType[type] ?? 0) > 0, `missing nodes of type ${type}`);
 }
 

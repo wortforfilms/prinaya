@@ -143,3 +143,91 @@ export function buildBoardComposerPanel(graph: KnowledgeGraph = kbs()): BoardCom
     evidenceRef: "release/evidence/kbs.json"
   };
 }
+
+export type VediEntry = {
+  id: string;
+  name: string;
+  vastuDirection: string;
+  agniZone: string;
+  pheraDirection: string;
+  rituals: KbsSurfaceNodeRef[];
+  muhurats: MuhuratEntry[];
+};
+
+export type MuhuratEntry = {
+  id: string;
+  name: string;
+  window: string;
+  direction: string;
+  score: number;
+  nakshatra: string | null;
+  tithi: string | null;
+};
+
+export type VediFinderPanel = {
+  status: "READY";
+  vedis: VediEntry[];
+  auspiciousNakshatras: KbsSurfaceNodeRef[];
+  auspiciousTithis: KbsSurfaceNodeRef[];
+  topMuhurat: MuhuratEntry | null;
+  summary: string;
+  evidenceRef: string;
+};
+
+function metaString(node: KbsNode, path: string[], fallback = ""): string {
+  let value: unknown = node.metadata;
+  for (const key of path) {
+    value = value && typeof value === "object" ? (value as Record<string, unknown>)[key] : undefined;
+  }
+  return typeof value === "string" ? value : fallback;
+}
+
+function muhuratEntry(graph: KnowledgeGraph, node: KbsNode): MuhuratEntry {
+  const requirements = graph.neighbors(node.id, "requires");
+  const nakshatra = requirements.find((n) => n.type === "Nakshatra") ?? null;
+  const tithi = requirements.find((n) => n.type === "Tithi") ?? null;
+  const score = typeof node.metadata.score === "number" ? node.metadata.score : 0;
+  return {
+    id: node.id,
+    name: node.name,
+    window: metaString(node, ["window"]),
+    direction: metaString(node, ["direction"], "East"),
+    score,
+    nakshatra: nakshatra?.name ?? null,
+    tithi: tithi?.name ?? null
+  };
+}
+
+/** Vedi Finder: vedis with vastu/agni/phera, their rituals, and auspicious muhurat windows. */
+export function buildVediFinderPanel(graph: KnowledgeGraph = kbs()): VediFinderPanel {
+  const vedis: VediEntry[] = graph.nodesOfType("Vedi").map((vedi) => {
+    const rituals = graph.neighbors(vedi.id, "linkedTo").filter((n) => n.type === "Ritual");
+    const muhurats = graph
+      .inboundNodes(vedi.id, "linkedTo")
+      .filter((n) => n.type === "Muhurat")
+      .map((node) => muhuratEntry(graph, node))
+      .sort((a, b) => b.score - a.score);
+    return {
+      id: vedi.id,
+      name: vedi.name,
+      vastuDirection: metaString(vedi, ["vastu", "direction"], "East"),
+      agniZone: metaString(vedi, ["agni", "zone"]),
+      pheraDirection: metaString(vedi, ["phera", "direction"]),
+      rituals: rituals.map(toRef),
+      muhurats
+    };
+  });
+
+  const allMuhurats = graph.nodesOfType("Muhurat").map((node) => muhuratEntry(graph, node));
+  const topMuhurat = allMuhurats.sort((a, b) => b.score - a.score)[0] ?? null;
+
+  return {
+    status: "READY",
+    vedis,
+    auspiciousNakshatras: graph.nodesOfType("Nakshatra").map(toRef),
+    auspiciousTithis: graph.nodesOfType("Tithi").map(toRef),
+    topMuhurat,
+    summary: `${vedis.length} vedi configurations, ${allMuhurats.length} muhurat windows, ${graph.nodesOfType("Nakshatra").length} auspicious nakshatras. Preview reference — not a certified panchang.`,
+    evidenceRef: "release/evidence/kbs.json"
+  };
+}

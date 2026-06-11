@@ -3,7 +3,7 @@ import { KnowledgeGraph, normalizeNode, type KbsNode } from "@/lib/kbs/graph";
 import { buildKbsGraph } from "@/lib/kbs/registry";
 import { searchKbs } from "@/lib/kbs/search";
 import { recommendForNode } from "@/lib/kbs/recommendations";
-import { buildBoardComposerPanel, buildCopilotPanel } from "@/lib/kbs/surfaces";
+import { buildBoardComposerPanel, buildCopilotPanel, buildVediFinderPanel } from "@/lib/kbs/surfaces";
 
 function node(id: string, partial: Partial<KbsNode> = {}): KbsNode {
   return normalizeNode({ id, type: partial.type ?? "Asset", name: partial.name ?? id, ...partial });
@@ -76,7 +76,7 @@ describe("KBS runtime graph (built from registries + curated layers)", () => {
   });
 
   it("represents every core entity layer", () => {
-    for (const type of ["Asset", "Route", "UseCase", "Screen", "Template", "Board", "Material", "Ritual", "Vedi", "Film", "Vendor"] as const) {
+    for (const type of ["Asset", "Route", "UseCase", "Screen", "Template", "Board", "Material", "Ritual", "Vedi", "Film", "Vendor", "Nakshatra", "Tithi", "Muhurat"] as const) {
       expect(stats.byType[type] ?? 0, `expected ${type} nodes`).toBeGreaterThan(0);
     }
   });
@@ -123,5 +123,16 @@ describe("KBS surfaces (AI Co-Pilot + Board Composer)", () => {
     expect(panel.assetCount).toBeGreaterThan(0);
     const totalLinkedTemplates = panel.boards.reduce((sum, board) => sum + board.linkedTemplates.length, 0);
     expect(totalLinkedTemplates).toBeGreaterThan(0);
+  });
+
+  it("builds a Vedi Finder panel with muhurat windows resolving nakshatra + tithi", () => {
+    const panel = buildVediFinderPanel();
+    expect(panel.vedis.length).toBeGreaterThan(0);
+    expect(panel.auspiciousNakshatras.length).toBeGreaterThan(0);
+    expect(panel.auspiciousTithis.length).toBeGreaterThan(0);
+    expect(panel.topMuhurat).not.toBeNull();
+    // At least one vedi has a muhurat window that resolved both a nakshatra and a tithi.
+    const resolved = panel.vedis.flatMap((v) => v.muhurats).filter((m) => m.nakshatra && m.tithi);
+    expect(resolved.length).toBeGreaterThan(0);
   });
 });

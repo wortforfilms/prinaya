@@ -24,8 +24,8 @@ import {
   UseCaseDemoFlowPanel,
   UsecaseGrid
 } from "@/components/routes/active-page-components";
-import { BoardComposerKnowledgePanel, CopilotKnowledgePanel } from "@/components/routes/KbsPanels";
-import { buildBoardComposerPanel, buildCopilotPanel } from "@/lib/kbs/surfaces";
+import { BoardComposerKnowledgePanel, CopilotKnowledgePanel, VediFinderKnowledgePanel } from "@/components/routes/KbsPanels";
+import { buildBoardComposerPanel, buildCopilotPanel, buildVediFinderPanel } from "@/lib/kbs/surfaces";
 import { cadObjects, projectSummary } from "@/lib/data-frames";
 import { getActiveRoutePage, type ActiveRoutePage } from "@/lib/route-page-runtime";
 import { routeMatrix, type RouteDefinition } from "@/lib/route-matrix";
@@ -56,6 +56,7 @@ export function RoutePage({ route, slug = [] }: { route: RouteDefinition; slug?:
           {(route.path.includes("/exports") || route.path.includes("/gallery")) && (
             <BoardComposerKnowledgePanel panel={buildBoardComposerPanel()} />
           )}
+          {route.path.includes("/mandap") && <VediFinderKnowledgePanel panel={buildVediFinderPanel()} />}
 
           <UsecaseGrid useCases={activePage.useCases} />
           <UseCaseDemoFlowPanel flows={activePage.demoFlows} />

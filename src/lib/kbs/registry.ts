@@ -18,6 +18,7 @@ import ritualsJson from "../../../data/kbs/rituals.json";
 import vediJson from "../../../data/kbs/vedi.json";
 import filmsJson from "../../../data/kbs/films.json";
 import vendorsJson from "../../../data/kbs/vendors.json";
+import muhuratJson from "../../../data/kbs/muhurat.json";
 
 import {
   KnowledgeGraph,
@@ -239,7 +240,7 @@ export function buildKbsGraph(): KnowledgeGraph {
   }
 
   // --- Curated knowledge layers -------------------------------------------
-  for (const file of [vediJson, ritualsJson, filmsJson, vendorsJson] as CuratedFile[]) {
+  for (const file of [vediJson, muhuratJson, ritualsJson, filmsJson, vendorsJson] as CuratedFile[]) {
     for (const node of curatedNodes(file)) add(node);
   }
 
