@@ -11,3 +11,20 @@ prisma/dev.db-journal
 tsconfig.tsbuildinfo
 .DS_Store
 **/.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Deploy / tooling caches
+.vercel/
+.eslintcache
+
+# Raw asset source inputs are intentionally NOT committed.
+# The generation scripts read originals from outside the repo via env vars
+# (TLPS_UNIQUE_SOURCE_DIR, HERO_BANNER_SOURCE, etc. — see ASSETS.md).
+# Only their processed/extracted outputs under public/ are tracked (via LFS).
+/raw-sources/
+*.psd
+*.ai

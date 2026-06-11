@@ -1,0 +1,22 @@
+# Git LFS — store large binary assets outside the regular packfiles.
+#
+# These asset types make up ~190 MB of the working tree (extracted frames,
+# cinematic WebP variants, GLB meshes, source boards, PDF/DXF deliverables).
+# Tracking them with LFS keeps clones and git operations fast while still
+# serving the files from public/ at runtime and deploy time.
+#
+# IMPORTANT: a .gitattributes file only affects FUTURE commits. To move the
+# blobs already in history into LFS (and actually shrink the repo), run the
+# one-time migration documented in ASSETS.md / scripts/migrate-to-lfs.sh.
+
+*.png   filter=lfs diff=lfs merge=lfs -text
+*.webp  filter=lfs diff=lfs merge=lfs -text
+*.jpg   filter=lfs diff=lfs merge=lfs -text
+*.jpeg  filter=lfs diff=lfs merge=lfs -text
+*.glb   filter=lfs diff=lfs merge=lfs -text
+*.gltf  filter=lfs diff=lfs merge=lfs -text
+*.pdf   filter=lfs diff=lfs merge=lfs -text
+*.dxf   filter=lfs diff=lfs merge=lfs -text
+
+# Keep text/data diffable in normal git (NOT in LFS):
+# *.json, *.ts, *.tsx, *.md, *.svg remain regular git objects.
