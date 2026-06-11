@@ -66,6 +66,71 @@ export function createPrintableBoardHtmlExport(): ExportArtifact {
   };
 }
 
+/** Bill of Quantities CSV — placed scene items grouped by kind/layer/material. */
+export function createBoqCsvExport(objects: CadObjectFrame[]): ExportArtifact {
+  const groups = new Map<string, { kind: string; layer: string; material: string; qty: number }>();
+  for (const object of objects) {
+    const key = `${object.kind}|${object.layerId}|${object.materialId ?? ""}`;
+    const existing = groups.get(key);
+    if (existing) existing.qty += 1;
+    else groups.set(key, { kind: object.kind, layer: object.layerId, material: object.materialId ?? "", qty: 1 });
+  }
+  const rows = [...groups.values()].sort((a, b) => a.layer.localeCompare(b.layer) || a.kind.localeCompare(b.kind));
+  const header = "Item,Layer,Material,Quantity,Unit";
+  const body = rows.map((r) => [csv(r.kind), csv(r.layer), csv(r.material), String(r.qty), "ea"].join(",")).join("\n");
+  return {
+    fileName: `${projectSummary.id}-boq.csv`,
+    mimeType: "text/csv",
+    content: `${header}\n${body}\n`
+  };
+}
+
+/** Top-view 2D plan as a real SVG — object footprints coloured by layer. */
+export function createPlanSvgExport(objects: CadObjectFrame[], layers: LayerFrame[] = initialCadScene.layers): ExportArtifact {
+  const layerColor = new Map(layers.map((layer) => [layer.id, layer.color]));
+  let minX = Infinity;
+  let maxX = -Infinity;
+  let minZ = Infinity;
+  let maxZ = -Infinity;
+  for (const object of objects) {
+    const [x, , z] = object.position;
+    const [w, , d] = object.scale;
+    minX = Math.min(minX, x - w / 2);
+    maxX = Math.max(maxX, x + w / 2);
+    minZ = Math.min(minZ, z - d / 2);
+    maxZ = Math.max(maxZ, z + d / 2);
+  }
+  if (!Number.isFinite(minX)) {
+    minX = 0;
+    maxX = 1;
+    minZ = 0;
+    maxZ = 1;
+  }
+  const pad = 4;
+  const scale = 12; // px per metre
+  const width = (maxX - minX + pad * 2) * scale;
+  const height = (maxZ - minZ + pad * 2) * scale;
+  const shapes = objects
+    .map((object) => {
+      const [x, , z] = object.position;
+      const [w, , d] = object.scale;
+      const rx = (x - Math.max(w, 0.1) / 2 - minX + pad) * scale;
+      const ry = (z - Math.max(d, 0.1) / 2 - minZ + pad) * scale;
+      const rw = Math.max(w, 0.1) * scale;
+      const rh = Math.max(d, 0.1) * scale;
+      const color = layerColor.get(object.layerId) ?? "#9aa";
+      return `<g><rect x="${fmt(rx)}" y="${fmt(ry)}" width="${fmt(rw)}" height="${fmt(rh)}" fill="${color}" fill-opacity="0.35" stroke="${color}" stroke-width="1"/><text x="${fmt(rx + rw / 2)}" y="${fmt(ry + rh / 2)}" fill="#f3ead4" font-size="9" text-anchor="middle" font-family="Arial">${escapeHtml(object.label)}</text></g>`;
+    })
+    .join("");
+  const content = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${fmt(width)} ${fmt(height)}" width="${fmt(width)}" height="${fmt(height)}">
+  <rect width="100%" height="100%" fill="#071010"/>
+  <text x="10" y="18" fill="#d9aa46" font-size="13" font-family="Georgia, serif">${escapeHtml(projectSummary.name)} — Ground Floor Plan (preview)</text>
+  ${shapes}
+</svg>
+`;
+  return { fileName: `${projectSummary.id}-plan.svg`, mimeType: "image/svg+xml", content };
+}
+
 export function sceneToPreviewDxf(objects: CadObjectFrame[], layers: LayerFrame[] = initialCadScene.layers): string {
   const layerNames = new Set(layers.map((layer) => normalizeDxfName(layer.id)));
   const entityRows = objects.flatMap((object) => objectToFootprintLines(object));
@@ -171,6 +236,10 @@ function sanitizeDxfText(value: string): string {
 
 function fmt(value: number): string {
   return Number.isFinite(value) ? value.toFixed(3) : "0.000";
+}
+
+function csv(value: string): string {
+  return /[",\n]/.test(value) ? `"${value.replaceAll('"', '""')}"` : value;
 }
 
 function escapeHtml(value: string): string {
