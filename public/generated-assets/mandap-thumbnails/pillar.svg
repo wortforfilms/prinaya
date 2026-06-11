@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" role="img" aria-label="Carved Pillars">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1f1b"/><stop offset="1" stop-color="#02100e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="60%">
+      <stop offset="0" stop-color="#d9aa46" stop-opacity="0.22"/><stop offset="1" stop-color="#d9aa46" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8d78b"/><stop offset="1" stop-color="#d9aa46"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="320" fill="url(#bg)"/>
+  <rect width="480" height="320" fill="url(#glow)"/>
+  <rect x="6" y="6" width="468" height="308" rx="10" fill="none" stroke="#d9aa46" stroke-opacity="0.35"/>
+  <g fill="url(#gold)">
+    <rect x="137.6" y="70" width="44.8" height="14" rx="3"/>
+    <rect x="144.32" y="84" width="31.359999999999996" height="120"/>
+    <rect x="137.6" y="204" width="44.8" height="16" rx="3"/>
+    <circle cx="160" cy="64" r="15.679999999999998"/>
+  </g><g fill="url(#gold)">
+    <rect x="297.6" y="70" width="44.8" height="14" rx="3"/>
+    <rect x="304.32" y="84" width="31.359999999999996" height="120"/>
+    <rect x="297.6" y="204" width="44.8" height="16" rx="3"/>
+    <circle cx="320" cy="64" r="15.679999999999998"/>
+  </g><rect x="120" y="60" width="240" height="8" rx="3" fill="url(#gold)" opacity="0.6"/>
+  <text x="240.0" y="298" text-anchor="middle" fill="#f8d78b" font-family="Georgia, serif" font-size="20" font-weight="600">Carved Pillars</text>
+  <text x="240.0" y="280" text-anchor="middle" fill="#9fb5ad" font-family="Arial, sans-serif" font-size="9" letter-spacing="2">PREVIEW · TLPS WEDDING OS</text>
+</svg>

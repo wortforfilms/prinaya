@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" role="img" aria-label="Floral & Greens">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1f1b"/><stop offset="1" stop-color="#02100e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="60%">
+      <stop offset="0" stop-color="#d9aa46" stop-opacity="0.22"/><stop offset="1" stop-color="#d9aa46" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8d78b"/><stop offset="1" stop-color="#d9aa46"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="320" fill="url(#bg)"/>
+  <rect width="480" height="320" fill="url(#glow)"/>
+  <rect x="6" y="6" width="468" height="308" rx="10" fill="none" stroke="#d9aa46" stroke-opacity="0.35"/>
+  <g transform="translate(110,140)"><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(0)" fill="#b7375f" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(36)" fill="#b7375f" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(72)" fill="#b7375f" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(108)" fill="#b7375f" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(144)" fill="#b7375f" opacity="0.85"/><circle r="5" fill="#f8d78b"/></g><g transform="translate(175,175)"><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(0)" fill="#e06a8b" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(36)" fill="#e06a8b" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(72)" fill="#e06a8b" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(108)" fill="#e06a8b" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(144)" fill="#e06a8b" opacity="0.85"/><circle r="5" fill="#f8d78b"/></g><g transform="translate(240,140)"><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(0)" fill="#f0a93f" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(36)" fill="#f0a93f" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(72)" fill="#f0a93f" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(108)" fill="#f0a93f" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(144)" fill="#f0a93f" opacity="0.85"/><circle r="5" fill="#f8d78b"/></g><g transform="translate(305,175)"><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(0)" fill="#f3d27a" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(36)" fill="#f3d27a" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(72)" fill="#f3d27a" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(108)" fill="#f3d27a" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(144)" fill="#f3d27a" opacity="0.85"/><circle r="5" fill="#f8d78b"/></g><g transform="translate(370,140)"><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(0)" fill="#b7375f" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(36)" fill="#b7375f" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(72)" fill="#b7375f" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(108)" fill="#b7375f" opacity="0.85"/><ellipse cx="0" cy="0" rx="13" ry="6" transform="rotate(144)" fill="#b7375f" opacity="0.85"/><circle r="5" fill="#f8d78b"/></g><path d="M70 210 Q240 250 410 210" fill="none" stroke="#36715d" stroke-width="6"/>
+  <text x="240.0" y="298" text-anchor="middle" fill="#f8d78b" font-family="Georgia, serif" font-size="20" font-weight="600">Floral & Greens</text>
+  <text x="240.0" y="280" text-anchor="middle" fill="#9fb5ad" font-family="Arial, sans-serif" font-size="9" letter-spacing="2">PREVIEW · TLPS WEDDING OS</text>
+</svg>

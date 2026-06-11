@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" role="img" aria-label="Canopy & Roofs">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1f1b"/><stop offset="1" stop-color="#02100e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="60%">
+      <stop offset="0" stop-color="#d9aa46" stop-opacity="0.22"/><stop offset="1" stop-color="#d9aa46" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8d78b"/><stop offset="1" stop-color="#d9aa46"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="320" fill="url(#bg)"/>
+  <rect width="480" height="320" fill="url(#glow)"/>
+  <rect x="6" y="6" width="468" height="308" rx="10" fill="none" stroke="#d9aa46" stroke-opacity="0.35"/>
+  <path d="M50 130 Q240 20 430 130" fill="none" stroke="url(#gold)" stroke-width="8"/><path d="M70 128 Q120 230 95 250" fill="none" stroke="#b7375f" stroke-width="6" opacity="0.7"/><path d="M410 128 Q360 230 385 250" fill="none" stroke="#b7375f" stroke-width="6" opacity="0.7"/><path d="M150 96 Q240 70 330 96 L330 110 Q240 86 150 110 Z" fill="url(#gold)" opacity="0.85"/><circle cx="60" cy="130" r="6" fill="#f8d78b"/><circle cx="92" cy="101" r="6" fill="#f8d78b"/><circle cx="124" cy="77" r="6" fill="#f8d78b"/><circle cx="156" cy="59" r="6" fill="#f8d78b"/><circle cx="188" cy="47" r="6" fill="#f8d78b"/><circle cx="220" cy="40" r="6" fill="#f8d78b"/><circle cx="252" cy="38" r="6" fill="#f8d78b"/><circle cx="284" cy="42" r="6" fill="#f8d78b"/><circle cx="316" cy="51" r="6" fill="#f8d78b"/><circle cx="348" cy="66" r="6" fill="#f8d78b"/><circle cx="380" cy="86" r="6" fill="#f8d78b"/><circle cx="412" cy="112" r="6" fill="#f8d78b"/><circle cx="444" cy="143" r="6" fill="#f8d78b"/>
+  <text x="240.0" y="298" text-anchor="middle" fill="#f8d78b" font-family="Georgia, serif" font-size="20" font-weight="600">Canopy & Roofs</text>
+  <text x="240.0" y="280" text-anchor="middle" fill="#9fb5ad" font-family="Arial, sans-serif" font-size="9" letter-spacing="2">PREVIEW · TLPS WEDDING OS</text>
+</svg>

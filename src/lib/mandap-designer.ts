@@ -21,7 +21,7 @@ import { blockedCapabilities, type CapabilityStatus } from "./status";
 
 export type MandapKpi = { label: string; value: string; sub: string; preview?: boolean };
 export type GalleryItem = { id: string; name: string; status: CapabilityStatus };
-export type ComponentGallery = { panel: string; category: string; total: number; items: GalleryItem[] };
+export type ComponentGallery = { panel: string; category: string; thumbnail: string; total: number; items: GalleryItem[] };
 export type RitualVastuRow = { label: string; value: string; ok: boolean };
 export type CostRow = { label: string; amountInr: number; status: string };
 export type MaterialRow = { id: string; label: string; finish: string; usage: string; color: string };
@@ -49,11 +49,14 @@ export type MandapDesigner = {
   evidenceRef: string;
 };
 
-function gallery(panel: string, category: string): ComponentGallery {
+const THUMB_BASE = "/generated-assets/mandap-thumbnails";
+
+function gallery(panel: string, category: string, thumb: string): ComponentGallery {
   const assets = weddingAssets.filter((asset) => asset.category === category);
   return {
     panel,
     category,
+    thumbnail: `${THUMB_BASE}/${thumb}.svg`,
     total: assets.length,
     items: assets.slice(0, 6).map((asset) => ({ id: asset.id, name: asset.name, status: asset.status as CapabilityStatus }))
   };
@@ -84,12 +87,12 @@ export function buildMandapDesigner(): MandapDesigner {
   ];
 
   const galleries: ComponentGallery[] = [
-    gallery("Pillars & Structures", "Pillars"),
-    gallery("Canopy & Roofs", "Structural Elements"),
-    gallery("Backdrops", "Backdrops"),
-    gallery("Decor & Props", "Decor Props"),
-    gallery("Lighting Design", "Lighting Fixtures"),
-    gallery("Floral & Greens", "Floral Installations")
+    gallery("Pillars & Structures", "Pillars", "pillar"),
+    gallery("Canopy & Roofs", "Structural Elements", "canopy"),
+    gallery("Backdrops", "Backdrops", "backdrop"),
+    gallery("Decor & Props", "Decor Props", "decor"),
+    gallery("Lighting Design", "Lighting Fixtures", "lighting"),
+    gallery("Floral & Greens", "Floral Installations", "floral")
   ];
 
   const ritualNames = rituals.map((r) => r.name);

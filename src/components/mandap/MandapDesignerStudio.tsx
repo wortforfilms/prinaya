@@ -55,8 +55,11 @@ export function MandapDesignerStudio() {
         {/* Component galleries */}
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {m.galleries.map((g) => (
-            <article key={g.panel} className="rounded-md border border-ink/10 bg-white p-4 shadow-sm">
-              <div className="flex items-center justify-between">
+            <article key={g.panel} className="overflow-hidden rounded-md border border-ink/10 bg-white shadow-sm">
+              {/* Generated preview thumbnail (SVG) — trusted local asset, rendered with a plain img. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={g.thumbnail} alt={`${g.panel} preview thumbnail`} className="h-32 w-full object-cover" loading="lazy" />
+              <div className="flex items-center justify-between px-4 pt-3">
                 <h2 className="font-semibold text-ink">{g.panel}</h2>
                 <span className="text-xs font-semibold text-basalt/55">{g.total} options</span>
               </div>

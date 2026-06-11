@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { buildMandapDesigner } from "@/lib/mandap-designer";
 
@@ -16,11 +18,13 @@ describe("mandap designer data", () => {
     expect(m.kpis.find((k) => k.label === "Est. Mandap Cost")?.preview).toBe(true);
   });
 
-  it("builds component galleries from the asset registry", () => {
+  it("builds component galleries from the asset registry with generated thumbnails", () => {
     expect(m.galleries).toHaveLength(6);
     m.galleries.forEach((g) => {
       expect(g.total).toBeGreaterThan(0);
       expect(g.items.length).toBeGreaterThan(0);
+      const onDisk = join(process.cwd(), "public", g.thumbnail.replace(/^\//, ""));
+      expect(existsSync(onDisk), `missing thumbnail ${g.thumbnail}`).toBe(true);
     });
   });
 

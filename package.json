@@ -18,6 +18,7 @@
     "tlps:extract": "python3 scripts/extract-tlps-homepage.py",
     "tlps:extract:unique": "python3 scripts/extract-unique-tlps-assets.py",
     "images:cinematic": "python3 scripts/generate-cinematic-assets.py",
+    "assets:mandap-thumbnails": "python3 scripts/generate-mandap-thumbnails.py",
     "kbs:generate": "node --import tsx scripts/generate-kbs.ts",
     "assets:generate": "tsx scripts/generate-assets.ts",
     "mesh:generate": "tsx scripts/generate-assets.ts",
