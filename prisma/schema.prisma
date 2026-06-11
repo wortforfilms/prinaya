@@ -111,6 +111,9 @@ model Project {
   aiGenerations      AIGeneration[]
   evidence           Evidence[]
   releaseGates       ReleaseGate[]
+
+  @@index([ownerId])
+  @@index([organizationId, status])
 }
 
 model Venue {
@@ -140,6 +143,8 @@ model Scene {
   layers      Layer[]
   cadObjects  CADObject[]
   cameras     Camera[]
+
+  @@index([projectId])
 }
 
 model Layer {
@@ -152,6 +157,9 @@ model Layer {
   sortOrder   Int         @default(0)
   scene       Scene       @relation(fields: [sceneId], references: [id], onDelete: Cascade)
   cadObjects  CADObject[]
+
+  @@index([sceneId])
+  @@index([sceneId, sortOrder])
 }
 
 model CADObject {
@@ -170,6 +178,13 @@ model CADObject {
   scene       Scene     @relation(fields: [sceneId], references: [id], onDelete: Cascade)
   layer       Layer     @relation(fields: [layerId], references: [id], onDelete: Cascade)
   material    Material? @relation(fields: [materialId], references: [id], onDelete: SetNull)
+
+  // Hot path: load a scene's objects, a layer's contents, or reassign a material.
+  @@index([sceneId])
+  @@index([layerId])
+  @@index([materialId])
+  @@index([sceneId, layerId])
+  @@index([sceneId, kind])
 }
 
 model Material {
@@ -183,6 +198,10 @@ model Material {
   organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
   cadObjects     CADObject[]
   assets         Asset[]
+
+  // A material name should be unique within an organization's palette.
+  // (the unique index also serves org-prefix lookups.)
+  @@unique([organizationId, name])
 }
 
 model Asset {
@@ -198,6 +217,14 @@ model Asset {
   organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
   material       Material?   @relation(fields: [materialId], references: [id], onDelete: SetNull)
   marketplaceItems MarketplaceItem[]
+
+  // Asset-library / configuration browsing: filter by category, status, kind within an org.
+  // (org-only scans use the leftmost prefix of the composite indexes below.)
+  @@index([organizationId, category])
+  @@index([organizationId, status])
+  @@index([organizationId, category, status])
+  @@index([category, kind])
+  @@index([materialId])
 }
 
 model Layout {
@@ -377,6 +404,10 @@ model MarketplaceItem {
   status         String       @default("BLOCKED")
   organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
   asset          Asset?       @relation(fields: [assetId], references: [id], onDelete: SetNull)
+
+  @@index([organizationId, status])
+  @@index([organizationId, category])
+  @@index([assetId])
 }
 
 model ObservatoryEvent {
