@@ -3,7 +3,7 @@ import { KnowledgeGraph, normalizeNode, type KbsNode } from "@/lib/kbs/graph";
 import { buildKbsGraph } from "@/lib/kbs/registry";
 import { searchKbs } from "@/lib/kbs/search";
 import { recommendForNode } from "@/lib/kbs/recommendations";
-import { buildBoardComposerPanel, buildCopilotPanel, buildVediFinderPanel, buildVediIntelligence } from "@/lib/kbs/surfaces";
+import { buildBoardComposerPanel, buildCopilotPanel, buildHomepageSurface, buildVediFinderPanel, buildVediIntelligence } from "@/lib/kbs/surfaces";
 
 function node(id: string, partial: Partial<KbsNode> = {}): KbsNode {
   return normalizeNode({ id, type: partial.type ?? "Asset", name: partial.name ?? id, ...partial });
@@ -176,5 +176,14 @@ describe("KBS surfaces (AI Co-Pilot + Board Composer)", () => {
     expect(intel.tithis).toHaveLength(30);
     expect(intel.vastuGrid).toHaveLength(9);
     expect(intel.muhurats.length).toBeGreaterThan(0);
+  });
+
+  it("Homepage surface exposes live KBS stats + 7 grouped use-case buckets", () => {
+    const home = buildHomepageSurface();
+    expect(home.kbs.nodes).toBeGreaterThanOrEqual(500);
+    expect(home.kbs.useCases).toBe(108);
+    expect(home.useCaseGroups.some((g) => g.group === "Vedi Planning")).toBe(true);
+    expect(home.useCaseGroups.reduce((sum, g) => sum + (g.group === "Vedi Planning" ? 0 : g.count), 0)).toBe(108);
+    expect(home.vedi.nakshatras).toBe(27);
   });
 });

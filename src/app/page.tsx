@@ -1,5 +1,5 @@
-import { StudioLandingExperience } from "@/components/landing/StudioLandingExperience";
+import { WeddingOsHomepage } from "@/components/landing/WeddingOsHomepage";
 
 export default function HomePage() {
-  return <StudioLandingExperience />;
+  return <WeddingOsHomepage />;
 }

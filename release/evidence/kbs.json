@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T18:13:27.385Z",
+  "generatedAt": "2026-06-11T18:29:36.838Z",
   "verdict": "CONTROLLED_PREVIEW_READY",
   "productionReady": false,
   "status": "READY",
@@ -44,11 +44,17 @@
     "entityTypes": 23,
     "boardComposerPages": 17,
     "copilotSuggestionGroups": 7,
+    "homepageUseCaseGroups": 7,
     "nakshatras": 27,
     "tithis": 30,
     "muhurats": 12
   },
   "routeIntegration": [
+    {
+      "route": "/",
+      "surface": "Wedding OS Homepage",
+      "status": "READY"
+    },
     {
       "route": "/ai",
       "surface": "AI Co-Pilot",
@@ -127,5 +133,5 @@
       "status": "BLOCKED"
     }
   ],
-  "note": "KBS v2 runtime knowledge graph. Rule-based preview heuristics; no live AI/vendor/payment/panchang runtime. Blockers preserved."
+  "note": "KBS v2 runtime knowledge graph powering the Wedding OS homepage, AI Co-Pilot, Board Composer, and Vedi Finder. Rule-based preview heuristics; no live AI/vendor/payment/panchang runtime. Blockers preserved."
 }

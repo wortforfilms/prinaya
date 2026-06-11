@@ -59,6 +59,7 @@ const boardComposer = buildBoardComposerPanel(graph);
 const vedi = buildVediIntelligence(graph);
 
 const routeIntegration = [
+  { route: "/", surface: "Wedding OS Homepage", nodes: vedi.nakshatras.length + boardComposer.boards.length + copilot.suggestions.length, status: "READY" },
   { route: "/ai", surface: "AI Co-Pilot", nodes: copilot.recommendations.length + copilot.seeds.length, status: "READY" },
   { route: "/exports", surface: "Board Composer", nodes: boardComposer.boards.length, status: "READY" },
   { route: "/gallery", surface: "Board Composer", nodes: boardComposer.boards.length, status: "READY" },

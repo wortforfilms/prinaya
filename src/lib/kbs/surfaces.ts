@@ -349,6 +349,85 @@ export function buildVediFinderPanel(graph: KnowledgeGraph = kbs()): VediFinderP
   };
 }
 
+export type HomepageUseCaseGroup = { group: string; count: number; examples: string[] };
+
+export type HomepageSurface = {
+  status: "READY";
+  verdict: "CONTROLLED_PREVIEW_READY";
+  productionReady: false;
+  kbs: { nodes: number; relations: number; useCases: number; assets: number; entityTypes: number };
+  useCaseGroups: HomepageUseCaseGroup[];
+  vedi: { vedis: number; nakshatras: number; tithis: number; muhurats: number; topMuhurat: string | null };
+  evidenceRef: string;
+};
+
+function groupForUseCaseCategory(category: string): string {
+  const c = category.toLowerCase();
+  if (c.includes("guest")) return "Guest Management";
+  if (c.includes("vendor")) return "Vendor Management";
+  if (c.includes("production") || c.includes("venue zones") || c.includes("utilities")) return "Production";
+  if (c.includes("drone") || c.includes("vr") || c.includes("ai outputs")) return "Filmy Studio";
+  if (c.includes("board") || c.includes("template")) return "Board Generation";
+  return "Design";
+}
+
+/** Homepage command-surface data: live KBS evidence + grouped use cases + vedi summary. */
+export function buildHomepageSurface(graph: KnowledgeGraph = kbs()): HomepageSurface {
+  const stats = graph.stats();
+  const assets = ["Asset", "Mandap", "Floral", "Lighting", "Venue", "Stage"].reduce(
+    (sum, type) => sum + (stats.byType[type] ?? 0),
+    0
+  );
+
+  // Group the use cases into the seven command buckets.
+  const groups = new Map<string, { count: number; examples: string[] }>();
+  const ensure = (g: string) => {
+    if (!groups.has(g)) groups.set(g, { count: 0, examples: [] });
+    return groups.get(g)!;
+  };
+  for (const useCase of graph.nodesOfType("UseCase")) {
+    const bucket = ensure(groupForUseCaseCategory(useCase.category));
+    bucket.count += 1;
+    if (bucket.examples.length < 3) bucket.examples.push(useCase.name);
+  }
+  // Vedi Planning is sourced from the panchanga/ritual layers, not the asset use cases.
+  const vediCount = graph.nodesOfType("Vedi").length + graph.nodesOfType("Ritual").length + graph.nodesOfType("Muhurat").length;
+  const vediBucket = ensure("Vedi Planning");
+  vediBucket.count = vediCount;
+  vediBucket.examples = graph.nodesOfType("Ritual").slice(0, 3).map((n) => n.name);
+
+  const useCaseGroups: HomepageUseCaseGroup[] = Array.from(groups.entries())
+    .map(([group, value]) => ({ group, count: value.count, examples: value.examples }))
+    .sort((a, b) => b.count - a.count);
+
+  const topMuhurat = graph
+    .nodesOfType("Muhurat")
+    .map((node) => muhuratEntry(graph, node))
+    .sort((a, b) => b.score - a.score)[0];
+
+  return {
+    status: "READY",
+    verdict: "CONTROLLED_PREVIEW_READY",
+    productionReady: false,
+    kbs: {
+      nodes: stats.nodeCount,
+      relations: stats.relationCount,
+      useCases: stats.byType.UseCase ?? 0,
+      assets,
+      entityTypes: Object.keys(stats.byType).length
+    },
+    useCaseGroups,
+    vedi: {
+      vedis: graph.nodesOfType("Vedi").length,
+      nakshatras: graph.nodesOfType("Nakshatra").length,
+      tithis: graph.nodesOfType("Tithi").length,
+      muhurats: graph.nodesOfType("Muhurat").length,
+      topMuhurat: topMuhurat?.name ?? null
+    },
+    evidenceRef: "release/evidence/kbs.json"
+  };
+}
+
 export type VastuCell = { direction: string; lord: string; use: string; favored: boolean };
 
 export type LookupRow = { id: string; name: string; detail: string; auspicious: boolean };
