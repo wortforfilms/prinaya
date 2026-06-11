@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "status": "READY",
+  "evidence": "data/kbs/rituals.json",
+  "nodes": [
+    {
+      "id": "ritual:ganesh-poojan",
+      "type": "Ritual",
+      "category": "Ritual",
+      "name": "Ganesh Poojan",
+      "description": "Invocation of Lord Ganesha to remove obstacles before the wedding rites.",
+      "status": "READY",
+      "metadata": { "sequence": 1, "durationMin": 30, "requires": ["vedi", "kalash"] },
+      "relations": [
+        { "kind": "requires", "to": "vedi:square-east-001" },
+        { "kind": "references", "to": "board:mandap-plan" }
+      ]
+    },
+    {
+      "id": "ritual:punyah-vachanam",
+      "type": "Ritual",
+      "category": "Ritual",
+      "name": "Punyah Vachanam",
+      "description": "Purification rite sanctifying the mandap, vedi, and participants.",
+      "status": "READY",
+      "metadata": { "sequence": 2, "durationMin": 25, "requires": ["vedi", "agni"] },
+      "relations": [{ "kind": "requires", "to": "vedi:square-east-001" }]
+    },
+    {
+      "id": "ritual:kanyadaan",
+      "type": "Ritual",
+      "category": "Ritual",
+      "name": "Kanyadaan",
+      "description": "Giving away of the bride by her family at the vedi.",
+      "status": "READY",
+      "metadata": { "sequence": 3, "durationMin": 40, "requires": ["vedi", "couple"] },
+      "relations": [
+        { "kind": "requires", "to": "vedi:square-east-001" },
+        { "kind": "references", "to": "board:mandap-plan" }
+      ]
+    },
+    {
+      "id": "ritual:mangalashtakam",
+      "type": "Ritual",
+      "category": "Ritual",
+      "name": "Mangalashtakam",
+      "description": "Eight auspicious verses chanted to bless the union.",
+      "status": "READY",
+      "metadata": { "sequence": 4, "durationMin": 15 },
+      "relations": [{ "kind": "requires", "to": "vedi:square-east-001" }]
+    },
+    {
+      "id": "ritual:saptapadi",
+      "type": "Ritual",
+      "category": "Ritual",
+      "name": "Saptapadi",
+      "description": "The seven sacred steps around the agni that solemnise the marriage.",
+      "status": "READY",
+      "metadata": { "sequence": 5, "steps": 7, "durationMin": 30, "requires": ["vedi", "agni", "couple"] },
+      "relations": [
+        { "kind": "requires", "to": "vedi:circular-saptapadi-001" },
+        { "kind": "references", "to": "board:mandap-plan" }
+      ]
+    },
+    {
+      "id": "ritual:ashirvad",
+      "type": "Ritual",
+      "category": "Ritual",
+      "name": "Ashirvad",
+      "description": "Blessings bestowed upon the couple by elders to close the ceremony.",
+      "status": "READY",
+      "metadata": { "sequence": 6, "durationMin": 20 },
+      "relations": [{ "kind": "requires", "to": "vedi:square-east-001" }]
+    }
+  ]
+}

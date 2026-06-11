@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "status": "BLOCKED",
+  "evidence": "data/kbs/vendors.json",
+  "note": "Vendor nodes are demo/preview metadata. Live vendor network, contracts, and payments remain BLOCKED.",
+  "nodes": [
+    {
+      "id": "vendor:lotus-decor-studio",
+      "type": "Vendor",
+      "category": "Floral & Decor",
+      "name": "Lotus Decor Studio",
+      "description": "Demo floral and decor vendor for preview planning only.",
+      "status": "BLOCKED",
+      "metadata": { "rating": 4.7, "city": "Udaipur", "deliverables": ["mandap floral", "aisle decor"], "live": false },
+      "relations": [
+        { "kind": "references", "to": "route:/floral" },
+        { "kind": "references", "to": "route:/vendors" }
+      ]
+    },
+    {
+      "id": "vendor:royal-lighting-co",
+      "type": "Vendor",
+      "category": "Lighting",
+      "name": "Royal Lighting Co.",
+      "description": "Demo lighting and rigging vendor for preview planning only.",
+      "status": "BLOCKED",
+      "metadata": { "rating": 4.5, "city": "Jaipur", "deliverables": ["chandeliers", "truss", "night wash"], "live": false },
+      "relations": [{ "kind": "references", "to": "route:/lighting" }]
+    },
+    {
+      "id": "vendor:skyframe-aerials",
+      "type": "Vendor",
+      "category": "Film & Drone",
+      "name": "Skyframe Aerials",
+      "description": "Demo drone cinematography vendor for preview planning only.",
+      "status": "BLOCKED",
+      "metadata": { "rating": 4.8, "city": "Goa", "deliverables": ["drone film", "aerial stills"], "live": false },
+      "relations": [
+        { "kind": "references", "to": "film:drone" },
+        { "kind": "references", "to": "route:/drone" }
+      ]
+    }
+  ]
+}

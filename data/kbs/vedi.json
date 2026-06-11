@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "status": "READY",
+  "evidence": "data/kbs/vedi.json",
+  "nodes": [
+    {
+      "id": "vedi:square-east-001",
+      "type": "Vedi",
+      "category": "Ritual",
+      "name": "Square East Facing Vedi",
+      "description": "Square fire altar oriented to the east with the agni in the south-east zone.",
+      "status": "READY",
+      "metadata": {
+        "shape": "square",
+        "vastu": { "direction": "East" },
+        "agni": { "zone": "SouthEast" },
+        "phera": { "direction": "Clockwise" },
+        "sizeM": 2.4
+      },
+      "relations": [
+        { "kind": "linkedTo", "to": "ritual:kanyadaan" },
+        { "kind": "linkedTo", "to": "ritual:ganesh-poojan" }
+      ]
+    },
+    {
+      "id": "vedi:circular-saptapadi-001",
+      "type": "Vedi",
+      "category": "Ritual",
+      "name": "Circular Saptapadi Vedi",
+      "description": "Circular vedi sized for the seven-step saptapadi circumambulation.",
+      "status": "READY",
+      "metadata": {
+        "shape": "circular",
+        "vastu": { "direction": "East" },
+        "agni": { "zone": "Center" },
+        "phera": { "direction": "Clockwise" },
+        "diameterM": 3.2
+      },
+      "relations": [{ "kind": "linkedTo", "to": "ritual:saptapadi" }]
+    }
+  ]
+}

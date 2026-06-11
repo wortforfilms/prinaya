@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "status": "READY",
+  "evidence": "data/kbs/films.json",
+  "nodes": [
+    {
+      "id": "film:pre-wedding",
+      "type": "Film",
+      "category": "Film",
+      "name": "Pre-Wedding Film",
+      "description": "Cinematic pre-wedding story film shot on location.",
+      "status": "READY",
+      "metadata": { "durationSec": 180, "shots": ["location_intro", "couple_portrait", "golden_hour"] }
+    },
+    {
+      "id": "film:wedding",
+      "type": "Film",
+      "category": "Film",
+      "name": "Wedding Film",
+      "description": "Full-ceremony wedding film covering the ritual sequence.",
+      "status": "READY",
+      "metadata": { "durationSec": 600, "shots": ["mandap_wide", "saptapadi", "kanyadaan", "ashirvad"] }
+    },
+    {
+      "id": "film:reception",
+      "type": "Film",
+      "category": "Film",
+      "name": "Reception Film",
+      "description": "Reception coverage with stage, lighting, and guest moments.",
+      "status": "READY",
+      "metadata": { "durationSec": 420, "shots": ["stage_reveal", "first_dance", "guest_candids"] }
+    },
+    {
+      "id": "film:highlights",
+      "type": "Film",
+      "category": "Film",
+      "name": "Highlights Film",
+      "description": "Condensed highlights reel of the full event.",
+      "status": "READY",
+      "metadata": { "durationSec": 240, "shots": ["teaser_montage", "vows", "celebration"] }
+    },
+    {
+      "id": "film:teaser",
+      "type": "Film",
+      "category": "Film",
+      "name": "Teaser",
+      "description": "Short teaser cut for social release.",
+      "status": "READY",
+      "metadata": { "durationSec": 60, "shots": ["hook", "couple_reveal"] }
+    },
+    {
+      "id": "film:reels",
+      "type": "Film",
+      "category": "Film",
+      "name": "Reels",
+      "description": "Vertical short-form reels for social platforms.",
+      "status": "READY",
+      "metadata": { "durationSec": 30, "shots": ["vertical_hook", "trend_cut"] }
+    },
+    {
+      "id": "film:drone",
+      "type": "Film",
+      "category": "Drone",
+      "name": "Drone Film",
+      "description": "Aerial drone cinematography of venue and mandap.",
+      "status": "PARTIAL",
+      "metadata": { "durationSec": 90, "shots": ["aerial_entry", "mandap_top", "couple_walk"] },
+      "relations": [{ "kind": "references", "to": "route:/drone" }]
+    },
+    {
+      "id": "film:full",
+      "type": "Film",
+      "category": "Film",
+      "name": "Full Film",
+      "description": "Feature-length documentary edit of the entire celebration.",
+      "status": "READY",
+      "metadata": { "durationSec": 1800, "shots": ["pre_wedding", "ceremony", "reception", "finale"] }
+    }
+  ]
+}
