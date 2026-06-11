@@ -1,5 +1,5 @@
-import { ModuleRoutePage } from "@/components/routes/ModuleRoutePage";
+import { MandapDesignerStudio } from "@/components/mandap/MandapDesignerStudio";
 
 export default function MandapPage() {
-  return <ModuleRoutePage segment="mandap" />;
+  return <MandapDesignerStudio />;
 }
