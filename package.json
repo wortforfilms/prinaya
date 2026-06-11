@@ -29,6 +29,8 @@
     "verify:pdf": "node --import tsx scripts/verify-pdf-board.ts",
     "verify:cad:fixtures": "node --import tsx scripts/verify-cad-fixtures.ts",
     "verify:routes": "node --import tsx scripts/verify-routes.ts",
+    "verify:active-pages": "tsx scripts/verify-active-pages.ts",
+    "verify:usecases": "tsx scripts/verify-usecases.ts",
     "verify:schema": "node --import tsx scripts/verify-schema.ts",
     "verify:cad": "node --import tsx scripts/verify-cad.ts",
     "verify:cad:visual": "node scripts/verify-cad-visual.mjs",

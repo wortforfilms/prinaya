@@ -1,6 +1,5 @@
-import { RoutePage } from "@/components/routes/RoutePage";
-import { publicRoute } from "@/lib/route-helpers";
+import { FeaturesDemoDataPage } from "@/components/routes/FeaturesDemoDataPage";
 
 export default function FeaturesPage() {
-  return <RoutePage route={publicRoute("/features")} />;
+  return <FeaturesDemoDataPage />;
 }

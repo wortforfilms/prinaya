@@ -49,7 +49,7 @@ import {
   renderJobs
 } from "@/lib/data-frames";
 import { previewFrameRuntimeSummary } from "@/lib/preview-frame-runtime";
-import { moduleRoutes, type RouteDefinition } from "@/lib/route-matrix";
+import { moduleRoutes, routeMatrix, type RouteDefinition } from "@/lib/route-matrix";
 import { blockedCapabilities, releaseStatus, type CapabilityStatus } from "@/lib/status";
 import { getHeroBannerBySlug } from "@/lib/hero-banner-registry";
 
@@ -113,16 +113,17 @@ const premiumModules: PremiumModule[] = [
   "drone",
   "vr"
 ].map((segment, index) => {
+  const baseRoute = resolvePremiumModuleRoute(segment);
   const route =
     segment === "venue-designer" && index === 9
       ? {
-          ...moduleRoutes.find((item) => item.path === "/venue-designer/*")!,
+          ...baseRoute,
           title: "Parking Planner",
           status: "READY" as CapabilityStatus,
           description: "Plan parking areas, valet flow, service access, and blocked safety-compliance checks.",
           path: "/venue-designer/parking"
         }
-      : moduleRoutes.find((item) => item.path === `/${segment}/*`)!;
+      : baseRoute;
   const [accent, glow, icon] = moduleAccent[index];
   return {
     ...route,
@@ -132,6 +133,14 @@ const premiumModules: PremiumModule[] = [
     href: route.path.replace("/*", "")
   };
 });
+
+function resolvePremiumModuleRoute(segment: string) {
+  const wildcard = moduleRoutes.find((item) => item.path === `/${segment}/*`);
+  if (wildcard) return wildcard;
+  const exact = routeMatrix.find((item) => item.path === `/${segment}`);
+  if (exact) return exact;
+  throw new Error(`Missing premium dashboard module route for ${segment}`);
+}
 
 const quickActions = [
   { label: "New Project", icon: Sparkles, href: "/projects/new", status: "READY" as CapabilityStatus },

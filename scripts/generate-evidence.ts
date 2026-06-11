@@ -18,6 +18,8 @@ import { heroBannerSummary } from "../src/lib/hero-banner-registry";
 import { tlpsWeddingOsHomepageSummary } from "../src/lib/tlps-wedding-os-homepage";
 import { tlpsUniqueExtractionSummary } from "../src/lib/tlps-unique-extractions";
 import { cinematicImageAssetSummary } from "../src/lib/cinematic-image-assets";
+import { categoryDemoUseCaseSets, categoryDemoUseCaseSummary, getRouteDemoUseCaseSummary } from "../src/lib/category-demo-usecases";
+import { activeRoutePages, extendedModuleProfiles, routePageRuntimeSummary } from "../src/lib/route-page-runtime";
 import {
   complianceRuntimeSummary,
   electricalComplianceReport,
@@ -41,6 +43,7 @@ const cadRoundTripEvidencePath = new URL("../release/evidence/cad-roundtrip-fixt
 const cadRoundTripSummary = createCadRoundTripSummary(cadObjects, layers);
 const pdfBoardEvidence = existsSync(pdfBoardEvidencePath) ? JSON.parse(readFileSync(pdfBoardEvidencePath, "utf8")) : null;
 const cadRoundTripEvidence = existsSync(cadRoundTripEvidencePath) ? JSON.parse(readFileSync(cadRoundTripEvidencePath, "utf8")) : null;
+const routeUseCaseCoverage = routeMatrix.map((route) => getRouteDemoUseCaseSummary(route.path));
 
 const latest = {
   generatedAt,
@@ -109,6 +112,16 @@ const latest = {
     },
     cinematicImageAssets: {
       ...cinematicImageAssetSummary
+    },
+    useCaseRegistry: {
+      ...categoryDemoUseCaseSummary,
+      registryRef: "data/usecases/category-demo-usecases.json",
+      evidenceRef: "release/evidence/usecases.json",
+      routeUseCaseCoverage
+    },
+    activePages: {
+      ...routePageRuntimeSummary,
+      extendedModuleProfiles
     },
     sceneGraph: {
       status: "READY",
@@ -188,7 +201,9 @@ const latest = {
       uniqueSourceImages: cinematicImageAssetSummary.uniqueSourceCount,
       aspectVariants: cinematicImageAssetSummary.aspectVariantCount,
       generatedVariants: cinematicImageAssetSummary.totalVariantCount,
-      totalBytes: cinematicImageAssetSummary.totalBytes
+      totalBytes: cinematicImageAssetSummary.totalBytes,
+      uxSpaces: cinematicImageAssetSummary.uxSpaceCount,
+      uxSpaceCounts: cinematicImageAssetSummary.uxSpaceCounts
     },
     note: "Nine generated design-board PNG assets are imported into public/extracted-boards and rendered in /vr with typed extraction data."
   },
@@ -208,6 +223,7 @@ const latest = {
     complianceValidators: "READY",
     liveIntegrations: "BLOCKED",
     previewRouteRuntime: previewFrameRuntimeSummary,
+    activePages: routePageRuntimeSummary,
     extractedBoardFrames: "READY",
     localExports: exportJobs.map((job) => ({ id: job.id, format: job.format, status: job.status })),
     renderJobs: renderJobs.map((job) => ({ id: job.id, status: job.status }))
@@ -410,6 +426,140 @@ const blockers = {
   blockedCapabilities
 };
 
+const usecases = {
+  generatedAt,
+  status: categoryDemoUseCaseSummary.status,
+  verdict: categoryDemoUseCaseSummary.verdict,
+  productionReady: categoryDemoUseCaseSummary.productionReady,
+  registryRef: "data/usecases/category-demo-usecases.json",
+  categoryCount: categoryDemoUseCaseSummary.categoryCount,
+  useCaseCount: categoryDemoUseCaseSummary.useCaseCount,
+  useCasesPerCategory: 4,
+  assetRefCount: categoryDemoUseCaseSummary.assetRefCount,
+  screenRefCount: categoryDemoUseCaseSummary.screenRefCount,
+  routeCount: categoryDemoUseCaseSummary.routeCount,
+  evidenceRefs: categoryDemoUseCaseSummary.evidenceRefs,
+  checks: {
+    categoriesExist: categoryDemoUseCaseSummary.categoryCount === 27,
+    fourUseCasesPerCategory:
+      categoryDemoUseCaseSummary.minUseCasesPerCategory === 4 && categoryDemoUseCaseSummary.maxUseCasesPerCategory === 4,
+    allUseCasesHaveAssetRefs: categoryDemoUseCaseSets.every((set) => set.useCases.every((useCase) => useCase.assetRefs.length > 0)),
+    allUseCasesHaveScreenRefs: categoryDemoUseCaseSets.every((set) => set.useCases.every((useCase) => useCase.screens.length > 0)),
+    blockerNotesExist: categoryDemoUseCaseSets.every((set) => set.useCases.every((useCase) => useCase.blockedNotes.length > 0)),
+    allRoutesHaveActiveUseCases: routeUseCaseCoverage.every((route) => route.useCaseCount >= 4),
+    productionReadyFalse: categoryDemoUseCaseSummary.productionReady === false,
+    verdictControlledPreviewReady: categoryDemoUseCaseSummary.verdict === "CONTROLLED_PREVIEW_READY"
+  },
+  blockedCapabilityNotes: blockedCapabilities.map((capability) => ({
+    id: capability.id,
+    label: capability.label,
+    status: capability.status,
+    reason: capability.reason
+  })),
+  routeUseCaseCoverage,
+  categories: categoryDemoUseCaseSets.map((set) => ({
+    category: set.category,
+    slug: set.slug,
+    status: set.status,
+    routes: set.routes,
+    useCaseCount: set.useCases.length,
+    assetCount: set.assetCount,
+    readyAssets: set.readyAssets,
+    partialAssets: set.partialAssets,
+    blockedAssets: set.blockedAssets,
+    screenCount: set.screenCount,
+    useCases: set.useCases.map((useCase) => ({
+      id: useCase.id,
+      title: useCase.title,
+      route: useCase.route,
+      status: useCase.status,
+      assetRefs: useCase.assetRefs.map((asset) => asset.id),
+      screenRefs: useCase.screens.map((screen) => ({
+        id: screen.id,
+        route: screen.route,
+        image: screen.image
+      })),
+      blockerNoteCount: useCase.blockedNotes.length
+    }))
+  }))
+};
+
+const activePages = {
+  generatedAt,
+  status: routePageRuntimeSummary.status,
+  verdict: routePageRuntimeSummary.verdict,
+  productionReady: routePageRuntimeSummary.productionReady,
+  activeRouteCount: routePageRuntimeSummary.activeRouteCount,
+  previewFramesUsed: routePageRuntimeSummary.previewFramesUsed,
+  routeFramesUsed: routePageRuntimeSummary.routeFramesUsed,
+  demoDataCount: routePageRuntimeSummary.demoDataCount,
+  runtimeCoverageCount: routePageRuntimeSummary.runtimeCoverageCount,
+  activeStepCount: routePageRuntimeSummary.activeStepCount,
+  demoFlowCount: routePageRuntimeSummary.demoFlowCount,
+  useCaseCount: routePageRuntimeSummary.useCaseCount,
+  routeUseCaseRefs: routePageRuntimeSummary.routeUseCaseRefs,
+  screenLinkCount: routePageRuntimeSummary.screenLinkCount,
+  routeScreenRefCount: routePageRuntimeSummary.routeScreenRefCount,
+  assetRefCount: routePageRuntimeSummary.assetRefCount,
+  blockerCount: routePageRuntimeSummary.blockerCount,
+  checks: {
+    allRoutesHaveActivePages: routePageRuntimeSummary.allRoutesHaveActivePages,
+    routeCountIs32: routePageRuntimeSummary.activeRouteCount === 32,
+    previewFramesUsed25: routePageRuntimeSummary.previewFramesUsed === 25,
+    demoDataAtLeast208: routePageRuntimeSummary.demoDataCount >= 208,
+    runtimeCoverageAtLeast139: routePageRuntimeSummary.runtimeCoverageCount >= 139,
+    demoFlowsCoverRouteUseCases: routePageRuntimeSummary.demoFlowCount === routePageRuntimeSummary.routeUseCaseRefs,
+    allUseCasesHaveDemoFlow: routePageRuntimeSummary.allUseCasesHaveDemoFlow,
+    useCases108: routePageRuntimeSummary.useCaseCount === 108,
+    screenLinks432: routePageRuntimeSummary.screenLinkCount === 432,
+    productionReadyFalse: routePageRuntimeSummary.productionReady === false,
+    verdictControlledPreviewReady: routePageRuntimeSummary.verdict === "CONTROLLED_PREVIEW_READY"
+  },
+  extendedModuleProfiles,
+  pages: activeRoutePages.map((page) => ({
+    routePath: page.route.path,
+    title: page.title,
+    status: page.status,
+    previewFrame: page.previewFrame.frameId,
+    previewFrameTitle: page.previewFrame.frameTitle,
+    cinematicScreen: page.cinematicScreen,
+    demoDataPoints: page.demoData.length,
+    runtimeCoverageChecks: page.localRuntimeCoverage.length,
+    activeSteps: page.activeSteps.map((step) => ({
+      id: step.id,
+      kind: step.kind,
+      label: step.label,
+      status: step.status,
+      evidenceRef: step.evidenceRef
+    })),
+    demoFlows: page.demoFlows.map((flow) => ({
+      id: flow.id,
+      useCaseId: flow.useCaseId,
+      chain: flow.chain,
+      activeStepCount: flow.activeSteps.length,
+      assetRefCount: flow.assetRefs.length,
+      screenRefCount: flow.screenRefs.length,
+      boardComposer: flow.boardComposer,
+      exportPackage: flow.exportPackage,
+      evidenceRefs: flow.evidenceRefs
+    })),
+    useCases: page.useCases.map((useCase) => ({
+      id: useCase.id,
+      title: useCase.title,
+      status: useCase.status,
+      route: useCase.route,
+      assetRefs: useCase.assetRefs.map((asset) => asset.id),
+      screenRefs: useCase.screens.map((screen) => screen.id),
+      blockers: useCase.blockedNotes
+    })),
+    assetRefCount: page.assetRefs.length,
+    screenRefCount: page.screenRefs.length,
+    routeSpecificBlockers: page.routeSpecificBlockers,
+    moduleActions: page.moduleActions,
+    evidenceRefs: page.evidenceRefs
+  }))
+};
+
 const statusMatrix = `# TLP Wedding CAD Status Matrix
 
 Generated: ${generatedAt}
@@ -425,7 +575,9 @@ PRODUCTION_READY=false
 | Hero banner generation | READY | ${heroBannerSummary.count} hero banners were generated as ${heroBannerSummary.hiresSize.width}x${heroBannerSummary.hiresSize.height} high-res local preview WebP assets from the supplied board reference and mapped across ${heroBannerSummary.routeBindings} route bindings. |
 | TLPS Wedding OS homepage extraction | READY | ${tlpsWeddingOsHomepageSummary.sectionCount} full-page sections, ${tlpsWeddingOsHomepageSummary.destinationCount} destination cards, ${tlpsWeddingOsHomepageSummary.designStudioCardCount} design studio cards, and ${tlpsWeddingOsHomepageSummary.filmCardCount} film cards were extracted into local preview assets for \`${tlpsWeddingOsHomepageSummary.route}\`. |
 | TLPS unique source extraction | READY | ${tlpsUniqueExtractionSummary.uniqueFrameCount} unique source/frame crops were extracted from ${tlpsUniqueExtractionSummary.uniqueSourceCount}/${tlpsUniqueExtractionSummary.sourceCount} supplied PNG sources; ${tlpsUniqueExtractionSummary.duplicateSourceCount} related duplicate source was recorded and skipped. |
-| Cinematic image asset regeneration | READY | ${cinematicImageAssetSummary.uniqueSourceCount}/${cinematicImageAssetSummary.sourceCount} unique local image sources were regenerated into ${cinematicImageAssetSummary.totalVariantCount} high-resolution cinematic WebP variants across ${cinematicImageAssetSummary.aspectVariantCount} aspects using ${cinematicImageAssetSummary.generationMode}; these are local derivatives, not new live photography or production-certified media. |
+| Cinematic image asset regeneration | READY | ${cinematicImageAssetSummary.uniqueSourceCount}/${cinematicImageAssetSummary.sourceCount} unique local image sources were regenerated into ${cinematicImageAssetSummary.totalVariantCount} high-resolution cinematic WebP variants across ${cinematicImageAssetSummary.aspectVariantCount} aspects and ${cinematicImageAssetSummary.uxSpaceCount} UX spaces using ${cinematicImageAssetSummary.generationMode}; these are local derivatives, not new live photography or production-certified media. |
+| Use case registry | READY | ${categoryDemoUseCaseSummary.categoryCount} categories and ${categoryDemoUseCaseSummary.useCaseCount} use cases are stabilized in \`data/usecases/category-demo-usecases.json\` with ${categoryDemoUseCaseSummary.assetRefCount} asset refs, ${categoryDemoUseCaseSummary.screenRefCount} screen refs, route refs, blocker notes, and active use-case coverage for ${routeUseCaseCoverage.length} route pages; evidence writes to \`release/evidence/usecases.json\`. |
+| Active real route pages | READY | ${routePageRuntimeSummary.activeRouteCount}/32 routes render active page data with ${routePageRuntimeSummary.previewFramesUsed} preview frames, ${routePageRuntimeSummary.demoDataCount} demo data points, ${routePageRuntimeSummary.runtimeCoverageCount} runtime coverage checks, ${routePageRuntimeSummary.activeStepCount} active steps, ${routePageRuntimeSummary.demoFlowCount} SPRINT-07 use-case demo flows, asset refs, screen refs, route-specific blockers, cinematic screens, board composer refs, export package refs, and evidence refs. |
 | Preview frame runtime | READY | ${previewFrameRuntimeSummary.routeFramesReady}/${previewFrameRuntimeSummary.routeFrames} route frames have typed demo data and local runtime coverage; ${previewFrameRuntimeSummary.totalDemoDataPoints} demo data points and ${previewFrameRuntimeSummary.totalLocalCoveragePoints} local coverage checks are generated from code. |
 | UI frame extraction | READY | Reusable UI frame definitions are complete and all frame statuses are READY. |
 | Generated board extraction | READY | ${extractedBoardSummary.boardCount} PNG boards, ${extractedBoardSummary.optionCount} extracted frames/options, and ${extractedBoardSummary.panelCount} technical panels render in \`/vr\`. |
@@ -462,6 +614,8 @@ writeJson("routes.json", routes);
 writeJson("schema.json", schema);
 writeJson("cad-runtime.json", cadRuntime);
 writeJson("blockers.json", blockers);
+writeJson("usecases.json", usecases);
+writeJson("active-pages.json", activePages);
 writeJson("compliance-runtime.json", {
   generatedAt,
   verdict: releaseStatus.verdict,

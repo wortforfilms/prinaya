@@ -215,15 +215,6 @@ export const moduleRoutes: RouteDefinition[] = [
     capabilities: ["guest sections", "capacity", "access notes"]
   },
   {
-    path: "/vendors/*",
-    title: "Vendor Library",
-    kind: "module",
-    status: "READY",
-    description: "Vendor module frame is present with demo data; live booking is blocked.",
-    primaryFrame: "activity feed",
-    capabilities: ["demo vendors", "blocked live marketplace", "blocked payments"]
-  },
-  {
     path: "/budget/*",
     title: "Budget Calculator",
     kind: "module",
@@ -303,6 +294,15 @@ export const moduleRoutes: RouteDefinition[] = [
     description: "Status matrix and evidence dashboard for preview readiness and blockers.",
     primaryFrame: "observatory status matrix",
     capabilities: ["release status", "evidence files", "blocker list"]
+  },
+  {
+    path: "/settings/*",
+    title: "Settings",
+    kind: "module",
+    status: "READY",
+    description: "Project defaults, theme preferences, evidence settings, and blocked integration controls.",
+    primaryFrame: "top command bar",
+    capabilities: ["project defaults", "evidence settings", "blocked integrations"]
   }
 ];
 

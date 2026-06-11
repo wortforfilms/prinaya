@@ -3,6 +3,7 @@ import { floralWorkspaceSummary } from "../src/lib/floral-workspace";
 import { heroBannerSummary } from "../src/lib/hero-banner-registry";
 import { previewFrameRuntimeSummary, previewRouteFrames, previewUiFrameRuntimes } from "../src/lib/preview-frame-runtime";
 import { routeFamilies, routeMatrix, publicRouteSlugs } from "../src/lib/route-matrix";
+import { getRouteDemoUseCases } from "../src/lib/category-demo-usecases";
 
 const missing: string[] = [];
 
@@ -27,6 +28,7 @@ const missingPreviewRuntime = routeMatrix.filter((route) => !previewRouteFrames.
 const previewFramesWithoutDemoData = previewRouteFrames.filter((frame) => frame.demoData.length === 0);
 const previewFramesWithoutCoverage = previewRouteFrames.filter((frame) => frame.localRuntimeCoverage.length === 0);
 const previewFramesWithoutEvidence = previewRouteFrames.filter((frame) => frame.evidenceRefs.length === 0);
+const routesWithoutActiveUseCases = routeMatrix.filter((route) => getRouteDemoUseCases(route.path).length < 4);
 
 if (routeMatrix.length !== 32) {
   throw new Error(`Expected 32 matrix route definitions, found ${routeMatrix.length}`);
@@ -68,6 +70,10 @@ if (previewFramesWithoutEvidence.length > 0) {
   throw new Error(`Preview route frames missing evidence refs: ${previewFramesWithoutEvidence.map((frame) => frame.routePath).join(", ")}`);
 }
 
+if (routesWithoutActiveUseCases.length > 0) {
+  throw new Error(`Routes missing active use cases: ${routesWithoutActiveUseCases.map((route) => route.path).join(", ")}`);
+}
+
 if (previewUiFrameRuntimes.some((frame) => frame.status !== "READY" || frame.demoBindings.length === 0 || frame.localRuntimeCoverage.length === 0)) {
   throw new Error("All UI frame runtimes must be READY with demo bindings and local runtime coverage");
 }
@@ -90,6 +96,17 @@ if (heroBannerSummary.count !== 21 || heroBannerSummary.routeBindings < routeMat
 const assetsRoutePage = readFileSync(new URL("../src/app/assets/page.tsx", import.meta.url), "utf8");
 if (!assetsRoutePage.includes("AssetsLibraryWorkspace")) {
   throw new Error("/assets must render the generated asset registry workspace");
+}
+
+const featuresRoutePage = readFileSync(new URL("../src/app/features/page.tsx", import.meta.url), "utf8");
+if (!featuresRoutePage.includes("FeaturesDemoDataPage")) {
+  throw new Error("/features must render the category demo data workspace");
+}
+
+const sharedRoutePage = readFileSync(new URL("../src/components/routes/RoutePage.tsx", import.meta.url), "utf8");
+const activePageComponents = readFileSync(new URL("../src/components/routes/active-page-components.tsx", import.meta.url), "utf8");
+if (!sharedRoutePage.includes("UsecaseGrid") || !activePageComponents.includes("Active route use cases")) {
+  throw new Error("Shared route pages must render active use cases and steps");
 }
 
 if (floralWorkspaceSummary.status !== "READY" || floralWorkspaceSummary.numberedPanels !== 14 || floralWorkspaceSummary.kpiWidgets !== 6) {

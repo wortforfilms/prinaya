@@ -1,5 +1,7 @@
-import { ModuleRoutePage } from "@/components/routes/ModuleRoutePage";
+import { RoutePage } from "@/components/routes/RoutePage";
+import { publicRoute } from "@/lib/route-helpers";
 
-export default function VendorsNestedPage({ params }: { params: Promise<{ slug?: string[] }> }) {
-  return <ModuleRoutePage segment="vendors" params={params} />;
+export default async function VendorsNestedPage({ params }: { params: Promise<{ slug?: string[] }> }) {
+  const resolved = await params;
+  return <RoutePage route={publicRoute("/vendors")} slug={resolved.slug ?? []} />;
 }

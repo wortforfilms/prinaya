@@ -29,12 +29,20 @@ import {
 import { liveIntegrationGates, liveIntegrationSummary } from "../src/lib/live-integration-runtime";
 import { getHeroBannerForRoute, heroBanners, heroBannerSummary } from "../src/lib/hero-banner-registry";
 import {
+  categoryDemoUseCaseRegistry,
+  categoryDemoUseCaseSets,
+  categoryDemoUseCaseSummary,
+  getRouteDemoUseCases
+} from "../src/lib/category-demo-usecases";
+import {
   cinematicImageAssets,
   cinematicImageAssetSummary,
   cinematicImageRegistry,
+  getCinematicVariantForRoute,
   getCinematicVariantForSource
 } from "../src/lib/cinematic-image-assets";
 import { tlpsWeddingOsHomepage, tlpsWeddingOsHomepageSummary } from "../src/lib/tlps-wedding-os-homepage";
+import { activeRoutePages, routePageRuntimeSummary } from "../src/lib/route-page-runtime";
 import {
   getTlpsUniqueFramesByKind,
   searchTlpsUniqueFrames,
@@ -49,6 +57,88 @@ describe("TLP Wedding CAD preview coverage", () => {
     expect(routeMatrix).toHaveLength(32);
     expect(routeMatrix.every((route) => ["READY", "PARTIAL", "BLOCKED"].includes(route.status))).toBe(true);
     expect(routeMatrix.every((route) => route.status === "READY")).toBe(true);
+  });
+
+  it("prepares full category demo data with assets and screens", () => {
+    const featureRoute = readFileSync(new URL("../src/app/features/page.tsx", import.meta.url), "utf8");
+    const sharedRoutePage = readFileSync(new URL("../src/components/routes/RoutePage.tsx", import.meta.url), "utf8");
+    const activePageComponents = readFileSync(new URL("../src/components/routes/active-page-components.tsx", import.meta.url), "utf8");
+    const useCaseRegistryFile = readFileSync(new URL("../data/usecases/category-demo-usecases.json", import.meta.url), "utf8");
+    const assets = getAllAssets();
+    const assetIds = new Set(assets.map((asset) => asset.id));
+    const normalizedRoutes = routeMatrix.map((route) => route.path.replace("/*", "").replace(/\/+$/, "") || "/");
+
+    expect(featureRoute).toContain("FeaturesDemoDataPage");
+    expect(sharedRoutePage).toContain("UsecaseGrid");
+    expect(sharedRoutePage).toContain("UseCaseDemoFlowPanel");
+    expect(activePageComponents).toContain("Active route use cases");
+    expect(activePageComponents).toContain("Page Action Plan");
+    expect(activePageComponents).toContain("Use Case Demo Flow");
+    expect(activePageComponents).toContain("Board Composer");
+    expect(activePageComponents).toContain("Export Package");
+    expect(useCaseRegistryFile).toContain("\"CONTROLLED_PREVIEW_READY\"");
+    expect(categoryDemoUseCaseRegistry.verdict).toBe("CONTROLLED_PREVIEW_READY");
+    expect(categoryDemoUseCaseRegistry.productionReady).toBe(false);
+    expect(categoryDemoUseCaseSummary.status).toBe("READY");
+    expect(categoryDemoUseCaseSummary.verdict).toBe("CONTROLLED_PREVIEW_READY");
+    expect(categoryDemoUseCaseSummary.productionReady).toBe(false);
+    expect(categoryDemoUseCaseSummary.categoryCount).toBe(assetCategoryValues.length);
+    expect(categoryDemoUseCaseSummary.categoryCount).toBe(27);
+    expect(categoryDemoUseCaseSummary.minUseCasesPerCategory).toBe(4);
+    expect(categoryDemoUseCaseSummary.maxUseCasesPerCategory).toBe(4);
+    expect(categoryDemoUseCaseSummary.useCaseCount).toBe(assetCategoryValues.length * 4);
+    expect(categoryDemoUseCaseSummary.assetRefCount).toBeGreaterThanOrEqual(categoryDemoUseCaseSummary.useCaseCount * 3);
+    expect(categoryDemoUseCaseSummary.screenRefCount).toBeGreaterThanOrEqual(categoryDemoUseCaseSummary.useCaseCount * 3);
+    expect(categoryDemoUseCaseSummary.evidenceRefs).toContain("data/usecases/category-demo-usecases.json");
+    expect(categoryDemoUseCaseSummary.evidenceRefs).toContain("release/evidence/usecases.json");
+    expect(categoryDemoUseCaseSets).toHaveLength(assetCategoryValues.length);
+    expect(categoryDemoUseCaseSets.every((set) => set.useCases.length === 4)).toBe(true);
+    expect(categoryDemoUseCaseSets.every((set) => set.assetCount >= 24)).toBe(true);
+    expect(
+      categoryDemoUseCaseSets.every((set) =>
+        set.useCases.every((useCase) =>
+          useCase.assetRefs.length === 4 &&
+          useCase.assetRefs.every((asset) => assetIds.has(asset.id)) &&
+          useCase.screens.length === 4 &&
+          useCase.screens.every((screen) => screen.image.startsWith("/") && existsSync(new URL(`../public${screen.image}`, import.meta.url))) &&
+          normalizedRoutes.some((route) => useCase.route === route || useCase.route.startsWith(`${route}/`)) &&
+          useCase.blockedNotes.length > 0
+        )
+      )
+    ).toBe(true);
+    expect(
+      routeMatrix.every((route) => {
+        const routeUseCases = getRouteDemoUseCases(route.path);
+        return (
+          routeUseCases.length >= 4 &&
+          routeUseCases.every(
+            (useCase) =>
+              useCase.assetRefs.length === 4 &&
+              useCase.screens.length === 4 &&
+              useCase.steps.length > 0 &&
+              useCase.blockedNotes.length > 0
+          )
+        );
+      })
+    ).toBe(true);
+    expect(routePageRuntimeSummary.demoFlowCount).toBe(routePageRuntimeSummary.routeUseCaseRefs);
+    expect(routePageRuntimeSummary.allUseCasesHaveDemoFlow).toBe(true);
+    expect(
+      activeRoutePages.every((page) =>
+        page.demoFlows.length === page.useCases.length &&
+        page.demoFlows.every(
+          (flow) =>
+            flow.chain.join(" > ") === "Use Case > Active Steps > Assets > Screens > Board Composer > Export Package > Evidence Ref" &&
+            flow.activeSteps.length > 0 &&
+            flow.assetRefs.length > 0 &&
+            flow.screenRefs.length > 0 &&
+            flow.boardComposer.route === "/exports/boards" &&
+            flow.exportPackage.route === "/exports/package" &&
+            flow.exportPackage.productionReady === false &&
+            flow.evidenceRefs.includes("release/evidence/usecases.json")
+        )
+      )
+    ).toBe(true);
   });
 
   it("creates preview-ready route frames with demo data and local runtime coverage", () => {
@@ -189,13 +279,21 @@ describe("TLP Wedding CAD preview coverage", () => {
     expect(cinematicImageAssetSummary.totalVariantCount).toBe(cinematicImageAssets.length * 5);
     expect(cinematicImageRegistry.duplicateSourceCount).toBeGreaterThan(0);
     expect(cinematicImageRegistry.sourceClassCounts["extracted-frame"]).toBeGreaterThanOrEqual(590);
+    expect(cinematicImageAssetSummary.uxSpaceCount).toBeGreaterThanOrEqual(20);
+    expect(cinematicImageAssetSummary.uxSpaceCounts["landing"]).toBeGreaterThan(0);
+    expect(cinematicImageAssetSummary.uxSpaceCounts["mandap-designer"]).toBeGreaterThan(0);
+    expect(cinematicImageAssetSummary.uxSpaceCounts["floral-designer"]).toBeGreaterThan(0);
     const homepageHero = getCinematicVariantForSource(tlpsWeddingOsHomepage.fullPageImage, "cinematic-21x9");
     const routeHero = getCinematicVariantForSource(getHeroBannerForRoute("/mandap").hiresImage, "cinematic-21x9");
+    const mandapSpaceHero = getCinematicVariantForRoute("/mandap", "cinematic-21x9");
     expect(homepageHero?.image).toMatch(/^\/cinematic-assets\/.+\.webp$/);
     expect(routeHero?.image).toMatch(/^\/cinematic-assets\/.+\.webp$/);
+    expect(homepageHero?.width).toBeGreaterThanOrEqual(1800);
+    expect(mandapSpaceHero?.image).toContain("/cinematic-assets/mandap-designer/");
     expect(homepageHero && existsSync(new URL(`../public${homepageHero.image}`, import.meta.url))).toBe(true);
     expect(routeHero && existsSync(new URL(`../public${routeHero.image}`, import.meta.url))).toBe(true);
     expect(cinematicImageAssets.every((asset) => asset.variants.length === cinematicImageAssetSummary.aspectVariantCount)).toBe(true);
+    expect(cinematicImageAssets.every((asset) => asset.uxSpace && asset.routeBindings.length > 0)).toBe(true);
   });
 
   it("keeps extracted UI and data frames available", () => {

@@ -214,7 +214,9 @@ function demoDataForRoute(route: RouteDefinition): PreviewDemoDatum[] {
   return [
     ...base,
     demo("UI frames", uiFrames.length, "uiFrames"),
-    demo("Blocked capabilities", blockedCapabilities.length, "blockedCapabilities")
+    demo("Blocked capabilities", blockedCapabilities.length, "blockedCapabilities"),
+    demo("Active page mode", "route use cases", "routePageRuntime"),
+    demo("Production ready", String(releaseStatus.productionReady), "releaseStatus.productionReady")
   ];
 }
 

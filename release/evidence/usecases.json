@@ -1,0 +1,4624 @@
+{
+  "generatedAt": "2026-06-11T02:37:18.448Z",
+  "status": "READY",
+  "verdict": "CONTROLLED_PREVIEW_READY",
+  "productionReady": false,
+  "registryRef": "data/usecases/category-demo-usecases.json",
+  "categoryCount": 27,
+  "useCaseCount": 108,
+  "useCasesPerCategory": 4,
+  "assetRefCount": 432,
+  "screenRefCount": 432,
+  "routeCount": 16,
+  "evidenceRefs": [
+    "src/lib/category-demo-usecases.ts",
+    "data/usecases/category-demo-usecases.json",
+    "data/assets/wedding-cad-assets.json",
+    "data/cinematic-image-assets.json",
+    "release/evidence/assets-library.json",
+    "release/evidence/cinematic-image-assets.json",
+    "release/evidence/usecases.json"
+  ],
+  "checks": {
+    "categoriesExist": true,
+    "fourUseCasesPerCategory": true,
+    "allUseCasesHaveAssetRefs": true,
+    "allUseCasesHaveScreenRefs": true,
+    "blockerNotesExist": true,
+    "allRoutesHaveActiveUseCases": true,
+    "productionReadyFalse": true,
+    "verdictControlledPreviewReady": true
+  },
+  "blockedCapabilityNotes": [
+    {
+      "id": "native-dwg-export",
+      "label": "Native DWG export",
+      "status": "BLOCKED",
+      "reason": "No native DWG writer, round-trip compatibility, AutoCAD validation, or DWG fixture evidence exists."
+    },
+    {
+      "id": "production-dxf-export",
+      "label": "Production DXF export",
+      "status": "BLOCKED",
+      "reason": "Preview ASCII DXF footprint export exists. Production DXF with layers, dimensions, units, blocks, title sheets, and CAD QA evidence is not implemented."
+    },
+    {
+      "id": "payments",
+      "label": "Payments",
+      "status": "BLOCKED",
+      "reason": "No payment processor credentials, checkout runtime, or transaction evidence exists."
+    },
+    {
+      "id": "live-vendors",
+      "label": "Live vendor network",
+      "status": "BLOCKED",
+      "reason": "Vendor records are seeded demo data; no live marketplace or vendor API is connected."
+    },
+    {
+      "id": "marketplace-commerce",
+      "label": "Marketplace commerce",
+      "status": "BLOCKED",
+      "reason": "Marketplace pages are preview shells without live listing, order, fulfillment, or seller flows."
+    },
+    {
+      "id": "structural-validation",
+      "label": "Structural validation",
+      "status": "BLOCKED",
+      "reason": "Local preview checks exist, but no stamped load, wind, truss, rigging, anchoring, or temporary-structure safety certification exists."
+    },
+    {
+      "id": "electrical-validation",
+      "label": "Electrical validation",
+      "status": "BLOCKED",
+      "reason": "Local preview checks exist, but no licensed load schedule, phase balancing, cabling, earthing, generator sizing, or certified electrical safety evidence exists."
+    },
+    {
+      "id": "fire-safety-validation",
+      "label": "Fire safety validation",
+      "status": "BLOCKED",
+      "reason": "Local preview checks exist, but no certified fire exit, extinguisher, flame-retardant material, evacuation-width, or authority approval evidence exists."
+    },
+    {
+      "id": "engineering-compliance",
+      "label": "Engineering compliance",
+      "status": "BLOCKED",
+      "reason": "Local validators are not a municipal, engineering, accessibility, fire, electrical, or venue-authority compliance signoff."
+    }
+  ],
+  "routeUseCaseCoverage": [
+    {
+      "routePath": "/",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/about",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/pricing",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/features",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/gallery",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/templates",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/venues",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/vendors",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/contact",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/support",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/blog",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/auth",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/dashboard",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/projects",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/venue-designer",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/mandap",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/layouts",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/cad",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/assets",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/floral",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/lighting",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/guests",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/budget",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/production",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/drone",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/vr",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/ai",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/exports",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/marketplace",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/admin",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/observatory",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    },
+    {
+      "routePath": "/settings",
+      "useCaseCount": 4,
+      "assetRefCount": 16,
+      "screenRefCount": 16,
+      "activeStepCount": 16,
+      "blockerNoteCount": 8
+    }
+  ],
+  "categories": [
+    {
+      "category": "Mandaps",
+      "slug": "mandaps",
+      "status": "READY",
+      "routes": [
+        "/mandap",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "mandaps-brief",
+          "title": "Mandaps concept brief",
+          "route": "/mandap",
+          "status": "READY",
+          "assetRefs": [
+            "mandaps-vedic-lotus-001",
+            "mandaps-royal-palace-002",
+            "mandaps-temple-mandap-003",
+            "mandaps-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "mandaps-1-route",
+              "route": "/mandap",
+              "image": "/cinematic-assets/mandap-designer/hero-banners-hires-mandap-designer-351762a0/desktop-16x9.webp"
+            },
+            {
+              "id": "mandaps-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/board-4x3.webp"
+            },
+            {
+              "id": "mandaps-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/square-1x1.webp"
+            },
+            {
+              "id": "mandaps-1-evidence",
+              "route": "/mandap",
+              "image": "/cinematic-assets/mandap-designer/hero-banners-hires-mandap-designer-351762a0/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "mandaps-cad-placement",
+          "title": "Mandaps CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "mandaps-garden-mandap-005",
+            "mandaps-navagraha-grid-006",
+            "mandaps-panch-tatva-007",
+            "mandaps-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "mandaps-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "mandaps-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/board-4x3.webp"
+            },
+            {
+              "id": "mandaps-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/square-1x1.webp"
+            },
+            {
+              "id": "mandaps-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "mandaps-budget-package",
+          "title": "Mandaps budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "mandaps-raj-darbar-009",
+            "mandaps-circular-saptapadi-010",
+            "mandaps-floating-floral-cloud-011",
+            "mandaps-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "mandaps-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "mandaps-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/board-4x3.webp"
+            },
+            {
+              "id": "mandaps-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/square-1x1.webp"
+            },
+            {
+              "id": "mandaps-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "mandaps-production-handoff",
+          "title": "Mandaps production handoff",
+          "route": "/mandap",
+          "status": "READY",
+          "assetRefs": [
+            "mandaps-kalash-court-013",
+            "mandaps-nagara-temple-014",
+            "mandaps-south-indian-brass-015",
+            "mandaps-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "mandaps-4-route",
+              "route": "/mandap",
+              "image": "/cinematic-assets/mandap-designer/hero-banners-hires-mandap-designer-351762a0/desktop-16x9.webp"
+            },
+            {
+              "id": "mandaps-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/board-4x3.webp"
+            },
+            {
+              "id": "mandaps-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/square-1x1.webp"
+            },
+            {
+              "id": "mandaps-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Structural Elements",
+      "slug": "structural-elements",
+      "status": "READY",
+      "routes": [
+        "/cad/editor",
+        "/production",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "structural-elements-brief",
+          "title": "Structural Elements concept brief",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "structural-elements-vedic-lotus-001",
+            "structural-elements-royal-palace-002",
+            "structural-elements-temple-mandap-003",
+            "structural-elements-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "structural-elements-1-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "structural-elements-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/board-4x3.webp"
+            },
+            {
+              "id": "structural-elements-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/square-1x1.webp"
+            },
+            {
+              "id": "structural-elements-1-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "structural-elements-cad-placement",
+          "title": "Structural Elements CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "structural-elements-garden-mandap-005",
+            "structural-elements-navagraha-grid-006",
+            "structural-elements-panch-tatva-007",
+            "structural-elements-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "structural-elements-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "structural-elements-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/board-4x3.webp"
+            },
+            {
+              "id": "structural-elements-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/square-1x1.webp"
+            },
+            {
+              "id": "structural-elements-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "structural-elements-budget-package",
+          "title": "Structural Elements budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "structural-elements-raj-darbar-009",
+            "structural-elements-circular-saptapadi-010",
+            "structural-elements-floating-floral-cloud-011",
+            "structural-elements-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "structural-elements-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "structural-elements-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/board-4x3.webp"
+            },
+            {
+              "id": "structural-elements-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/square-1x1.webp"
+            },
+            {
+              "id": "structural-elements-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "structural-elements-production-handoff",
+          "title": "Structural Elements production handoff",
+          "route": "/production",
+          "status": "READY",
+          "assetRefs": [
+            "structural-elements-kalash-court-013",
+            "structural-elements-nagara-temple-014",
+            "structural-elements-south-indian-brass-015",
+            "structural-elements-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "structural-elements-4-route",
+              "route": "/production",
+              "image": "/cinematic-assets/production-planner/hero-banners-hires-production-planner-6dcc94f7/desktop-16x9.webp"
+            },
+            {
+              "id": "structural-elements-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/board-4x3.webp"
+            },
+            {
+              "id": "structural-elements-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/square-1x1.webp"
+            },
+            {
+              "id": "structural-elements-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Pillars",
+      "slug": "pillars",
+      "status": "READY",
+      "routes": [
+        "/mandap",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "pillars-brief",
+          "title": "Pillars concept brief",
+          "route": "/mandap",
+          "status": "READY",
+          "assetRefs": [
+            "pillars-vedic-lotus-001",
+            "pillars-royal-palace-002",
+            "pillars-temple-mandap-003",
+            "pillars-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "pillars-1-route",
+              "route": "/mandap",
+              "image": "/cinematic-assets/mandap-designer/hero-banners-hires-mandap-designer-351762a0/desktop-16x9.webp"
+            },
+            {
+              "id": "pillars-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-design-options-6d049876/board-4x3.webp"
+            },
+            {
+              "id": "pillars-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-design-options-6d049876/square-1x1.webp"
+            },
+            {
+              "id": "pillars-1-evidence",
+              "route": "/mandap",
+              "image": "/cinematic-assets/mandap-designer/hero-banners-hires-mandap-designer-351762a0/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "pillars-cad-placement",
+          "title": "Pillars CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "pillars-garden-mandap-005",
+            "pillars-navagraha-grid-006",
+            "pillars-panch-tatva-007",
+            "pillars-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "pillars-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "pillars-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-design-options-6d049876/board-4x3.webp"
+            },
+            {
+              "id": "pillars-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-design-options-6d049876/square-1x1.webp"
+            },
+            {
+              "id": "pillars-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "pillars-budget-package",
+          "title": "Pillars budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "pillars-raj-darbar-009",
+            "pillars-circular-saptapadi-010",
+            "pillars-floating-floral-cloud-011",
+            "pillars-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "pillars-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "pillars-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-design-options-6d049876/board-4x3.webp"
+            },
+            {
+              "id": "pillars-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-design-options-6d049876/square-1x1.webp"
+            },
+            {
+              "id": "pillars-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "pillars-production-handoff",
+          "title": "Pillars production handoff",
+          "route": "/mandap",
+          "status": "READY",
+          "assetRefs": [
+            "pillars-kalash-court-013",
+            "pillars-nagara-temple-014",
+            "pillars-south-indian-brass-015",
+            "pillars-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "pillars-4-route",
+              "route": "/mandap",
+              "image": "/cinematic-assets/mandap-designer/hero-banners-hires-mandap-designer-351762a0/desktop-16x9.webp"
+            },
+            {
+              "id": "pillars-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-design-options-6d049876/board-4x3.webp"
+            },
+            {
+              "id": "pillars-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-design-options-6d049876/square-1x1.webp"
+            },
+            {
+              "id": "pillars-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Gates & Arches",
+      "slug": "gates-and-arches",
+      "status": "READY",
+      "routes": [
+        "/venue-designer",
+        "/mandap",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "gates-and-arches-brief",
+          "title": "Gates & Arches concept brief",
+          "route": "/venue-designer",
+          "status": "READY",
+          "assetRefs": [
+            "gates-and-arches-vedic-lotus-001",
+            "gates-and-arches-royal-palace-002",
+            "gates-and-arches-temple-mandap-003",
+            "gates-and-arches-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "gates-and-arches-1-route",
+              "route": "/venue-designer",
+              "image": "/cinematic-assets/venue-designer/hero-banners-hires-venue-designer-24281063/desktop-16x9.webp"
+            },
+            {
+              "id": "gates-and-arches-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/board-4x3.webp"
+            },
+            {
+              "id": "gates-and-arches-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/square-1x1.webp"
+            },
+            {
+              "id": "gates-and-arches-1-evidence",
+              "route": "/venue-designer",
+              "image": "/cinematic-assets/venue-designer/hero-banners-hires-venue-designer-24281063/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "gates-and-arches-cad-placement",
+          "title": "Gates & Arches CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "gates-and-arches-garden-mandap-005",
+            "gates-and-arches-navagraha-grid-006",
+            "gates-and-arches-panch-tatva-007",
+            "gates-and-arches-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "gates-and-arches-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "gates-and-arches-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/board-4x3.webp"
+            },
+            {
+              "id": "gates-and-arches-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/square-1x1.webp"
+            },
+            {
+              "id": "gates-and-arches-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "gates-and-arches-budget-package",
+          "title": "Gates & Arches budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "gates-and-arches-raj-darbar-009",
+            "gates-and-arches-circular-saptapadi-010",
+            "gates-and-arches-floating-floral-cloud-011",
+            "gates-and-arches-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "gates-and-arches-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "gates-and-arches-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/board-4x3.webp"
+            },
+            {
+              "id": "gates-and-arches-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/square-1x1.webp"
+            },
+            {
+              "id": "gates-and-arches-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "gates-and-arches-production-handoff",
+          "title": "Gates & Arches production handoff",
+          "route": "/venue-designer",
+          "status": "READY",
+          "assetRefs": [
+            "gates-and-arches-kalash-court-013",
+            "gates-and-arches-nagara-temple-014",
+            "gates-and-arches-south-indian-brass-015",
+            "gates-and-arches-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "gates-and-arches-4-route",
+              "route": "/venue-designer",
+              "image": "/cinematic-assets/venue-designer/hero-banners-hires-venue-designer-24281063/desktop-16x9.webp"
+            },
+            {
+              "id": "gates-and-arches-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/board-4x3.webp"
+            },
+            {
+              "id": "gates-and-arches-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/square-1x1.webp"
+            },
+            {
+              "id": "gates-and-arches-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Backdrops",
+      "slug": "backdrops",
+      "status": "READY",
+      "routes": [
+        "/mandap",
+        "/floral",
+        "/lighting",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "backdrops-brief",
+          "title": "Backdrops concept brief",
+          "route": "/mandap",
+          "status": "READY",
+          "assetRefs": [
+            "backdrops-vedic-lotus-001",
+            "backdrops-royal-palace-002",
+            "backdrops-temple-mandap-003",
+            "backdrops-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "backdrops-1-route",
+              "route": "/mandap",
+              "image": "/cinematic-assets/mandap-designer/hero-banners-hires-mandap-designer-351762a0/desktop-16x9.webp"
+            },
+            {
+              "id": "backdrops-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/board-4x3.webp"
+            },
+            {
+              "id": "backdrops-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/square-1x1.webp"
+            },
+            {
+              "id": "backdrops-1-evidence",
+              "route": "/mandap",
+              "image": "/cinematic-assets/mandap-designer/hero-banners-hires-mandap-designer-351762a0/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "backdrops-cad-placement",
+          "title": "Backdrops CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "backdrops-garden-mandap-005",
+            "backdrops-navagraha-grid-006",
+            "backdrops-panch-tatva-007",
+            "backdrops-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "backdrops-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "backdrops-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/board-4x3.webp"
+            },
+            {
+              "id": "backdrops-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/square-1x1.webp"
+            },
+            {
+              "id": "backdrops-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "backdrops-budget-package",
+          "title": "Backdrops budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "backdrops-raj-darbar-009",
+            "backdrops-circular-saptapadi-010",
+            "backdrops-floating-floral-cloud-011",
+            "backdrops-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "backdrops-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "backdrops-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/board-4x3.webp"
+            },
+            {
+              "id": "backdrops-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/square-1x1.webp"
+            },
+            {
+              "id": "backdrops-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "backdrops-production-handoff",
+          "title": "Backdrops production handoff",
+          "route": "/mandap",
+          "status": "READY",
+          "assetRefs": [
+            "backdrops-kalash-court-013",
+            "backdrops-nagara-temple-014",
+            "backdrops-south-indian-brass-015",
+            "backdrops-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "backdrops-4-route",
+              "route": "/mandap",
+              "image": "/cinematic-assets/mandap-designer/hero-banners-hires-mandap-designer-351762a0/desktop-16x9.webp"
+            },
+            {
+              "id": "backdrops-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/board-4x3.webp"
+            },
+            {
+              "id": "backdrops-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/square-1x1.webp"
+            },
+            {
+              "id": "backdrops-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Decor Props",
+      "slug": "decor-props",
+      "status": "READY",
+      "routes": [
+        "/mandap",
+        "/floral",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "decor-props-brief",
+          "title": "Decor Props concept brief",
+          "route": "/mandap",
+          "status": "READY",
+          "assetRefs": [
+            "decor-props-vedic-lotus-001",
+            "decor-props-royal-palace-002",
+            "decor-props-temple-mandap-003",
+            "decor-props-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "decor-props-1-route",
+              "route": "/mandap",
+              "image": "/cinematic-assets/mandap-designer/hero-banners-hires-mandap-designer-351762a0/desktop-16x9.webp"
+            },
+            {
+              "id": "decor-props-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/board-4x3.webp"
+            },
+            {
+              "id": "decor-props-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/square-1x1.webp"
+            },
+            {
+              "id": "decor-props-1-evidence",
+              "route": "/mandap",
+              "image": "/cinematic-assets/mandap-designer/hero-banners-hires-mandap-designer-351762a0/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "decor-props-cad-placement",
+          "title": "Decor Props CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "decor-props-garden-mandap-005",
+            "decor-props-navagraha-grid-006",
+            "decor-props-panch-tatva-007",
+            "decor-props-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "decor-props-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "decor-props-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/board-4x3.webp"
+            },
+            {
+              "id": "decor-props-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/square-1x1.webp"
+            },
+            {
+              "id": "decor-props-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "decor-props-budget-package",
+          "title": "Decor Props budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "decor-props-raj-darbar-009",
+            "decor-props-circular-saptapadi-010",
+            "decor-props-floating-floral-cloud-011",
+            "decor-props-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "decor-props-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "decor-props-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/board-4x3.webp"
+            },
+            {
+              "id": "decor-props-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/square-1x1.webp"
+            },
+            {
+              "id": "decor-props-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "decor-props-production-handoff",
+          "title": "Decor Props production handoff",
+          "route": "/mandap",
+          "status": "READY",
+          "assetRefs": [
+            "decor-props-kalash-court-013",
+            "decor-props-nagara-temple-014",
+            "decor-props-south-indian-brass-015",
+            "decor-props-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "decor-props-4-route",
+              "route": "/mandap",
+              "image": "/cinematic-assets/mandap-designer/hero-banners-hires-mandap-designer-351762a0/desktop-16x9.webp"
+            },
+            {
+              "id": "decor-props-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/board-4x3.webp"
+            },
+            {
+              "id": "decor-props-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/square-1x1.webp"
+            },
+            {
+              "id": "decor-props-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Floral Installations",
+      "slug": "floral-installations",
+      "status": "READY",
+      "routes": [
+        "/floral",
+        "/mandap",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "floral-installations-brief",
+          "title": "Floral Installations concept brief",
+          "route": "/floral",
+          "status": "READY",
+          "assetRefs": [
+            "floral-installations-vedic-lotus-001",
+            "floral-installations-royal-palace-002",
+            "floral-installations-temple-mandap-003",
+            "floral-installations-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "floral-installations-1-route",
+              "route": "/floral",
+              "image": "/cinematic-assets/floral-designer/hero-banners-hires-floral-designer-3b1f9a14/desktop-16x9.webp"
+            },
+            {
+              "id": "floral-installations-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/board-4x3.webp"
+            },
+            {
+              "id": "floral-installations-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/square-1x1.webp"
+            },
+            {
+              "id": "floral-installations-1-evidence",
+              "route": "/floral",
+              "image": "/cinematic-assets/floral-designer/hero-banners-hires-floral-designer-3b1f9a14/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "floral-installations-cad-placement",
+          "title": "Floral Installations CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "floral-installations-garden-mandap-005",
+            "floral-installations-navagraha-grid-006",
+            "floral-installations-panch-tatva-007",
+            "floral-installations-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "floral-installations-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "floral-installations-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/board-4x3.webp"
+            },
+            {
+              "id": "floral-installations-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/square-1x1.webp"
+            },
+            {
+              "id": "floral-installations-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "floral-installations-budget-package",
+          "title": "Floral Installations budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "floral-installations-raj-darbar-009",
+            "floral-installations-circular-saptapadi-010",
+            "floral-installations-floating-floral-cloud-011",
+            "floral-installations-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "floral-installations-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "floral-installations-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/board-4x3.webp"
+            },
+            {
+              "id": "floral-installations-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/square-1x1.webp"
+            },
+            {
+              "id": "floral-installations-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "floral-installations-production-handoff",
+          "title": "Floral Installations production handoff",
+          "route": "/floral",
+          "status": "READY",
+          "assetRefs": [
+            "floral-installations-kalash-court-013",
+            "floral-installations-nagara-temple-014",
+            "floral-installations-south-indian-brass-015",
+            "floral-installations-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "floral-installations-4-route",
+              "route": "/floral",
+              "image": "/cinematic-assets/floral-designer/hero-banners-hires-floral-designer-3b1f9a14/desktop-16x9.webp"
+            },
+            {
+              "id": "floral-installations-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/board-4x3.webp"
+            },
+            {
+              "id": "floral-installations-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-unique-design-options-e93890b0/square-1x1.webp"
+            },
+            {
+              "id": "floral-installations-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Flower Types",
+      "slug": "flower-types",
+      "status": "READY",
+      "routes": [
+        "/floral",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "flower-types-brief",
+          "title": "Flower Types concept brief",
+          "route": "/floral",
+          "status": "READY",
+          "assetRefs": [
+            "flower-types-vedic-lotus-001",
+            "flower-types-royal-palace-002",
+            "flower-types-temple-mandap-003",
+            "flower-types-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "flower-types-1-route",
+              "route": "/floral",
+              "image": "/cinematic-assets/floral-designer/hero-banners-hires-floral-designer-3b1f9a14/desktop-16x9.webp"
+            },
+            {
+              "id": "flower-types-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/board-4x3.webp"
+            },
+            {
+              "id": "flower-types-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/square-1x1.webp"
+            },
+            {
+              "id": "flower-types-1-evidence",
+              "route": "/floral",
+              "image": "/cinematic-assets/floral-designer/hero-banners-hires-floral-designer-3b1f9a14/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "flower-types-cad-placement",
+          "title": "Flower Types CAD placement review",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "flower-types-garden-mandap-005",
+            "flower-types-navagraha-grid-006",
+            "flower-types-panch-tatva-007",
+            "flower-types-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "flower-types-2-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "flower-types-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/board-4x3.webp"
+            },
+            {
+              "id": "flower-types-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/square-1x1.webp"
+            },
+            {
+              "id": "flower-types-2-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "flower-types-budget-package",
+          "title": "Flower Types budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "flower-types-raj-darbar-009",
+            "flower-types-circular-saptapadi-010",
+            "flower-types-floating-floral-cloud-011",
+            "flower-types-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "flower-types-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "flower-types-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/board-4x3.webp"
+            },
+            {
+              "id": "flower-types-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/square-1x1.webp"
+            },
+            {
+              "id": "flower-types-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "flower-types-production-handoff",
+          "title": "Flower Types production handoff",
+          "route": "/floral",
+          "status": "READY",
+          "assetRefs": [
+            "flower-types-kalash-court-013",
+            "flower-types-nagara-temple-014",
+            "flower-types-south-indian-brass-015",
+            "flower-types-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "flower-types-4-route",
+              "route": "/floral",
+              "image": "/cinematic-assets/floral-designer/hero-banners-hires-floral-designer-3b1f9a14/desktop-16x9.webp"
+            },
+            {
+              "id": "flower-types-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/board-4x3.webp"
+            },
+            {
+              "id": "flower-types-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/square-1x1.webp"
+            },
+            {
+              "id": "flower-types-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Furniture",
+      "slug": "furniture",
+      "status": "READY",
+      "routes": [
+        "/layouts",
+        "/guests",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "furniture-brief",
+          "title": "Furniture concept brief",
+          "route": "/layouts",
+          "status": "READY",
+          "assetRefs": [
+            "furniture-vedic-lotus-001",
+            "furniture-royal-palace-002",
+            "furniture-temple-mandap-003",
+            "furniture-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "furniture-1-route",
+              "route": "/layouts",
+              "image": "/cinematic-assets/layout-generator/hero-banners-hires-layout-generator-40e42e02/desktop-16x9.webp"
+            },
+            {
+              "id": "furniture-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/board-4x3.webp"
+            },
+            {
+              "id": "furniture-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/square-1x1.webp"
+            },
+            {
+              "id": "furniture-1-evidence",
+              "route": "/layouts",
+              "image": "/cinematic-assets/layout-generator/hero-banners-hires-layout-generator-40e42e02/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "furniture-cad-placement",
+          "title": "Furniture CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "furniture-garden-mandap-005",
+            "furniture-navagraha-grid-006",
+            "furniture-panch-tatva-007",
+            "furniture-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "furniture-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "furniture-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/board-4x3.webp"
+            },
+            {
+              "id": "furniture-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/square-1x1.webp"
+            },
+            {
+              "id": "furniture-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "furniture-budget-package",
+          "title": "Furniture budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "furniture-raj-darbar-009",
+            "furniture-circular-saptapadi-010",
+            "furniture-floating-floral-cloud-011",
+            "furniture-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "furniture-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "furniture-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/board-4x3.webp"
+            },
+            {
+              "id": "furniture-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/square-1x1.webp"
+            },
+            {
+              "id": "furniture-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "furniture-production-handoff",
+          "title": "Furniture production handoff",
+          "route": "/layouts",
+          "status": "READY",
+          "assetRefs": [
+            "furniture-kalash-court-013",
+            "furniture-nagara-temple-014",
+            "furniture-south-indian-brass-015",
+            "furniture-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "furniture-4-route",
+              "route": "/layouts",
+              "image": "/cinematic-assets/layout-generator/hero-banners-hires-layout-generator-40e42e02/desktop-16x9.webp"
+            },
+            {
+              "id": "furniture-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/board-4x3.webp"
+            },
+            {
+              "id": "furniture-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/cad-editor/extracted-boards-traditional-royal-cad-presentation-3220043d/square-1x1.webp"
+            },
+            {
+              "id": "furniture-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Seating",
+      "slug": "seating",
+      "status": "READY",
+      "routes": [
+        "/layouts",
+        "/guests",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "seating-brief",
+          "title": "Seating concept brief",
+          "route": "/layouts",
+          "status": "READY",
+          "assetRefs": [
+            "seating-vedic-lotus-001",
+            "seating-royal-palace-002",
+            "seating-temple-mandap-003",
+            "seating-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "seating-1-route",
+              "route": "/layouts",
+              "image": "/cinematic-assets/layout-generator/hero-banners-hires-layout-generator-40e42e02/desktop-16x9.webp"
+            },
+            {
+              "id": "seating-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "seating-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "seating-1-evidence",
+              "route": "/layouts",
+              "image": "/cinematic-assets/layout-generator/hero-banners-hires-layout-generator-40e42e02/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "seating-cad-placement",
+          "title": "Seating CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "seating-garden-mandap-005",
+            "seating-navagraha-grid-006",
+            "seating-panch-tatva-007",
+            "seating-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "seating-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "seating-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "seating-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "seating-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "seating-budget-package",
+          "title": "Seating budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "seating-raj-darbar-009",
+            "seating-circular-saptapadi-010",
+            "seating-floating-floral-cloud-011",
+            "seating-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "seating-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "seating-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "seating-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "seating-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "seating-production-handoff",
+          "title": "Seating production handoff",
+          "route": "/layouts",
+          "status": "READY",
+          "assetRefs": [
+            "seating-kalash-court-013",
+            "seating-nagara-temple-014",
+            "seating-south-indian-brass-015",
+            "seating-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "seating-4-route",
+              "route": "/layouts",
+              "image": "/cinematic-assets/layout-generator/hero-banners-hires-layout-generator-40e42e02/desktop-16x9.webp"
+            },
+            {
+              "id": "seating-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "seating-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "seating-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Tables",
+      "slug": "tables",
+      "status": "READY",
+      "routes": [
+        "/layouts",
+        "/budget",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "tables-brief",
+          "title": "Tables concept brief",
+          "route": "/layouts",
+          "status": "READY",
+          "assetRefs": [
+            "tables-vedic-lotus-001",
+            "tables-royal-palace-002",
+            "tables-temple-mandap-003",
+            "tables-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "tables-1-route",
+              "route": "/layouts",
+              "image": "/cinematic-assets/layout-generator/hero-banners-hires-layout-generator-40e42e02/desktop-16x9.webp"
+            },
+            {
+              "id": "tables-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/board-4x3.webp"
+            },
+            {
+              "id": "tables-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/square-1x1.webp"
+            },
+            {
+              "id": "tables-1-evidence",
+              "route": "/layouts",
+              "image": "/cinematic-assets/layout-generator/hero-banners-hires-layout-generator-40e42e02/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "tables-cad-placement",
+          "title": "Tables CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "tables-garden-mandap-005",
+            "tables-navagraha-grid-006",
+            "tables-panch-tatva-007",
+            "tables-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "tables-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "tables-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/board-4x3.webp"
+            },
+            {
+              "id": "tables-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/square-1x1.webp"
+            },
+            {
+              "id": "tables-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "tables-budget-package",
+          "title": "Tables budget package",
+          "route": "/budget",
+          "status": "READY",
+          "assetRefs": [
+            "tables-raj-darbar-009",
+            "tables-circular-saptapadi-010",
+            "tables-floating-floral-cloud-011",
+            "tables-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "tables-3-route",
+              "route": "/budget",
+              "image": "/cinematic-assets/budget-planner/hero-banners-hires-budget-planner-f709cdf8/desktop-16x9.webp"
+            },
+            {
+              "id": "tables-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/board-4x3.webp"
+            },
+            {
+              "id": "tables-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/square-1x1.webp"
+            },
+            {
+              "id": "tables-3-evidence",
+              "route": "/budget",
+              "image": "/cinematic-assets/budget-planner/hero-banners-hires-budget-planner-f709cdf8/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "tables-production-handoff",
+          "title": "Tables production handoff",
+          "route": "/layouts",
+          "status": "READY",
+          "assetRefs": [
+            "tables-kalash-court-013",
+            "tables-nagara-temple-014",
+            "tables-south-indian-brass-015",
+            "tables-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "tables-4-route",
+              "route": "/layouts",
+              "image": "/cinematic-assets/layout-generator/hero-banners-hires-layout-generator-40e42e02/desktop-16x9.webp"
+            },
+            {
+              "id": "tables-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/board-4x3.webp"
+            },
+            {
+              "id": "tables-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/square-1x1.webp"
+            },
+            {
+              "id": "tables-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Lighting Fixtures",
+      "slug": "lighting-fixtures",
+      "status": "READY",
+      "routes": [
+        "/lighting",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "lighting-fixtures-brief",
+          "title": "Lighting Fixtures concept brief",
+          "route": "/lighting",
+          "status": "READY",
+          "assetRefs": [
+            "lighting-fixtures-vedic-lotus-001",
+            "lighting-fixtures-royal-palace-002",
+            "lighting-fixtures-temple-mandap-003",
+            "lighting-fixtures-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "lighting-fixtures-1-route",
+              "route": "/lighting",
+              "image": "/cinematic-assets/lighting-designer/hero-banners-hires-lighting-designer-69ca2b53/desktop-16x9.webp"
+            },
+            {
+              "id": "lighting-fixtures-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "lighting-fixtures-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "lighting-fixtures-1-evidence",
+              "route": "/lighting",
+              "image": "/cinematic-assets/lighting-designer/hero-banners-hires-lighting-designer-69ca2b53/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "lighting-fixtures-cad-placement",
+          "title": "Lighting Fixtures CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "lighting-fixtures-garden-mandap-005",
+            "lighting-fixtures-navagraha-grid-006",
+            "lighting-fixtures-panch-tatva-007",
+            "lighting-fixtures-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "lighting-fixtures-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "lighting-fixtures-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "lighting-fixtures-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "lighting-fixtures-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "lighting-fixtures-budget-package",
+          "title": "Lighting Fixtures budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "lighting-fixtures-raj-darbar-009",
+            "lighting-fixtures-circular-saptapadi-010",
+            "lighting-fixtures-floating-floral-cloud-011",
+            "lighting-fixtures-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "lighting-fixtures-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "lighting-fixtures-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "lighting-fixtures-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "lighting-fixtures-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "lighting-fixtures-production-handoff",
+          "title": "Lighting Fixtures production handoff",
+          "route": "/lighting",
+          "status": "READY",
+          "assetRefs": [
+            "lighting-fixtures-kalash-court-013",
+            "lighting-fixtures-nagara-temple-014",
+            "lighting-fixtures-south-indian-brass-015",
+            "lighting-fixtures-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "lighting-fixtures-4-route",
+              "route": "/lighting",
+              "image": "/cinematic-assets/lighting-designer/hero-banners-hires-lighting-designer-69ca2b53/desktop-16x9.webp"
+            },
+            {
+              "id": "lighting-fixtures-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "lighting-fixtures-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "lighting-fixtures-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Decorative Lighting",
+      "slug": "decorative-lighting",
+      "status": "READY",
+      "routes": [
+        "/lighting",
+        "/floral",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "decorative-lighting-brief",
+          "title": "Decorative Lighting concept brief",
+          "route": "/lighting",
+          "status": "READY",
+          "assetRefs": [
+            "decorative-lighting-vedic-lotus-001",
+            "decorative-lighting-royal-palace-002",
+            "decorative-lighting-temple-mandap-003",
+            "decorative-lighting-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "decorative-lighting-1-route",
+              "route": "/lighting",
+              "image": "/cinematic-assets/lighting-designer/hero-banners-hires-lighting-designer-69ca2b53/desktop-16x9.webp"
+            },
+            {
+              "id": "decorative-lighting-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/board-4x3.webp"
+            },
+            {
+              "id": "decorative-lighting-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/square-1x1.webp"
+            },
+            {
+              "id": "decorative-lighting-1-evidence",
+              "route": "/lighting",
+              "image": "/cinematic-assets/lighting-designer/hero-banners-hires-lighting-designer-69ca2b53/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "decorative-lighting-cad-placement",
+          "title": "Decorative Lighting CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "decorative-lighting-garden-mandap-005",
+            "decorative-lighting-navagraha-grid-006",
+            "decorative-lighting-panch-tatva-007",
+            "decorative-lighting-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "decorative-lighting-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "decorative-lighting-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/board-4x3.webp"
+            },
+            {
+              "id": "decorative-lighting-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/square-1x1.webp"
+            },
+            {
+              "id": "decorative-lighting-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "decorative-lighting-budget-package",
+          "title": "Decorative Lighting budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "decorative-lighting-raj-darbar-009",
+            "decorative-lighting-circular-saptapadi-010",
+            "decorative-lighting-floating-floral-cloud-011",
+            "decorative-lighting-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "decorative-lighting-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "decorative-lighting-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/board-4x3.webp"
+            },
+            {
+              "id": "decorative-lighting-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/square-1x1.webp"
+            },
+            {
+              "id": "decorative-lighting-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "decorative-lighting-production-handoff",
+          "title": "Decorative Lighting production handoff",
+          "route": "/lighting",
+          "status": "READY",
+          "assetRefs": [
+            "decorative-lighting-kalash-court-013",
+            "decorative-lighting-nagara-temple-014",
+            "decorative-lighting-south-indian-brass-015",
+            "decorative-lighting-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "decorative-lighting-4-route",
+              "route": "/lighting",
+              "image": "/cinematic-assets/lighting-designer/hero-banners-hires-lighting-designer-69ca2b53/desktop-16x9.webp"
+            },
+            {
+              "id": "decorative-lighting-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/board-4x3.webp"
+            },
+            {
+              "id": "decorative-lighting-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-vedic-sacred-traditional-options-6243b47f/square-1x1.webp"
+            },
+            {
+              "id": "decorative-lighting-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Effects",
+      "slug": "effects",
+      "status": "PARTIAL",
+      "routes": [
+        "/lighting",
+        "/production",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 0,
+      "partialAssets": 20,
+      "blockedAssets": 4,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "effects-brief",
+          "title": "Effects concept brief",
+          "route": "/lighting",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "effects-vedic-lotus-001",
+            "effects-royal-palace-002",
+            "effects-temple-mandap-003",
+            "effects-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "effects-1-route",
+              "route": "/lighting",
+              "image": "/cinematic-assets/lighting-designer/hero-banners-hires-lighting-designer-69ca2b53/desktop-16x9.webp"
+            },
+            {
+              "id": "effects-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "effects-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "effects-1-evidence",
+              "route": "/lighting",
+              "image": "/cinematic-assets/lighting-designer/hero-banners-hires-lighting-designer-69ca2b53/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "effects-cad-placement",
+          "title": "Effects CAD placement review",
+          "route": "/assets",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "effects-garden-mandap-005",
+            "effects-navagraha-grid-006",
+            "effects-panch-tatva-007",
+            "effects-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "effects-2-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "effects-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "effects-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "effects-2-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "effects-budget-package",
+          "title": "Effects budget package",
+          "route": "/assets",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "effects-raj-darbar-009",
+            "effects-circular-saptapadi-010",
+            "effects-floating-floral-cloud-011",
+            "effects-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "effects-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "effects-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "effects-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "effects-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "effects-production-handoff",
+          "title": "Effects production handoff",
+          "route": "/production",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "effects-kalash-court-013",
+            "effects-nagara-temple-014",
+            "effects-south-indian-brass-015",
+            "effects-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "effects-4-route",
+              "route": "/production",
+              "image": "/cinematic-assets/production-planner/hero-banners-hires-production-planner-6dcc94f7/desktop-16x9.webp"
+            },
+            {
+              "id": "effects-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "effects-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "effects-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Truss & Rigging",
+      "slug": "truss-and-rigging",
+      "status": "PARTIAL",
+      "routes": [
+        "/lighting",
+        "/production",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 0,
+      "partialAssets": 20,
+      "blockedAssets": 4,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "truss-and-rigging-brief",
+          "title": "Truss & Rigging concept brief",
+          "route": "/lighting",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "truss-and-rigging-vedic-lotus-001",
+            "truss-and-rigging-royal-palace-002",
+            "truss-and-rigging-temple-mandap-003",
+            "truss-and-rigging-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "truss-and-rigging-1-route",
+              "route": "/lighting",
+              "image": "/cinematic-assets/lighting-designer/hero-banners-hires-lighting-designer-69ca2b53/desktop-16x9.webp"
+            },
+            {
+              "id": "truss-and-rigging-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "truss-and-rigging-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "truss-and-rigging-1-evidence",
+              "route": "/lighting",
+              "image": "/cinematic-assets/lighting-designer/hero-banners-hires-lighting-designer-69ca2b53/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "truss-and-rigging-cad-placement",
+          "title": "Truss & Rigging CAD placement review",
+          "route": "/cad/editor",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "truss-and-rigging-garden-mandap-005",
+            "truss-and-rigging-navagraha-grid-006",
+            "truss-and-rigging-panch-tatva-007",
+            "truss-and-rigging-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "truss-and-rigging-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "truss-and-rigging-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "truss-and-rigging-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "truss-and-rigging-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "truss-and-rigging-budget-package",
+          "title": "Truss & Rigging budget package",
+          "route": "/assets",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "truss-and-rigging-raj-darbar-009",
+            "truss-and-rigging-circular-saptapadi-010",
+            "truss-and-rigging-floating-floral-cloud-011",
+            "truss-and-rigging-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "truss-and-rigging-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "truss-and-rigging-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "truss-and-rigging-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "truss-and-rigging-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "truss-and-rigging-production-handoff",
+          "title": "Truss & Rigging production handoff",
+          "route": "/production",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "truss-and-rigging-kalash-court-013",
+            "truss-and-rigging-nagara-temple-014",
+            "truss-and-rigging-south-indian-brass-015",
+            "truss-and-rigging-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "truss-and-rigging-4-route",
+              "route": "/production",
+              "image": "/cinematic-assets/production-planner/hero-banners-hires-production-planner-6dcc94f7/desktop-16x9.webp"
+            },
+            {
+              "id": "truss-and-rigging-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "truss-and-rigging-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "truss-and-rigging-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "LED & Screens",
+      "slug": "led-and-screens",
+      "status": "READY",
+      "routes": [
+        "/lighting",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "led-and-screens-brief",
+          "title": "LED & Screens concept brief",
+          "route": "/lighting",
+          "status": "READY",
+          "assetRefs": [
+            "led-and-screens-vedic-lotus-001",
+            "led-and-screens-royal-palace-002",
+            "led-and-screens-temple-mandap-003",
+            "led-and-screens-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "led-and-screens-1-route",
+              "route": "/lighting",
+              "image": "/cinematic-assets/lighting-designer/hero-banners-hires-lighting-designer-69ca2b53/desktop-16x9.webp"
+            },
+            {
+              "id": "led-and-screens-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "led-and-screens-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "led-and-screens-1-evidence",
+              "route": "/lighting",
+              "image": "/cinematic-assets/lighting-designer/hero-banners-hires-lighting-designer-69ca2b53/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "led-and-screens-cad-placement",
+          "title": "LED & Screens CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "led-and-screens-garden-mandap-005",
+            "led-and-screens-navagraha-grid-006",
+            "led-and-screens-panch-tatva-007",
+            "led-and-screens-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "led-and-screens-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "led-and-screens-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "led-and-screens-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "led-and-screens-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "led-and-screens-budget-package",
+          "title": "LED & Screens budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "led-and-screens-raj-darbar-009",
+            "led-and-screens-circular-saptapadi-010",
+            "led-and-screens-floating-floral-cloud-011",
+            "led-and-screens-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "led-and-screens-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "led-and-screens-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "led-and-screens-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "led-and-screens-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "led-and-screens-production-handoff",
+          "title": "LED & Screens production handoff",
+          "route": "/lighting",
+          "status": "READY",
+          "assetRefs": [
+            "led-and-screens-kalash-court-013",
+            "led-and-screens-nagara-temple-014",
+            "led-and-screens-south-indian-brass-015",
+            "led-and-screens-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "led-and-screens-4-route",
+              "route": "/lighting",
+              "image": "/cinematic-assets/lighting-designer/hero-banners-hires-lighting-designer-69ca2b53/desktop-16x9.webp"
+            },
+            {
+              "id": "led-and-screens-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "led-and-screens-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "led-and-screens-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Audio",
+      "slug": "audio",
+      "status": "PARTIAL",
+      "routes": [
+        "/production",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 0,
+      "partialAssets": 20,
+      "blockedAssets": 4,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "audio-brief",
+          "title": "Audio concept brief",
+          "route": "/production",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "audio-vedic-lotus-001",
+            "audio-royal-palace-002",
+            "audio-temple-mandap-003",
+            "audio-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "audio-1-route",
+              "route": "/production",
+              "image": "/cinematic-assets/production-planner/hero-banners-hires-production-planner-6dcc94f7/desktop-16x9.webp"
+            },
+            {
+              "id": "audio-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "audio-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "audio-1-evidence",
+              "route": "/production",
+              "image": "/cinematic-assets/production-planner/hero-banners-hires-production-planner-6dcc94f7/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "audio-cad-placement",
+          "title": "Audio CAD placement review",
+          "route": "/assets",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "audio-garden-mandap-005",
+            "audio-navagraha-grid-006",
+            "audio-panch-tatva-007",
+            "audio-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "audio-2-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "audio-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "audio-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "audio-2-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "audio-budget-package",
+          "title": "Audio budget package",
+          "route": "/assets",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "audio-raj-darbar-009",
+            "audio-circular-saptapadi-010",
+            "audio-floating-floral-cloud-011",
+            "audio-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "audio-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "audio-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "audio-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "audio-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "audio-production-handoff",
+          "title": "Audio production handoff",
+          "route": "/production",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "audio-kalash-court-013",
+            "audio-nagara-temple-014",
+            "audio-south-indian-brass-015",
+            "audio-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "audio-4-route",
+              "route": "/production",
+              "image": "/cinematic-assets/production-planner/hero-banners-hires-production-planner-6dcc94f7/desktop-16x9.webp"
+            },
+            {
+              "id": "audio-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "audio-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "audio-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Venue Zones",
+      "slug": "venue-zones",
+      "status": "READY",
+      "routes": [
+        "/venue-designer",
+        "/layouts",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "venue-zones-brief",
+          "title": "Venue Zones concept brief",
+          "route": "/venue-designer",
+          "status": "READY",
+          "assetRefs": [
+            "venue-zones-vedic-lotus-001",
+            "venue-zones-royal-palace-002",
+            "venue-zones-temple-mandap-003",
+            "venue-zones-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "venue-zones-1-route",
+              "route": "/venue-designer",
+              "image": "/cinematic-assets/venue-designer/hero-banners-hires-venue-designer-24281063/desktop-16x9.webp"
+            },
+            {
+              "id": "venue-zones-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "venue-zones-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "venue-zones-1-evidence",
+              "route": "/venue-designer",
+              "image": "/cinematic-assets/venue-designer/hero-banners-hires-venue-designer-24281063/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "venue-zones-cad-placement",
+          "title": "Venue Zones CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "venue-zones-garden-mandap-005",
+            "venue-zones-navagraha-grid-006",
+            "venue-zones-panch-tatva-007",
+            "venue-zones-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "venue-zones-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "venue-zones-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "venue-zones-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "venue-zones-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "venue-zones-budget-package",
+          "title": "Venue Zones budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "venue-zones-raj-darbar-009",
+            "venue-zones-circular-saptapadi-010",
+            "venue-zones-floating-floral-cloud-011",
+            "venue-zones-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "venue-zones-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "venue-zones-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "venue-zones-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "venue-zones-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "venue-zones-production-handoff",
+          "title": "Venue Zones production handoff",
+          "route": "/venue-designer",
+          "status": "READY",
+          "assetRefs": [
+            "venue-zones-kalash-court-013",
+            "venue-zones-nagara-temple-014",
+            "venue-zones-south-indian-brass-015",
+            "venue-zones-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "venue-zones-4-route",
+              "route": "/venue-designer",
+              "image": "/cinematic-assets/venue-designer/hero-banners-hires-venue-designer-24281063/desktop-16x9.webp"
+            },
+            {
+              "id": "venue-zones-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "venue-zones-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "venue-zones-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Utilities",
+      "slug": "utilities",
+      "status": "PARTIAL",
+      "routes": [
+        "/production",
+        "/venue-designer",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 0,
+      "partialAssets": 20,
+      "blockedAssets": 4,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "utilities-brief",
+          "title": "Utilities concept brief",
+          "route": "/production",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "utilities-vedic-lotus-001",
+            "utilities-royal-palace-002",
+            "utilities-temple-mandap-003",
+            "utilities-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "utilities-1-route",
+              "route": "/production",
+              "image": "/cinematic-assets/production-planner/hero-banners-hires-production-planner-6dcc94f7/desktop-16x9.webp"
+            },
+            {
+              "id": "utilities-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "utilities-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "utilities-1-evidence",
+              "route": "/production",
+              "image": "/cinematic-assets/production-planner/hero-banners-hires-production-planner-6dcc94f7/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "utilities-cad-placement",
+          "title": "Utilities CAD placement review",
+          "route": "/cad/editor",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "utilities-garden-mandap-005",
+            "utilities-navagraha-grid-006",
+            "utilities-panch-tatva-007",
+            "utilities-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "utilities-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "utilities-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "utilities-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "utilities-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "utilities-budget-package",
+          "title": "Utilities budget package",
+          "route": "/assets",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "utilities-raj-darbar-009",
+            "utilities-circular-saptapadi-010",
+            "utilities-floating-floral-cloud-011",
+            "utilities-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "utilities-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "utilities-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "utilities-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "utilities-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "utilities-production-handoff",
+          "title": "Utilities production handoff",
+          "route": "/production",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "utilities-kalash-court-013",
+            "utilities-nagara-temple-014",
+            "utilities-south-indian-brass-015",
+            "utilities-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "utilities-4-route",
+              "route": "/production",
+              "image": "/cinematic-assets/production-planner/hero-banners-hires-production-planner-6dcc94f7/desktop-16x9.webp"
+            },
+            {
+              "id": "utilities-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "utilities-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "utilities-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Guest Planning",
+      "slug": "guest-planning",
+      "status": "READY",
+      "routes": [
+        "/guests",
+        "/layouts",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "guest-planning-brief",
+          "title": "Guest Planning concept brief",
+          "route": "/guests",
+          "status": "READY",
+          "assetRefs": [
+            "guest-planning-vedic-lotus-001",
+            "guest-planning-royal-palace-002",
+            "guest-planning-temple-mandap-003",
+            "guest-planning-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "guest-planning-1-route",
+              "route": "/guests",
+              "image": "/cinematic-assets/guest-seating/hero-banners-hires-guest-seating-fc856be2/desktop-16x9.webp"
+            },
+            {
+              "id": "guest-planning-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "guest-planning-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "guest-planning-1-evidence",
+              "route": "/guests",
+              "image": "/cinematic-assets/guest-seating/hero-banners-hires-guest-seating-fc856be2/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "guest-planning-cad-placement",
+          "title": "Guest Planning CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "guest-planning-garden-mandap-005",
+            "guest-planning-navagraha-grid-006",
+            "guest-planning-panch-tatva-007",
+            "guest-planning-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "guest-planning-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "guest-planning-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "guest-planning-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "guest-planning-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "guest-planning-budget-package",
+          "title": "Guest Planning budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "guest-planning-raj-darbar-009",
+            "guest-planning-circular-saptapadi-010",
+            "guest-planning-floating-floral-cloud-011",
+            "guest-planning-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "guest-planning-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "guest-planning-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "guest-planning-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "guest-planning-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "guest-planning-production-handoff",
+          "title": "Guest Planning production handoff",
+          "route": "/guests",
+          "status": "READY",
+          "assetRefs": [
+            "guest-planning-kalash-court-013",
+            "guest-planning-nagara-temple-014",
+            "guest-planning-south-indian-brass-015",
+            "guest-planning-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "guest-planning-4-route",
+              "route": "/guests",
+              "image": "/cinematic-assets/guest-seating/hero-banners-hires-guest-seating-fc856be2/desktop-16x9.webp"
+            },
+            {
+              "id": "guest-planning-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "guest-planning-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "guest-planning-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Vendor Documents",
+      "slug": "vendor-documents",
+      "status": "BLOCKED",
+      "routes": [
+        "/vendors",
+        "/production",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 0,
+      "partialAssets": 0,
+      "blockedAssets": 24,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "vendor-documents-brief",
+          "title": "Vendor Documents concept brief",
+          "route": "/vendors",
+          "status": "BLOCKED",
+          "assetRefs": [
+            "vendor-documents-vedic-lotus-001",
+            "vendor-documents-royal-palace-002",
+            "vendor-documents-temple-mandap-003",
+            "vendor-documents-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "vendor-documents-1-route",
+              "route": "/vendors",
+              "image": "/cinematic-assets/vendor-manager/hero-banners-hires-vendor-manager-d736fefd/desktop-16x9.webp"
+            },
+            {
+              "id": "vendor-documents-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/board-4x3.webp"
+            },
+            {
+              "id": "vendor-documents-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/square-1x1.webp"
+            },
+            {
+              "id": "vendor-documents-1-evidence",
+              "route": "/vendors",
+              "image": "/cinematic-assets/vendor-manager/hero-banners-hires-vendor-manager-d736fefd/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "vendor-documents-cad-placement",
+          "title": "Vendor Documents CAD placement review",
+          "route": "/assets",
+          "status": "BLOCKED",
+          "assetRefs": [
+            "vendor-documents-garden-mandap-005",
+            "vendor-documents-navagraha-grid-006",
+            "vendor-documents-panch-tatva-007",
+            "vendor-documents-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "vendor-documents-2-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "vendor-documents-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/board-4x3.webp"
+            },
+            {
+              "id": "vendor-documents-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/square-1x1.webp"
+            },
+            {
+              "id": "vendor-documents-2-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "vendor-documents-budget-package",
+          "title": "Vendor Documents budget package",
+          "route": "/assets",
+          "status": "BLOCKED",
+          "assetRefs": [
+            "vendor-documents-raj-darbar-009",
+            "vendor-documents-circular-saptapadi-010",
+            "vendor-documents-floating-floral-cloud-011",
+            "vendor-documents-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "vendor-documents-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "vendor-documents-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/board-4x3.webp"
+            },
+            {
+              "id": "vendor-documents-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/square-1x1.webp"
+            },
+            {
+              "id": "vendor-documents-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "vendor-documents-production-handoff",
+          "title": "Vendor Documents production handoff",
+          "route": "/production",
+          "status": "BLOCKED",
+          "assetRefs": [
+            "vendor-documents-kalash-court-013",
+            "vendor-documents-nagara-temple-014",
+            "vendor-documents-south-indian-brass-015",
+            "vendor-documents-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "vendor-documents-4-route",
+              "route": "/production",
+              "image": "/cinematic-assets/production-planner/hero-banners-hires-production-planner-6dcc94f7/desktop-16x9.webp"
+            },
+            {
+              "id": "vendor-documents-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/board-4x3.webp"
+            },
+            {
+              "id": "vendor-documents-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/square-1x1.webp"
+            },
+            {
+              "id": "vendor-documents-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Production Planning",
+      "slug": "production-planning",
+      "status": "PARTIAL",
+      "routes": [
+        "/production",
+        "/admin",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 0,
+      "partialAssets": 20,
+      "blockedAssets": 4,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "production-planning-brief",
+          "title": "Production Planning concept brief",
+          "route": "/production",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "production-planning-vedic-lotus-001",
+            "production-planning-royal-palace-002",
+            "production-planning-temple-mandap-003",
+            "production-planning-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "production-planning-1-route",
+              "route": "/production",
+              "image": "/cinematic-assets/production-planner/hero-banners-hires-production-planner-6dcc94f7/desktop-16x9.webp"
+            },
+            {
+              "id": "production-planning-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/board-4x3.webp"
+            },
+            {
+              "id": "production-planning-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/square-1x1.webp"
+            },
+            {
+              "id": "production-planning-1-evidence",
+              "route": "/production",
+              "image": "/cinematic-assets/production-planner/hero-banners-hires-production-planner-6dcc94f7/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "production-planning-cad-placement",
+          "title": "Production Planning CAD placement review",
+          "route": "/assets",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "production-planning-garden-mandap-005",
+            "production-planning-navagraha-grid-006",
+            "production-planning-panch-tatva-007",
+            "production-planning-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "production-planning-2-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "production-planning-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/board-4x3.webp"
+            },
+            {
+              "id": "production-planning-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/square-1x1.webp"
+            },
+            {
+              "id": "production-planning-2-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "production-planning-budget-package",
+          "title": "Production Planning budget package",
+          "route": "/assets",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "production-planning-raj-darbar-009",
+            "production-planning-circular-saptapadi-010",
+            "production-planning-floating-floral-cloud-011",
+            "production-planning-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "production-planning-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "production-planning-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/board-4x3.webp"
+            },
+            {
+              "id": "production-planning-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/square-1x1.webp"
+            },
+            {
+              "id": "production-planning-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "production-planning-production-handoff",
+          "title": "Production Planning production handoff",
+          "route": "/production",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "production-planning-kalash-court-013",
+            "production-planning-nagara-temple-014",
+            "production-planning-south-indian-brass-015",
+            "production-planning-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "production-planning-4-route",
+              "route": "/production",
+              "image": "/cinematic-assets/production-planner/hero-banners-hires-production-planner-6dcc94f7/desktop-16x9.webp"
+            },
+            {
+              "id": "production-planning-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/board-4x3.webp"
+            },
+            {
+              "id": "production-planning-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/square-1x1.webp"
+            },
+            {
+              "id": "production-planning-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Drone Planning",
+      "slug": "drone-planning",
+      "status": "PARTIAL",
+      "routes": [
+        "/drone",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 0,
+      "partialAssets": 20,
+      "blockedAssets": 4,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "drone-planning-brief",
+          "title": "Drone Planning concept brief",
+          "route": "/drone",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "drone-planning-vedic-lotus-001",
+            "drone-planning-royal-palace-002",
+            "drone-planning-temple-mandap-003",
+            "drone-planning-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "drone-planning-1-route",
+              "route": "/drone",
+              "image": "/cinematic-assets/drone-aerial/hero-banners-hires-drone-aerial-c6ee5e81/desktop-16x9.webp"
+            },
+            {
+              "id": "drone-planning-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "drone-planning-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "drone-planning-1-evidence",
+              "route": "/drone",
+              "image": "/cinematic-assets/drone-aerial/hero-banners-hires-drone-aerial-c6ee5e81/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "drone-planning-cad-placement",
+          "title": "Drone Planning CAD placement review",
+          "route": "/cad/editor",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "drone-planning-garden-mandap-005",
+            "drone-planning-navagraha-grid-006",
+            "drone-planning-panch-tatva-007",
+            "drone-planning-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "drone-planning-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "drone-planning-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "drone-planning-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "drone-planning-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "drone-planning-budget-package",
+          "title": "Drone Planning budget package",
+          "route": "/assets",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "drone-planning-raj-darbar-009",
+            "drone-planning-circular-saptapadi-010",
+            "drone-planning-floating-floral-cloud-011",
+            "drone-planning-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "drone-planning-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "drone-planning-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "drone-planning-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "drone-planning-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "drone-planning-production-handoff",
+          "title": "Drone Planning production handoff",
+          "route": "/drone",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "drone-planning-kalash-court-013",
+            "drone-planning-nagara-temple-014",
+            "drone-planning-south-indian-brass-015",
+            "drone-planning-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "drone-planning-4-route",
+              "route": "/drone",
+              "image": "/cinematic-assets/drone-aerial/hero-banners-hires-drone-aerial-c6ee5e81/desktop-16x9.webp"
+            },
+            {
+              "id": "drone-planning-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/board-4x3.webp"
+            },
+            {
+              "id": "drone-planning-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-sci-fi-futuristic-options-73c1fecc/square-1x1.webp"
+            },
+            {
+              "id": "drone-planning-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "VR Walkthrough",
+      "slug": "vr-walkthrough",
+      "status": "PARTIAL",
+      "routes": [
+        "/vr",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 0,
+      "partialAssets": 20,
+      "blockedAssets": 4,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "vr-walkthrough-brief",
+          "title": "VR Walkthrough concept brief",
+          "route": "/vr",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "vr-walkthrough-vedic-lotus-001",
+            "vr-walkthrough-royal-palace-002",
+            "vr-walkthrough-temple-mandap-003",
+            "vr-walkthrough-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "vr-walkthrough-1-route",
+              "route": "/vr",
+              "image": "/cinematic-assets/vr-walkthrough/hero-banners-hires-vr-walkthrough-a0b49fea/desktop-16x9.webp"
+            },
+            {
+              "id": "vr-walkthrough-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "vr-walkthrough-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "vr-walkthrough-1-evidence",
+              "route": "/vr",
+              "image": "/cinematic-assets/vr-walkthrough/hero-banners-hires-vr-walkthrough-a0b49fea/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "vr-walkthrough-cad-placement",
+          "title": "VR Walkthrough CAD placement review",
+          "route": "/cad/editor",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "vr-walkthrough-garden-mandap-005",
+            "vr-walkthrough-navagraha-grid-006",
+            "vr-walkthrough-panch-tatva-007",
+            "vr-walkthrough-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "vr-walkthrough-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "vr-walkthrough-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "vr-walkthrough-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "vr-walkthrough-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "vr-walkthrough-budget-package",
+          "title": "VR Walkthrough budget package",
+          "route": "/assets",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "vr-walkthrough-raj-darbar-009",
+            "vr-walkthrough-circular-saptapadi-010",
+            "vr-walkthrough-floating-floral-cloud-011",
+            "vr-walkthrough-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "vr-walkthrough-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "vr-walkthrough-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "vr-walkthrough-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "vr-walkthrough-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "vr-walkthrough-production-handoff",
+          "title": "VR Walkthrough production handoff",
+          "route": "/vr",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "vr-walkthrough-kalash-court-013",
+            "vr-walkthrough-nagara-temple-014",
+            "vr-walkthrough-south-indian-brass-015",
+            "vr-walkthrough-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "vr-walkthrough-4-route",
+              "route": "/vr",
+              "image": "/cinematic-assets/vr-walkthrough/hero-banners-hires-vr-walkthrough-a0b49fea/desktop-16x9.webp"
+            },
+            {
+              "id": "vr-walkthrough-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/board-4x3.webp"
+            },
+            {
+              "id": "vr-walkthrough-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-all-pages-black-gold-board-2b5ef86b/square-1x1.webp"
+            },
+            {
+              "id": "vr-walkthrough-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Boards",
+      "slug": "boards",
+      "status": "READY",
+      "routes": [
+        "/exports",
+        "/vr",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "boards-brief",
+          "title": "Boards concept brief",
+          "route": "/exports",
+          "status": "READY",
+          "assetRefs": [
+            "boards-vedic-lotus-001",
+            "boards-royal-palace-002",
+            "boards-temple-mandap-003",
+            "boards-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "boards-1-route",
+              "route": "/exports",
+              "image": "/cinematic-assets/exports-boards/hero-banners-hires-exports-boards-145d3a6e/desktop-16x9.webp"
+            },
+            {
+              "id": "boards-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/board-4x3.webp"
+            },
+            {
+              "id": "boards-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/square-1x1.webp"
+            },
+            {
+              "id": "boards-1-evidence",
+              "route": "/exports",
+              "image": "/cinematic-assets/exports-boards/hero-banners-hires-exports-boards-145d3a6e/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "boards-cad-placement",
+          "title": "Boards CAD placement review",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "boards-garden-mandap-005",
+            "boards-navagraha-grid-006",
+            "boards-panch-tatva-007",
+            "boards-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "boards-2-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "boards-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/board-4x3.webp"
+            },
+            {
+              "id": "boards-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/square-1x1.webp"
+            },
+            {
+              "id": "boards-2-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "boards-budget-package",
+          "title": "Boards budget package",
+          "route": "/exports",
+          "status": "READY",
+          "assetRefs": [
+            "boards-raj-darbar-009",
+            "boards-circular-saptapadi-010",
+            "boards-floating-floral-cloud-011",
+            "boards-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "boards-3-route",
+              "route": "/exports",
+              "image": "/cinematic-assets/exports-boards/hero-banners-hires-exports-boards-145d3a6e/desktop-16x9.webp"
+            },
+            {
+              "id": "boards-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/board-4x3.webp"
+            },
+            {
+              "id": "boards-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/square-1x1.webp"
+            },
+            {
+              "id": "boards-3-evidence",
+              "route": "/exports",
+              "image": "/cinematic-assets/exports-boards/hero-banners-hires-exports-boards-145d3a6e/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "boards-production-handoff",
+          "title": "Boards production handoff",
+          "route": "/exports",
+          "status": "READY",
+          "assetRefs": [
+            "boards-kalash-court-013",
+            "boards-nagara-temple-014",
+            "boards-south-indian-brass-015",
+            "boards-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "boards-4-route",
+              "route": "/exports",
+              "image": "/cinematic-assets/exports-boards/hero-banners-hires-exports-boards-145d3a6e/desktop-16x9.webp"
+            },
+            {
+              "id": "boards-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/board-4x3.webp"
+            },
+            {
+              "id": "boards-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/mandap-designer/extracted-boards-vedic-lotus-all-pages-board-2f96639e/square-1x1.webp"
+            },
+            {
+              "id": "boards-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "Templates",
+      "slug": "templates",
+      "status": "READY",
+      "routes": [
+        "/templates",
+        "/cad/editor",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 24,
+      "partialAssets": 0,
+      "blockedAssets": 0,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "templates-brief",
+          "title": "Templates concept brief",
+          "route": "/templates",
+          "status": "READY",
+          "assetRefs": [
+            "templates-vedic-lotus-001",
+            "templates-royal-palace-002",
+            "templates-temple-mandap-003",
+            "templates-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "templates-1-route",
+              "route": "/templates",
+              "image": "/cinematic-assets/templates/hero-banners-hires-templates-3c5bdf9f/desktop-16x9.webp"
+            },
+            {
+              "id": "templates-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/board-4x3.webp"
+            },
+            {
+              "id": "templates-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/square-1x1.webp"
+            },
+            {
+              "id": "templates-1-evidence",
+              "route": "/templates",
+              "image": "/cinematic-assets/templates/hero-banners-hires-templates-3c5bdf9f/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "templates-cad-placement",
+          "title": "Templates CAD placement review",
+          "route": "/cad/editor",
+          "status": "READY",
+          "assetRefs": [
+            "templates-garden-mandap-005",
+            "templates-navagraha-grid-006",
+            "templates-panch-tatva-007",
+            "templates-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "templates-2-route",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            },
+            {
+              "id": "templates-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/board-4x3.webp"
+            },
+            {
+              "id": "templates-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/square-1x1.webp"
+            },
+            {
+              "id": "templates-2-evidence",
+              "route": "/cad/editor",
+              "image": "/cinematic-assets/cad-editor/hero-banners-hires-cad-editor-7c1537bb/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "templates-budget-package",
+          "title": "Templates budget package",
+          "route": "/assets",
+          "status": "READY",
+          "assetRefs": [
+            "templates-raj-darbar-009",
+            "templates-circular-saptapadi-010",
+            "templates-floating-floral-cloud-011",
+            "templates-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "templates-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "templates-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/board-4x3.webp"
+            },
+            {
+              "id": "templates-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/square-1x1.webp"
+            },
+            {
+              "id": "templates-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "templates-production-handoff",
+          "title": "Templates production handoff",
+          "route": "/templates",
+          "status": "READY",
+          "assetRefs": [
+            "templates-kalash-court-013",
+            "templates-nagara-temple-014",
+            "templates-south-indian-brass-015",
+            "templates-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "templates-4-route",
+              "route": "/templates",
+              "image": "/cinematic-assets/templates/hero-banners-hires-templates-3c5bdf9f/desktop-16x9.webp"
+            },
+            {
+              "id": "templates-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/board-4x3.webp"
+            },
+            {
+              "id": "templates-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/design-boards/extracted-boards-general-design-options-1d8dcf53/square-1x1.webp"
+            },
+            {
+              "id": "templates-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    },
+    {
+      "category": "AI Outputs",
+      "slug": "ai-outputs",
+      "status": "PARTIAL",
+      "routes": [
+        "/ai",
+        "/assets"
+      ],
+      "useCaseCount": 4,
+      "assetCount": 24,
+      "readyAssets": 0,
+      "partialAssets": 20,
+      "blockedAssets": 4,
+      "screenCount": 16,
+      "useCases": [
+        {
+          "id": "ai-outputs-brief",
+          "title": "AI Outputs concept brief",
+          "route": "/ai",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "ai-outputs-vedic-lotus-001",
+            "ai-outputs-royal-palace-002",
+            "ai-outputs-temple-mandap-003",
+            "ai-outputs-sci-fi-galactic-portal-004"
+          ],
+          "screenRefs": [
+            {
+              "id": "ai-outputs-1-route",
+              "route": "/ai",
+              "image": "/cinematic-assets/ai-copilot/hero-banners-hires-ai-co-pilot-8149377e/desktop-16x9.webp"
+            },
+            {
+              "id": "ai-outputs-1-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/board-4x3.webp"
+            },
+            {
+              "id": "ai-outputs-1-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/square-1x1.webp"
+            },
+            {
+              "id": "ai-outputs-1-evidence",
+              "route": "/ai",
+              "image": "/cinematic-assets/ai-copilot/hero-banners-hires-ai-co-pilot-8149377e/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "ai-outputs-cad-placement",
+          "title": "AI Outputs CAD placement review",
+          "route": "/assets",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "ai-outputs-garden-mandap-005",
+            "ai-outputs-navagraha-grid-006",
+            "ai-outputs-panch-tatva-007",
+            "ai-outputs-hemant-samwat-008"
+          ],
+          "screenRefs": [
+            {
+              "id": "ai-outputs-2-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "ai-outputs-2-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/board-4x3.webp"
+            },
+            {
+              "id": "ai-outputs-2-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/square-1x1.webp"
+            },
+            {
+              "id": "ai-outputs-2-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "ai-outputs-budget-package",
+          "title": "AI Outputs budget package",
+          "route": "/assets",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "ai-outputs-raj-darbar-009",
+            "ai-outputs-circular-saptapadi-010",
+            "ai-outputs-floating-floral-cloud-011",
+            "ai-outputs-sacred-agni-012"
+          ],
+          "screenRefs": [
+            {
+              "id": "ai-outputs-3-route",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            },
+            {
+              "id": "ai-outputs-3-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/board-4x3.webp"
+            },
+            {
+              "id": "ai-outputs-3-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/square-1x1.webp"
+            },
+            {
+              "id": "ai-outputs-3-evidence",
+              "route": "/assets",
+              "image": "/cinematic-assets/assets-library/hero-banners-hires-assets-library-a11e46a9/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        },
+        {
+          "id": "ai-outputs-production-handoff",
+          "title": "AI Outputs production handoff",
+          "route": "/ai",
+          "status": "PARTIAL",
+          "assetRefs": [
+            "ai-outputs-kalash-court-013",
+            "ai-outputs-nagara-temple-014",
+            "ai-outputs-south-indian-brass-015",
+            "ai-outputs-celestial-garden-016"
+          ],
+          "screenRefs": [
+            {
+              "id": "ai-outputs-4-route",
+              "route": "/ai",
+              "image": "/cinematic-assets/ai-copilot/hero-banners-hires-ai-co-pilot-8149377e/desktop-16x9.webp"
+            },
+            {
+              "id": "ai-outputs-4-board",
+              "route": "/gallery",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/board-4x3.webp"
+            },
+            {
+              "id": "ai-outputs-4-asset",
+              "route": "/assets",
+              "image": "/cinematic-assets/dashboard/extracted-boards-premium-dashboard-reference-268d5a84/square-1x1.webp"
+            },
+            {
+              "id": "ai-outputs-4-evidence",
+              "route": "/observatory",
+              "image": "/cinematic-assets/observatory/hero-banners-hires-observatory-13365bc5/desktop-16x9.webp"
+            }
+          ],
+          "blockerNoteCount": 2
+        }
+      ]
+    }
+  ]
+}

@@ -10,7 +10,7 @@ export const releaseStatus = {
 };
 
 export const statusCopy: Record<CapabilityStatus, string> = {
-  READY: "Preview-ready frame with demo data and local runtime coverage.",
+  READY: "Active preview page with route use cases, local records, and runtime coverage.",
   PARTIAL: "Usable scaffold exists, but production integrations or deeper workflow logic are pending.",
   BLOCKED: "Clearly unavailable until real implementation and evidence are added."
 };
