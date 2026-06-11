@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { starterObjectKinds, type StarterObjectKind } from "./data-frames";
 
 const jsonValue = z.unknown();
 const dateLike = z.union([z.string(), z.date()]);
@@ -209,6 +210,19 @@ export const assetCategoryValues = [
 
 export const AssetStatusSchema = z.enum(assetStatusValues);
 export const AssetCategorySchema = z.enum(assetCategoryValues);
+
+// Database enums (CapabilityStatus, ReleaseVerdict) cover status/verdict fields.
+// `kind` and `category` stay String columns and are enforced here at the app layer:
+// `kind` uses kebab-case values that are illegal Prisma enum identifiers, and the
+// `category` columns hold heterogeneous vocabularies across models.
+export const cadObjectKindValues = starterObjectKinds as [StarterObjectKind, ...StarterObjectKind[]];
+export const releaseVerdictValues = ["CONTROLLED_PREVIEW_READY", "PRODUCTION_READY", "BLOCKED"] as const;
+export const CapabilityStatusSchema = z.enum(assetStatusValues); // READY | PARTIAL | BLOCKED
+export const ReleaseVerdictSchema = z.enum(releaseVerdictValues);
+export const CadObjectKindSchema = z.enum(cadObjectKindValues);
+export type CapabilityStatus = z.infer<typeof CapabilityStatusSchema>;
+export type ReleaseVerdict = z.infer<typeof ReleaseVerdictSchema>;
+export type CadObjectKind = z.infer<typeof CadObjectKindSchema>;
 export const AssetDimensionSchema = z.object({
   widthM: z.number().nonnegative(),
   depthM: z.number().nonnegative(),

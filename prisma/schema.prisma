@@ -3,8 +3,23 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+// Readiness status shared by assets, scenes, and design/plan records.
+// Values match src/lib/status.ts CapabilityStatus and are used verbatim by the app.
+enum CapabilityStatus {
+  READY
+  PARTIAL
+  BLOCKED
+}
+
+// Release/project verdict. Matches src/lib/status.ts ReleaseVerdict.
+enum ReleaseVerdict {
+  CONTROLLED_PREVIEW_READY
+  PRODUCTION_READY
+  BLOCKED
 }
 
 model Organization {
@@ -86,7 +101,7 @@ model Project {
   name               String
   clientName         String
   eventDate          DateTime
-  status             String             @default("CONTROLLED_PREVIEW_READY")
+  status             ReleaseVerdict     @default(CONTROLLED_PREVIEW_READY)
   productionReady    Boolean            @default(false)
   createdAt          DateTime           @default(now())
   updatedAt          DateTime           @updatedAt
@@ -134,7 +149,7 @@ model Scene {
   id          String      @id @default(cuid())
   projectId   String
   name        String
-  status      String      @default("READY")
+  status      CapabilityStatus @default(READY)
   worldUnits  String      @default("meters")
   metadata    Json?
   createdAt   DateTime    @default(now())
@@ -233,7 +248,7 @@ model Layout {
   name        String
   planJson    Json
   capacity    Int
-  status      String   @default("READY")
+  status      CapabilityStatus @default(READY)
   project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
 }
 
@@ -256,7 +271,7 @@ model FloralDesign {
   palette        Json
   garlandMeters  Float
   decorItems     Json
-  status         String   @default("READY")
+  status         CapabilityStatus @default(READY)
   project        Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
 }
 
@@ -264,7 +279,7 @@ model LightingPlan {
   id          String    @id @default(cuid())
   projectId   String
   name        String
-  status      String    @default("READY")
+  status      CapabilityStatus @default(READY)
   nightMode   Boolean   @default(true)
   metadata    Json?
   project     Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
@@ -288,7 +303,7 @@ model SeatingPlan {
   name        String
   totalSeats  Int
   sections    Json
-  status      String   @default("READY")
+  status      CapabilityStatus @default(READY)
   project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
   guests      Guest[]
 }
@@ -354,7 +369,7 @@ model RenderJob {
   projectId   String
   cameraId    String?
   label       String
-  status      String
+  status      CapabilityStatus
   outputPath  String?
   createdAt   DateTime @default(now())
   project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
@@ -401,7 +416,7 @@ model MarketplaceItem {
   title          String
   category       String
   priceEstimate  Float?
-  status         String       @default("BLOCKED")
+  status         CapabilityStatus @default(BLOCKED)
   organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
   asset          Asset?       @relation(fields: [assetId], references: [id], onDelete: SetNull)
 
@@ -441,7 +456,7 @@ model Evidence {
   releaseGateId  String?
   kind           String
   path           String
-  status         String
+  status         CapabilityStatus
   summary        String
   createdAt      DateTime     @default(now())
   organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
@@ -453,7 +468,7 @@ model ReleaseGate {
   id              String       @id @default(cuid())
   organizationId  String
   projectId       String?
-  verdict         String       @default("CONTROLLED_PREVIEW_READY")
+  verdict         ReleaseVerdict @default(CONTROLLED_PREVIEW_READY)
   productionReady Boolean      @default(false)
   blockers        Json
   evidenceSummary Json
