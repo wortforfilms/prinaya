@@ -1,6 +1,6 @@
 # TLP Wedding CAD Status Matrix
 
-Generated: 2026-06-09T23:58:49.372Z
+Generated: 2026-06-11T02:37:18.448Z
 
 Final verdict: CONTROLLED_PREVIEW_READY  
 PRODUCTION_READY=false
@@ -13,8 +13,10 @@ PRODUCTION_READY=false
 | Hero banner generation | READY | 21 hero banners were generated as 1920x580 high-res local preview WebP assets from the supplied board reference and mapped across 34 route bindings. |
 | TLPS Wedding OS homepage extraction | READY | 10 full-page sections, 7 destination cards, 4 design studio cards, and 8 film cards were extracted into local preview assets for `/wedding-os`. |
 | TLPS unique source extraction | READY | 591 unique source/frame crops were extracted from 30/31 supplied PNG sources; 1 related duplicate source was recorded and skipped. |
-| Cinematic image asset regeneration | READY | 651/703 unique local image sources were regenerated into 3255 high-resolution cinematic WebP variants across 5 aspects using CINEMATIC_LOCAL_DERIVATIVE; these are local derivatives, not new live photography or production-certified media. |
-| Preview frame runtime | READY | 32/32 route frames have typed demo data and local runtime coverage; 208 demo data points and 139 local coverage checks are generated from code. |
+| Cinematic image asset regeneration | READY | 651/703 unique local image sources were regenerated into 3255 high-resolution cinematic WebP variants across 5 aspects and 25 UX spaces using CINEMATIC_LOCAL_DERIVATIVE; these are local derivatives, not new live photography or production-certified media. |
+| Use case registry | READY | 27 categories and 108 use cases are stabilized in `data/usecases/category-demo-usecases.json` with 432 asset refs, 432 screen refs, route refs, blocker notes, and active use-case coverage for 32 route pages; evidence writes to `release/evidence/usecases.json`. |
+| Active real route pages | READY | 32/32 routes render active page data with 25 preview frames, 218 demo data points, 139 runtime coverage checks, 192 active steps, 128 SPRINT-07 use-case demo flows, asset refs, screen refs, route-specific blockers, cinematic screens, board composer refs, export package refs, and evidence refs. |
+| Preview frame runtime | READY | 32/32 route frames have typed demo data and local runtime coverage; 218 demo data points and 139 local coverage checks are generated from code. |
 | UI frame extraction | READY | Reusable UI frame definitions are complete and all frame statuses are READY. |
 | Generated board extraction | READY | 9 PNG boards, 63 extracted frames/options, and 38 technical panels render in `/vr`. |
 | Data frame extraction | READY | Typed frames exist for project, venue, mandap, seating, lighting, floral, materials, CAD objects, layers, assets, budget, vendors, guests, drone zones, jobs, events, and blockers. |

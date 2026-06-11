@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-09T23:58:49.372Z",
+  "generatedAt": "2026-06-11T02:37:18.448Z",
   "verdict": "CONTROLLED_PREVIEW_READY",
   "productionReady": false,
   "routeCoverage": {
@@ -140,7 +140,7 @@
       "duplicateSourceCount": 52,
       "aspectVariantCount": 5,
       "totalVariantCount": 3255,
-      "totalBytes": 141641672,
+      "totalBytes": 168555476,
       "sourceClassCounts": {
         "design-board": 9,
         "extracted-frame": 591,
@@ -148,7 +148,392 @@
         "homepage": 8,
         "public-image": 1
       },
+      "uxSpaceCounts": {
+        "admin-panel": 25,
+        "ai-copilot": 25,
+        "assets-library": 25,
+        "board-composer": 16,
+        "budget-planner": 3,
+        "cad-editor": 15,
+        "dashboard": 99,
+        "design-boards": 107,
+        "drone-aerial": 4,
+        "exports-boards": 3,
+        "filmy-studio": 11,
+        "floral-designer": 12,
+        "guest-seating": 3,
+        "landing": 39,
+        "layout-generator": 3,
+        "lighting-designer": 5,
+        "mandap-designer": 4,
+        "observatory": 25,
+        "production-planner": 3,
+        "settings": 3,
+        "shared-visuals": 176,
+        "templates": 25,
+        "vedi-position-finder": 11,
+        "vendor-manager": 3,
+        "venue-designer": 3,
+        "vr-walkthrough": 3
+      },
+      "uxRoleCounts": {
+        "asset-card": 1,
+        "board-page": 14,
+        "design-option": 44,
+        "destination-card": 9,
+        "film-card": 11,
+        "hero": 80,
+        "shell-frame": 52,
+        "supporting-visual": 134,
+        "ui-panel": 289,
+        "workspace-main": 17
+      },
+      "uxSpaceCount": 25,
       "evidenceRef": "release/evidence/cinematic-image-assets.json"
+    },
+    "useCaseRegistry": {
+      "status": "READY",
+      "verdict": "CONTROLLED_PREVIEW_READY",
+      "productionReady": false,
+      "categoryCount": 27,
+      "useCaseCount": 108,
+      "minUseCasesPerCategory": 4,
+      "maxUseCasesPerCategory": 4,
+      "assetRefCount": 432,
+      "screenRefCount": 432,
+      "routeCount": 16,
+      "evidenceRefs": [
+        "src/lib/category-demo-usecases.ts",
+        "data/usecases/category-demo-usecases.json",
+        "data/assets/wedding-cad-assets.json",
+        "data/cinematic-image-assets.json",
+        "release/evidence/assets-library.json",
+        "release/evidence/cinematic-image-assets.json",
+        "release/evidence/usecases.json"
+      ],
+      "registryRef": "data/usecases/category-demo-usecases.json",
+      "evidenceRef": "release/evidence/usecases.json",
+      "routeUseCaseCoverage": [
+        {
+          "routePath": "/",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/about",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/pricing",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/features",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/gallery",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/templates",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/venues",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/vendors",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/contact",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/support",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/blog",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/auth",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/dashboard",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/projects",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/venue-designer",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/mandap",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/layouts",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/cad",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/assets",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/floral",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/lighting",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/guests",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/budget",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/production",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/drone",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/vr",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/ai",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/exports",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/marketplace",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/admin",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/observatory",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        },
+        {
+          "routePath": "/settings",
+          "useCaseCount": 4,
+          "assetRefCount": 16,
+          "screenRefCount": 16,
+          "activeStepCount": 16,
+          "blockerNoteCount": 8
+        }
+      ]
+    },
+    "activePages": {
+      "status": "READY",
+      "verdict": "CONTROLLED_PREVIEW_READY",
+      "productionReady": false,
+      "activeRouteCount": 32,
+      "previewFramesUsed": 25,
+      "routeFramesUsed": 32,
+      "demoDataCount": 218,
+      "runtimeCoverageCount": 139,
+      "activeStepCount": 192,
+      "demoFlowCount": 128,
+      "useCaseCount": 108,
+      "routeUseCaseRefs": 128,
+      "screenLinkCount": 432,
+      "routeScreenRefCount": 512,
+      "assetRefCount": 432,
+      "blockerCount": 9,
+      "allRoutesHaveActivePages": true,
+      "allUseCasesHaveDemoFlow": true,
+      "previewFrameRuntime": {
+        "status": "READY",
+        "routeFrames": 32,
+        "routeFramesReady": 32,
+        "routeFramesWithDemoData": 32,
+        "routeFramesWithLocalCoverage": 32,
+        "uiFrames": 25,
+        "uiFramesReady": 25,
+        "totalDemoDataPoints": 218,
+        "totalLocalCoveragePoints": 139
+      },
+      "evidenceRef": "release/evidence/active-pages.json",
+      "extendedModuleProfiles": [
+        {
+          "id": "filmy-studio",
+          "label": "Filmy Studio",
+          "route": "/wedding-os",
+          "actions": [
+            "Projects",
+            "Concepts",
+            "Shot list",
+            "Timeline editing",
+            "Color grading",
+            "Audio mixing",
+            "Deliverables",
+            "Media library"
+          ]
+        },
+        {
+          "id": "hemant-samwat-vedi-finder",
+          "label": "Hemant Samwat Vedi Finder",
+          "route": "/wedding-os",
+          "actions": [
+            "Venue input",
+            "Orientation",
+            "Vastu grid",
+            "Vedi recommendation",
+            "Agni placement",
+            "Phera path",
+            "Review/export"
+          ]
+        }
+      ]
     },
     "sceneGraph": {
       "status": "READY",
@@ -752,7 +1137,36 @@
       "uniqueSourceImages": 651,
       "aspectVariants": 5,
       "generatedVariants": 3255,
-      "totalBytes": 141641672
+      "totalBytes": 168555476,
+      "uxSpaces": 25,
+      "uxSpaceCounts": {
+        "admin-panel": 25,
+        "ai-copilot": 25,
+        "assets-library": 25,
+        "board-composer": 16,
+        "budget-planner": 3,
+        "cad-editor": 15,
+        "dashboard": 99,
+        "design-boards": 107,
+        "drone-aerial": 4,
+        "exports-boards": 3,
+        "filmy-studio": 11,
+        "floral-designer": 12,
+        "guest-seating": 3,
+        "landing": 39,
+        "layout-generator": 3,
+        "lighting-designer": 5,
+        "mandap-designer": 4,
+        "observatory": 25,
+        "production-planner": 3,
+        "settings": 3,
+        "shared-visuals": 176,
+        "templates": 25,
+        "vedi-position-finder": 11,
+        "vendor-manager": 3,
+        "venue-designer": 3,
+        "vr-walkthrough": 3
+      }
     },
     "note": "Nine generated design-board PNG assets are imported into public/extracted-boards and rendered in /vr with typed extraction data."
   },
@@ -779,8 +1193,40 @@
       "routeFramesWithLocalCoverage": 32,
       "uiFrames": 25,
       "uiFramesReady": 25,
-      "totalDemoDataPoints": 208,
+      "totalDemoDataPoints": 218,
       "totalLocalCoveragePoints": 139
+    },
+    "activePages": {
+      "status": "READY",
+      "verdict": "CONTROLLED_PREVIEW_READY",
+      "productionReady": false,
+      "activeRouteCount": 32,
+      "previewFramesUsed": 25,
+      "routeFramesUsed": 32,
+      "demoDataCount": 218,
+      "runtimeCoverageCount": 139,
+      "activeStepCount": 192,
+      "demoFlowCount": 128,
+      "useCaseCount": 108,
+      "routeUseCaseRefs": 128,
+      "screenLinkCount": 432,
+      "routeScreenRefCount": 512,
+      "assetRefCount": 432,
+      "blockerCount": 9,
+      "allRoutesHaveActivePages": true,
+      "allUseCasesHaveDemoFlow": true,
+      "previewFrameRuntime": {
+        "status": "READY",
+        "routeFrames": 32,
+        "routeFramesReady": 32,
+        "routeFramesWithDemoData": 32,
+        "routeFramesWithLocalCoverage": 32,
+        "uiFrames": 25,
+        "uiFramesReady": 25,
+        "totalDemoDataPoints": 218,
+        "totalLocalCoveragePoints": 139
+      },
+      "evidenceRef": "release/evidence/active-pages.json"
     },
     "extractedBoardFrames": "READY",
     "localExports": [

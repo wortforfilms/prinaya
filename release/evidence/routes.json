@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-09T23:58:49.372Z",
+  "generatedAt": "2026-06-11T02:37:18.448Z",
   "status": "READY",
   "matrixRoutes": 32,
   "runtimeRoutes": [
@@ -31,7 +31,6 @@
     "/floral/*",
     "/lighting/*",
     "/guests/*",
-    "/vendors/*",
     "/budget/*",
     "/production/*",
     "/drone/*",
@@ -40,7 +39,8 @@
     "/exports/*",
     "/marketplace/*",
     "/admin/*",
-    "/observatory/*"
+    "/observatory/*",
+    "/settings/*"
   ],
   "statusRules": {
     "allRoutesShowStatus": true,
@@ -71,7 +71,7 @@
     "routeFramesReady": 32,
     "routeFramesWithDemoData": 32,
     "routeFramesWithLocalCoverage": 32,
-    "totalDemoDataPoints": 208,
+    "totalDemoDataPoints": 218,
     "totalLocalCoveragePoints": 139,
     "uiFrames": 25,
     "uiFramesReady": 25,
@@ -100,7 +100,7 @@
       {
         "path": "/features",
         "status": "READY",
-        "demoDataPoints": 5,
+        "demoDataPoints": 7,
         "localCoverageChecks": 4,
         "blockerCount": 0
       },
@@ -135,7 +135,7 @@
       {
         "path": "/contact",
         "status": "READY",
-        "demoDataPoints": 5,
+        "demoDataPoints": 7,
         "localCoverageChecks": 4,
         "blockerCount": 0
       },
@@ -149,14 +149,14 @@
       {
         "path": "/blog",
         "status": "READY",
-        "demoDataPoints": 5,
+        "demoDataPoints": 7,
         "localCoverageChecks": 4,
         "blockerCount": 0
       },
       {
         "path": "/auth/*",
         "status": "READY",
-        "demoDataPoints": 5,
+        "demoDataPoints": 7,
         "localCoverageChecks": 4,
         "blockerCount": 0
       },
@@ -231,13 +231,6 @@
         "blockerCount": 0
       },
       {
-        "path": "/vendors/*",
-        "status": "READY",
-        "demoDataPoints": 7,
-        "localCoverageChecks": 4,
-        "blockerCount": 3
-      },
-      {
         "path": "/budget/*",
         "status": "READY",
         "demoDataPoints": 6,
@@ -268,7 +261,7 @@
       {
         "path": "/ai/*",
         "status": "READY",
-        "demoDataPoints": 5,
+        "demoDataPoints": 7,
         "localCoverageChecks": 4,
         "blockerCount": 0
       },
@@ -297,6 +290,13 @@
         "path": "/observatory/*",
         "status": "READY",
         "demoDataPoints": 6,
+        "localCoverageChecks": 4,
+        "blockerCount": 0
+      },
+      {
+        "path": "/settings/*",
+        "status": "READY",
+        "demoDataPoints": 7,
         "localCoverageChecks": 4,
         "blockerCount": 0
       }
