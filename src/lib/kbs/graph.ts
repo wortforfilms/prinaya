@@ -35,6 +35,11 @@ export type KbsEntityType =
   | "Nakshatra"
   | "Tithi"
   | "Muhurat"
+  | "Yoga"
+  | "Karana"
+  | "Paksha"
+  | "Rashi"
+  | "Graha"
   | "Cost"
   | "Material"
   | "Evidence";

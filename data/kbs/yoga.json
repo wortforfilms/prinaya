@@ -1,0 +1,331 @@
+{
+  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "status": "READY",
+  "evidence": "data/kbs/yoga.json",
+  "nodes": [
+    {
+      "id": "yoga:vishkambha",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Vishkambha",
+      "description": "Yoga 1 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 1,
+        "auspicious": false
+      }
+    },
+    {
+      "id": "yoga:priti",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Priti",
+      "description": "Yoga 2 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 2,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:ayushman",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Ayushman",
+      "description": "Yoga 3 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 3,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:saubhagya",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Saubhagya",
+      "description": "Yoga 4 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 4,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:shobhana",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Shobhana",
+      "description": "Yoga 5 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 5,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:atiganda",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Atiganda",
+      "description": "Yoga 6 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 6,
+        "auspicious": false
+      }
+    },
+    {
+      "id": "yoga:sukarma",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Sukarma",
+      "description": "Yoga 7 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 7,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:dhriti",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Dhriti",
+      "description": "Yoga 8 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 8,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:shula",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Shula",
+      "description": "Yoga 9 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 9,
+        "auspicious": false
+      }
+    },
+    {
+      "id": "yoga:ganda",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Ganda",
+      "description": "Yoga 10 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 10,
+        "auspicious": false
+      }
+    },
+    {
+      "id": "yoga:vriddhi",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Vriddhi",
+      "description": "Yoga 11 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 11,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:dhruva",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Dhruva",
+      "description": "Yoga 12 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 12,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:vyaghata",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Vyaghata",
+      "description": "Yoga 13 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 13,
+        "auspicious": false
+      }
+    },
+    {
+      "id": "yoga:harshana",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Harshana",
+      "description": "Yoga 14 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 14,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:vajra",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Vajra",
+      "description": "Yoga 15 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 15,
+        "auspicious": false
+      }
+    },
+    {
+      "id": "yoga:siddhi",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Siddhi",
+      "description": "Yoga 16 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 16,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:vyatipata",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Vyatipata",
+      "description": "Yoga 17 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 17,
+        "auspicious": false
+      }
+    },
+    {
+      "id": "yoga:variyana",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Variyana",
+      "description": "Yoga 18 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 18,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:parigha",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Parigha",
+      "description": "Yoga 19 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 19,
+        "auspicious": false
+      }
+    },
+    {
+      "id": "yoga:shiva",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Shiva",
+      "description": "Yoga 20 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 20,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:siddha",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Siddha",
+      "description": "Yoga 21 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 21,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:sadhya",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Sadhya",
+      "description": "Yoga 22 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 22,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:shubha",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Shubha",
+      "description": "Yoga 23 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 23,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:shukla",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Shukla",
+      "description": "Yoga 24 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 24,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:brahma",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Brahma",
+      "description": "Yoga 25 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 25,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:indra",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Indra",
+      "description": "Yoga 26 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 26,
+        "auspicious": true
+      }
+    },
+    {
+      "id": "yoga:vaidhriti",
+      "type": "Yoga",
+      "category": "Muhurat",
+      "name": "Vaidhriti",
+      "description": "Yoga 27 of 27.",
+      "status": "READY",
+      "metadata": {
+        "index": 27,
+        "auspicious": false
+      }
+    }
+  ]
+}

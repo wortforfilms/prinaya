@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "status": "READY",
+  "evidence": "data/kbs/paksha.json",
+  "nodes": [
+    {
+      "id": "paksha:shukla",
+      "type": "Paksha",
+      "category": "Muhurat",
+      "name": "Shukla Paksha",
+      "description": "Waxing fortnight; generally auspicious.",
+      "status": "READY",
+      "metadata": {
+        "phase": "waxing",
+        "auspicious": true
+      }
+    },
+    {
+      "id": "paksha:krishna",
+      "type": "Paksha",
+      "category": "Muhurat",
+      "name": "Krishna Paksha",
+      "description": "Waning fortnight.",
+      "status": "READY",
+      "metadata": {
+        "phase": "waning",
+        "auspicious": false
+      }
+    }
+  ]
+}

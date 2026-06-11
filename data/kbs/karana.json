@@ -1,0 +1,151 @@
+{
+  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "status": "READY",
+  "evidence": "data/kbs/karana.json",
+  "nodes": [
+    {
+      "id": "karana:bava",
+      "type": "Karana",
+      "category": "Muhurat",
+      "name": "Bava",
+      "description": "Movable karana (auspicious).",
+      "status": "READY",
+      "metadata": {
+        "index": 1,
+        "type": "movable",
+        "auspicious": true
+      }
+    },
+    {
+      "id": "karana:balava",
+      "type": "Karana",
+      "category": "Muhurat",
+      "name": "Balava",
+      "description": "Movable karana (auspicious).",
+      "status": "READY",
+      "metadata": {
+        "index": 2,
+        "type": "movable",
+        "auspicious": true
+      }
+    },
+    {
+      "id": "karana:kaulava",
+      "type": "Karana",
+      "category": "Muhurat",
+      "name": "Kaulava",
+      "description": "Movable karana (auspicious).",
+      "status": "READY",
+      "metadata": {
+        "index": 3,
+        "type": "movable",
+        "auspicious": true
+      }
+    },
+    {
+      "id": "karana:taitila",
+      "type": "Karana",
+      "category": "Muhurat",
+      "name": "Taitila",
+      "description": "Movable karana (auspicious).",
+      "status": "READY",
+      "metadata": {
+        "index": 4,
+        "type": "movable",
+        "auspicious": true
+      }
+    },
+    {
+      "id": "karana:gara",
+      "type": "Karana",
+      "category": "Muhurat",
+      "name": "Gara",
+      "description": "Movable karana (auspicious).",
+      "status": "READY",
+      "metadata": {
+        "index": 5,
+        "type": "movable",
+        "auspicious": true
+      }
+    },
+    {
+      "id": "karana:vanija",
+      "type": "Karana",
+      "category": "Muhurat",
+      "name": "Vanija",
+      "description": "Movable karana (auspicious).",
+      "status": "READY",
+      "metadata": {
+        "index": 6,
+        "type": "movable",
+        "auspicious": true
+      }
+    },
+    {
+      "id": "karana:vishti",
+      "type": "Karana",
+      "category": "Muhurat",
+      "name": "Vishti",
+      "description": "Movable karana (inauspicious).",
+      "status": "READY",
+      "metadata": {
+        "index": 7,
+        "type": "movable",
+        "auspicious": false
+      }
+    },
+    {
+      "id": "karana:shakuni",
+      "type": "Karana",
+      "category": "Muhurat",
+      "name": "Shakuni",
+      "description": "Fixed karana.",
+      "status": "READY",
+      "metadata": {
+        "index": 8,
+        "type": "fixed",
+        "auspicious": false
+      }
+    },
+    {
+      "id": "karana:chatushpada",
+      "type": "Karana",
+      "category": "Muhurat",
+      "name": "Chatushpada",
+      "description": "Fixed karana.",
+      "status": "READY",
+      "metadata": {
+        "index": 9,
+        "type": "fixed",
+        "auspicious": false
+      }
+    },
+    {
+      "id": "karana:naga",
+      "type": "Karana",
+      "category": "Muhurat",
+      "name": "Naga",
+      "description": "Fixed karana.",
+      "status": "READY",
+      "metadata": {
+        "index": 10,
+        "type": "fixed",
+        "auspicious": false
+      }
+    },
+    {
+      "id": "karana:kimstughna",
+      "type": "Karana",
+      "category": "Muhurat",
+      "name": "Kimstughna",
+      "description": "Fixed karana.",
+      "status": "READY",
+      "metadata": {
+        "index": 11,
+        "type": "fixed",
+        "auspicious": true
+      }
+    }
+  ],
+  "note": "11 karanas; Vishti (Bhadra) is inauspicious for vivah."
+}

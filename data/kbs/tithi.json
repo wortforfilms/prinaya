@@ -1,0 +1,577 @@
+{
+  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "status": "READY",
+  "evidence": "data/kbs/tithi.json",
+  "nodes": [
+    {
+      "id": "tithi:shukla-pratipada",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Pratipada (Shukla)",
+      "description": "Lunar day 1 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 1,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-dwitiya",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Dwitiya (Shukla)",
+      "description": "Lunar day 2 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 2,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-tritiya",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Tritiya (Shukla)",
+      "description": "Lunar day 3 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 3,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-chaturthi",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Chaturthi (Shukla)",
+      "description": "Lunar day 4 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 4,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-panchami",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Panchami (Shukla)",
+      "description": "Lunar day 5 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 5,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-shashthi",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Shashthi (Shukla)",
+      "description": "Lunar day 6 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 6,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-saptami",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Saptami (Shukla)",
+      "description": "Lunar day 7 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 7,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-ashtami",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Ashtami (Shukla)",
+      "description": "Lunar day 8 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 8,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-navami",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Navami (Shukla)",
+      "description": "Lunar day 9 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 9,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-dashami",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Dashami (Shukla)",
+      "description": "Lunar day 10 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 10,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-ekadashi",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Ekadashi (Shukla)",
+      "description": "Lunar day 11 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 11,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-dwadashi",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Dwadashi (Shukla)",
+      "description": "Lunar day 12 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 12,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-trayodashi",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Trayodashi (Shukla)",
+      "description": "Lunar day 13 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 13,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-chaturdashi",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Chaturdashi (Shukla)",
+      "description": "Lunar day 14 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 14,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:shukla-purnima",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Purnima (Shukla)",
+      "description": "Lunar day 15 of Shukla Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 15,
+        "paksha": "Shukla",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:shukla"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-pratipada",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Pratipada (Krishna)",
+      "description": "Lunar day 1 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 1,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-dwitiya",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Dwitiya (Krishna)",
+      "description": "Lunar day 2 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 2,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-tritiya",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Tritiya (Krishna)",
+      "description": "Lunar day 3 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 3,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-chaturthi",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Chaturthi (Krishna)",
+      "description": "Lunar day 4 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 4,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-panchami",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Panchami (Krishna)",
+      "description": "Lunar day 5 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 5,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-shashthi",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Shashthi (Krishna)",
+      "description": "Lunar day 6 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 6,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-saptami",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Saptami (Krishna)",
+      "description": "Lunar day 7 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 7,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-ashtami",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Ashtami (Krishna)",
+      "description": "Lunar day 8 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 8,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-navami",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Navami (Krishna)",
+      "description": "Lunar day 9 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 9,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-dashami",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Dashami (Krishna)",
+      "description": "Lunar day 10 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 10,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-ekadashi",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Ekadashi (Krishna)",
+      "description": "Lunar day 11 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 11,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-dwadashi",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Dwadashi (Krishna)",
+      "description": "Lunar day 12 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 12,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-trayodashi",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Trayodashi (Krishna)",
+      "description": "Lunar day 13 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 13,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-chaturdashi",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Chaturdashi (Krishna)",
+      "description": "Lunar day 14 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 14,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    },
+    {
+      "id": "tithi:krishna-amavasya",
+      "type": "Tithi",
+      "category": "Muhurat",
+      "name": "Amavasya (Krishna)",
+      "description": "Lunar day 15 of Krishna Paksha.",
+      "status": "READY",
+      "metadata": {
+        "number": 15,
+        "paksha": "Krishna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "partOf",
+          "to": "paksha:krishna"
+        }
+      ]
+    }
+  ]
+}

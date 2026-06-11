@@ -2,154 +2,8 @@
   "generatedAt": "2026-06-11T00:00:00.000Z",
   "status": "READY",
   "evidence": "data/kbs/muhurat.json",
-  "note": "Vedic muhurat knowledge for the Vedi Finder. Auspicious nakshatras/tithis and composite vivah muhurat windows. Preview reference data — not a certified panchang service.",
+  "note": "Wedding muhurat registry. Composite vivah windows requiring a nakshatra + tithi, linked to vedis. Preview reference \u2014 not a certified panchang service.",
   "nodes": [
-    {
-      "id": "nakshatra:rohini",
-      "type": "Nakshatra",
-      "category": "Muhurat",
-      "name": "Rohini",
-      "description": "Fourth nakshatra; highly auspicious for marriage.",
-      "status": "READY",
-      "metadata": { "index": 4, "lord": "Moon", "symbol": "Chariot", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "nakshatra:mrigashira",
-      "type": "Nakshatra",
-      "category": "Muhurat",
-      "name": "Mrigashira",
-      "description": "Fifth nakshatra; favourable for vivah.",
-      "status": "READY",
-      "metadata": { "index": 5, "lord": "Mars", "symbol": "Deer head", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "nakshatra:magha",
-      "type": "Nakshatra",
-      "category": "Muhurat",
-      "name": "Magha",
-      "description": "Tenth nakshatra; auspicious for marriage rites.",
-      "status": "READY",
-      "metadata": { "index": 10, "lord": "Ketu", "symbol": "Throne", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "nakshatra:uttara-phalguni",
-      "type": "Nakshatra",
-      "category": "Muhurat",
-      "name": "Uttara Phalguni",
-      "description": "Twelfth nakshatra; one of the strongest vivah nakshatras.",
-      "status": "READY",
-      "metadata": { "index": 12, "lord": "Sun", "symbol": "Bed", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "nakshatra:hasta",
-      "type": "Nakshatra",
-      "category": "Muhurat",
-      "name": "Hasta",
-      "description": "Thirteenth nakshatra; auspicious for marriage.",
-      "status": "READY",
-      "metadata": { "index": 13, "lord": "Moon", "symbol": "Hand", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "nakshatra:swati",
-      "type": "Nakshatra",
-      "category": "Muhurat",
-      "name": "Swati",
-      "description": "Fifteenth nakshatra; favourable for vivah.",
-      "status": "READY",
-      "metadata": { "index": 15, "lord": "Rahu", "symbol": "Coral", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "nakshatra:anuradha",
-      "type": "Nakshatra",
-      "category": "Muhurat",
-      "name": "Anuradha",
-      "description": "Seventeenth nakshatra; auspicious for marriage.",
-      "status": "READY",
-      "metadata": { "index": 17, "lord": "Saturn", "symbol": "Lotus", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "nakshatra:uttara-ashadha",
-      "type": "Nakshatra",
-      "category": "Muhurat",
-      "name": "Uttara Ashadha",
-      "description": "Twenty-first nakshatra; auspicious for vivah.",
-      "status": "READY",
-      "metadata": { "index": 21, "lord": "Sun", "symbol": "Elephant tusk", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "nakshatra:uttara-bhadrapada",
-      "type": "Nakshatra",
-      "category": "Muhurat",
-      "name": "Uttara Bhadrapada",
-      "description": "Twenty-sixth nakshatra; auspicious for marriage.",
-      "status": "READY",
-      "metadata": { "index": 26, "lord": "Saturn", "symbol": "Twin", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "nakshatra:revati",
-      "type": "Nakshatra",
-      "category": "Muhurat",
-      "name": "Revati",
-      "description": "Twenty-seventh nakshatra; auspicious for marriage.",
-      "status": "READY",
-      "metadata": { "index": 27, "lord": "Mercury", "symbol": "Fish", "auspiciousForMarriage": true }
-    },
-
-    {
-      "id": "tithi:dwitiya",
-      "type": "Tithi",
-      "category": "Muhurat",
-      "name": "Dwitiya",
-      "description": "Second lunar day; auspicious in Shukla Paksha.",
-      "status": "READY",
-      "metadata": { "number": 2, "preferredPaksha": "Shukla", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "tithi:tritiya",
-      "type": "Tithi",
-      "category": "Muhurat",
-      "name": "Tritiya",
-      "description": "Third lunar day; auspicious for vivah.",
-      "status": "READY",
-      "metadata": { "number": 3, "preferredPaksha": "Shukla", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "tithi:panchami",
-      "type": "Tithi",
-      "category": "Muhurat",
-      "name": "Panchami",
-      "description": "Fifth lunar day; auspicious for marriage.",
-      "status": "READY",
-      "metadata": { "number": 5, "preferredPaksha": "Shukla", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "tithi:saptami",
-      "type": "Tithi",
-      "category": "Muhurat",
-      "name": "Saptami",
-      "description": "Seventh lunar day; auspicious for vivah.",
-      "status": "READY",
-      "metadata": { "number": 7, "preferredPaksha": "Shukla", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "tithi:ekadashi",
-      "type": "Tithi",
-      "category": "Muhurat",
-      "name": "Ekadashi",
-      "description": "Eleventh lunar day; auspicious for marriage.",
-      "status": "READY",
-      "metadata": { "number": 11, "preferredPaksha": "Shukla", "auspiciousForMarriage": true }
-    },
-    {
-      "id": "tithi:trayodashi",
-      "type": "Tithi",
-      "category": "Muhurat",
-      "name": "Trayodashi",
-      "description": "Thirteenth lunar day; auspicious for vivah.",
-      "status": "READY",
-      "metadata": { "number": 13, "preferredPaksha": "Shukla", "auspiciousForMarriage": true }
-    },
-
     {
       "id": "muhurat:abhijit",
       "type": "Muhurat",
@@ -157,52 +11,317 @@
       "name": "Abhijit Muhurat",
       "description": "Midday victory window auspicious for most rites; vedi faces east.",
       "status": "READY",
-      "metadata": { "window": "11:48–12:36", "direction": "East", "score": 0.82 },
+      "metadata": {
+        "window": "11:48\u201312:36",
+        "direction": "East",
+        "score": 0.82
+      },
       "relations": [
-        { "kind": "linkedTo", "to": "vedi:square-east-001" },
-        { "kind": "linkedTo", "to": "vedi:circular-saptapadi-001" }
+        {
+          "kind": "linkedTo",
+          "to": "vedi:square-east-001"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "vedi:circular-saptapadi-001"
+        }
       ]
     },
     {
       "id": "muhurat:rohini-tritiya-lagna",
       "type": "Muhurat",
       "category": "Muhurat",
-      "name": "Rohini–Tritiya Vivah Lagna",
-      "description": "Evening vivah lagna combining Rohini nakshatra with Shukla Tritiya.",
+      "name": "Rohini\u2013Tritiya Vivah Lagna",
+      "description": "Vivah lagna combining Rohini nakshatra with Shukla Tritiya.",
       "status": "READY",
-      "metadata": { "window": "19:10–20:30", "direction": "East", "score": 0.94 },
+      "metadata": {
+        "window": "19:10\u201320:30",
+        "direction": "East",
+        "score": 0.96
+      },
       "relations": [
-        { "kind": "requires", "to": "nakshatra:rohini" },
-        { "kind": "requires", "to": "tithi:tritiya" },
-        { "kind": "linkedTo", "to": "vedi:square-east-001" }
+        {
+          "kind": "requires",
+          "to": "nakshatra:rohini"
+        },
+        {
+          "kind": "requires",
+          "to": "tithi:shukla-tritiya"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "vedi:square-east-001"
+        }
       ]
     },
     {
       "id": "muhurat:uttara-phalguni-panchami-lagna",
       "type": "Muhurat",
       "category": "Muhurat",
-      "name": "Uttara Phalguni–Panchami Vivah Lagna",
-      "description": "Night vivah lagna combining Uttara Phalguni with Shukla Panchami; suited to the saptapadi circle.",
+      "name": "Uttara Phalguni\u2013Panchami Vivah Lagna",
+      "description": "Vivah lagna combining Uttara Phalguni nakshatra with Shukla Panchami.",
       "status": "READY",
-      "metadata": { "window": "21:00–22:15", "direction": "East", "score": 0.96 },
+      "metadata": {
+        "window": "21:00\u201322:15",
+        "direction": "East",
+        "score": 0.97
+      },
       "relations": [
-        { "kind": "requires", "to": "nakshatra:uttara-phalguni" },
-        { "kind": "requires", "to": "tithi:panchami" },
-        { "kind": "linkedTo", "to": "vedi:circular-saptapadi-001" }
+        {
+          "kind": "requires",
+          "to": "nakshatra:uttara-phalguni"
+        },
+        {
+          "kind": "requires",
+          "to": "tithi:shukla-panchami"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "vedi:circular-saptapadi-001"
+        }
       ]
     },
     {
       "id": "muhurat:hasta-ekadashi-lagna",
       "type": "Muhurat",
       "category": "Muhurat",
-      "name": "Hasta–Ekadashi Vivah Lagna",
-      "description": "Auspicious vivah lagna combining Hasta nakshatra with Shukla Ekadashi.",
+      "name": "Hasta\u2013Ekadashi Vivah Lagna",
+      "description": "Vivah lagna combining Hasta nakshatra with Shukla Ekadashi.",
       "status": "READY",
-      "metadata": { "window": "20:00–21:10", "direction": "East", "score": 0.9 },
+      "metadata": {
+        "window": "20:00\u201321:10",
+        "direction": "East",
+        "score": 0.92
+      },
       "relations": [
-        { "kind": "requires", "to": "nakshatra:hasta" },
-        { "kind": "requires", "to": "tithi:ekadashi" },
-        { "kind": "linkedTo", "to": "vedi:square-east-001" }
+        {
+          "kind": "requires",
+          "to": "nakshatra:hasta"
+        },
+        {
+          "kind": "requires",
+          "to": "tithi:shukla-ekadashi"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "vedi:square-east-001"
+        }
+      ]
+    },
+    {
+      "id": "muhurat:mrigashira-dwitiya-lagna",
+      "type": "Muhurat",
+      "category": "Muhurat",
+      "name": "Mrigashira\u2013Dwitiya Vivah Lagna",
+      "description": "Vivah lagna combining Mrigashira nakshatra with Shukla Dwitiya.",
+      "status": "READY",
+      "metadata": {
+        "window": "18:40\u201319:50",
+        "direction": "East",
+        "score": 0.9
+      },
+      "relations": [
+        {
+          "kind": "requires",
+          "to": "nakshatra:mrigashira"
+        },
+        {
+          "kind": "requires",
+          "to": "tithi:shukla-dwitiya"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "vedi:square-east-001"
+        }
+      ]
+    },
+    {
+      "id": "muhurat:magha-saptami-lagna",
+      "type": "Muhurat",
+      "category": "Muhurat",
+      "name": "Magha\u2013Saptami Vivah Lagna",
+      "description": "Vivah lagna combining Magha nakshatra with Shukla Saptami.",
+      "status": "READY",
+      "metadata": {
+        "window": "20:30\u201321:40",
+        "direction": "East",
+        "score": 0.88
+      },
+      "relations": [
+        {
+          "kind": "requires",
+          "to": "nakshatra:magha"
+        },
+        {
+          "kind": "requires",
+          "to": "tithi:shukla-saptami"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "vedi:circular-saptapadi-001"
+        }
+      ]
+    },
+    {
+      "id": "muhurat:swati-tritiya-lagna",
+      "type": "Muhurat",
+      "category": "Muhurat",
+      "name": "Swati\u2013Tritiya Vivah Lagna",
+      "description": "Vivah lagna combining Swati nakshatra with Shukla Tritiya.",
+      "status": "READY",
+      "metadata": {
+        "window": "19:20\u201320:30",
+        "direction": "East",
+        "score": 0.89
+      },
+      "relations": [
+        {
+          "kind": "requires",
+          "to": "nakshatra:swati"
+        },
+        {
+          "kind": "requires",
+          "to": "tithi:shukla-tritiya"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "vedi:square-east-001"
+        }
+      ]
+    },
+    {
+      "id": "muhurat:anuradha-panchami-lagna",
+      "type": "Muhurat",
+      "category": "Muhurat",
+      "name": "Anuradha\u2013Panchami Vivah Lagna",
+      "description": "Vivah lagna combining Anuradha nakshatra with Shukla Panchami.",
+      "status": "READY",
+      "metadata": {
+        "window": "21:10\u201322:20",
+        "direction": "East",
+        "score": 0.91
+      },
+      "relations": [
+        {
+          "kind": "requires",
+          "to": "nakshatra:anuradha"
+        },
+        {
+          "kind": "requires",
+          "to": "tithi:shukla-panchami"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "vedi:circular-saptapadi-001"
+        }
+      ]
+    },
+    {
+      "id": "muhurat:uttara-ashadha-ekadashi-lagna",
+      "type": "Muhurat",
+      "category": "Muhurat",
+      "name": "Uttara Ashadha\u2013Ekadashi Vivah Lagna",
+      "description": "Vivah lagna combining Uttara Ashadha nakshatra with Shukla Ekadashi.",
+      "status": "READY",
+      "metadata": {
+        "window": "20:05\u201321:15",
+        "direction": "East",
+        "score": 0.93
+      },
+      "relations": [
+        {
+          "kind": "requires",
+          "to": "nakshatra:uttara-ashadha"
+        },
+        {
+          "kind": "requires",
+          "to": "tithi:shukla-ekadashi"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "vedi:square-east-001"
+        }
+      ]
+    },
+    {
+      "id": "muhurat:uttara-bhadrapada-trayodashi-lagna",
+      "type": "Muhurat",
+      "category": "Muhurat",
+      "name": "Uttara Bhadrapada\u2013Trayodashi Vivah Lagna",
+      "description": "Vivah lagna combining Uttara Bhadrapada nakshatra with Shukla Trayodashi.",
+      "status": "READY",
+      "metadata": {
+        "window": "19:50\u201321:00",
+        "direction": "East",
+        "score": 0.9
+      },
+      "relations": [
+        {
+          "kind": "requires",
+          "to": "nakshatra:uttara-bhadrapada"
+        },
+        {
+          "kind": "requires",
+          "to": "tithi:shukla-trayodashi"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "vedi:circular-saptapadi-001"
+        }
+      ]
+    },
+    {
+      "id": "muhurat:revati-dwitiya-lagna",
+      "type": "Muhurat",
+      "category": "Muhurat",
+      "name": "Revati\u2013Dwitiya Vivah Lagna",
+      "description": "Vivah lagna combining Revati nakshatra with Shukla Dwitiya.",
+      "status": "READY",
+      "metadata": {
+        "window": "18:30\u201319:40",
+        "direction": "East",
+        "score": 0.87
+      },
+      "relations": [
+        {
+          "kind": "requires",
+          "to": "nakshatra:revati"
+        },
+        {
+          "kind": "requires",
+          "to": "tithi:shukla-dwitiya"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "vedi:square-east-001"
+        }
+      ]
+    },
+    {
+      "id": "muhurat:mula-saptami-lagna",
+      "type": "Muhurat",
+      "category": "Muhurat",
+      "name": "Mula\u2013Saptami Vivah Lagna",
+      "description": "Vivah lagna combining Mula nakshatra with Shukla Saptami.",
+      "status": "READY",
+      "metadata": {
+        "window": "20:40\u201321:50",
+        "direction": "East",
+        "score": 0.85
+      },
+      "relations": [
+        {
+          "kind": "requires",
+          "to": "nakshatra:mula"
+        },
+        {
+          "kind": "requires",
+          "to": "tithi:shukla-saptami"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "vedi:circular-saptapadi-001"
+        }
       ]
     }
   ]

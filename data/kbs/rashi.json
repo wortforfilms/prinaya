@@ -1,0 +1,223 @@
+{
+  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "status": "READY",
+  "evidence": "data/kbs/rashi.json",
+  "nodes": [
+    {
+      "id": "rashi:mesha",
+      "type": "Rashi",
+      "category": "Rashi",
+      "name": "Mesha",
+      "description": "Mesha \u2014 zodiac sign ruled by Mangala.",
+      "status": "READY",
+      "metadata": {
+        "index": 1,
+        "lord": "Mangala"
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:mangala"
+        }
+      ]
+    },
+    {
+      "id": "rashi:vrishabha",
+      "type": "Rashi",
+      "category": "Rashi",
+      "name": "Vrishabha",
+      "description": "Vrishabha \u2014 zodiac sign ruled by Shukra.",
+      "status": "READY",
+      "metadata": {
+        "index": 2,
+        "lord": "Shukra"
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:shukra"
+        }
+      ]
+    },
+    {
+      "id": "rashi:mithuna",
+      "type": "Rashi",
+      "category": "Rashi",
+      "name": "Mithuna",
+      "description": "Mithuna \u2014 zodiac sign ruled by Budha.",
+      "status": "READY",
+      "metadata": {
+        "index": 3,
+        "lord": "Budha"
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:budha"
+        }
+      ]
+    },
+    {
+      "id": "rashi:karka",
+      "type": "Rashi",
+      "category": "Rashi",
+      "name": "Karka",
+      "description": "Karka \u2014 zodiac sign ruled by Chandra.",
+      "status": "READY",
+      "metadata": {
+        "index": 4,
+        "lord": "Chandra"
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:chandra"
+        }
+      ]
+    },
+    {
+      "id": "rashi:simha",
+      "type": "Rashi",
+      "category": "Rashi",
+      "name": "Simha",
+      "description": "Simha \u2014 zodiac sign ruled by Surya.",
+      "status": "READY",
+      "metadata": {
+        "index": 5,
+        "lord": "Surya"
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:surya"
+        }
+      ]
+    },
+    {
+      "id": "rashi:kanya",
+      "type": "Rashi",
+      "category": "Rashi",
+      "name": "Kanya",
+      "description": "Kanya \u2014 zodiac sign ruled by Budha.",
+      "status": "READY",
+      "metadata": {
+        "index": 6,
+        "lord": "Budha"
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:budha"
+        }
+      ]
+    },
+    {
+      "id": "rashi:tula",
+      "type": "Rashi",
+      "category": "Rashi",
+      "name": "Tula",
+      "description": "Tula \u2014 zodiac sign ruled by Shukra.",
+      "status": "READY",
+      "metadata": {
+        "index": 7,
+        "lord": "Shukra"
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:shukra"
+        }
+      ]
+    },
+    {
+      "id": "rashi:vrishchika",
+      "type": "Rashi",
+      "category": "Rashi",
+      "name": "Vrishchika",
+      "description": "Vrishchika \u2014 zodiac sign ruled by Mangala.",
+      "status": "READY",
+      "metadata": {
+        "index": 8,
+        "lord": "Mangala"
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:mangala"
+        }
+      ]
+    },
+    {
+      "id": "rashi:dhanu",
+      "type": "Rashi",
+      "category": "Rashi",
+      "name": "Dhanu",
+      "description": "Dhanu \u2014 zodiac sign ruled by Guru.",
+      "status": "READY",
+      "metadata": {
+        "index": 9,
+        "lord": "Guru"
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:guru"
+        }
+      ]
+    },
+    {
+      "id": "rashi:makara",
+      "type": "Rashi",
+      "category": "Rashi",
+      "name": "Makara",
+      "description": "Makara \u2014 zodiac sign ruled by Shani.",
+      "status": "READY",
+      "metadata": {
+        "index": 10,
+        "lord": "Shani"
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:shani"
+        }
+      ]
+    },
+    {
+      "id": "rashi:kumbha",
+      "type": "Rashi",
+      "category": "Rashi",
+      "name": "Kumbha",
+      "description": "Kumbha \u2014 zodiac sign ruled by Shani.",
+      "status": "READY",
+      "metadata": {
+        "index": 11,
+        "lord": "Shani"
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:shani"
+        }
+      ]
+    },
+    {
+      "id": "rashi:meena",
+      "type": "Rashi",
+      "category": "Rashi",
+      "name": "Meena",
+      "description": "Meena \u2014 zodiac sign ruled by Guru.",
+      "status": "READY",
+      "metadata": {
+        "index": 12,
+        "lord": "Guru"
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:guru"
+        }
+      ]
+    }
+  ]
+}

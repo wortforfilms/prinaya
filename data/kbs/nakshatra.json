@@ -1,0 +1,655 @@
+{
+  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "status": "READY",
+  "evidence": "data/kbs/nakshatra.json",
+  "nodes": [
+    {
+      "id": "nakshatra:ashwini",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Ashwini",
+      "description": "Nakshatra 1 of 27; lord Ketu.",
+      "status": "READY",
+      "metadata": {
+        "index": 1,
+        "lord": "Ketu",
+        "primaryRashi": "Mesha",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:ketu"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:mesha"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:bharani",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Bharani",
+      "description": "Nakshatra 2 of 27; lord Shukra.",
+      "status": "READY",
+      "metadata": {
+        "index": 2,
+        "lord": "Shukra",
+        "primaryRashi": "Mesha",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:shukra"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:mesha"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:krittika",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Krittika",
+      "description": "Nakshatra 3 of 27; lord Surya.",
+      "status": "READY",
+      "metadata": {
+        "index": 3,
+        "lord": "Surya",
+        "primaryRashi": "Mesha",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:surya"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:mesha"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:rohini",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Rohini",
+      "description": "Nakshatra 4 of 27; lord Chandra.",
+      "status": "READY",
+      "metadata": {
+        "index": 4,
+        "lord": "Chandra",
+        "primaryRashi": "Vrishabha",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:chandra"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:vrishabha"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:mrigashira",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Mrigashira",
+      "description": "Nakshatra 5 of 27; lord Mangala.",
+      "status": "READY",
+      "metadata": {
+        "index": 5,
+        "lord": "Mangala",
+        "primaryRashi": "Vrishabha",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:mangala"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:vrishabha"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:ardra",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Ardra",
+      "description": "Nakshatra 6 of 27; lord Rahu.",
+      "status": "READY",
+      "metadata": {
+        "index": 6,
+        "lord": "Rahu",
+        "primaryRashi": "Mithuna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:rahu"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:mithuna"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:punarvasu",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Punarvasu",
+      "description": "Nakshatra 7 of 27; lord Guru.",
+      "status": "READY",
+      "metadata": {
+        "index": 7,
+        "lord": "Guru",
+        "primaryRashi": "Mithuna",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:guru"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:mithuna"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:pushya",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Pushya",
+      "description": "Nakshatra 8 of 27; lord Shani.",
+      "status": "READY",
+      "metadata": {
+        "index": 8,
+        "lord": "Shani",
+        "primaryRashi": "Karka",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:shani"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:karka"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:ashlesha",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Ashlesha",
+      "description": "Nakshatra 9 of 27; lord Budha.",
+      "status": "READY",
+      "metadata": {
+        "index": 9,
+        "lord": "Budha",
+        "primaryRashi": "Karka",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:budha"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:karka"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:magha",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Magha",
+      "description": "Nakshatra 10 of 27; lord Ketu.",
+      "status": "READY",
+      "metadata": {
+        "index": 10,
+        "lord": "Ketu",
+        "primaryRashi": "Simha",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:ketu"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:simha"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:purva-phalguni",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Purva Phalguni",
+      "description": "Nakshatra 11 of 27; lord Shukra.",
+      "status": "READY",
+      "metadata": {
+        "index": 11,
+        "lord": "Shukra",
+        "primaryRashi": "Simha",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:shukra"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:simha"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:uttara-phalguni",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Uttara Phalguni",
+      "description": "Nakshatra 12 of 27; lord Surya.",
+      "status": "READY",
+      "metadata": {
+        "index": 12,
+        "lord": "Surya",
+        "primaryRashi": "Simha",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:surya"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:simha"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:hasta",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Hasta",
+      "description": "Nakshatra 13 of 27; lord Chandra.",
+      "status": "READY",
+      "metadata": {
+        "index": 13,
+        "lord": "Chandra",
+        "primaryRashi": "Kanya",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:chandra"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:kanya"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:chitra",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Chitra",
+      "description": "Nakshatra 14 of 27; lord Mangala.",
+      "status": "READY",
+      "metadata": {
+        "index": 14,
+        "lord": "Mangala",
+        "primaryRashi": "Kanya",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:mangala"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:kanya"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:swati",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Swati",
+      "description": "Nakshatra 15 of 27; lord Rahu.",
+      "status": "READY",
+      "metadata": {
+        "index": 15,
+        "lord": "Rahu",
+        "primaryRashi": "Tula",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:rahu"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:tula"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:vishakha",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Vishakha",
+      "description": "Nakshatra 16 of 27; lord Guru.",
+      "status": "READY",
+      "metadata": {
+        "index": 16,
+        "lord": "Guru",
+        "primaryRashi": "Tula",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:guru"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:tula"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:anuradha",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Anuradha",
+      "description": "Nakshatra 17 of 27; lord Shani.",
+      "status": "READY",
+      "metadata": {
+        "index": 17,
+        "lord": "Shani",
+        "primaryRashi": "Vrishchika",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:shani"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:vrishchika"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:jyeshtha",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Jyeshtha",
+      "description": "Nakshatra 18 of 27; lord Budha.",
+      "status": "READY",
+      "metadata": {
+        "index": 18,
+        "lord": "Budha",
+        "primaryRashi": "Vrishchika",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:budha"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:vrishchika"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:mula",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Mula",
+      "description": "Nakshatra 19 of 27; lord Ketu.",
+      "status": "READY",
+      "metadata": {
+        "index": 19,
+        "lord": "Ketu",
+        "primaryRashi": "Dhanu",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:ketu"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:dhanu"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:purva-ashadha",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Purva Ashadha",
+      "description": "Nakshatra 20 of 27; lord Shukra.",
+      "status": "READY",
+      "metadata": {
+        "index": 20,
+        "lord": "Shukra",
+        "primaryRashi": "Dhanu",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:shukra"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:dhanu"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:uttara-ashadha",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Uttara Ashadha",
+      "description": "Nakshatra 21 of 27; lord Surya.",
+      "status": "READY",
+      "metadata": {
+        "index": 21,
+        "lord": "Surya",
+        "primaryRashi": "Dhanu",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:surya"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:dhanu"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:shravana",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Shravana",
+      "description": "Nakshatra 22 of 27; lord Chandra.",
+      "status": "READY",
+      "metadata": {
+        "index": 22,
+        "lord": "Chandra",
+        "primaryRashi": "Makara",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:chandra"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:makara"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:dhanishta",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Dhanishta",
+      "description": "Nakshatra 23 of 27; lord Mangala.",
+      "status": "READY",
+      "metadata": {
+        "index": 23,
+        "lord": "Mangala",
+        "primaryRashi": "Makara",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:mangala"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:makara"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:shatabhisha",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Shatabhisha",
+      "description": "Nakshatra 24 of 27; lord Rahu.",
+      "status": "READY",
+      "metadata": {
+        "index": 24,
+        "lord": "Rahu",
+        "primaryRashi": "Kumbha",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:rahu"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:kumbha"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:purva-bhadrapada",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Purva Bhadrapada",
+      "description": "Nakshatra 25 of 27; lord Guru.",
+      "status": "READY",
+      "metadata": {
+        "index": 25,
+        "lord": "Guru",
+        "primaryRashi": "Kumbha",
+        "auspiciousForMarriage": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:guru"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:kumbha"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:uttara-bhadrapada",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Uttara Bhadrapada",
+      "description": "Nakshatra 26 of 27; lord Shani.",
+      "status": "READY",
+      "metadata": {
+        "index": 26,
+        "lord": "Shani",
+        "primaryRashi": "Meena",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:shani"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:meena"
+        }
+      ]
+    },
+    {
+      "id": "nakshatra:revati",
+      "type": "Nakshatra",
+      "category": "Muhurat",
+      "name": "Revati",
+      "description": "Nakshatra 27 of 27; lord Budha.",
+      "status": "READY",
+      "metadata": {
+        "index": 27,
+        "lord": "Budha",
+        "primaryRashi": "Meena",
+        "auspiciousForMarriage": true
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "graha:budha"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:meena"
+        }
+      ]
+    }
+  ]
+}

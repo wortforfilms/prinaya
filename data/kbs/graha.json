@@ -1,0 +1,207 @@
+{
+  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "status": "READY",
+  "evidence": "data/kbs/graha.json",
+  "nodes": [
+    {
+      "id": "graha:surya",
+      "type": "Graha",
+      "category": "Graha",
+      "name": "Surya",
+      "description": "Surya \u2014 one of the nine grahas.",
+      "status": "READY",
+      "metadata": {
+        "index": 1,
+        "rules": [
+          "Simha"
+        ],
+        "shadow": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "rashi:simha"
+        }
+      ]
+    },
+    {
+      "id": "graha:chandra",
+      "type": "Graha",
+      "category": "Graha",
+      "name": "Chandra",
+      "description": "Chandra \u2014 one of the nine grahas.",
+      "status": "READY",
+      "metadata": {
+        "index": 2,
+        "rules": [
+          "Karka"
+        ],
+        "shadow": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "rashi:karka"
+        }
+      ]
+    },
+    {
+      "id": "graha:mangala",
+      "type": "Graha",
+      "category": "Graha",
+      "name": "Mangala",
+      "description": "Mangala \u2014 one of the nine grahas.",
+      "status": "READY",
+      "metadata": {
+        "index": 3,
+        "rules": [
+          "Mesha",
+          "Vrishchika"
+        ],
+        "shadow": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "rashi:mesha"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:vrishchika"
+        }
+      ]
+    },
+    {
+      "id": "graha:budha",
+      "type": "Graha",
+      "category": "Graha",
+      "name": "Budha",
+      "description": "Budha \u2014 one of the nine grahas.",
+      "status": "READY",
+      "metadata": {
+        "index": 4,
+        "rules": [
+          "Mithuna",
+          "Kanya"
+        ],
+        "shadow": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "rashi:mithuna"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:kanya"
+        }
+      ]
+    },
+    {
+      "id": "graha:guru",
+      "type": "Graha",
+      "category": "Graha",
+      "name": "Guru",
+      "description": "Guru \u2014 one of the nine grahas.",
+      "status": "READY",
+      "metadata": {
+        "index": 5,
+        "rules": [
+          "Dhanu",
+          "Meena"
+        ],
+        "shadow": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "rashi:dhanu"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:meena"
+        }
+      ]
+    },
+    {
+      "id": "graha:shukra",
+      "type": "Graha",
+      "category": "Graha",
+      "name": "Shukra",
+      "description": "Shukra \u2014 one of the nine grahas.",
+      "status": "READY",
+      "metadata": {
+        "index": 6,
+        "rules": [
+          "Vrishabha",
+          "Tula"
+        ],
+        "shadow": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "rashi:vrishabha"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:tula"
+        }
+      ]
+    },
+    {
+      "id": "graha:shani",
+      "type": "Graha",
+      "category": "Graha",
+      "name": "Shani",
+      "description": "Shani \u2014 one of the nine grahas.",
+      "status": "READY",
+      "metadata": {
+        "index": 7,
+        "rules": [
+          "Makara",
+          "Kumbha"
+        ],
+        "shadow": false
+      },
+      "relations": [
+        {
+          "kind": "linkedTo",
+          "to": "rashi:makara"
+        },
+        {
+          "kind": "linkedTo",
+          "to": "rashi:kumbha"
+        }
+      ]
+    },
+    {
+      "id": "graha:rahu",
+      "type": "Graha",
+      "category": "Graha",
+      "name": "Rahu",
+      "description": "Rahu \u2014 one of the nine grahas.",
+      "status": "READY",
+      "metadata": {
+        "index": 8,
+        "rules": [],
+        "shadow": true
+      },
+      "relations": []
+    },
+    {
+      "id": "graha:ketu",
+      "type": "Graha",
+      "category": "Graha",
+      "name": "Ketu",
+      "description": "Ketu \u2014 one of the nine grahas.",
+      "status": "READY",
+      "metadata": {
+        "index": 9,
+        "rules": [],
+        "shadow": true
+      },
+      "relations": []
+    }
+  ]
+}

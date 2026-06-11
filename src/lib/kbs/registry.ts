@@ -19,6 +19,13 @@ import vediJson from "../../../data/kbs/vedi.json";
 import filmsJson from "../../../data/kbs/films.json";
 import vendorsJson from "../../../data/kbs/vendors.json";
 import muhuratJson from "../../../data/kbs/muhurat.json";
+import nakshatraJson from "../../../data/kbs/nakshatra.json";
+import tithiJson from "../../../data/kbs/tithi.json";
+import pakshaJson from "../../../data/kbs/paksha.json";
+import yogaJson from "../../../data/kbs/yoga.json";
+import karanaJson from "../../../data/kbs/karana.json";
+import rashiJson from "../../../data/kbs/rashi.json";
+import grahaJson from "../../../data/kbs/graha.json";
 
 import {
   KnowledgeGraph,
@@ -240,11 +247,51 @@ export function buildKbsGraph(): KnowledgeGraph {
   }
 
   // --- Curated knowledge layers -------------------------------------------
-  for (const file of [vediJson, muhuratJson, ritualsJson, filmsJson, vendorsJson] as CuratedFile[]) {
+  const curatedFiles = [
+    grahaJson,
+    rashiJson,
+    pakshaJson,
+    nakshatraJson,
+    tithiJson,
+    yogaJson,
+    karanaJson,
+    vediJson,
+    muhuratJson,
+    ritualsJson,
+    filmsJson,
+    vendorsJson
+  ] as CuratedFile[];
+  for (const file of curatedFiles) {
     for (const node of curatedNodes(file)) add(node);
   }
 
-  return new KnowledgeGraph(Array.from(collected.values()));
+  const graph = new KnowledgeGraph(Array.from(collected.values()));
+  linkCrossDomain(graph);
+  return graph;
+}
+
+/**
+ * Phase-3 cross-domain links that span derived + curated layers:
+ * Mandap ↔ Vedi, and Ritual ↔ Muhurat (bridged by their shared vedi).
+ */
+function linkCrossDomain(graph: KnowledgeGraph): void {
+  const vedis = graph.nodesOfType("Vedi");
+  const mandaps = graph.nodesOfType("Mandap").slice(0, 3);
+
+  for (const vedi of vedis) {
+    for (const mandap of mandaps) {
+      graph.addRelation(vedi.id, linkedTo(mandap.id));
+      graph.addRelation(mandap.id, linkedTo(vedi.id));
+    }
+  }
+
+  for (const ritual of graph.nodesOfType("Ritual")) {
+    const vedi = graph.neighbors(ritual.id, "requires").find((node) => node.type === "Vedi");
+    if (!vedi) continue;
+    for (const muhurat of graph.inboundNodes(vedi.id, "linkedTo")) {
+      if (muhurat.type === "Muhurat") graph.addRelation(ritual.id, references(muhurat.id));
+    }
+  }
 }
 
 /** Singleton runtime graph for the app. */
