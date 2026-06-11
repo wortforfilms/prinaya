@@ -21,7 +21,7 @@ export function MandapDesignerStudio() {
           <div className="flex flex-wrap gap-2 text-sm">
             <span className="rounded-md border border-ink/15 px-3 py-2 font-semibold text-basalt/70">Import Reference</span>
             <span className="rounded-md border border-ink/15 px-3 py-2 font-semibold text-basalt/70">AI Suggest</span>
-            <Link href="/cad/editor" className="rounded-md bg-[#d9aa46] px-3 py-2 font-semibold text-[#02100e]">New Mandap Concept</Link>
+            <Link href="/cad/studio" className="rounded-md bg-[#d9aa46] px-3 py-2 font-semibold text-[#02100e]">New Mandap Concept</Link>
           </div>
         </header>
 

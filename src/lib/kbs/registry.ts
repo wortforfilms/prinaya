@@ -174,6 +174,7 @@ export function buildKbsGraph(): KnowledgeGraph {
   // Standalone runtime routes (not in the matrix, but real pages referenced by screens/use cases).
   for (const runtime of [
     { path: "/cad/editor", title: "CAD Editor", caps: ["scene canvas", "layers", "insertion", "preview DXF"] },
+    { path: "/cad/studio", title: "CAD Studio", caps: ["2D plan", "3D view", "elevation", "layers", "preview JSON export"] },
     { path: "/hemant-samwat-vedi", title: "Vedi Intelligence", caps: ["orientation", "vastu grid", "vedi", "muhurat lookup"] }
   ]) {
     add(

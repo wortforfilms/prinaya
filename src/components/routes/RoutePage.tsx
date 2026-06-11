@@ -114,7 +114,12 @@ function RouteCapabilitySection({ activePage }: { activePage: ActiveRoutePage })
             <CapabilityCard key={capability} capability={capability} />
           ))}
         </div>
-        {route.path.includes("/cad") && <div className="mt-4"><ModuleLinkButton href="/cad/editor" label="Open CAD editor" /></div>}
+        {route.path.includes("/cad") && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            <ModuleLinkButton href="/cad/editor" label="Open CAD editor" />
+            <ModuleLinkButton href="/cad/studio" label="Open CAD Studio" />
+          </div>
+        )}
       </article>
 
       <article className="rounded-md border border-ink/10 bg-white p-4 shadow-sm">

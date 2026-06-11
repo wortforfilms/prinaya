@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>TLPS CAD Studio — Three.js Wedding Layout Editor</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+:root{--bg:#040706;--panel:#081112;--gold:#d9a84a;--gold2:#ffd789;--line:rgba(217,168,74,.32);--magenta:#ff39d4}
+*{box-sizing:border-box} body{margin:0;background:#030606;color:#f8ecd7;font-family:Inter,system-ui,Arial,sans-serif;overflow:hidden}
+.app{height:100vh;display:grid;grid-template-rows:70px 1fr 40px;background:radial-gradient(circle at 50% 0%,#14201e,#030606 45%)}
+.topbar{display:flex;align-items:center;gap:18px;padding:0 18px;border-bottom:1px solid var(--line);background:rgba(2,7,8,.94)}
+.logo{font-family:Georgia,serif;font-size:34px;color:var(--gold);font-weight:900;letter-spacing:.08em}.sub{font-size:11px;letter-spacing:.28em}
+.tabs{display:flex;gap:6px;margin-left:20px}.tab{padding:12px 24px;border:1px solid rgba(255,255,255,.08);background:#081011;color:#ddd;border-radius:8px;cursor:pointer;font-weight:800;font-size:13px}.tab.active{background:rgba(217,168,74,.16);border-color:var(--gold);color:var(--gold2)}
+.btn{border:1px solid var(--line);background:#0a1113;color:#fff;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:800}.btn.gold{background:linear-gradient(135deg,#e8b85a,#9c691f);color:#170d02;border:0}
+.workspace{display:grid;grid-template-columns:250px 1fr 360px;min-height:0}.left,.right{overflow:auto;padding:12px;background:rgba(4,10,12,.88)}.left{border-right:1px solid var(--line)}.right{border-left:1px solid var(--line)}
+.center{display:grid;grid-template-rows:44px 1fr 92px;min-width:0}.toolbar{display:flex;align-items:center;gap:8px;padding:6px 12px;border-bottom:1px solid rgba(217,168,74,.22);background:#071011;overflow:auto}
+.tool{min-width:42px;height:32px;border:1px solid rgba(255,255,255,.08);background:#0b1517;color:#e7dac4;border-radius:7px;cursor:pointer}.tool.active{border-color:var(--gold);color:var(--gold2);background:rgba(217,168,74,.12)}
+.viewport{position:relative;min-height:0;background:#071010}#three{position:absolute;inset:0}.ruler-x,.ruler-y{position:absolute;background:rgba(4,8,10,.75);color:#b7aa93;font-size:11px;z-index:3}.ruler-x{left:0;right:0;top:0;height:24px;border-bottom:1px solid rgba(217,168,74,.2)}.ruler-y{top:24px;bottom:0;left:0;width:26px;border-right:1px solid rgba(217,168,74,.2);writing-mode:vertical-rl}
+.hint{position:absolute;left:45px;bottom:18px;z-index:4;background:rgba(0,0,0,.62);border:1px solid var(--line);border-radius:10px;padding:10px 14px;color:#ffde9f;font-size:12px}
+.panel{border:1px solid rgba(217,168,74,.22);background:linear-gradient(145deg,rgba(12,22,24,.96),rgba(5,10,11,.95));border-radius:12px;margin-bottom:10px;padding:12px}.panel h3{margin:0 0 10px;color:#fff;font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+.toolgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.toolitem{height:58px;border:1px solid rgba(255,255,255,.08);background:#0b1517;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#d6c7ad;font-size:11px;cursor:pointer}.toolitem:hover{border-color:var(--gold);color:var(--gold2)}
+.layers .row,.prop-row{display:grid;grid-template-columns:22px 18px 1fr 70px;gap:8px;align-items:center;padding:7px;border-bottom:1px solid rgba(255,255,255,.06);font-size:12px}.swatch{width:12px;height:12px;border-radius:3px}.props{font-size:12px}.prop-row{grid-template-columns:1fr 1.3fr}.prop-row input,.prop-row select{background:#071011;border:1px solid rgba(217,168,74,.2);color:#eee;border-radius:6px;padding:7px;width:100%}
+.bottom{display:grid;grid-template-columns:1fr 370px;border-top:1px solid rgba(217,168,74,.22);background:#071011}.command{padding:12px;color:#bdb09b;font-family:ui-monospace,Menlo,monospace;font-size:12px;border-right:1px solid rgba(217,168,74,.22)}.mini-map{padding:10px;display:grid;grid-template-columns:1fr 120px;gap:10px;align-items:center}
+.badge{display:inline-flex;padding:3px 8px;border-radius:999px;font-size:11px;border:1px solid rgba(74,224,130,.35);color:#84f0a8;background:rgba(74,224,130,.1)}.blocked{border-color:rgba(255,105,105,.45);color:#ffa0a0;background:rgba(255,105,105,.1)}
+.statusbar{display:flex;align-items:center;gap:18px;padding:0 15px;border-top:1px solid var(--line);background:#071011;color:#cdbf9f;font-size:12px}
+@media(max-width:1000px){body{overflow:auto}.app{height:auto}.workspace{grid-template-columns:1fr}.center{height:760px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div><div class="logo">TLPS</div><div class="sub">WEDDING OS</div></div>
+  <div><div style="font-size:25px;font-weight:900">CAD STUDIO</div><div style="font-size:13px;color:#cfc2aa">Professional Wedding Design & Engineering</div></div>
+  <nav class="tabs">
+    <button class="tab active" onclick="setView('2d',this)">2D PLAN</button><button class="tab" onclick="setView('3d',this)">3D VIEW</button><button class="tab" onclick="setView('elevation',this)">ELEVATION</button><button class="tab" onclick="setView('sections',this)">SECTIONS</button><button class="tab" onclick="setView('details',this)">DETAILS</button><button class="tab" onclick="setView('renders',this)">RENDERS</button>
+  </nav>
+  <div style="margin-left:auto;display:flex;gap:10px;align-items:center"><span class="badge">SAVED</span><button class="btn" onclick="downloadScene()">Export JSON</button><button class="btn">Share</button><button class="btn gold">Generate Board</button></div>
+</header>
+<div class="workspace">
+<aside class="left">
+  <div class="panel"><h3>Draw</h3><div class="toolgrid">
+    <div class="toolitem" onclick="addLine()">╱<span>Line</span></div><div class="toolitem">⌁<span>Polyline</span></div><div class="toolitem" onclick="addRect()">▭<span>Rectangle</span></div><div class="toolitem" onclick="addCircle()">○<span>Circle</span></div><div class="toolitem">T<span>Text</span></div><div class="toolitem">↔<span>Dimension</span></div></div></div>
+  <div class="panel"><h3>Modify</h3><div class="toolgrid">
+    <div class="toolitem">✥<span>Move</span></div><div class="toolitem" onclick="duplicateSelected()">⧉<span>Copy</span></div><div class="toolitem">↻<span>Rotate</span></div><div class="toolitem">⤢<span>Scale</span></div><div class="toolitem">▦<span>Array</span></div><div class="toolitem">⌫<span>Trim</span></div></div></div>
+  <div class="panel"><h3>Blocks / Assets</h3><div class="toolgrid">
+    <div class="toolitem" onclick="addMandap()">𑁍<span>Mandap</span></div><div class="toolitem" onclick="addStage()">▰<span>Stage</span></div><div class="toolitem" onclick="addChairRows()">▣<span>Seating</span></div><div class="toolitem" onclick="addTrees()">♣<span>Trees</span></div><div class="toolitem" onclick="addLights()">✦<span>Lights</span></div><div class="toolitem" onclick="addRooms()">▥<span>Rooms</span></div></div></div>
+  <div class="panel"><h3>Honest Export Gate</h3><p style="font-size:12px;color:#c8baa1">Preview JSON and printable boards are allowed. Production DXF/DWG and certified engineering remain blocked.</p><span class="badge">JSON READY</span> <span class="badge blocked">DWG BLOCKED</span></div>
+</aside>
+<main class="center">
+  <div class="toolbar"><button class="tool active">↖</button><button class="tool">↔</button><button class="tool">↻</button><button class="tool">⤢</button><button class="tool">⧉</button><button class="tool">🗑</button><button class="tool">↶</button><button class="tool">↷</button><button class="tool">⌖</button><button class="tool">▦</button><select class="btn"><option>ByLayer</option></select><select class="btn"><option>0.30 mm</option></select><select class="btn"><option>Magenta</option><option>Gold</option><option>Cyan</option></select></div>
+  <section class="viewport"><div class="ruler-x">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60 FT</div><div class="ruler-y">0 10 20 30 40 50</div><div id="three"></div><div class="hint" id="hint">Command: _line<br/>Specify first point: 0,0<br/>Mode: <b>2D plan</b> · Click objects to inspect</div></section>
+  <section class="bottom"><div class="command" id="command">Command: _line<br/>Specify first point: 0,0<br/>Specify next point or [Undo]:</div><div class="mini-map"><div><span class="badge">CONTROLLED_PREVIEW_READY</span> <span class="badge blocked">PRODUCTION_READY=false</span></div><button class="btn gold" onclick="resetScene()">Reset View</button></div></section>
+</main>
+<aside class="right">
+  <div class="panel props"><h3>Properties</h3><div class="prop-row"><span>Selection</span><select id="selection"><option>No selection</option></select></div><div class="prop-row"><span>Color</span><select><option>Magenta</option><option>Gold</option><option>Cyan</option></select></div><div class="prop-row"><span>Layer</span><select><option>Stage</option><option>Mandap</option><option>Seating</option></select></div><div class="prop-row"><span>Lineweight</span><input value="0.30 mm"/></div><div class="prop-row"><span>Scale</span><input value="1/8&quot; = 1'-0&quot;"/></div></div>
+  <div class="panel layers"><h3>Layers</h3><div id="layers"></div></div>
+  <div class="panel"><h3>Project Info</h3><table style="width:100%;font-size:12px;color:#d7c9ad"><tr><td>Project</td><td>Royal Heritage Wedding</td></tr><tr><td>Venue</td><td>Udaipur Palace</td></tr><tr><td>Drawing</td><td>Ground Floor Plan</td></tr><tr><td>Date</td><td>25 May 2025</td></tr><tr><td>Scale</td><td>1/8&quot; = 1'-0&quot;</td></tr></table></div>
+  <div class="panel"><h3>KBS / Board Links</h3><p style="font-size:12px;color:#c8baa1">Scene links to Mandap, Vedi, Stage, Seating, Floral, Lighting and Board Composer knowledge.</p><button class="btn gold" style="width:100%">Open Board Composer</button></div>
+</aside>
+</div>
+<footer class="statusbar"><span id="coords">45'-6 1/2", 23'-4 3/8", 0'-0"</span><span>SNAP</span><span>GRID</span><span>ORTHO</span><span>OSNAP</span><span>MODEL</span><span>100%</span></footer>
+</div>
+<script>
+let scene,camera,renderer,root,raycaster,mouse,selected=null; const objects=[];
+const layerData=[['0','#fff'],['Stage','#ff39d4'],['Mandap','#f1d83b'],['Seating','#3cc7ff'],['Decor','#37e0d6'],['Lighting','#ff4658'],['Floral','#ff75d6'],['Furniture','#f28a2e'],['Dimensions','#fff'],['Text','#ddd']];
+function init(){const mount=document.getElementById('three');scene=new THREE.Scene();scene.background=new THREE.Color(0x061012);camera=new THREE.PerspectiveCamera(45,mount.clientWidth/mount.clientHeight,1,5000);camera.position.set(0,850,0);camera.up.set(0,0,-1);camera.lookAt(0,0,0);renderer=new THREE.WebGLRenderer({antialias:true});renderer.setSize(mount.clientWidth,mount.clientHeight);renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));mount.appendChild(renderer.domElement);raycaster=new THREE.Raycaster();mouse=new THREE.Vector2();root=new THREE.Group();scene.add(root);scene.add(new THREE.AmbientLight(0xffffff,.75));const light=new THREE.DirectionalLight(0xffd08a,.8);light.position.set(100,300,100);scene.add(light);buildGrid();buildLayerPanel();buildBasePlan();renderer.domElement.addEventListener('pointerdown',onPick);renderer.domElement.addEventListener('pointermove',onMove);window.addEventListener('resize',resize);animate()}
+function mat(color){return new THREE.MeshBasicMaterial({color,transparent:true,opacity:.95})} function lineMat(color){return new THREE.LineBasicMaterial({color})}
+function buildGrid(){const grid=new THREE.GridHelper(1000,40,0x24454a,0x14272a);root.add(grid);root.add(new THREE.AxesHelper(120))}
+function addLabel(text,x,z){const canvas=document.createElement('canvas');canvas.width=512;canvas.height=128;const ctx=canvas.getContext('2d');ctx.font='bold 42px Arial';ctx.fillStyle='#fff';ctx.textAlign='center';ctx.fillText(text,256,72);const tex=new THREE.CanvasTexture(canvas);const sprite=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,transparent:true}));sprite.position.set(x,6,z);sprite.scale.set(120,30,1);root.add(sprite);return sprite}
+function addBox(name,x,z,w,d,color,layer='0',h=3){const mesh=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat(color));mesh.position.set(x,h/2,z);mesh.userData={name,layer,type:'block',w,d};root.add(mesh);objects.push(mesh);return mesh}
+function addOutline(w,d){const pts=[new THREE.Vector3(-w/2,2,-d/2),new THREE.Vector3(w/2,2,-d/2),new THREE.Vector3(w/2,2,d/2),new THREE.Vector3(-w/2,2,d/2),new THREE.Vector3(-w/2,2,-d/2)];root.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),lineMat(0xffffff)));addDimension(-w/2,-d/2,w/2,-d/2,"120'-0\\"");addDimension(-w/2,-d/2,-w/2,d/2,"90'-0\\"")}
+function addDimension(x1,z1,x2,z2,label){root.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(x1,8,z1),new THREE.Vector3(x2,8,z2)]),lineMat(0xbfbfbf)));addLabel(label,(x1+x2)/2,(z1+z2)/2)}
+function buildBasePlan(){addOutline(720,540);addStage();addMandap();addChairRows();addRooms();addTrees();addLights();addLabel('ENTRY',0,292);addLabel('MAIN STAGE',0,-210);addLabel('MANDAP',0,30)}
+function addStage(){addBox('Main Stage',0,-205,280,72,0x16160b,'Stage',8)}
+function addMandap(){addBox('Mandap Platform',0,30,150,150,0x3a2407,'Mandap',6);[[-65,-35],[65,-35],[-65,95],[65,95]].forEach(([x,z])=>addBox('Mandap Pillar',x,z,10,10,0xd9a84a,'Mandap',32))}
+function addChairRows(){for(let side of [-1,1])for(let r=0;r<7;r++)for(let c=0;c<8;c++)addBox('Guest Chair',side*(185+c*22),-20+r*24,12,12,0xff66cf,'Seating',3)}
+function addRooms(){addBox('Bride Room',-270,250,110,70,0x101820,'Text',5);addBox('Groom Room',270,250,110,70,0x101820,'Text',5);addLabel('BRIDE ROOM',-270,250);addLabel('GROOM ROOM',270,250)}
+function addTrees(){for(let i=0;i<34;i++){const x=(Math.random()-.5)*670,z=(Math.random()-.5)*500;if(Math.abs(x)<260&&Math.abs(z)<230)continue;const tree=new THREE.Mesh(new THREE.CircleGeometry(12,24),mat(0x1fb94f));tree.rotation.x=-Math.PI/2;tree.position.set(x,4,z);tree.userData={name:'Tree',layer:'Decor'};root.add(tree);objects.push(tree)}}
+function addLights(){for(let i=0;i<24;i++){const a=i/24*Math.PI*2;addBox('Uplight',Math.cos(a)*180,Math.sin(a)*180+30,8,8,0xffd45a,'Lighting',8)}}
+function addRect(){addBox('Rectangle',0,0,70,45,0x3cc7ff,'0',4)} function addCircle(){const mesh=new THREE.Mesh(new THREE.CylinderGeometry(35,35,3,48),mat(0xff39d4));mesh.position.set(0,2,0);mesh.userData={name:'Circle',layer:'0'};root.add(mesh);objects.push(mesh)}
+function addLine(){const line=new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-50,8,-50),new THREE.Vector3(50,8,50)]),lineMat(0xff39d4));line.userData={name:'Line',layer:'Dimensions'};root.add(line);objects.push(line)}
+function duplicateSelected(){if(!selected||!selected.clone)return;const clone=selected.clone();clone.position.x+=20;clone.position.z+=20;root.add(clone);objects.push(clone);select(clone)}
+function resetScene(){camera.position.set(0,850,0);camera.up.set(0,0,-1);camera.lookAt(0,0,0)}
+function buildLayerPanel(){const wrap=document.getElementById('layers');wrap.innerHTML='';layerData.forEach(([name,color])=>{const row=document.createElement('div');row.className='row';row.innerHTML=`<span>👁</span><span class="swatch" style="background:${color}"></span><span>${name}</span><span>🔒</span>`;wrap.appendChild(row)})}
+function setView(v,btn){document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');if(v==='2d'){camera.position.set(0,850,0);camera.up.set(0,0,-1)}if(v==='3d'){camera.position.set(440,460,480);camera.up.set(0,1,0)}if(v==='elevation'){camera.position.set(0,150,800);camera.up.set(0,1,0)}camera.lookAt(0,0,0);document.getElementById('hint').innerHTML=`Command: _view<br/>Mode: <b>${v.toUpperCase()}</b><br/>Click objects to inspect`}
+function onPick(e){const rect=renderer.domElement.getBoundingClientRect();mouse.x=((e.clientX-rect.left)/rect.width)*2-1;mouse.y=-((e.clientY-rect.top)/rect.height)*2+1;raycaster.setFromCamera(mouse,camera);const hits=raycaster.intersectObjects(objects,true);if(hits[0])select(hits[0].object)}
+function select(obj){selected=obj;document.getElementById('selection').innerHTML=`<option>${obj.userData.name||'Object'}</option>`;document.getElementById('command').innerHTML=`Selected: ${obj.userData.name||'Object'}<br/>Layer: ${obj.userData.layer||'0'}<br/>Position: ${obj.position.x.toFixed(1)}, ${obj.position.z.toFixed(1)}`}
+function onMove(e){document.getElementById('coords').textContent=`${(e.offsetX/10).toFixed(1)}', ${(e.offsetY/10).toFixed(1)}', 0'-0"`}
+function downloadScene(){const data={project:'Royal Heritage Wedding',status:'CONTROLLED_PREVIEW_READY',productionReady:false,objects:objects.map(o=>({name:o.userData.name,layer:o.userData.layer,position:o.position}))};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='tlps-cad-scene-preview.json';a.click();URL.revokeObjectURL(url)}
+function resize(){const mount=document.getElementById('three');if(!renderer)return;camera.aspect=mount.clientWidth/mount.clientHeight;camera.updateProjectionMatrix();renderer.setSize(mount.clientWidth,mount.clientHeight)}
+function animate(){requestAnimationFrame(animate);renderer.render(scene,camera)} init();
+</script>
+</body>
+</html>

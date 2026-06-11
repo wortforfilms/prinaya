@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-06-11T18:29:36.838Z",
+  "generatedAt": "2026-06-11T20:31:53.559Z",
   "verdict": "CONTROLLED_PREVIEW_READY",
   "productionReady": false,
   "status": "READY",
-  "nodeCount": 1406,
+  "nodeCount": 1407,
   "relationCount": 4539,
   "stats": {
-    "nodeCount": 1406,
+    "nodeCount": 1407,
     "relationCount": 4539,
     "byType": {
       "Material": 5,
@@ -15,7 +15,7 @@
       "Floral": 48,
       "Lighting": 48,
       "Venue": 24,
-      "Route": 34,
+      "Route": 35,
       "Screen": 432,
       "UseCase": 108,
       "Template": 8,
@@ -34,7 +34,7 @@
       "Vendor": 3
     },
     "byStatus": {
-      "READY": 1150,
+      "READY": 1151,
       "PARTIAL": 193,
       "BLOCKED": 63
     },
@@ -72,7 +72,12 @@
     },
     {
       "route": "/mandap",
-      "surface": "Vedi Finder",
+      "surface": "Mandap Designer",
+      "status": "READY"
+    },
+    {
+      "route": "/cad/studio",
+      "surface": "CAD Studio",
       "status": "READY"
     },
     {
@@ -133,5 +138,5 @@
       "status": "BLOCKED"
     }
   ],
-  "note": "KBS v2 runtime knowledge graph powering the Wedding OS homepage, AI Co-Pilot, Board Composer, and Vedi Finder. Rule-based preview heuristics; no live AI/vendor/payment/panchang runtime. Blockers preserved."
+  "note": "KBS v2 runtime knowledge graph powering homepage, Mandap Designer, CAD Studio, AI Co-Pilot, Board Composer, and Vedi Finder. Rule-based preview heuristics; no live AI/vendor/payment/panchang/CAD-export runtime. Blockers preserved."
 }
