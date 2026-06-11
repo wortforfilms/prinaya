@@ -3,6 +3,7 @@ import { KnowledgeGraph, normalizeNode, type KbsNode } from "@/lib/kbs/graph";
 import { buildKbsGraph } from "@/lib/kbs/registry";
 import { searchKbs } from "@/lib/kbs/search";
 import { recommendForNode } from "@/lib/kbs/recommendations";
+import { buildBoardComposerPanel, buildCopilotPanel } from "@/lib/kbs/surfaces";
 
 function node(id: string, partial: Partial<KbsNode> = {}): KbsNode {
   return normalizeNode({ id, type: partial.type ?? "Asset", name: partial.name ?? id, ...partial });
@@ -101,5 +102,26 @@ describe("KBS runtime graph (built from registries + curated layers)", () => {
       expect(rec.confidence).toBeLessThanOrEqual(1);
       expect(rec.recommendation).not.toBe(mandap.id);
     });
+  });
+});
+
+describe("KBS surfaces (AI Co-Pilot + Board Composer)", () => {
+  it("builds an AI Co-Pilot panel with seeds and recommendations", () => {
+    const panel = buildCopilotPanel("/ai");
+    expect(panel.status).toBe("READY");
+    expect(panel.seeds.length).toBeGreaterThan(0);
+    panel.recommendations.forEach((rec) => {
+      expect(rec.recommendation).toBeTruthy();
+      expect(rec.confidence).toBeGreaterThanOrEqual(0.5);
+    });
+  });
+
+  it("builds a Board Composer panel with board->template->asset reach", () => {
+    const panel = buildBoardComposerPanel();
+    expect(panel.boards.length).toBeGreaterThan(0);
+    expect(panel.pipeline).toEqual(["Scene", "Render", "Board Composer", "PDF Package"]);
+    expect(panel.assetCount).toBeGreaterThan(0);
+    const totalLinkedTemplates = panel.boards.reduce((sum, board) => sum + board.linkedTemplates.length, 0);
+    expect(totalLinkedTemplates).toBeGreaterThan(0);
   });
 });

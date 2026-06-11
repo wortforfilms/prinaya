@@ -80,6 +80,22 @@ recommendForNode(graph, "mandap-node-id");        // [{ recommendation, confiden
 - `search.ts` — ranked text search with type/status/category filters.
 - `recommendations.ts` — co-occurrence + complementary-category heuristic, confidence ∈ [0.5, 1].
 
+## Wired surfaces
+
+`src/lib/kbs/surfaces.ts` adapts the graph into render-ready panels, shown by
+`RoutePage` (`src/components/routes/KbsPanels.tsx`):
+
+- **AI Co-Pilot** (`/ai`) — `buildCopilotPanel(routePath)` seeds from nodes linked
+  to the route (falling back to the project mandaps), aggregates
+  `recommendForNode` across seeds (strongest confidence per target), and surfaces
+  related ritual/vedi/film/material knowledge within two hops.
+- **Board Composer** (`/exports`, `/gallery`) — `buildBoardComposerPanel()` walks
+  each `Board` node to its inbound `Template` references and the assets those
+  templates use, rendering the `Scene → Render → Board Composer → PDF Package`
+  pipeline with live template/asset/use-case counts.
+
+Both are server-safe (cached singleton graph) and stay within the preview gate.
+
 ## Scripts & evidence
 
 ```bash

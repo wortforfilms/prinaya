@@ -24,6 +24,8 @@ import {
   UseCaseDemoFlowPanel,
   UsecaseGrid
 } from "@/components/routes/active-page-components";
+import { BoardComposerKnowledgePanel, CopilotKnowledgePanel } from "@/components/routes/KbsPanels";
+import { buildBoardComposerPanel, buildCopilotPanel } from "@/lib/kbs/surfaces";
 import { cadObjects, projectSummary } from "@/lib/data-frames";
 import { getActiveRoutePage, type ActiveRoutePage } from "@/lib/route-page-runtime";
 import { routeMatrix, type RouteDefinition } from "@/lib/route-matrix";
@@ -49,6 +51,11 @@ export function RoutePage({ route, slug = [] }: { route: RouteDefinition; slug?:
             <ScreenPreviewCard screen={activePage.cinematicScreen} />
             <ActiveStepsPanel steps={activePage.activeSteps} />
           </section>
+
+          {route.path.includes("/ai") && <CopilotKnowledgePanel panel={buildCopilotPanel(route.path)} />}
+          {(route.path.includes("/exports") || route.path.includes("/gallery")) && (
+            <BoardComposerKnowledgePanel panel={buildBoardComposerPanel()} />
+          )}
 
           <UsecaseGrid useCases={activePage.useCases} />
           <UseCaseDemoFlowPanel flows={activePage.demoFlows} />
