@@ -18,6 +18,7 @@
     "tlps:extract": "python3 scripts/extract-tlps-homepage.py",
     "tlps:extract:unique": "python3 scripts/extract-unique-tlps-assets.py",
     "images:cinematic": "python3 scripts/generate-cinematic-assets.py",
+    "kbs:generate": "node --import tsx scripts/generate-kbs.ts",
     "assets:generate": "tsx scripts/generate-assets.ts",
     "mesh:generate": "tsx scripts/generate-assets.ts",
     "pdf:generate": "node --import tsx scripts/generate-board-pdf.ts",
@@ -37,7 +38,8 @@
     "verify:cad": "node --import tsx scripts/verify-cad.ts",
     "verify:cad:visual": "node scripts/verify-cad-visual.mjs",
     "verify:evidence": "node --import tsx scripts/verify-evidence.ts",
-    "verify:release": "node --import tsx scripts/verify-release.ts"
+    "verify:release": "node --import tsx scripts/verify-release.ts",
+    "verify:kbs": "node --import tsx scripts/verify-kbs.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.10.0",
