@@ -30,7 +30,7 @@ import {
 import { useState, type ComponentType, type CSSProperties } from "react";
 import { StatusBadge } from "@/components/layout/StatusBadge";
 import { blockedCapabilities, releaseStatus, type CapabilityStatus } from "@/lib/status";
-import { getCinematicImageForSource, type CinematicAspectId } from "@/lib/cinematic-image-assets";
+import { getCinematicImageForSource, getCinematicImageForUxSpace, type CinematicAspectId } from "@/lib/cinematic-image-assets";
 import { getTlpsHomepageAsset, tlpsWeddingOsHomepage as page } from "@/lib/tlps-wedding-os-homepage";
 
 type IconType = ComponentType<{ className?: string; "aria-hidden"?: boolean }>;
@@ -52,6 +52,22 @@ const ecosystemIcons: IconType[] = [
 
 const toolIcons: IconType[] = [Landmark, Gem, Compass, Flower2, Lightbulb, CircleDollarSign];
 const actionIcons: IconType[] = [MessageCircle, Phone, WandSparkles, BookOpen];
+const designCardUxSpaces: Record<string, string> = {
+  "2D Plans": "layout-generator",
+  "3D Visuals": "venue-designer",
+  "VR Walkthroughs": "vr-walkthrough",
+  "Board Generation": "board-composer"
+};
+const filmCardUxSpaces: Record<string, string> = {
+  "Pre Wedding Films": "filmy-studio",
+  "Wedding Teasers": "filmy-studio",
+  Highlights: "filmy-studio",
+  "Full Wedding Films": "filmy-studio",
+  "Wedding Reels": "filmy-studio",
+  "Drone Films": "drone-aerial",
+  "Destination Films": "filmy-studio",
+  "Celebrity Style Films": "filmy-studio"
+};
 
 const buyerValues = ["Risk Reduction", "Decision Authority", "Execution Capability", "Access", "Time Compression"];
 
@@ -349,7 +365,7 @@ export function TlpsWeddingOsHomepage() {
       style={themeStyle}
     >
       <section className="relative min-h-[700px] overflow-hidden border-b border-[#d8a84a]/25">
-        <img src={cinematicImage(hero?.image ?? page.fullPageImage, "cinematic-21x9")} alt="" className="tlps-hero-image absolute inset-0 h-full w-full object-cover" />
+        <img src={cinematicSpaceImage("landing", hero?.image ?? page.fullPageImage, "cinematic-21x9")} alt="" className="tlps-hero-image absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,3,3,0.96)_0%,rgba(3,3,3,0.68)_42%,rgba(3,3,3,0.15)_78%,rgba(3,3,3,0.7)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#050504] to-transparent" />
 
@@ -500,7 +516,7 @@ function HeroLayoutPreview({ layout }: { layout: (typeof landingLayouts)[number]
             const asset = getTlpsHomepageAsset(card.assetId);
             return (
               <div key={card.label} className="overflow-hidden rounded-md border border-white/10 bg-white/[0.045]">
-                <img src={cinematicImage(asset?.image ?? page.fullPageImage, "desktop-16x9")} alt="" className="h-24 w-full object-cover" />
+                <img src={cinematicSpaceImage(designCardUxSpaces[card.label] ?? "design-boards", asset?.image ?? page.fullPageImage, "desktop-16x9", "workspace-main")} alt="" className="h-24 w-full object-cover" />
                 <p className="px-2 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-white/72">{card.label}</p>
               </div>
             );
@@ -765,7 +781,7 @@ function DesignStudioSection() {
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             {page.designStudio.cards.map((card) => {
               const asset = getTlpsHomepageAsset(card.assetId);
-              return <ImageCard key={card.label} label={card.label} image={asset?.image} href="/cad/editor" />;
+              return <ImageCard key={card.label} label={card.label} image={asset?.image} uxSpace={designCardUxSpaces[card.label]} href="/cad/editor" />;
             })}
           </div>
         </div>
@@ -782,7 +798,7 @@ function FilmStudioSection() {
         <div className="mt-5 grid gap-3 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-8">
           {page.filmStudio.map((film) => {
             const asset = getTlpsHomepageAsset(film.assetId);
-            return <ImageCard key={film.label} label={film.label} image={asset?.image} href="/gallery" compact />;
+            return <ImageCard key={film.label} label={film.label} image={asset?.image} uxSpace={filmCardUxSpaces[film.label]} href="/gallery" compact />;
           })}
         </div>
       </div>
@@ -947,11 +963,19 @@ function SectionTop({ title, subtitle, cta }: { title: string; subtitle: string;
   );
 }
 
-function ImageCard({ label, image, href, compact }: { label: string; image?: string; href: string; compact?: boolean }) {
+function ImageCard({ label, image, uxSpace, href, compact }: { label: string; image?: string; uxSpace?: string; href: string; compact?: boolean }) {
   return (
     <a href={href} className="group overflow-hidden rounded-md border border-[#d8a84a]/20 bg-white/[0.035]">
       <div className={compact ? "relative h-40" : "relative h-44"}>
-        <img src={cinematicImage(image ?? page.fullPageImage, compact ? "portrait-4x5" : "desktop-16x9")} alt={label} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+        <img
+          src={
+            uxSpace
+              ? cinematicSpaceImage(uxSpace, image ?? page.fullPageImage, compact ? "portrait-4x5" : "desktop-16x9", compact ? "film-card" : "workspace-main")
+              : cinematicImage(image ?? page.fullPageImage, compact ? "portrait-4x5" : "desktop-16x9")
+          }
+          alt={label}
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
         <p className="absolute bottom-3 left-3 right-3 text-center text-xs font-bold uppercase leading-4 tracking-[0.08em] text-white">{label}</p>
       </div>
@@ -980,4 +1004,11 @@ function slug(value: string) {
 
 function cinematicImage(source: string | undefined, aspectId: CinematicAspectId) {
   return getCinematicImageForSource(source ?? page.fullPageImage, aspectId);
+}
+
+function cinematicSpaceImage(uxSpace: string, fallbackSource: string | undefined, aspectId: CinematicAspectId, preferredRole = "hero") {
+  const source = fallbackSource ?? page.fullPageImage;
+  const sourceVariant = getCinematicImageForSource(source, aspectId);
+  if (sourceVariant !== source) return sourceVariant;
+  return getCinematicImageForUxSpace(uxSpace, aspectId, source, preferredRole);
 }

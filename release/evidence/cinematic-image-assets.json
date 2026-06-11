@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-09T23:34:30.509197+00:00",
+  "generatedAt": "2026-06-10T17:41:21.152097+00:00",
   "status": "READY",
   "verdict": "CONTROLLED_PREVIEW_READY",
   "productionReady": false,
@@ -9,7 +9,7 @@
   "duplicateSourceCount": 52,
   "aspectVariantCount": 5,
   "totalVariantCount": 3255,
-  "totalBytes": 141641672,
+  "totalBytes": 168555476,
   "sourceClassCounts": {
     "design-board": 9,
     "extracted-frame": 591,
@@ -17,6 +17,246 @@
     "homepage": 8,
     "public-image": 1
   },
+  "uxSpaceCounts": {
+    "admin-panel": 25,
+    "ai-copilot": 25,
+    "assets-library": 25,
+    "board-composer": 16,
+    "budget-planner": 3,
+    "cad-editor": 15,
+    "dashboard": 99,
+    "design-boards": 107,
+    "drone-aerial": 4,
+    "exports-boards": 3,
+    "filmy-studio": 11,
+    "floral-designer": 12,
+    "guest-seating": 3,
+    "landing": 39,
+    "layout-generator": 3,
+    "lighting-designer": 5,
+    "mandap-designer": 4,
+    "observatory": 25,
+    "production-planner": 3,
+    "settings": 3,
+    "shared-visuals": 176,
+    "templates": 25,
+    "vedi-position-finder": 11,
+    "vendor-manager": 3,
+    "venue-designer": 3,
+    "vr-walkthrough": 3
+  },
+  "uxRoleCounts": {
+    "asset-card": 1,
+    "board-page": 14,
+    "design-option": 44,
+    "destination-card": 9,
+    "film-card": 11,
+    "hero": 80,
+    "shell-frame": 52,
+    "supporting-visual": 134,
+    "ui-panel": 289,
+    "workspace-main": 17
+  },
+  "uxSpaces": [
+    {
+      "id": "landing",
+      "label": "TLPS Wedding OS Landing",
+      "routes": [
+        "/",
+        "/wedding-os"
+      ]
+    },
+    {
+      "id": "dashboard",
+      "label": "Premium Dashboard",
+      "routes": [
+        "/dashboard",
+        "/dashboard/overview"
+      ]
+    },
+    {
+      "id": "venue-designer",
+      "label": "Venue Designer",
+      "routes": [
+        "/venue-designer",
+        "/venues"
+      ]
+    },
+    {
+      "id": "mandap-designer",
+      "label": "Mandap Designer",
+      "routes": [
+        "/mandap",
+        "/mandap/designer"
+      ]
+    },
+    {
+      "id": "layout-generator",
+      "label": "Layout Generator",
+      "routes": [
+        "/layouts",
+        "/layouts/generator"
+      ]
+    },
+    {
+      "id": "floral-designer",
+      "label": "Floral Designer",
+      "routes": [
+        "/floral",
+        "/floral/concepts"
+      ]
+    },
+    {
+      "id": "lighting-designer",
+      "label": "Lighting Designer",
+      "routes": [
+        "/lighting",
+        "/lighting/designer"
+      ]
+    },
+    {
+      "id": "budget-planner",
+      "label": "Budget Planner",
+      "routes": [
+        "/budget",
+        "/pricing"
+      ]
+    },
+    {
+      "id": "guest-seating",
+      "label": "Guest & Seating",
+      "routes": [
+        "/guests",
+        "/guests/seating"
+      ]
+    },
+    {
+      "id": "vendor-manager",
+      "label": "Vendor Manager",
+      "routes": [
+        "/vendors",
+        "/vendors/library"
+      ]
+    },
+    {
+      "id": "production-planner",
+      "label": "Production Planner",
+      "routes": [
+        "/production",
+        "/production/planner"
+      ]
+    },
+    {
+      "id": "drone-aerial",
+      "label": "Drone & Aerial",
+      "routes": [
+        "/drone",
+        "/drone/planner"
+      ]
+    },
+    {
+      "id": "vr-walkthrough",
+      "label": "VR Walkthrough",
+      "routes": [
+        "/vr",
+        "/vr/walkthrough"
+      ]
+    },
+    {
+      "id": "exports-boards",
+      "label": "Exports & Boards",
+      "routes": [
+        "/exports",
+        "/exports/boards"
+      ]
+    },
+    {
+      "id": "observatory",
+      "label": "Observatory",
+      "routes": [
+        "/observatory",
+        "/observatory/status"
+      ]
+    },
+    {
+      "id": "ai-copilot",
+      "label": "AI Co-Pilot",
+      "routes": [
+        "/ai",
+        "/ai/copilot"
+      ]
+    },
+    {
+      "id": "assets-library",
+      "label": "Assets Library",
+      "routes": [
+        "/assets",
+        "/assets/library"
+      ]
+    },
+    {
+      "id": "templates",
+      "label": "Templates",
+      "routes": [
+        "/templates"
+      ]
+    },
+    {
+      "id": "admin-panel",
+      "label": "Admin Panel",
+      "routes": [
+        "/admin",
+        "/admin/panel"
+      ]
+    },
+    {
+      "id": "settings",
+      "label": "Settings",
+      "routes": [
+        "/settings"
+      ]
+    },
+    {
+      "id": "cad-editor",
+      "label": "CAD Editor",
+      "routes": [
+        "/cad",
+        "/cad/editor"
+      ]
+    },
+    {
+      "id": "board-composer",
+      "label": "Board Composer",
+      "routes": [
+        "/exports/boards",
+        "/boards"
+      ]
+    },
+    {
+      "id": "vedi-position-finder",
+      "label": "Hemant Samwat Vedi Position Finder",
+      "routes": [
+        "/ai/vedi-position-finder",
+        "/vedic"
+      ]
+    },
+    {
+      "id": "filmy-studio",
+      "label": "Wedding Filmy Studio",
+      "routes": [
+        "/gallery",
+        "/wedding-films"
+      ]
+    },
+    {
+      "id": "design-boards",
+      "label": "Design Boards",
+      "routes": [
+        "/gallery",
+        "/exports/boards"
+      ]
+    }
+  ],
   "assetTruth": "These are local high-resolution cinematic WebP derivatives generated from existing supplied/extracted preview sources. They are not claimed as new photography, live vendor inventory, or production-certified media.",
   "blockers": [
     {
