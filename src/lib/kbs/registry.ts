@@ -203,7 +203,13 @@ export function buildKbsGraph(): KnowledgeGraph {
     { path: "/planning/calendar", title: "Calendar", caps: ["day plan", "call sheets"] },
     { path: "/planning/projects", title: "Project Manager", caps: ["scope", "resources"] },
     { path: "/planning/risks", title: "Risk Manager", caps: ["risk register", "blockers"] },
-    { path: "/planning/quality", title: "Quality Manager", caps: ["quality checks", "preview"] }
+    { path: "/planning/quality", title: "Quality Manager", caps: ["quality checks", "preview"] },
+    { path: "/kbs/templates", title: "Template Explorer", caps: ["templates", "asset/board links"] },
+    { path: "/kbs/usecases", title: "Use Case Explorer", caps: ["use cases", "grouping"] },
+    { path: "/kbs/screens", title: "Screen Explorer", caps: ["screens", "routes"] },
+    { path: "/kbs/boards", title: "Board Explorer", caps: ["boards", "template links"] },
+    { path: "/kbs/vendors", title: "Vendor Explorer", caps: ["vendor categories", "preview"] },
+    { path: "/kbs/films", title: "Film Explorer", caps: ["films", "shots"] }
   ]) {
     add(
       normalizeNode({

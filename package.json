@@ -47,7 +47,8 @@
     "verify:evidence": "node --import tsx scripts/verify-evidence.ts",
     "verify:release": "node --import tsx scripts/verify-release.ts",
     "verify:kbs": "node --import tsx scripts/verify-kbs.ts",
-    "verify:spas": "node --import tsx scripts/verify-spas.ts"
+    "verify:spas": "node --import tsx scripts/verify-spas.ts",
+    "verify:kbs-explorers": "node --import tsx scripts/verify-kbs-explorers.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.10.0",

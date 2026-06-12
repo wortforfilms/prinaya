@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
+  buildBoardsExplorer,
   buildContractManager,
   buildDeliveryManager,
+  buildFilmsExplorer,
   buildGraphExplorer,
   buildGuestTwin,
   buildHospitalityPlanner,
@@ -11,10 +13,14 @@ import {
   buildProductionTwin,
   buildRitualExplorer,
   buildRsvp,
+  buildScreensExplorer,
   buildSeatingPlanner,
   buildShotPlanner,
   buildStoryboard,
+  buildTemplatesExplorer,
+  buildUseCasesExplorer,
   buildVendorManager,
+  buildVendorsExplorer,
   buildVendorTwin,
   buildVenueTwin,
   type SurfacePanel
@@ -37,7 +43,13 @@ const builders: [string, () => SurfacePanel][] = [
   ["VenueTwin", buildVenueTwin],
   ["GuestTwin", buildGuestTwin],
   ["VendorTwin", buildVendorTwin],
-  ["ProductionTwin", buildProductionTwin]
+  ["ProductionTwin", buildProductionTwin],
+  ["TemplatesExplorer", buildTemplatesExplorer],
+  ["UseCasesExplorer", buildUseCasesExplorer],
+  ["ScreensExplorer", buildScreensExplorer],
+  ["BoardsExplorer", buildBoardsExplorer],
+  ["VendorsExplorer", buildVendorsExplorer],
+  ["FilmsExplorer", buildFilmsExplorer]
 ];
 
 describe("runtime surface builders", () => {

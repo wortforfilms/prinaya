@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-06-12T03:22:01.276Z",
+  "generatedAt": "2026-06-12T03:50:04.430Z",
   "verdict": "CONTROLLED_PREVIEW_READY",
   "productionReady": false,
   "status": "READY",
-  "nodeCount": 1435,
+  "nodeCount": 1441,
   "relationCount": 4539,
   "stats": {
-    "nodeCount": 1435,
+    "nodeCount": 1441,
     "relationCount": 4539,
     "byType": {
       "Material": 5,
@@ -15,7 +15,7 @@
       "Floral": 48,
       "Lighting": 48,
       "Venue": 24,
-      "Route": 63,
+      "Route": 69,
       "Screen": 432,
       "UseCase": 108,
       "Template": 8,
@@ -34,7 +34,7 @@
       "Vendor": 3
     },
     "byStatus": {
-      "READY": 1179,
+      "READY": 1185,
       "PARTIAL": 193,
       "BLOCKED": 63
     },
@@ -102,5 +102,5 @@
       "status": "BLOCKED"
     }
   ],
-  "note": "KBS v2 graph + 156-surface SPA registry incl. Planning suite (timeline/tasks/milestones/calendar/projects/risks/quality). Preview heuristics; live vendor/payment/contract/AI/CAD-export blocked."
+  "note": "KBS v2 graph + 156-surface SPA registry incl. KBS Explorer suite (templates/usecases/screens/boards/vendors/films) and Planning suite. Preview heuristics; payments/contracts/live-vendor/CAD-export blocked."
 }

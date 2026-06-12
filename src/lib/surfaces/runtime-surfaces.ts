@@ -432,6 +432,218 @@ export function buildVendorTwin(): SurfacePanel {
   };
 }
 
+// ---------------------------------------------------------------- KBS explorer batch
+const ASSET_TYPES = new Set(["Asset", "Mandap", "Floral", "Lighting", "Venue", "Stage"]);
+
+function ucGroup(category: string): string {
+  const c = category.toLowerCase();
+  if (c.includes("guest")) return "Guest";
+  if (c.includes("vendor")) return "Vendor";
+  if (c.includes("production") || c.includes("venue zones") || c.includes("utilities")) return "Production";
+  if (c.includes("drone") || c.includes("vr") || c.includes("ai outputs")) return "Filmy Studio";
+  if (c.includes("board") || c.includes("template")) return "Board";
+  return "Design";
+}
+
+export function buildTemplatesExplorer(): SurfacePanel {
+  const g = kbs();
+  const templates = g.nodesOfType("Template");
+  const assetReach = (id: string) => g.neighbors(id, "uses").filter((n) => ASSET_TYPES.has(n.type)).length;
+  const boardReach = (id: string) => g.neighbors(id, "references").filter((n) => n.type === "Board").length;
+  return {
+    title: "Template Explorer",
+    subtitle: "Runtime templates and the assets, boards, and use cases they bind.",
+    status: "READY",
+    metrics: [
+      { label: "Templates", value: String(templates.length) },
+      { label: "Bound assets", value: String(templates.reduce((s, t) => s + assetReach(t.id), 0)) },
+      { label: "Board refs", value: String(templates.reduce((s, t) => s + boardReach(t.id), 0)) }
+    ],
+    sections: [
+      {
+        title: "Templates",
+        rows: templates.map((t) => ({
+          label: t.name,
+          value: `${assetReach(t.id)} assets · ${boardReach(t.id)} boards`,
+          sub: `use cases referencing: ${g.inboundNodes(t.id, "references").filter((n) => n.type === "UseCase").length}`
+        }))
+      }
+    ],
+    activeSteps: ["Pick template", "Bind assets", "Compose boards", "Link use cases", "Preview", "Export"],
+    useCases: ["Template browsing", "Asset binding", "Board composition"],
+    runtimeCoverage: templates.length,
+    kbsRefs: ["Template", "Asset", "Board", "UseCase"],
+    links: [{ label: "Templates", href: "/templates" }, { label: "Board Explorer", href: "/kbs/boards" }, { label: "Graph", href: "/kbs/graph" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildUseCasesExplorer(): SurfacePanel {
+  const g = kbs();
+  const useCases = g.nodesOfType("UseCase");
+  const groups = new Map<string, number>();
+  for (const uc of useCases) groups.set(ucGroup(uc.category), (groups.get(ucGroup(uc.category)) ?? 0) + 1);
+  const assetRefs = useCases.reduce((s, uc) => s + g.neighbors(uc.id, "references").filter((n) => ASSET_TYPES.has(n.type)).length, 0);
+  const screenRefs = useCases.reduce((s, uc) => s + g.neighbors(uc.id, "references").filter((n) => n.type === "Screen").length, 0);
+  return {
+    title: "Use Case Explorer",
+    subtitle: "Use cases grouped by domain, with asset, screen, and step links.",
+    status: "READY",
+    metrics: [
+      { label: "Use cases", value: String(useCases.length) },
+      { label: "Asset refs", value: String(assetRefs) },
+      { label: "Screen refs", value: String(screenRefs) },
+      { label: "Groups", value: String(groups.size) }
+    ],
+    sections: [
+      {
+        title: "By group",
+        rows: [...groups.entries()].sort((a, b) => b[1] - a[1]).map(([group, count]) => ({ label: group, value: String(count) }))
+      }
+    ],
+    activeSteps: ["Browse group", "Open use case", "Review steps", "Inspect assets", "Inspect screens", "Compose board"],
+    useCases: ["Use-case discovery", "Coverage audit"],
+    runtimeCoverage: useCases.length,
+    kbsRefs: ["UseCase", "Asset", "Screen", "Template", "Board"],
+    links: [{ label: "Features", href: "/features" }, { label: "Screen Explorer", href: "/kbs/screens" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildScreensExplorer(): SurfacePanel {
+  const g = kbs();
+  const screens = g.nodesOfType("Screen");
+  const byRoute = new Map<string, number>();
+  for (const s of screens) {
+    const route = String(s.metadata.route ?? "—");
+    byRoute.set(route, (byRoute.get(route) ?? 0) + 1);
+  }
+  return {
+    title: "Screen Explorer",
+    subtitle: "Preview screens grouped by route, linked to use cases and assets.",
+    status: "READY",
+    metrics: [
+      { label: "Screens", value: String(screens.length) },
+      { label: "Routes", value: String(byRoute.size) }
+    ],
+    sections: [
+      {
+        title: "By route",
+        rows: [...byRoute.entries()].sort((a, b) => b[1] - a[1]).map(([route, count]) => ({ label: route, value: `${count} screens` }))
+      }
+    ],
+    activeSteps: ["Pick route", "Open screen", "Trace use case", "Inspect assets", "Verify evidence"],
+    useCases: ["Screen discovery", "Route coverage"],
+    runtimeCoverage: screens.length,
+    kbsRefs: ["Screen", "Route", "UseCase"],
+    links: [{ label: "Gallery", href: "/gallery" }, { label: "Use Case Explorer", href: "/kbs/usecases" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildBoardsExplorer(): SurfacePanel {
+  const g = kbs();
+  const boards = g.nodesOfType("Board");
+  const templateReach = (id: string) =>
+    [...g.neighbors(id, "references"), ...g.inboundNodes(id, "references")].filter((n) => n.type === "Template").length;
+  return {
+    title: "Board Explorer",
+    subtitle: "Board pages and the templates and assets connected to each.",
+    status: "READY",
+    metrics: [
+      { label: "Board nodes", value: String(boards.length) },
+      { label: "Template links", value: String(boards.reduce((s, b) => s + templateReach(b.id), 0)) }
+    ],
+    sections: [
+      {
+        title: "Boards",
+        rows: boards.map((b) => ({
+          label: b.name,
+          value: `${templateReach(b.id)} template(s)`,
+          sub: String(b.metadata.source ?? ""),
+          status: b.status
+        }))
+      }
+    ],
+    activeSteps: ["Open board", "Bind template", "Pull assets", "Arrange page", "Export package"],
+    useCases: ["Board composition", "Asset binding"],
+    runtimeCoverage: boards.length,
+    kbsRefs: ["Board", "Template", "Asset"],
+    links: [{ label: "Board Composer", href: "/exports/studio" }, { label: "Template Explorer", href: "/kbs/templates" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildVendorsExplorer(): SurfacePanel {
+  const g = kbs();
+  const vendorNodes = g.nodesOfType("Vendor");
+  const byCategory = new Map<string, number>();
+  for (const v of [...vendorNodes.map((n) => n.category), ...vendors.map((v) => v.category)]) {
+    byCategory.set(v, (byCategory.get(v) ?? 0) + 1);
+  }
+  return {
+    title: "Vendor Explorer",
+    subtitle: "Vendor knowledge by category. Payments, contracts, invoices stay blocked.",
+    status: "READY",
+    metrics: [
+      { label: "KBS vendors", value: String(vendorNodes.length) },
+      { label: "Demo vendors", value: String(vendors.length) },
+      { label: "Categories", value: String(byCategory.size) }
+    ],
+    sections: [
+      {
+        title: "By category",
+        rows: [...byCategory.entries()].map(([cat, count]) => ({ label: cat, value: `${count} vendor(s)` }))
+      }
+    ],
+    activeSteps: ["Browse category", "Open vendor", "Link to assets", "Attach to use case"],
+    useCases: ["Vendor discovery (preview)", "Category mapping"],
+    runtimeCoverage: vendorNodes.length + vendors.length,
+    kbsRefs: ["Vendor"],
+    links: [{ label: "Vendor Manager", href: "/vendors/manager" }],
+    blockers: [
+      { label: "Payments", reason: "no payment processor" },
+      { label: "Contracts / invoices", reason: "no contract/e-sign runtime" },
+      { label: "Live vendor network", reason: "demo vendors only" }
+    ],
+    note: "Vendor knowledge is demo/preview; payments, contracts, and invoices are not exposed.",
+    evidenceRef: EV
+  };
+}
+
+export function buildFilmsExplorer(): SurfacePanel {
+  const g = kbs();
+  const films = g.nodesOfType("Film");
+  const totalShots = films.reduce((s, f) => s + (((f.metadata.shots as string[]) ?? []).length), 0);
+  return {
+    title: "Film Explorer",
+    subtitle: "Film types with shots, durations, and deliverable links.",
+    status: "READY",
+    metrics: [
+      { label: "Films", value: String(films.length) },
+      { label: "Shots", value: String(totalShots) }
+    ],
+    sections: [
+      {
+        title: "Films",
+        rows: films.map((f) => ({
+          label: f.name,
+          value: `${((f.metadata.shots as string[]) ?? []).length} shots`,
+          sub: f.metadata.durationSec ? `${Number(f.metadata.durationSec)}s` : undefined,
+          status: f.status
+        }))
+      }
+    ],
+    activeSteps: ["Pick film type", "Plan shots", "Build storyboard", "Track delivery"],
+    useCases: ["Film planning", "Shot discovery"],
+    runtimeCoverage: films.length,
+    kbsRefs: ["Film"],
+    links: [{ label: "Storyboard", href: "/filmy/storyboard" }, { label: "Shot Planner", href: "/filmy/shots" }],
+    note: "No real video files; film layer is preview metadata.",
+    evidenceRef: EV
+  };
+}
+
 // ---------------------------------------------------------------- Planning suite
 const fmtDate = (iso: string) => iso.slice(0, 10);
 const fmtTime = (iso: string) => (iso.includes("T") ? iso.slice(11, 16) : "");

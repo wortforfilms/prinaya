@@ -6,10 +6,10 @@
   "summary": {
     "total": 156,
     "byStatus": {
-      "READY": 65,
+      "READY": 71,
       "BLOCKED": 7,
-      "PLANNED": 41,
-      "PARTIAL": 43
+      "PLANNED": 39,
+      "PARTIAL": 39
     },
     "groupCount": 20
   },
@@ -376,26 +376,26 @@
         {
           "id": "kbs-runtime-template-explorer",
           "name": "Template Explorer",
-          "href": "/templates",
-          "status": "PARTIAL"
+          "href": "/kbs/templates",
+          "status": "READY"
         },
         {
           "id": "kbs-runtime-use-case-explorer",
           "name": "Use Case Explorer",
-          "href": "/features",
-          "status": "PARTIAL"
+          "href": "/kbs/usecases",
+          "status": "READY"
         },
         {
           "id": "kbs-runtime-screen-explorer",
           "name": "Screen Explorer",
-          "href": "/gallery",
-          "status": "PLANNED"
+          "href": "/kbs/screens",
+          "status": "READY"
         },
         {
           "id": "kbs-runtime-board-explorer",
           "name": "Board Explorer",
-          "href": "/exports",
-          "status": "PARTIAL"
+          "href": "/kbs/boards",
+          "status": "READY"
         },
         {
           "id": "kbs-runtime-ritual-explorer",
@@ -424,14 +424,14 @@
         {
           "id": "kbs-runtime-vendor-explorer",
           "name": "Vendor Explorer",
-          "href": "/vendors",
-          "status": "PARTIAL"
+          "href": "/kbs/vendors",
+          "status": "READY"
         },
         {
           "id": "kbs-runtime-film-explorer",
           "name": "Film Explorer",
-          "href": "/gallery",
-          "status": "PLANNED"
+          "href": "/kbs/films",
+          "status": "READY"
         }
       ]
     },
