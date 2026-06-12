@@ -50,7 +50,10 @@ test("primary CTAs resolve to real in-app routes", async ({ page }) => {
 test("mobile nav opens and closes", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
+  const navMandap = page.locator("header").getByRole("link", { name: "Mandap Designer" });
+  await expect(navMandap).toBeHidden();
   await page.getByRole("button", { name: "Open menu" }).click();
-  await expect(page.getByRole("link", { name: "Mandap Designer" })).toBeVisible();
+  await expect(navMandap).toBeVisible();
   await page.getByRole("button", { name: "Close menu" }).click();
+  await expect(navMandap).toBeHidden();
 });
