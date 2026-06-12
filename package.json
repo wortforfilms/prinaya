@@ -17,6 +17,7 @@
     "electron:dev": "concurrently -k \"next dev\" \"wait-on http://localhost:3000 && electron .\"",
     "electron:start": "concurrently -k \"next start\" \"wait-on http://localhost:3000 && electron .\"",
     "db:migrate": "prisma migrate deploy",
+    "account:create": "node --import tsx scripts/create-account.ts",
     "db:migrate:dev": "prisma migrate dev",
     "db:seed": "node --import tsx prisma/seed.ts",
     "hero:extract": "python3 scripts/extract-hero-banners.py",
