@@ -52,7 +52,8 @@ export const navGroups: NavGroup[] = [
       { label: "AI Co-Pilot", href: "/ai" },
       { label: "Vedi Finder", href: "/hemant-samwat-vedi" },
       { label: "Observatory", href: "/observatory" },
-      { label: "Board Composer", href: "/exports" }
+      { label: "Board Composer", href: "/exports" },
+      { label: "All Surfaces", href: "/surfaces" }
     ]
   }
 ];

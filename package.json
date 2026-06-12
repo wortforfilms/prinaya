@@ -44,7 +44,8 @@
     "verify:cad:visual": "node scripts/verify-cad-visual.mjs",
     "verify:evidence": "node --import tsx scripts/verify-evidence.ts",
     "verify:release": "node --import tsx scripts/verify-release.ts",
-    "verify:kbs": "node --import tsx scripts/verify-kbs.ts"
+    "verify:kbs": "node --import tsx scripts/verify-kbs.ts",
+    "verify:spas": "node --import tsx scripts/verify-spas.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.10.0",

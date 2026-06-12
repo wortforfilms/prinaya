@@ -1,0 +1,1051 @@
+{
+  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "verdict": "CONTROLLED_PREVIEW_READY",
+  "productionReady": false,
+  "note": "SPA surface registry. READY=dedicated build; PARTIAL=preview frame; PLANNED=named surface routing to nearest existing route; BLOCKED=requires provider/payment/compliance evidence. No production claims.",
+  "summary": {
+    "total": 152,
+    "byStatus": {
+      "READY": 55,
+      "BLOCKED": 7,
+      "PLANNED": 52,
+      "PARTIAL": 38
+    },
+    "groupCount": 19
+  },
+  "groups": [
+    {
+      "group": "Core Experience",
+      "count": 7,
+      "surfaces": [
+        {
+          "id": "core-experience-homepage",
+          "name": "Homepage",
+          "href": "/",
+          "status": "READY"
+        },
+        {
+          "id": "core-experience-wedding-os",
+          "name": "Wedding OS",
+          "href": "/wedding-os",
+          "status": "READY"
+        },
+        {
+          "id": "core-experience-destination-weddings",
+          "name": "Destination Weddings",
+          "href": "/venues",
+          "status": "READY"
+        },
+        {
+          "id": "core-experience-wedding-experiences",
+          "name": "Wedding Experiences",
+          "href": "/gallery",
+          "status": "READY"
+        },
+        {
+          "id": "core-experience-wedding-services",
+          "name": "Wedding Services",
+          "href": "/features",
+          "status": "READY"
+        },
+        {
+          "id": "core-experience-marketplace",
+          "name": "Marketplace",
+          "href": "/marketplace",
+          "status": "BLOCKED",
+          "reason": "marketplace commerce blocked"
+        },
+        {
+          "id": "core-experience-contact",
+          "name": "Contact",
+          "href": "/contact",
+          "status": "READY"
+        }
+      ]
+    },
+    {
+      "group": "Design Studio",
+      "count": 8,
+      "surfaces": [
+        {
+          "id": "design-studio-venue-designer",
+          "name": "Venue Designer",
+          "href": "/venue-designer",
+          "status": "READY"
+        },
+        {
+          "id": "design-studio-mandap-designer",
+          "name": "Mandap Designer",
+          "href": "/mandap",
+          "status": "READY"
+        },
+        {
+          "id": "design-studio-vedi-designer",
+          "name": "Vedi Designer",
+          "href": "/hemant-samwat-vedi",
+          "status": "READY"
+        },
+        {
+          "id": "design-studio-layout-generator",
+          "name": "Layout Generator",
+          "href": "/layouts",
+          "status": "READY"
+        },
+        {
+          "id": "design-studio-floral-designer",
+          "name": "Floral Designer",
+          "href": "/floral",
+          "status": "READY"
+        },
+        {
+          "id": "design-studio-lighting-designer",
+          "name": "Lighting Designer",
+          "href": "/lighting",
+          "status": "READY"
+        },
+        {
+          "id": "design-studio-stage-designer",
+          "name": "Stage Designer",
+          "href": "/mandap",
+          "status": "PLANNED"
+        },
+        {
+          "id": "design-studio-decor-designer",
+          "name": "Decor Designer",
+          "href": "/floral",
+          "status": "PLANNED"
+        }
+      ]
+    },
+    {
+      "group": "CAD Runtime",
+      "count": 7,
+      "surfaces": [
+        {
+          "id": "cad-runtime-cad-editor",
+          "name": "CAD Editor",
+          "href": "/cad/editor",
+          "status": "READY"
+        },
+        {
+          "id": "cad-runtime-cad-assets",
+          "name": "CAD Assets",
+          "href": "/assets",
+          "status": "READY"
+        },
+        {
+          "id": "cad-runtime-cad-templates",
+          "name": "CAD Templates",
+          "href": "/templates",
+          "status": "READY"
+        },
+        {
+          "id": "cad-runtime-cad-boards",
+          "name": "CAD Boards",
+          "href": "/exports",
+          "status": "READY"
+        },
+        {
+          "id": "cad-runtime-cad-renders",
+          "name": "CAD Renders",
+          "href": "/gallery",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "cad-runtime-cad-layers",
+          "name": "CAD Layers",
+          "href": "/cad/editor",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "cad-runtime-cad-scene-manager",
+          "name": "CAD Scene Manager",
+          "href": "/cad",
+          "status": "PLANNED"
+        }
+      ]
+    },
+    {
+      "group": "Three.js Designer",
+      "count": 6,
+      "surfaces": [
+        {
+          "id": "three-js-designer-3d-designer-studio",
+          "name": "3D Designer Studio",
+          "href": "/cad/3d",
+          "status": "READY"
+        },
+        {
+          "id": "three-js-designer-3d-mandap-studio",
+          "name": "3D Mandap Studio",
+          "href": "/cad/3d",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "three-js-designer-3d-vedi-studio",
+          "name": "3D Vedi Studio",
+          "href": "/hemant-samwat-vedi",
+          "status": "PLANNED"
+        },
+        {
+          "id": "three-js-designer-3d-stage-studio",
+          "name": "3D Stage Studio",
+          "href": "/cad/3d",
+          "status": "PLANNED"
+        },
+        {
+          "id": "three-js-designer-3d-walkthrough",
+          "name": "3D Walkthrough",
+          "href": "/vr",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "three-js-designer-3d-render-studio",
+          "name": "3D Render Studio",
+          "href": "/gallery",
+          "status": "PLANNED"
+        }
+      ]
+    },
+    {
+      "group": "AI Runtime",
+      "count": 8,
+      "surfaces": [
+        {
+          "id": "ai-runtime-ai-co-pilot",
+          "name": "AI Co-Pilot",
+          "href": "/ai",
+          "status": "READY"
+        },
+        {
+          "id": "ai-runtime-ai-generator-studio",
+          "name": "AI Generator Studio",
+          "href": "/ai/studio",
+          "status": "READY"
+        },
+        {
+          "id": "ai-runtime-text-to-image",
+          "name": "Text To Image",
+          "href": "/ai/studio",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "ai-runtime-sketch-to-image",
+          "name": "Sketch To Image",
+          "href": "/ai/studio",
+          "status": "PLANNED"
+        },
+        {
+          "id": "ai-runtime-mood-to-design",
+          "name": "Mood To Design",
+          "href": "/ai/studio",
+          "status": "PLANNED"
+        },
+        {
+          "id": "ai-runtime-3d-concept-generator",
+          "name": "3D Concept Generator",
+          "href": "/ai/studio",
+          "status": "PLANNED"
+        },
+        {
+          "id": "ai-runtime-variation-generator",
+          "name": "Variation Generator",
+          "href": "/ai/studio",
+          "status": "PLANNED"
+        },
+        {
+          "id": "ai-runtime-prompt-library",
+          "name": "Prompt Library",
+          "href": "/ai",
+          "status": "PLANNED"
+        }
+      ]
+    },
+    {
+      "group": "Board Composer",
+      "count": 15,
+      "surfaces": [
+        {
+          "id": "board-composer-cover-board",
+          "name": "Cover Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-concept-board",
+          "name": "Concept Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-venue-board",
+          "name": "Venue Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-layout-board",
+          "name": "Layout Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-mandap-board",
+          "name": "Mandap Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-vedi-board",
+          "name": "Vedi Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-lighting-board",
+          "name": "Lighting Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-floral-board",
+          "name": "Floral Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-budget-board",
+          "name": "Budget Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-guest-board",
+          "name": "Guest Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-vendor-board",
+          "name": "Vendor Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-production-board",
+          "name": "Production Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-drone-board",
+          "name": "Drone Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-vr-board",
+          "name": "VR Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        },
+        {
+          "id": "board-composer-evidence-board",
+          "name": "Evidence Board",
+          "href": "/exports/studio",
+          "status": "READY"
+        }
+      ]
+    },
+    {
+      "group": "KBS Runtime",
+      "count": 12,
+      "surfaces": [
+        {
+          "id": "kbs-runtime-knowledge-graph",
+          "name": "Knowledge Graph",
+          "href": "/observatory",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "kbs-runtime-asset-explorer",
+          "name": "Asset Explorer",
+          "href": "/assets",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "kbs-runtime-template-explorer",
+          "name": "Template Explorer",
+          "href": "/templates",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "kbs-runtime-use-case-explorer",
+          "name": "Use Case Explorer",
+          "href": "/features",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "kbs-runtime-screen-explorer",
+          "name": "Screen Explorer",
+          "href": "/gallery",
+          "status": "PLANNED"
+        },
+        {
+          "id": "kbs-runtime-board-explorer",
+          "name": "Board Explorer",
+          "href": "/exports",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "kbs-runtime-ritual-explorer",
+          "name": "Ritual Explorer",
+          "href": "/hemant-samwat-vedi",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "kbs-runtime-muhurat-explorer",
+          "name": "Muhurat Explorer",
+          "href": "/hemant-samwat-vedi",
+          "status": "READY"
+        },
+        {
+          "id": "kbs-runtime-nakshatra-explorer",
+          "name": "Nakshatra Explorer",
+          "href": "/hemant-samwat-vedi",
+          "status": "READY"
+        },
+        {
+          "id": "kbs-runtime-tithi-explorer",
+          "name": "Tithi Explorer",
+          "href": "/hemant-samwat-vedi",
+          "status": "READY"
+        },
+        {
+          "id": "kbs-runtime-vendor-explorer",
+          "name": "Vendor Explorer",
+          "href": "/vendors",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "kbs-runtime-film-explorer",
+          "name": "Film Explorer",
+          "href": "/gallery",
+          "status": "PLANNED"
+        }
+      ]
+    },
+    {
+      "group": "Hemant Samwat",
+      "count": 10,
+      "surfaces": [
+        {
+          "id": "hemant-samwat-hemant-samwat-dashboard",
+          "name": "Hemant Samwat Dashboard",
+          "href": "/hemant-samwat-vedi",
+          "status": "READY"
+        },
+        {
+          "id": "hemant-samwat-vedi-finder",
+          "name": "Vedi Finder",
+          "href": "/hemant-samwat-vedi",
+          "status": "READY"
+        },
+        {
+          "id": "hemant-samwat-muhurat-finder",
+          "name": "Muhurat Finder",
+          "href": "/hemant-samwat-vedi",
+          "status": "READY"
+        },
+        {
+          "id": "hemant-samwat-nakshatra-explorer",
+          "name": "Nakshatra Explorer",
+          "href": "/hemant-samwat-vedi",
+          "status": "READY"
+        },
+        {
+          "id": "hemant-samwat-tithi-explorer",
+          "name": "Tithi Explorer",
+          "href": "/hemant-samwat-vedi",
+          "status": "READY"
+        },
+        {
+          "id": "hemant-samwat-yoga-explorer",
+          "name": "Yoga Explorer",
+          "href": "/hemant-samwat-vedi",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "hemant-samwat-karana-explorer",
+          "name": "Karana Explorer",
+          "href": "/hemant-samwat-vedi",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "hemant-samwat-graha-explorer",
+          "name": "Graha Explorer",
+          "href": "/hemant-samwat-vedi",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "hemant-samwat-rashi-explorer",
+          "name": "Rashi Explorer",
+          "href": "/hemant-samwat-vedi",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "hemant-samwat-panchanga-explorer",
+          "name": "Panchanga Explorer",
+          "href": "/hemant-samwat-vedi",
+          "status": "PARTIAL"
+        }
+      ]
+    },
+    {
+      "group": "Filmy Studio",
+      "count": 9,
+      "surfaces": [
+        {
+          "id": "filmy-studio-filmy-studio-dashboard",
+          "name": "Filmy Studio Dashboard",
+          "href": "/wedding-os",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "filmy-studio-film-projects",
+          "name": "Film Projects",
+          "href": "/projects",
+          "status": "PLANNED"
+        },
+        {
+          "id": "filmy-studio-shot-planner",
+          "name": "Shot Planner",
+          "href": "/gallery",
+          "status": "PLANNED"
+        },
+        {
+          "id": "filmy-studio-storyboard",
+          "name": "Storyboard",
+          "href": "/gallery",
+          "status": "PLANNED"
+        },
+        {
+          "id": "filmy-studio-drone-planner",
+          "name": "Drone Planner",
+          "href": "/drone",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "filmy-studio-media-library",
+          "name": "Media Library",
+          "href": "/assets",
+          "status": "PLANNED"
+        },
+        {
+          "id": "filmy-studio-edit-studio",
+          "name": "Edit Studio",
+          "href": "/gallery",
+          "status": "PLANNED"
+        },
+        {
+          "id": "filmy-studio-color-grading",
+          "name": "Color Grading",
+          "href": "/gallery",
+          "status": "PLANNED"
+        },
+        {
+          "id": "filmy-studio-delivery-manager",
+          "name": "Delivery Manager",
+          "href": "/exports",
+          "status": "PLANNED"
+        }
+      ]
+    },
+    {
+      "group": "Planning",
+      "count": 8,
+      "surfaces": [
+        {
+          "id": "planning-project-manager",
+          "name": "Project Manager",
+          "href": "/projects",
+          "status": "READY"
+        },
+        {
+          "id": "planning-timeline",
+          "name": "Timeline",
+          "href": "/production",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "planning-calendar",
+          "name": "Calendar",
+          "href": "/production",
+          "status": "PLANNED"
+        },
+        {
+          "id": "planning-task-manager",
+          "name": "Task Manager",
+          "href": "/production",
+          "status": "PLANNED"
+        },
+        {
+          "id": "planning-milestone-tracker",
+          "name": "Milestone Tracker",
+          "href": "/production",
+          "status": "PLANNED"
+        },
+        {
+          "id": "planning-budget-planner",
+          "name": "Budget Planner",
+          "href": "/budget",
+          "status": "READY"
+        },
+        {
+          "id": "planning-risk-manager",
+          "name": "Risk Manager",
+          "href": "/observatory",
+          "status": "PLANNED"
+        },
+        {
+          "id": "planning-quality-manager",
+          "name": "Quality Manager",
+          "href": "/production",
+          "status": "PLANNED"
+        }
+      ]
+    },
+    {
+      "group": "Guest",
+      "count": 8,
+      "surfaces": [
+        {
+          "id": "guest-guest-manager",
+          "name": "Guest Manager",
+          "href": "/guests",
+          "status": "READY"
+        },
+        {
+          "id": "guest-invitation",
+          "name": "Invitation",
+          "href": "/guests",
+          "status": "PLANNED"
+        },
+        {
+          "id": "guest-rsvp",
+          "name": "RSVP",
+          "href": "/guests",
+          "status": "PLANNED"
+        },
+        {
+          "id": "guest-seating-planner",
+          "name": "Seating Planner",
+          "href": "/guests",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "guest-vip-manager",
+          "name": "VIP Manager",
+          "href": "/guests",
+          "status": "PLANNED"
+        },
+        {
+          "id": "guest-hospitality-planner",
+          "name": "Hospitality Planner",
+          "href": "/guests",
+          "status": "PLANNED"
+        },
+        {
+          "id": "guest-meal-planner",
+          "name": "Meal Planner",
+          "href": "/guests",
+          "status": "PLANNED"
+        },
+        {
+          "id": "guest-communication-center",
+          "name": "Communication Center",
+          "href": "/guests",
+          "status": "PLANNED"
+        }
+      ]
+    },
+    {
+      "group": "Vendor",
+      "count": 7,
+      "surfaces": [
+        {
+          "id": "vendor-vendor-manager",
+          "name": "Vendor Manager",
+          "href": "/vendors",
+          "status": "READY"
+        },
+        {
+          "id": "vendor-vendor-discovery",
+          "name": "Vendor Discovery",
+          "href": "/vendors",
+          "status": "BLOCKED",
+          "reason": "live vendor network blocked"
+        },
+        {
+          "id": "vendor-contract-manager",
+          "name": "Contract Manager",
+          "href": "/vendors",
+          "status": "BLOCKED",
+          "reason": "payments/legal blocked"
+        },
+        {
+          "id": "vendor-purchase-orders",
+          "name": "Purchase Orders",
+          "href": "/vendors",
+          "status": "BLOCKED",
+          "reason": "payments blocked"
+        },
+        {
+          "id": "vendor-invoice-manager",
+          "name": "Invoice Manager",
+          "href": "/vendors",
+          "status": "BLOCKED",
+          "reason": "payments blocked"
+        },
+        {
+          "id": "vendor-vendor-performance",
+          "name": "Vendor Performance",
+          "href": "/vendors",
+          "status": "PLANNED"
+        },
+        {
+          "id": "vendor-procurement",
+          "name": "Procurement",
+          "href": "/production",
+          "status": "PLANNED"
+        }
+      ]
+    },
+    {
+      "group": "Drone",
+      "count": 6,
+      "surfaces": [
+        {
+          "id": "drone-drone-mission-planner",
+          "name": "Drone Mission Planner",
+          "href": "/drone",
+          "status": "READY"
+        },
+        {
+          "id": "drone-flight-path-designer",
+          "name": "Flight Path Designer",
+          "href": "/drone",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "drone-coverage-planner",
+          "name": "Coverage Planner",
+          "href": "/drone",
+          "status": "PLANNED"
+        },
+        {
+          "id": "drone-weather-center",
+          "name": "Weather Center",
+          "href": "/drone",
+          "status": "PLANNED"
+        },
+        {
+          "id": "drone-battery-planner",
+          "name": "Battery Planner",
+          "href": "/drone",
+          "status": "PLANNED"
+        },
+        {
+          "id": "drone-compliance-center",
+          "name": "Compliance Center",
+          "href": "/drone",
+          "status": "BLOCKED",
+          "reason": "certified compliance blocked"
+        }
+      ]
+    },
+    {
+      "group": "VR",
+      "count": 5,
+      "surfaces": [
+        {
+          "id": "vr-vr-walkthrough",
+          "name": "VR Walkthrough",
+          "href": "/vr",
+          "status": "READY"
+        },
+        {
+          "id": "vr-360-gallery",
+          "name": "360 Gallery",
+          "href": "/vr",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "vr-hotspot-manager",
+          "name": "Hotspot Manager",
+          "href": "/vr",
+          "status": "PLANNED"
+        },
+        {
+          "id": "vr-vr-analytics",
+          "name": "VR Analytics",
+          "href": "/vr",
+          "status": "PLANNED"
+        },
+        {
+          "id": "vr-client-review",
+          "name": "Client Review",
+          "href": "/vr",
+          "status": "PLANNED"
+        }
+      ]
+    },
+    {
+      "group": "Asset Library",
+      "count": 7,
+      "surfaces": [
+        {
+          "id": "asset-library-mandap-library",
+          "name": "Mandap Library",
+          "href": "/assets",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "asset-library-vedi-library",
+          "name": "Vedi Library",
+          "href": "/assets",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "asset-library-stage-library",
+          "name": "Stage Library",
+          "href": "/assets",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "asset-library-floral-library",
+          "name": "Floral Library",
+          "href": "/assets",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "asset-library-lighting-library",
+          "name": "Lighting Library",
+          "href": "/assets",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "asset-library-furniture-library",
+          "name": "Furniture Library",
+          "href": "/assets",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "asset-library-material-library",
+          "name": "Material Library",
+          "href": "/assets",
+          "status": "PARTIAL"
+        }
+      ]
+    },
+    {
+      "group": "Observatory",
+      "count": 7,
+      "surfaces": [
+        {
+          "id": "observatory-project-health",
+          "name": "Project Health",
+          "href": "/observatory",
+          "status": "READY"
+        },
+        {
+          "id": "observatory-budget-health",
+          "name": "Budget Health",
+          "href": "/observatory",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "observatory-vendor-health",
+          "name": "Vendor Health",
+          "href": "/observatory",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "observatory-guest-health",
+          "name": "Guest Health",
+          "href": "/observatory",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "observatory-timeline-health",
+          "name": "Timeline Health",
+          "href": "/observatory",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "observatory-risk-observatory",
+          "name": "Risk Observatory",
+          "href": "/observatory",
+          "status": "PLANNED"
+        },
+        {
+          "id": "observatory-ai-observatory",
+          "name": "AI Observatory",
+          "href": "/observatory",
+          "status": "PARTIAL"
+        }
+      ]
+    },
+    {
+      "group": "Admin",
+      "count": 8,
+      "surfaces": [
+        {
+          "id": "admin-admin-dashboard",
+          "name": "Admin Dashboard",
+          "href": "/admin",
+          "status": "READY"
+        },
+        {
+          "id": "admin-users",
+          "name": "Users",
+          "href": "/admin",
+          "status": "PLANNED"
+        },
+        {
+          "id": "admin-roles",
+          "name": "Roles",
+          "href": "/admin",
+          "status": "PLANNED"
+        },
+        {
+          "id": "admin-permissions",
+          "name": "Permissions",
+          "href": "/admin",
+          "status": "PLANNED"
+        },
+        {
+          "id": "admin-storage",
+          "name": "Storage",
+          "href": "/admin",
+          "status": "PLANNED"
+        },
+        {
+          "id": "admin-logs",
+          "name": "Logs",
+          "href": "/admin",
+          "status": "PLANNED"
+        },
+        {
+          "id": "admin-evidence",
+          "name": "Evidence",
+          "href": "/admin",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "admin-system-health",
+          "name": "System Health",
+          "href": "/admin",
+          "status": "PARTIAL"
+        }
+      ]
+    },
+    {
+      "group": "Settings",
+      "count": 8,
+      "surfaces": [
+        {
+          "id": "settings-profile",
+          "name": "Profile",
+          "href": "/settings",
+          "status": "READY"
+        },
+        {
+          "id": "settings-organization",
+          "name": "Organization",
+          "href": "/settings",
+          "status": "PLANNED"
+        },
+        {
+          "id": "settings-branding",
+          "name": "Branding",
+          "href": "/settings",
+          "status": "PLANNED"
+        },
+        {
+          "id": "settings-theme-manager",
+          "name": "Theme Manager",
+          "href": "/settings",
+          "status": "PLANNED"
+        },
+        {
+          "id": "settings-notifications",
+          "name": "Notifications",
+          "href": "/settings",
+          "status": "PLANNED"
+        },
+        {
+          "id": "settings-integrations",
+          "name": "Integrations",
+          "href": "/settings",
+          "status": "BLOCKED",
+          "reason": "provider integrations blocked"
+        },
+        {
+          "id": "settings-security",
+          "name": "Security",
+          "href": "/settings",
+          "status": "PLANNED"
+        },
+        {
+          "id": "settings-backups",
+          "name": "Backups",
+          "href": "/settings",
+          "status": "PLANNED"
+        }
+      ]
+    },
+    {
+      "group": "Export",
+      "count": 6,
+      "surfaces": [
+        {
+          "id": "export-export-center",
+          "name": "Export Center",
+          "href": "/exports",
+          "status": "READY"
+        },
+        {
+          "id": "export-pdf-export",
+          "name": "PDF Export",
+          "href": "/exports",
+          "status": "READY"
+        },
+        {
+          "id": "export-image-export",
+          "name": "Image Export",
+          "href": "/mandap",
+          "status": "READY"
+        },
+        {
+          "id": "export-presentation-export",
+          "name": "Presentation Export",
+          "href": "/exports/studio",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "export-board-package-export",
+          "name": "Board Package Export",
+          "href": "/exports",
+          "status": "READY"
+        },
+        {
+          "id": "export-archive-export",
+          "name": "Archive Export",
+          "href": "/exports",
+          "status": "PLANNED"
+        }
+      ]
+    }
+  ]
+}

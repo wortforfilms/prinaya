@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-06-11T23:39:15.505Z",
+  "generatedAt": "2026-06-12T01:57:07.369Z",
   "verdict": "CONTROLLED_PREVIEW_READY",
   "productionReady": false,
   "status": "READY",
-  "nodeCount": 1410,
+  "nodeCount": 1411,
   "relationCount": 4539,
   "stats": {
-    "nodeCount": 1410,
+    "nodeCount": 1411,
     "relationCount": 4539,
     "byType": {
       "Material": 5,
@@ -15,7 +15,7 @@
       "Floral": 48,
       "Lighting": 48,
       "Venue": 24,
-      "Route": 38,
+      "Route": 39,
       "Screen": 432,
       "UseCase": 108,
       "Template": 8,
@@ -34,7 +34,7 @@
       "Vendor": 3
     },
     "byStatus": {
-      "READY": 1154,
+      "READY": 1155,
       "PARTIAL": 193,
       "BLOCKED": 63
     },
@@ -47,60 +47,9 @@
     "homepageUseCaseGroups": 7,
     "nakshatras": 27,
     "tithis": 30,
-    "muhurats": 12
+    "muhurats": 12,
+    "spaSurfaces": 152
   },
-  "routeIntegration": [
-    {
-      "route": "/",
-      "surface": "Wedding OS Homepage",
-      "status": "READY"
-    },
-    {
-      "route": "/ai",
-      "surface": "AI Co-Pilot",
-      "status": "READY"
-    },
-    {
-      "route": "/ai/studio",
-      "surface": "AI Generator Studio",
-      "status": "READY"
-    },
-    {
-      "route": "/exports",
-      "surface": "Board Composer",
-      "status": "READY"
-    },
-    {
-      "route": "/exports/studio",
-      "surface": "Board Composer Studio",
-      "status": "READY"
-    },
-    {
-      "route": "/gallery",
-      "surface": "Board Composer",
-      "status": "READY"
-    },
-    {
-      "route": "/mandap",
-      "surface": "Mandap Designer",
-      "status": "READY"
-    },
-    {
-      "route": "/cad/studio",
-      "surface": "CAD Studio",
-      "status": "READY"
-    },
-    {
-      "route": "/cad/3d",
-      "surface": "3D Designer Studio",
-      "status": "READY"
-    },
-    {
-      "route": "/hemant-samwat-vedi",
-      "surface": "Vedi Intelligence",
-      "status": "READY"
-    }
-  ],
   "validation": {
     "errors": 0,
     "warnings": 0,
@@ -153,5 +102,5 @@
       "status": "BLOCKED"
     }
   ],
-  "note": "KBS v2 runtime knowledge graph powering homepage, Mandap Designer, AI Generator Studio, Board Composer, 3D Designer, CAD Studio, AI Co-Pilot, and Vedi Finder. Rule-based preview heuristics; no live AI/vendor/payment/panchang/CAD-export runtime. Blockers preserved."
+  "note": "KBS v2 runtime knowledge graph + 152-surface SPA registry. Rule-based preview heuristics; no live AI/vendor/payment/panchang/CAD-export runtime. Blockers preserved."
 }

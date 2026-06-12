@@ -12,7 +12,12 @@ const validRoutes = new Set<string>([
   "/",
   ...routeMatrix.map((route) => route.path.replace("/*", "") || "/"),
   "/cad/editor",
-  "/hemant-samwat-vedi"
+  "/cad/studio",
+  "/cad/3d",
+  "/ai/studio",
+  "/exports/studio",
+  "/hemant-samwat-vedi",
+  "/surfaces"
 ]);
 
 describe("homepage smoke", () => {

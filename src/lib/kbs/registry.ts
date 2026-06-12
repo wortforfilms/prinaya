@@ -178,6 +178,7 @@ export function buildKbsGraph(): KnowledgeGraph {
     { path: "/cad/3d", title: "3D Designer Studio", caps: ["3D scene", "asset library", "materials", "presets", "preview render"] },
     { path: "/ai/studio", title: "AI Generator Studio", caps: ["text-to-image preview", "moodboard", "variations", "preview only"] },
     { path: "/exports/studio", title: "Board Composer Studio", caps: ["board pages", "KBS connections", "preview export"] },
+    { path: "/surfaces", title: "Surface Registry", caps: ["SPA surface index", "status registry", "route map"] },
     { path: "/hemant-samwat-vedi", title: "Vedi Intelligence", caps: ["orientation", "vastu grid", "vedi", "muhurat lookup"] }
   ]) {
     add(
