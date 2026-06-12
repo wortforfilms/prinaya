@@ -65,6 +65,31 @@ export function SurfaceScaffold({ panel }: { panel: SurfacePanel }) {
           ))}
         </div>
 
+        {panel.activeSteps && panel.activeSteps.length > 0 && (
+          <div className="mt-6 rounded-md border border-white/10 bg-white/[0.03] p-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-basalt/55">Active steps</p>
+            <ol className="mt-2 flex flex-wrap gap-2 text-xs">
+              {panel.activeSteps.map((step, i) => (
+                <li key={step} className="rounded-full border border-[#d9aa46]/25 bg-[#d9aa46]/5 px-2.5 py-1 text-[#f8d78b]">
+                  {i + 1}. {step}
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+
+        {panel.useCases && panel.useCases.length > 0 && (
+          <div className="mt-4 flex flex-wrap items-center gap-2 text-xs">
+            <span className="font-semibold uppercase tracking-[0.12em] text-basalt/55">Use cases:</span>
+            {panel.useCases.map((uc) => (
+              <span key={uc} className="rounded-full border border-white/15 px-2.5 py-1 text-white/70">{uc}</span>
+            ))}
+            {typeof panel.runtimeCoverage === "number" && (
+              <span className="ml-auto text-basalt/55">Runtime coverage: {panel.runtimeCoverage} check(s)</span>
+            )}
+          </div>
+        )}
+
         {panel.kbsRefs.length > 0 && (
           <div className="mt-6">
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-basalt/55">KBS references</p>

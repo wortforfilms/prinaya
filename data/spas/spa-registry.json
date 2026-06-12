@@ -6,10 +6,10 @@
   "summary": {
     "total": 156,
     "byStatus": {
-      "READY": 61,
+      "READY": 65,
       "BLOCKED": 7,
-      "PLANNED": 46,
-      "PARTIAL": 42
+      "PLANNED": 41,
+      "PARTIAL": 43
     },
     "groupCount": 20
   },
@@ -568,32 +568,32 @@
         {
           "id": "planning-project-manager",
           "name": "Project Manager",
-          "href": "/projects",
+          "href": "/planning/projects",
           "status": "READY"
         },
         {
           "id": "planning-timeline",
           "name": "Timeline",
-          "href": "/production",
-          "status": "PARTIAL"
+          "href": "/planning/timeline",
+          "status": "READY"
         },
         {
           "id": "planning-calendar",
           "name": "Calendar",
-          "href": "/production",
-          "status": "PLANNED"
+          "href": "/planning/calendar",
+          "status": "READY"
         },
         {
           "id": "planning-task-manager",
           "name": "Task Manager",
-          "href": "/production",
-          "status": "PLANNED"
+          "href": "/planning/tasks",
+          "status": "READY"
         },
         {
           "id": "planning-milestone-tracker",
           "name": "Milestone Tracker",
-          "href": "/production",
-          "status": "PLANNED"
+          "href": "/planning/milestones",
+          "status": "READY"
         },
         {
           "id": "planning-budget-planner",
@@ -604,14 +604,14 @@
         {
           "id": "planning-risk-manager",
           "name": "Risk Manager",
-          "href": "/observatory",
-          "status": "PLANNED"
+          "href": "/planning/risks",
+          "status": "PARTIAL"
         },
         {
           "id": "planning-quality-manager",
           "name": "Quality Manager",
-          "href": "/production",
-          "status": "PLANNED"
+          "href": "/planning/quality",
+          "status": "PARTIAL"
         }
       ]
     },

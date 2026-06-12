@@ -11,11 +11,15 @@ import {
   guestSections,
   lightingFixtures,
   mandapDimensions,
+  observatoryEvents,
+  projectSummary,
   seatingCapacity,
   stageDimensions,
   vendors,
   venueDimensions
 } from "../data-frames";
+import { productionRuntime, productionRuntimeSummary } from "../production-runtime";
+import { blockedCapabilities } from "../status";
 
 export type SurfaceStatus = "READY" | "PARTIAL" | "BLOCKED";
 export type SurfaceRow = { label: string; value?: string; sub?: string; status?: SurfaceStatus };
@@ -30,6 +34,9 @@ export type SurfacePanel = {
   sections: SurfaceSection[];
   kbsRefs: string[];
   links: SurfaceLink[];
+  activeSteps?: string[];
+  useCases?: string[];
+  runtimeCoverage?: number;
   blockers?: { label: string; reason: string }[];
   note?: string;
   evidenceRef: string;
@@ -421,6 +428,203 @@ export function buildVendorTwin(): SurfacePanel {
     kbsRefs: ["Vendor"],
     links: [{ label: "Vendor Manager", href: "/vendors" }],
     note: "Demo vendors only; live vendor network blocked.",
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Planning suite
+const fmtDate = (iso: string) => iso.slice(0, 10);
+const fmtTime = (iso: string) => (iso.includes("T") ? iso.slice(11, 16) : "");
+
+export function buildTimeline(): SurfacePanel {
+  const sched = productionRuntime.schedule;
+  return {
+    title: "Timeline",
+    subtitle: "Production schedule with dependencies, leading to the event date.",
+    status: "READY",
+    metrics: [
+      { label: "Schedule items", value: String(sched.length) },
+      { label: "Event date", value: projectSummary.eventDate },
+      { label: "Work orders", value: String(productionRuntimeSummary.workOrders) }
+    ],
+    sections: [
+      {
+        title: "Schedule",
+        rows: sched.map((s) => ({
+          label: s.label,
+          value: `${fmtDate(s.start)} ${fmtTime(s.start)}–${fmtTime(s.end)}`,
+          sub: s.dependencyIds.length ? `after ${s.dependencyIds.length} task(s)` : "no dependencies"
+        }))
+      }
+    ],
+    activeSteps: ["Set milestones", "Sequence schedule", "Resolve dependencies", "Assign crews", "Lock call sheets", "Track progress"],
+    useCases: ["Build timeline", "Dependency planning", "Event countdown"],
+    runtimeCoverage: sched.length,
+    kbsRefs: ["Production Planning"],
+    links: [{ label: "Tasks", href: "/planning/tasks" }, { label: "Milestones", href: "/planning/milestones" }, { label: "Production", href: "/production" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildTasks(): SurfacePanel {
+  const wos = productionRuntime.workOrders;
+  return {
+    title: "Task Manager",
+    subtitle: "Work orders and checklists across the production crew.",
+    status: "READY",
+    metrics: [
+      { label: "Work orders", value: String(wos.length) },
+      { label: "Checklist items", value: String(wos.reduce((s, w) => s + w.checklist.length, 0)) }
+    ],
+    sections: [
+      {
+        title: "Work orders",
+        rows: wos.map((w) => ({ label: w.title, value: `${w.checklist.length} steps`, sub: `owner: ${w.owner}`, status: "READY" }))
+      }
+    ],
+    activeSteps: ["Create work order", "Assign owner", "Define checklist", "Schedule", "Execute", "Sign off"],
+    useCases: ["Task tracking", "Crew assignment", "Checklist execution"],
+    runtimeCoverage: wos.length,
+    kbsRefs: ["Production Planning"],
+    links: [{ label: "Timeline", href: "/planning/timeline" }, { label: "Calendar", href: "/planning/calendar" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildMilestones(): SurfacePanel {
+  const milestones = [
+    ...productionRuntime.callSheets.map((c) => ({ label: c.title, date: c.date })),
+    { label: "Wedding day", date: projectSummary.eventDate }
+  ].sort((a, b) => a.date.localeCompare(b.date));
+  return {
+    title: "Milestone Tracker",
+    subtitle: "Key production milestones leading to the event.",
+    status: "READY",
+    metrics: [
+      { label: "Milestones", value: String(milestones.length) },
+      { label: "Event date", value: projectSummary.eventDate }
+    ],
+    sections: [
+      { title: "Milestones", rows: milestones.map((m) => ({ label: m.label, value: m.date })) }
+    ],
+    activeSteps: ["Define milestones", "Set target dates", "Track readiness", "Flag slippage", "Confirm completion"],
+    useCases: ["Milestone tracking", "Readiness gates"],
+    runtimeCoverage: milestones.length,
+    kbsRefs: ["Production Planning"],
+    links: [{ label: "Timeline", href: "/planning/timeline" }, { label: "Calendar", href: "/planning/calendar" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildCalendar(): SurfacePanel {
+  const byDate = new Map<string, string[]>();
+  for (const s of productionRuntime.schedule) {
+    const d = fmtDate(s.start);
+    byDate.set(d, [...(byDate.get(d) ?? []), s.label]);
+  }
+  for (const c of productionRuntime.callSheets) byDate.set(c.date, [...(byDate.get(c.date) ?? []), c.title]);
+  const days = [...byDate.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+  return {
+    title: "Calendar",
+    subtitle: "Day-by-day production calendar of schedule items and call sheets.",
+    status: "READY",
+    metrics: [
+      { label: "Active days", value: String(days.length) },
+      { label: "Event date", value: projectSummary.eventDate }
+    ],
+    sections: [
+      { title: "Days", rows: days.map(([date, items]) => ({ label: date, value: `${items.length} item(s)`, sub: items.join(" · ") })) }
+    ],
+    activeSteps: ["Aggregate schedule", "Place call sheets", "Resolve clashes", "Publish calendar"],
+    useCases: ["Calendar view", "Day planning"],
+    runtimeCoverage: days.length,
+    kbsRefs: ["Production Planning"],
+    links: [{ label: "Timeline", href: "/planning/timeline" }, { label: "Tasks", href: "/planning/tasks" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildProjects(): SurfacePanel {
+  return {
+    title: "Project Manager",
+    subtitle: "Project overview — scope, coverage, and production resources.",
+    status: "READY",
+    metrics: [
+      { label: "Project", value: projectSummary.name.split(" ")[0] },
+      { label: "Routes", value: String(projectSummary.routeCoverage) },
+      { label: "CAD objects", value: String(projectSummary.cadObjectCount) },
+      { label: "Event date", value: projectSummary.eventDate }
+    ],
+    sections: [
+      {
+        title: "Production resources",
+        rows: [
+          { label: "Vendor assignments", value: String(productionRuntimeSummary.vendorAssignments) },
+          { label: "Crew assignments", value: String(productionRuntimeSummary.crewAssignments) },
+          { label: "Schedule items", value: String(productionRuntimeSummary.scheduleItems) },
+          { label: "Work orders", value: String(productionRuntimeSummary.workOrders) },
+          { label: "Call sheets", value: String(productionRuntimeSummary.callSheets) }
+        ]
+      }
+    ],
+    activeSteps: ["Define scope", "Plan resources", "Schedule", "Assign crews", "Track health", "Deliver"],
+    useCases: ["Project overview", "Resource planning"],
+    runtimeCoverage: Object.values(productionRuntimeSummary).reduce((a, b) => a + b, 0),
+    kbsRefs: ["Production Planning"],
+    links: [{ label: "Timeline", href: "/planning/timeline" }, { label: "Observatory", href: "/observatory" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildRisks(): SurfacePanel {
+  return {
+    title: "Risk Manager",
+    subtitle: "Risk register — blocked capabilities are tracked as open risks.",
+    status: "PARTIAL",
+    metrics: [
+      { label: "Open risks", value: String(blockedCapabilities.length) },
+      { label: "Severity", value: "high" }
+    ],
+    sections: [
+      {
+        title: "Blocked-capability risks",
+        rows: blockedCapabilities.map((cap) => ({ label: cap.label, value: "BLOCKED", sub: cap.reason, status: "BLOCKED" }))
+      }
+    ],
+    activeSteps: ["Identify risk", "Assess severity", "Assign owner", "Mitigate", "Monitor", "Close"],
+    useCases: ["Risk register", "Blocker tracking"],
+    runtimeCoverage: blockedCapabilities.length,
+    kbsRefs: ["Production Planning"],
+    links: [{ label: "Observatory", href: "/observatory" }, { label: "Support", href: "/support" }],
+    blockers: blockedCapabilities.slice(0, 3).map((c) => ({ label: c.label, reason: c.reason })),
+    note: "Risk register surfaces the preserved blockers; mitigation requires external provider/compliance evidence.",
+    evidenceRef: EV
+  };
+}
+
+export function buildQuality(): SurfacePanel {
+  const checks = productionRuntime.workOrders.flatMap((w) => w.checklist);
+  return {
+    title: "Quality Manager",
+    subtitle: "Quality checklists derived from work-order steps and runtime coverage.",
+    status: "PARTIAL",
+    metrics: [
+      { label: "Checklists", value: String(productionRuntime.workOrders.length) },
+      { label: "Quality checks", value: String(checks.length) },
+      { label: "Observatory events", value: String(observatoryEvents.length) }
+    ],
+    sections: [
+      {
+        title: "Work-order quality checks",
+        rows: productionRuntime.workOrders.map((w) => ({ label: w.title, value: `${w.checklist.length} checks`, sub: w.checklist.join(" · ") }))
+      }
+    ],
+    activeSteps: ["Define checks", "Inspect", "Record findings", "Re-test", "Approve"],
+    useCases: ["Quality assurance", "Snag tracking"],
+    runtimeCoverage: checks.length,
+    kbsRefs: ["Production Planning"],
+    links: [{ label: "Tasks", href: "/planning/tasks" }, { label: "Observatory", href: "/observatory" }],
+    note: "Preview quality checks from local work orders; certified engineering/compliance signoff remains blocked.",
     evidenceRef: EV
   };
 }

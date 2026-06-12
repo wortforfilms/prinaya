@@ -196,7 +196,14 @@ export function buildKbsGraph(): KnowledgeGraph {
     { path: "/twin/venue", title: "Venue Twin", caps: ["venue model", "preview"] },
     { path: "/twin/guest", title: "Guest Twin", caps: ["guest model", "preview"] },
     { path: "/twin/vendor", title: "Vendor Twin", caps: ["vendor model", "preview"] },
-    { path: "/twin/production", title: "Production Twin", caps: ["production model", "preview"] }
+    { path: "/twin/production", title: "Production Twin", caps: ["production model", "preview"] },
+    { path: "/planning/timeline", title: "Timeline", caps: ["schedule", "dependencies"] },
+    { path: "/planning/tasks", title: "Task Manager", caps: ["work orders", "checklists"] },
+    { path: "/planning/milestones", title: "Milestone Tracker", caps: ["milestones", "dates"] },
+    { path: "/planning/calendar", title: "Calendar", caps: ["day plan", "call sheets"] },
+    { path: "/planning/projects", title: "Project Manager", caps: ["scope", "resources"] },
+    { path: "/planning/risks", title: "Risk Manager", caps: ["risk register", "blockers"] },
+    { path: "/planning/quality", title: "Quality Manager", caps: ["quality checks", "preview"] }
   ]) {
     add(
       normalizeNode({
