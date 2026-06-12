@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-06-12T01:57:07.369Z",
+  "generatedAt": "2026-06-12T03:12:54.784Z",
   "verdict": "CONTROLLED_PREVIEW_READY",
   "productionReady": false,
   "status": "READY",
-  "nodeCount": 1411,
+  "nodeCount": 1428,
   "relationCount": 4539,
   "stats": {
-    "nodeCount": 1411,
+    "nodeCount": 1428,
     "relationCount": 4539,
     "byType": {
       "Material": 5,
@@ -15,7 +15,7 @@
       "Floral": 48,
       "Lighting": 48,
       "Venue": 24,
-      "Route": 39,
+      "Route": 56,
       "Screen": 432,
       "UseCase": 108,
       "Template": 8,
@@ -34,7 +34,7 @@
       "Vendor": 3
     },
     "byStatus": {
-      "READY": 1155,
+      "READY": 1172,
       "PARTIAL": 193,
       "BLOCKED": 63
     },
@@ -48,7 +48,7 @@
     "nakshatras": 27,
     "tithis": 30,
     "muhurats": 12,
-    "spaSurfaces": 152
+    "spaSurfaces": 156
   },
   "validation": {
     "errors": 0,
@@ -102,5 +102,5 @@
       "status": "BLOCKED"
     }
   ],
-  "note": "KBS v2 runtime knowledge graph + 152-surface SPA registry. Rule-based preview heuristics; no live AI/vendor/payment/panchang/CAD-export runtime. Blockers preserved."
+  "note": "KBS v2 graph + 156-surface SPA registry with KBS/Guest/Vendor/Filmy explorers and Wedding Digital Twin. Rule-based preview heuristics; live vendor/payment/contract/AI/CAD-export runtime blocked. Blockers preserved."
 }

@@ -179,7 +179,24 @@ export function buildKbsGraph(): KnowledgeGraph {
     { path: "/ai/studio", title: "AI Generator Studio", caps: ["text-to-image preview", "moodboard", "variations", "preview only"] },
     { path: "/exports/studio", title: "Board Composer Studio", caps: ["board pages", "KBS connections", "preview export"] },
     { path: "/surfaces", title: "Surface Registry", caps: ["SPA surface index", "status registry", "route map"] },
-    { path: "/hemant-samwat-vedi", title: "Vedi Intelligence", caps: ["orientation", "vastu grid", "vedi", "muhurat lookup"] }
+    { path: "/hemant-samwat-vedi", title: "Vedi Intelligence", caps: ["orientation", "vastu grid", "vedi", "muhurat lookup"] },
+    { path: "/kbs/graph", title: "KBS Graph Explorer", caps: ["graph", "entity types"] },
+    { path: "/kbs/rituals", title: "Ritual Explorer", caps: ["rituals", "vedi links"] },
+    { path: "/kbs/muhurat", title: "Muhurat Explorer", caps: ["muhurat", "nakshatra", "tithi"] },
+    { path: "/kbs/nakshatra", title: "Nakshatra Explorer", caps: ["nakshatra", "graha", "rashi"] },
+    { path: "/guests/rsvp", title: "RSVP", caps: ["guest response", "sections"] },
+    { path: "/guests/seating", title: "Seating Planner", caps: ["seat zones", "capacity"] },
+    { path: "/guests/hospitality", title: "Hospitality Planner", caps: ["accommodation", "transport"] },
+    { path: "/vendors/manager", title: "Vendor Manager", caps: ["vendor directory", "demo"] },
+    { path: "/vendors/procurement", title: "Procurement", caps: ["budget lines", "preview"] },
+    { path: "/vendors/contracts", title: "Contract Manager", caps: ["contracts blocked"] },
+    { path: "/filmy/storyboard", title: "Storyboard", caps: ["shots", "film"] },
+    { path: "/filmy/shots", title: "Shot Planner", caps: ["shots", "film"] },
+    { path: "/filmy/delivery", title: "Delivery Manager", caps: ["deliverables", "preview"] },
+    { path: "/twin/venue", title: "Venue Twin", caps: ["venue model", "preview"] },
+    { path: "/twin/guest", title: "Guest Twin", caps: ["guest model", "preview"] },
+    { path: "/twin/vendor", title: "Vendor Twin", caps: ["vendor model", "preview"] },
+    { path: "/twin/production", title: "Production Twin", caps: ["production model", "preview"] }
   ]) {
     add(
       normalizeNode({

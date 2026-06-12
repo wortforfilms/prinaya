@@ -1,19 +1,24 @@
+import { existsSync, readdirSync, statSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { spaSurfaces, spaGroups, spaRegistrySummary } from "@/lib/spa-registry";
-import { routeMatrix } from "@/lib/route-matrix";
 
-const KNOWN = new Set<string>([
-  "/",
-  ...routeMatrix.map((route) => route.path.replace("/*", "") || "/"),
-  "/cad/editor",
-  "/cad/studio",
-  "/cad/3d",
-  "/ai/studio",
-  "/exports/studio",
-  "/hemant-samwat-vedi",
-  "/wedding-os",
-  "/surfaces"
-]);
+const APP = join(process.cwd(), "src", "app");
+
+function hasCatchAll(dir: string): boolean {
+  if (!existsSync(dir) || !statSync(dir).isDirectory()) return false;
+  return readdirSync(dir).some((d) => d.startsWith("[") && d.includes("...") && existsSync(join(dir, d, "page.tsx")));
+}
+
+function routeHasPage(href: string): boolean {
+  if (href === "/") return existsSync(join(APP, "page.tsx"));
+  const segs = href.replace(/^\//, "").split("/");
+  if (existsSync(join(APP, ...segs, "page.tsx"))) return true;
+  for (let i = segs.length; i >= 1; i -= 1) {
+    if (hasCatchAll(join(APP, ...segs.slice(0, i)))) return true;
+  }
+  return hasCatchAll(join(APP, segs[0]));
+}
 
 describe("SPA surface registry", () => {
   it("declares 150+ surfaces across multiple groups", () => {
@@ -23,13 +28,12 @@ describe("SPA surface registry", () => {
   });
 
   it("has unique ids", () => {
-    const ids = new Set(spaSurfaces.map((s) => s.id));
-    expect(ids.size).toBe(spaSurfaces.length);
+    expect(new Set(spaSurfaces.map((s) => s.id)).size).toBe(spaSurfaces.length);
   });
 
-  it("every surface href resolves to a real route (no dangling)", () => {
-    const dangling = spaSurfaces.filter((s) => !KNOWN.has(s.href)).map((s) => `${s.id} -> ${s.href}`);
-    expect(dangling).toEqual([]);
+  it("every surface href resolves to a real Next page (no 404s)", () => {
+    const unresolved = spaSurfaces.filter((s) => !routeHasPage(s.href)).map((s) => `${s.id} -> ${s.href}`);
+    expect(unresolved).toEqual([]);
   });
 
   it("BLOCKED surfaces carry a reason", () => {
@@ -38,14 +42,9 @@ describe("SPA surface registry", () => {
     }
   });
 
-  it("status counts sum to the total", () => {
+  it("status counts sum to the total and group counts match", () => {
     const sum = Object.values(spaRegistrySummary.byStatus).reduce((a, b) => a + b, 0);
     expect(sum).toBe(spaRegistrySummary.total);
-  });
-
-  it("group counts match their surfaces", () => {
-    for (const group of spaGroups) {
-      expect(group.count).toBe(group.surfaces.length);
-    }
+    for (const g of spaGroups) expect(g.count).toBe(g.surfaces.length);
   });
 });

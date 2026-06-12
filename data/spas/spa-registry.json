@@ -4,14 +4,14 @@
   "productionReady": false,
   "note": "SPA surface registry. READY=dedicated build; PARTIAL=preview frame; PLANNED=named surface routing to nearest existing route; BLOCKED=requires provider/payment/compliance evidence. No production claims.",
   "summary": {
-    "total": 152,
+    "total": 156,
     "byStatus": {
-      "READY": 55,
+      "READY": 61,
       "BLOCKED": 7,
-      "PLANNED": 52,
-      "PARTIAL": 38
+      "PLANNED": 46,
+      "PARTIAL": 42
     },
-    "groupCount": 19
+    "groupCount": 20
   },
   "groups": [
     {
@@ -364,8 +364,8 @@
         {
           "id": "kbs-runtime-knowledge-graph",
           "name": "Knowledge Graph",
-          "href": "/observatory",
-          "status": "PARTIAL"
+          "href": "/kbs/graph",
+          "status": "READY"
         },
         {
           "id": "kbs-runtime-asset-explorer",
@@ -400,19 +400,19 @@
         {
           "id": "kbs-runtime-ritual-explorer",
           "name": "Ritual Explorer",
-          "href": "/hemant-samwat-vedi",
-          "status": "PARTIAL"
+          "href": "/kbs/rituals",
+          "status": "READY"
         },
         {
           "id": "kbs-runtime-muhurat-explorer",
           "name": "Muhurat Explorer",
-          "href": "/hemant-samwat-vedi",
+          "href": "/kbs/muhurat",
           "status": "READY"
         },
         {
           "id": "kbs-runtime-nakshatra-explorer",
           "name": "Nakshatra Explorer",
-          "href": "/hemant-samwat-vedi",
+          "href": "/kbs/nakshatra",
           "status": "READY"
         },
         {
@@ -520,14 +520,14 @@
         {
           "id": "filmy-studio-shot-planner",
           "name": "Shot Planner",
-          "href": "/gallery",
-          "status": "PLANNED"
+          "href": "/filmy/shots",
+          "status": "READY"
         },
         {
           "id": "filmy-studio-storyboard",
           "name": "Storyboard",
-          "href": "/gallery",
-          "status": "PLANNED"
+          "href": "/filmy/storyboard",
+          "status": "READY"
         },
         {
           "id": "filmy-studio-drone-planner",
@@ -556,8 +556,8 @@
         {
           "id": "filmy-studio-delivery-manager",
           "name": "Delivery Manager",
-          "href": "/exports",
-          "status": "PLANNED"
+          "href": "/filmy/delivery",
+          "status": "PARTIAL"
         }
       ]
     },
@@ -634,14 +634,14 @@
         {
           "id": "guest-rsvp",
           "name": "RSVP",
-          "href": "/guests",
-          "status": "PLANNED"
+          "href": "/guests/rsvp",
+          "status": "READY"
         },
         {
           "id": "guest-seating-planner",
           "name": "Seating Planner",
-          "href": "/guests",
-          "status": "PARTIAL"
+          "href": "/guests/seating",
+          "status": "READY"
         },
         {
           "id": "guest-vip-manager",
@@ -652,8 +652,8 @@
         {
           "id": "guest-hospitality-planner",
           "name": "Hospitality Planner",
-          "href": "/guests",
-          "status": "PLANNED"
+          "href": "/guests/hospitality",
+          "status": "PARTIAL"
         },
         {
           "id": "guest-meal-planner",
@@ -676,7 +676,7 @@
         {
           "id": "vendor-vendor-manager",
           "name": "Vendor Manager",
-          "href": "/vendors",
+          "href": "/vendors/manager",
           "status": "READY"
         },
         {
@@ -689,7 +689,7 @@
         {
           "id": "vendor-contract-manager",
           "name": "Contract Manager",
-          "href": "/vendors",
+          "href": "/vendors/contracts",
           "status": "BLOCKED",
           "reason": "payments/legal blocked"
         },
@@ -716,8 +716,8 @@
         {
           "id": "vendor-procurement",
           "name": "Procurement",
-          "href": "/production",
-          "status": "PLANNED"
+          "href": "/vendors/procurement",
+          "status": "PARTIAL"
         }
       ]
     },
@@ -1044,6 +1044,36 @@
           "name": "Archive Export",
           "href": "/exports",
           "status": "PLANNED"
+        }
+      ]
+    },
+    {
+      "group": "Wedding Digital Twin",
+      "count": 4,
+      "surfaces": [
+        {
+          "id": "wedding-digital-twin-venue-twin",
+          "name": "Venue Twin",
+          "href": "/twin/venue",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "wedding-digital-twin-guest-twin",
+          "name": "Guest Twin",
+          "href": "/twin/guest",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "wedding-digital-twin-vendor-twin",
+          "name": "Vendor Twin",
+          "href": "/twin/vendor",
+          "status": "PARTIAL"
+        },
+        {
+          "id": "wedding-digital-twin-production-twin",
+          "name": "Production Twin",
+          "href": "/twin/production",
+          "status": "PARTIAL"
         }
       ]
     }
