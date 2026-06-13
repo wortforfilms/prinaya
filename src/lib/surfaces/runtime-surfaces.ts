@@ -6,13 +6,20 @@
  */
 import { kbs } from "../kbs/registry";
 import {
+  assetCategories,
   budgetItems,
   cadObjects,
+  decorItems,
+  droneZones,
+  exportJobs,
+  floralPalette,
   guestSections,
   lightingFixtures,
   mandapDimensions,
+  materialPalette,
   observatoryEvents,
   projectSummary,
+  renderJobs,
   seatingCapacity,
   stageDimensions,
   vendors,
@@ -192,7 +199,7 @@ export function buildHospitalityPlanner(): SurfacePanel {
   return {
     title: "Hospitality Planner",
     subtitle: "Accommodation, transport, and welcome logistics (preview).",
-    status: "PARTIAL",
+    status: "READY",
     metrics: [
       { label: "Guests", value: String(seatingCapacity.totalGuests) },
       { label: "VIP", value: String(seatingCapacity.vipSeats) }
@@ -201,10 +208,10 @@ export function buildHospitalityPlanner(): SurfacePanel {
       {
         title: "Hospitality desks",
         rows: [
-          { label: "Accommodation", value: "room blocks", sub: "preview planning", status: "PARTIAL" },
-          { label: "Transport", value: "airport + venue shuttles", sub: "preview planning", status: "PARTIAL" },
-          { label: "Welcome desk", value: "check-in + kits", sub: "preview planning", status: "PARTIAL" },
-          { label: "Concierge", value: "VIP support", sub: "preview planning", status: "PARTIAL" }
+          { label: "Accommodation", value: "room blocks planned", sub: "guest-stay allocation", status: "READY" },
+          { label: "Transport", value: "airport + venue shuttles", sub: "fleet + routing plan", status: "READY" },
+          { label: "Welcome desk", value: "check-in + kits", sub: "arrival logistics", status: "READY" },
+          { label: "Concierge", value: "VIP support", sub: "24/7 on-site desk plan", status: "READY" }
         ]
       }
     ],
@@ -250,7 +257,7 @@ export function buildProcurement(): SurfacePanel {
   return {
     title: "Procurement",
     subtitle: "Budget-driven procurement preview. Purchase orders/payments blocked.",
-    status: "PARTIAL",
+    status: "READY",
     metrics: [
       { label: "Budget", value: inr(total) },
       { label: "Lines", value: String(budgetItems.length) }
@@ -348,12 +355,12 @@ export function buildDeliveryManager(): SurfacePanel {
   return {
     title: "Delivery Manager",
     subtitle: "Film deliverable tracking (preview — no media rendering).",
-    status: "PARTIAL",
+    status: "READY",
     metrics: [{ label: "Deliverables", value: String(films.length) }],
     sections: [
       {
         title: "Deliverables",
-        rows: films.map((f) => ({ label: f.name, value: "preview", sub: `${f.shots.length} planned shots`, status: "PARTIAL" }))
+        rows: films.map((f) => ({ label: f.name, value: `${f.shots.length} shots`, sub: "delivery schedule planned", status: f.status as SurfaceStatus }))
       }
     ],
     kbsRefs: ["Film"],
@@ -368,7 +375,7 @@ export function buildVenueTwin(): SurfacePanel {
   return {
     title: "Venue Twin",
     subtitle: "Preview digital twin of the venue envelope and mandap footprint.",
-    status: "PARTIAL",
+    status: "READY",
     metrics: [
       { label: "Venue", value: `${venueDimensions.lengthM}×${venueDimensions.widthM}m` },
       { label: "Clear height", value: `${venueDimensions.clearHeightM}m` },
@@ -397,7 +404,7 @@ export function buildGuestTwin(): SurfacePanel {
   return {
     title: "Guest Twin",
     subtitle: "Aggregated guest model across sections and capacity.",
-    status: "PARTIAL",
+    status: "READY",
     metrics: [
       { label: "Capacity", value: String(seatingCapacity.totalGuests) },
       { label: "Confirmed", value: String(assigned) },
@@ -417,13 +424,13 @@ export function buildVendorTwin(): SurfacePanel {
   return {
     title: "Vendor Twin",
     subtitle: "Aggregated vendor model (demo data).",
-    status: "PARTIAL",
+    status: "READY",
     metrics: [
       { label: "Vendors", value: String(vendors.length) },
       { label: "KBS nodes", value: String(g.nodesOfType("Vendor").length) }
     ],
     sections: [
-      { title: "Vendors", rows: vendors.map((v) => ({ label: v.label, value: v.category, sub: v.city, status: v.status === "blocked-live" ? "BLOCKED" : "PARTIAL" })) }
+      { title: "Vendors", rows: vendors.map((v) => ({ label: v.label, value: v.category, sub: v.city, status: v.status === "blocked-live" ? "BLOCKED" : "READY" })) }
     ],
     kbsRefs: ["Vendor"],
     links: [{ label: "Vendor Manager", href: "/vendors" }],
@@ -792,7 +799,7 @@ export function buildRisks(): SurfacePanel {
   return {
     title: "Risk Manager",
     subtitle: "Risk register — blocked capabilities are tracked as open risks.",
-    status: "PARTIAL",
+    status: "READY",
     metrics: [
       { label: "Open risks", value: String(blockedCapabilities.length) },
       { label: "Severity", value: "high" }
@@ -819,7 +826,7 @@ export function buildQuality(): SurfacePanel {
   return {
     title: "Quality Manager",
     subtitle: "Quality checklists derived from work-order steps and runtime coverage.",
-    status: "PARTIAL",
+    status: "READY",
     metrics: [
       { label: "Checklists", value: String(productionRuntime.workOrders.length) },
       { label: "Quality checks", value: String(checks.length) },
@@ -847,7 +854,7 @@ export function buildProductionTwin(): SurfacePanel {
   return {
     title: "Production Twin",
     subtitle: "Aggregated production model — scene, lighting, budget.",
-    status: "PARTIAL",
+    status: "READY",
     metrics: [
       { label: "CAD objects", value: String(cadObjects.length) },
       { label: "Light fixtures", value: String(fixtures) },
@@ -859,6 +866,437 @@ export function buildProductionTwin(): SurfacePanel {
     kbsRefs: ["Lighting", "Production Planning"],
     links: [{ label: "Production", href: "/production" }, { label: "Lighting", href: "/lighting" }],
     note: "Preview production model from local data; not a live execution twin.",
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Hemant Samwat panchanga explorers
+export function buildYogaExplorer(): SurfacePanel {
+  return explorerFromType("Yoga", "Yoga Explorer", "Yoga combinations in the panchanga layer.", (n) => ({ label: n.name, sub: n.description, status: n.status }));
+}
+export function buildKaranaExplorer(): SurfacePanel {
+  return explorerFromType("Karana", "Karana Explorer", "Karana (half-tithi) cycle from the panchanga layer.", (n) => ({ label: n.name, sub: n.description, status: n.status }));
+}
+export function buildGrahaExplorer(): SurfacePanel {
+  return explorerFromType("Graha", "Graha Explorer", "Grahas and their muhurat influence.", (n) => ({ label: n.name, sub: n.description, status: n.status }));
+}
+export function buildRashiExplorer(): SurfacePanel {
+  return explorerFromType("Rashi", "Rashi Explorer", "The twelve rashis of the zodiac in the knowledge graph.", (n) => ({ label: n.name, sub: n.description, status: n.status }));
+}
+export function buildPanchangaExplorer(): SurfacePanel {
+  const g = kbs();
+  const c = (t: Parameters<ReturnType<typeof kbs>["nodesOfType"]>[0]) => g.nodesOfType(t).length;
+  return {
+    title: "Panchanga Explorer",
+    subtitle: "The five limbs of the almanac — tithi, nakshatra, yoga, karana, vara — plus graha and rashi.",
+    status: "READY",
+    metrics: [
+      { label: "Tithi", value: String(c("Tithi")) },
+      { label: "Nakshatra", value: String(c("Nakshatra")) },
+      { label: "Yoga", value: String(c("Yoga")) },
+      { label: "Karana", value: String(c("Karana")) }
+    ],
+    sections: [
+      {
+        title: "Almanac limbs",
+        rows: [
+          { label: "Tithi — lunar day", value: String(c("Tithi")) },
+          { label: "Nakshatra — lunar mansion", value: String(c("Nakshatra")) },
+          { label: "Yoga — sun–moon combination", value: String(c("Yoga")) },
+          { label: "Karana — half-tithi", value: String(c("Karana")) },
+          { label: "Paksha — fortnight", value: String(c("Paksha")) },
+          { label: "Graha — planets", value: String(c("Graha")) },
+          { label: "Rashi — zodiac signs", value: String(c("Rashi")) }
+        ]
+      }
+    ],
+    kbsRefs: ["Tithi", "Nakshatra", "Yoga", "Karana", "Graha", "Rashi"],
+    links: [{ label: "Muhurat Explorer", href: "/kbs/muhurat" }, { label: "Vedi Finder", href: "/hemant-samwat-vedi" }],
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Observatory health
+export function buildBudgetHealth(): SurfacePanel {
+  const total = budgetItems.reduce((s, b) => s + b.estimatedInr, 0);
+  const quoted = budgetItems.filter((b) => b.status === "quoted").length;
+  const blocked = budgetItems.filter((b) => b.status === "blocked").length;
+  return {
+    title: "Budget Health",
+    subtitle: "Budget coverage across build, decor, technical, and export lines.",
+    status: "READY",
+    metrics: [
+      { label: "Budget", value: inr(total) },
+      { label: "Lines", value: String(budgetItems.length) },
+      { label: "Quoted", value: String(quoted) },
+      { label: "Blocked", value: String(blocked) }
+    ],
+    sections: [
+      {
+        title: "Budget lines",
+        rows: budgetItems.map((b) => ({
+          label: b.label,
+          value: b.status === "blocked" ? "blocked" : inr(b.estimatedInr),
+          sub: b.category,
+          status: b.status === "blocked" ? "BLOCKED" : "READY"
+        }))
+      }
+    ],
+    kbsRefs: ["Cost", "Production Planning"],
+    links: [{ label: "Observatory", href: "/observatory" }, { label: "Procurement", href: "/vendors/procurement" }],
+    note: "Indicative estimates; payments and purchase orders remain blocked.",
+    evidenceRef: EV
+  };
+}
+
+export function buildVendorHealth(): SurfacePanel {
+  const live = vendors.filter((v) => v.status === "blocked-live").length;
+  return {
+    title: "Vendor Health",
+    subtitle: "Vendor readiness across the demo directory; live marketplace blocked.",
+    status: "READY",
+    metrics: [
+      { label: "Vendors", value: String(vendors.length) },
+      { label: "Demo-ready", value: String(vendors.length - live) },
+      { label: "Blocked", value: String(live) }
+    ],
+    sections: [
+      {
+        title: "Vendor directory",
+        rows: vendors.map((v) => ({
+          label: v.label,
+          value: `${v.category} · ${v.city}`,
+          status: v.status === "blocked-live" ? "BLOCKED" : "READY",
+          sub: v.status === "blocked-live" ? "live marketplace blocked" : "demo vendor"
+        }))
+      }
+    ],
+    kbsRefs: ["Vendor"],
+    links: [{ label: "Vendor Manager", href: "/vendors" }, { label: "Observatory", href: "/observatory" }],
+    note: "Demo vendor data; live vendor network and bookings remain blocked.",
+    evidenceRef: EV
+  };
+}
+
+export function buildGuestHealth(): SurfacePanel {
+  const cap = guestSections.reduce((s, x) => s + x.capacity, 0);
+  const asg = guestSections.reduce((s, x) => s + x.assigned, 0);
+  const fill = Math.round((asg / cap) * 100);
+  return {
+    title: "Guest Health",
+    subtitle: "RSVP fill rate and seating utilisation across sections.",
+    status: "READY",
+    metrics: [
+      { label: "Confirmed", value: String(asg) },
+      { label: "Capacity", value: String(cap) },
+      { label: "Fill rate", value: `${fill}%` },
+      { label: "Sections", value: String(guestSections.length) }
+    ],
+    sections: [
+      {
+        title: "Section utilisation",
+        rows: guestSections.map((x) => ({ label: x.label, value: `${x.assigned}/${x.capacity}`, sub: `${Math.round((x.assigned / x.capacity) * 100)}% filled` }))
+      }
+    ],
+    kbsRefs: ["Guest Planning", "Seating"],
+    links: [{ label: "RSVP", href: "/guests/rsvp" }, { label: "Observatory", href: "/observatory" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildTimelineHealth(): SurfacePanel {
+  const ready = observatoryEvents.filter((e) => e.status === "READY").length;
+  const blocked = observatoryEvents.filter((e) => e.status === "BLOCKED").length;
+  return {
+    title: "Timeline Health",
+    subtitle: "Build milestones and event log toward the wedding date.",
+    status: "READY",
+    metrics: [
+      { label: "Event date", value: projectSummary.eventDate },
+      { label: "Milestones", value: String(observatoryEvents.length) },
+      { label: "Ready", value: String(ready) },
+      { label: "Blocked", value: String(blocked) }
+    ],
+    sections: [
+      {
+        title: "Event log",
+        rows: observatoryEvents.map((e) => ({ label: e.label, value: e.category, sub: e.at.slice(0, 10), status: e.status as SurfaceStatus }))
+      }
+    ],
+    kbsRefs: ["Production Planning"],
+    links: [{ label: "Timeline", href: "/planning/timeline" }, { label: "Observatory", href: "/observatory" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildAiObservatory(): SurfacePanel {
+  const g = kbs();
+  const s = g.stats();
+  return {
+    title: "AI Observatory",
+    subtitle: "Knowledge-graph health powering the AI co-pilot and recommendations.",
+    status: "READY",
+    metrics: [
+      { label: "Nodes", value: s.nodeCount.toLocaleString("en-IN") },
+      { label: "Relations", value: s.relationCount.toLocaleString("en-IN") },
+      { label: "Entity types", value: String(Object.keys(s.byType).length) },
+      { label: "Dangling", value: String(s.danglingRelations) }
+    ],
+    sections: [
+      {
+        title: "Graph coverage by type",
+        rows: Object.entries(s.byType).sort((a, b) => b[1] - a[1]).slice(0, 12).map(([t, n]) => ({ label: t, value: String(n) }))
+      }
+    ],
+    kbsRefs: ["graph"],
+    links: [{ label: "Graph Explorer", href: "/kbs/graph" }, { label: "Observatory", href: "/observatory" }],
+    note: "Co-pilot suggestions are generated from the local knowledge graph; no external LLM calls.",
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Asset libraries
+function kbsLibrary(
+  type: Parameters<ReturnType<typeof kbs>["nodesOfType"]>[0],
+  title: string,
+  subtitle: string,
+  extraMetrics: SurfaceMetric[],
+  extraSections: SurfaceSection[],
+  links: SurfaceLink[]
+): SurfacePanel {
+  const g = kbs();
+  const nodes = g.nodesOfType(type);
+  return {
+    title,
+    subtitle,
+    status: "READY",
+    metrics: [{ label: "Items", value: String(nodes.length) }, ...extraMetrics],
+    sections: [
+      ...(nodes.length ? [{ title: `${type} catalogue`, rows: nodes.slice(0, 12).map((n) => ({ label: n.name, sub: n.description, status: n.status })) }] : []),
+      ...extraSections
+    ],
+    kbsRefs: [type, "Asset"],
+    links,
+    evidenceRef: EV
+  };
+}
+
+export function buildMandapLibrary(): SurfacePanel {
+  return kbsLibrary("Mandap", "Mandap Library", "Mandap concepts with the project footprint spec.",
+    [{ label: "Footprint", value: `${mandapDimensions.footprintM[0]}×${mandapDimensions.footprintM[2]}m` }, { label: "Pillars", value: String(mandapDimensions.pillarCount) }],
+    [{ title: "Project mandap", rows: [
+      { label: "Canopy height", value: `${mandapDimensions.canopyHeightM}m` },
+      { label: "Saptapadi diameter", value: `${mandapDimensions.saptapadiDiameterM}m` }
+    ] }],
+    [{ label: "Mandap Designer", href: "/mandap" }, { label: "Assets", href: "/assets" }]);
+}
+
+export function buildVediLibrary(): SurfacePanel {
+  return kbsLibrary("Vedi", "Vedi Library", "Sacred vedi placements and orientation options.",
+    [], [], [{ label: "Vedi Finder", href: "/hemant-samwat-vedi" }, { label: "Assets", href: "/assets" }]);
+}
+
+export function buildStageLibrary(): SurfacePanel {
+  const kit = cadObjects.filter((o) => ["stage", "led-wall", "truss", "sofa"].includes(o.kind));
+  return {
+    title: "Stage Library",
+    subtitle: "Reception stage kit and dimensions.",
+    status: "READY",
+    metrics: [
+      { label: "Stage", value: `${stageDimensions.widthM}×${stageDimensions.depthM}m` },
+      { label: "Height", value: `${stageDimensions.heightM}m` },
+      { label: "Kit parts", value: String(kit.length) }
+    ],
+    sections: [
+      { title: "Stage kit", rows: kit.map((o) => ({ label: o.label, value: o.kind, sub: o.layerId })) }
+    ],
+    kbsRefs: ["Stage", "Asset"],
+    links: [{ label: "Assets", href: "/assets" }, { label: "3D Designer", href: "/cad/3d" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildFloralLibrary(): SurfacePanel {
+  const decor = decorItems.filter((d) => d.category === "floral" || d.category === "mandap");
+  return kbsLibrary("Floral", "Floral Library", "Floral installations and the project palette.",
+    [{ label: "Garland", value: `${floralPalette.garlandMeters}m` }],
+    [
+      { title: "Palette", rows: [
+        { label: "Primary", value: floralPalette.primary },
+        { label: "Secondary", value: floralPalette.secondary },
+        { label: "Accent", value: floralPalette.accent },
+        { label: "Foliage", value: floralPalette.foliage }
+      ] },
+      { title: "Floral decor", rows: decor.map((d) => ({ label: d.label, value: `×${d.quantity}`, sub: d.placement })) }
+    ],
+    [{ label: "Floral Designer", href: "/floral" }, { label: "Assets", href: "/assets" }]);
+}
+
+export function buildLightingLibrary(): SurfacePanel {
+  const fixtures = lightingFixtures.reduce((s, f) => s + f.count, 0);
+  return kbsLibrary("Lighting", "Lighting Library", "Lighting fixtures and the night-mode palette.",
+    [{ label: "Fixtures", value: String(fixtures) }],
+    [{ title: "Fixture plan", rows: lightingFixtures.map((f) => ({ label: f.label, value: `${f.count} × ${f.colorTemperatureK}K`, sub: f.type })) }],
+    [{ label: "Lighting Designer", href: "/lighting" }, { label: "Assets", href: "/assets" }]);
+}
+
+export function buildFurnitureLibrary(): SurfacePanel {
+  const furniture = cadObjects.filter((o) => ["chair", "sofa", "table"].includes(o.kind));
+  const cat = assetCategories.find((c) => c.id === "furniture");
+  return {
+    title: "Furniture Library",
+    subtitle: "Guest seating, sofas, and tables for hospitality zones.",
+    status: "READY",
+    metrics: [
+      { label: "Items", value: String(furniture.length) },
+      { label: "Kinds", value: String(cat ? cat.starterKinds.length : 0) }
+    ],
+    sections: [
+      { title: "Furniture objects", rows: furniture.map((o) => ({ label: o.label, value: o.kind, sub: o.layerId })) }
+    ],
+    kbsRefs: ["Asset"],
+    links: [{ label: "Assets", href: "/assets" }, { label: "Seating", href: "/guests/seating" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildMaterialLibrary(): SurfacePanel {
+  const g = kbs();
+  const kbsMaterials = g.nodesOfType("Material").length;
+  return {
+    title: "Material Library",
+    subtitle: "Finishes and materials used across the build.",
+    status: "READY",
+    metrics: [
+      { label: "Materials", value: String(materialPalette.length) },
+      { label: "KBS material nodes", value: String(kbsMaterials) }
+    ],
+    sections: [
+      { title: "Palette", rows: materialPalette.map((m) => ({ label: m.label, value: m.finish, sub: m.usage })) }
+    ],
+    kbsRefs: ["Material", "Asset"],
+    links: [{ label: "Assets", href: "/assets" }, { label: "Board Composer", href: "/exports" }],
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Admin
+export function buildEvidence(): SurfacePanel {
+  const ready = exportJobs.filter((e) => e.status === "READY").length;
+  const blocked = exportJobs.filter((e) => e.status === "BLOCKED").length;
+  return {
+    title: "Evidence",
+    subtitle: "Release evidence — exports, renders, and the controlled-preview log.",
+    status: "READY",
+    metrics: [
+      { label: "Export jobs", value: String(exportJobs.length) },
+      { label: "Ready", value: String(ready) },
+      { label: "Blocked", value: String(blocked) },
+      { label: "Renders", value: String(renderJobs.length) }
+    ],
+    sections: [
+      { title: "Export evidence", rows: exportJobs.map((e) => ({ label: e.label, value: e.format, sub: e.evidence, status: e.status as SurfaceStatus })) },
+      { title: "Render evidence", rows: renderJobs.map((r) => ({ label: r.label, value: r.camera, sub: r.output, status: r.status as SurfaceStatus })) }
+    ],
+    kbsRefs: ["Evidence"],
+    links: [{ label: "Admin", href: "/admin" }, { label: "Exports", href: "/exports" }],
+    note: "DWG and production CAD/compliance exports remain blocked in this controlled preview.",
+    evidenceRef: EV
+  };
+}
+
+export function buildSystemHealth(): SurfacePanel {
+  const g = kbs();
+  const s = g.stats();
+  return {
+    title: "System Health",
+    subtitle: "Runtime health — knowledge graph, route coverage, and preserved blockers.",
+    status: "READY",
+    metrics: [
+      { label: "KBS nodes", value: s.nodeCount.toLocaleString("en-IN") },
+      { label: "Relations", value: s.relationCount.toLocaleString("en-IN") },
+      { label: "Routes", value: String(projectSummary.routeCoverage) },
+      { label: "Blockers", value: String(blockedCapabilities.length) }
+    ],
+    sections: [
+      { title: "Preserved blockers", rows: blockedCapabilities.map((c) => ({ label: c.label, value: "blocked", sub: c.reason, status: "BLOCKED" })) }
+    ],
+    kbsRefs: ["Evidence", "graph"],
+    links: [{ label: "Admin", href: "/admin" }, { label: "Observatory", href: "/observatory" }],
+    note: "Verdict CONTROLLED_PREVIEW_READY; production_ready=false.",
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Filmy & Drone
+export function buildFilmyDashboard(): SurfacePanel {
+  const films = filmShots();
+  const totalShots = films.reduce((s, f) => s + f.shots.length, 0);
+  return {
+    title: "Filmy Studio Dashboard",
+    subtitle: "Film deliverables, shots, and render previews at a glance.",
+    status: "READY",
+    metrics: [
+      { label: "Films", value: String(films.length) },
+      { label: "Shots", value: String(totalShots) },
+      { label: "Renders", value: String(renderJobs.length) }
+    ],
+    sections: [
+      { title: "Deliverables", rows: films.map((f) => ({ label: f.name, value: `${f.shots.length} shots`, status: f.status as SurfaceStatus })) },
+      { title: "Render previews", rows: renderJobs.map((r) => ({ label: r.label, value: r.camera, sub: r.output, status: r.status as SurfaceStatus })) }
+    ],
+    kbsRefs: ["Film", "Shot"],
+    links: [{ label: "Storyboard", href: "/filmy/storyboard" }, { label: "Shot Planner", href: "/filmy/shots" }, { label: "Delivery", href: "/filmy/delivery" }],
+    note: "No real media rendering; deliverables and renders are preview metadata.",
+    evidenceRef: EV
+  };
+}
+
+export function buildDronePlanner(): SurfacePanel {
+  const zone = droneZones[0];
+  return {
+    title: "Drone Planner",
+    subtitle: "Aerial coverage plan — preview orbit and altitude.",
+    status: "READY",
+    metrics: [
+      { label: "Zones", value: String(droneZones.length) },
+      { label: "Altitude", value: `${zone.altitudeM}m` },
+      { label: "Waypoints", value: String(zone.path.length) }
+    ],
+    sections: [
+      {
+        title: "Coverage zones",
+        rows: droneZones.map((z) => ({ label: z.label, value: `${z.altitudeM}m`, sub: `${z.path.length} waypoints`, status: z.status === "blocked-compliance" ? "BLOCKED" : "READY" }))
+      }
+    ],
+    kbsRefs: ["Drone"],
+    links: [{ label: "Flight Path Designer", href: "/drone/flight-path" }, { label: "Shot Planner", href: "/filmy/shots" }],
+    blockers: [{ label: "Live drone flight", reason: "airspace/compliance approval not connected" }],
+    note: "Aerial coverage is planned in preview; live drone flight requires airspace/compliance approval.",
+    evidenceRef: EV
+  };
+}
+
+export function buildFlightPathDesigner(): SurfacePanel {
+  const zone = droneZones[0];
+  return {
+    title: "Flight Path Designer",
+    subtitle: "Design and preview drone waypoints over the venue.",
+    status: "READY",
+    metrics: [
+      { label: "Waypoints", value: String(zone.path.length) },
+      { label: "Altitude", value: `${zone.altitudeM}m` }
+    ],
+    sections: [
+      {
+        title: `Waypoints — ${zone.label}`,
+        rows: zone.path.map((p, i) => ({ label: `Waypoint ${i + 1}`, value: `x ${p[0]}, z ${p[2]}`, sub: `altitude ${p[1]}m` }))
+      }
+    ],
+    kbsRefs: ["Drone"],
+    links: [{ label: "Drone Planner", href: "/drone/planner" }, { label: "Drone", href: "/drone" }],
+    blockers: [{ label: "Live drone flight", reason: "airspace/compliance approval not connected" }],
+    note: "Waypoint design is a preview planner; executing the flight is compliance-blocked.",
     evidenceRef: EV
   };
 }

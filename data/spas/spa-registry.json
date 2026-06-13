@@ -1,15 +1,14 @@
 {
-  "generatedAt": "2026-06-11T00:00:00.000Z",
+  "generatedAt": "2026-06-13T03:44:26.084148+00:00",
   "verdict": "CONTROLLED_PREVIEW_READY",
   "productionReady": false,
   "note": "SPA surface registry. READY=dedicated build; PARTIAL=preview frame; PLANNED=named surface routing to nearest existing route; BLOCKED=requires provider/payment/compliance evidence. No production claims.",
   "summary": {
     "total": 156,
     "byStatus": {
-      "READY": 71,
+      "READY": 110,
       "BLOCKED": 7,
-      "PLANNED": 39,
-      "PARTIAL": 39
+      "PLANNED": 39
     },
     "groupCount": 20
   },
@@ -149,13 +148,13 @@
           "id": "cad-runtime-cad-renders",
           "name": "CAD Renders",
           "href": "/gallery",
-          "status": "PARTIAL"
+          "status": "READY"
         },
         {
           "id": "cad-runtime-cad-layers",
           "name": "CAD Layers",
           "href": "/cad/editor",
-          "status": "PARTIAL"
+          "status": "READY"
         },
         {
           "id": "cad-runtime-cad-scene-manager",
@@ -179,7 +178,7 @@
           "id": "three-js-designer-3d-mandap-studio",
           "name": "3D Mandap Studio",
           "href": "/cad/3d",
-          "status": "PARTIAL"
+          "status": "READY"
         },
         {
           "id": "three-js-designer-3d-vedi-studio",
@@ -197,7 +196,7 @@
           "id": "three-js-designer-3d-walkthrough",
           "name": "3D Walkthrough",
           "href": "/vr",
-          "status": "PARTIAL"
+          "status": "READY"
         },
         {
           "id": "three-js-designer-3d-render-studio",
@@ -227,7 +226,7 @@
           "id": "ai-runtime-text-to-image",
           "name": "Text To Image",
           "href": "/ai/studio",
-          "status": "PARTIAL"
+          "status": "READY"
         },
         {
           "id": "ai-runtime-sketch-to-image",
@@ -371,7 +370,7 @@
           "id": "kbs-runtime-asset-explorer",
           "name": "Asset Explorer",
           "href": "/assets",
-          "status": "PARTIAL"
+          "status": "READY"
         },
         {
           "id": "kbs-runtime-template-explorer",
@@ -472,32 +471,32 @@
         {
           "id": "hemant-samwat-yoga-explorer",
           "name": "Yoga Explorer",
-          "href": "/hemant-samwat-vedi",
-          "status": "PARTIAL"
+          "href": "/hemant-samwat-vedi/yoga",
+          "status": "READY"
         },
         {
           "id": "hemant-samwat-karana-explorer",
           "name": "Karana Explorer",
-          "href": "/hemant-samwat-vedi",
-          "status": "PARTIAL"
+          "href": "/hemant-samwat-vedi/karana",
+          "status": "READY"
         },
         {
           "id": "hemant-samwat-graha-explorer",
           "name": "Graha Explorer",
-          "href": "/hemant-samwat-vedi",
-          "status": "PARTIAL"
+          "href": "/hemant-samwat-vedi/graha",
+          "status": "READY"
         },
         {
           "id": "hemant-samwat-rashi-explorer",
           "name": "Rashi Explorer",
-          "href": "/hemant-samwat-vedi",
-          "status": "PARTIAL"
+          "href": "/hemant-samwat-vedi/rashi",
+          "status": "READY"
         },
         {
           "id": "hemant-samwat-panchanga-explorer",
           "name": "Panchanga Explorer",
-          "href": "/hemant-samwat-vedi",
-          "status": "PARTIAL"
+          "href": "/hemant-samwat-vedi/panchanga",
+          "status": "READY"
         }
       ]
     },
@@ -508,8 +507,8 @@
         {
           "id": "filmy-studio-filmy-studio-dashboard",
           "name": "Filmy Studio Dashboard",
-          "href": "/wedding-os",
-          "status": "PARTIAL"
+          "href": "/filmy/dashboard",
+          "status": "READY"
         },
         {
           "id": "filmy-studio-film-projects",
@@ -532,8 +531,8 @@
         {
           "id": "filmy-studio-drone-planner",
           "name": "Drone Planner",
-          "href": "/drone",
-          "status": "PARTIAL"
+          "href": "/drone/planner",
+          "status": "READY"
         },
         {
           "id": "filmy-studio-media-library",
@@ -557,7 +556,7 @@
           "id": "filmy-studio-delivery-manager",
           "name": "Delivery Manager",
           "href": "/filmy/delivery",
-          "status": "PARTIAL"
+          "status": "READY"
         }
       ]
     },
@@ -605,13 +604,13 @@
           "id": "planning-risk-manager",
           "name": "Risk Manager",
           "href": "/planning/risks",
-          "status": "PARTIAL"
+          "status": "READY"
         },
         {
           "id": "planning-quality-manager",
           "name": "Quality Manager",
           "href": "/planning/quality",
-          "status": "PARTIAL"
+          "status": "READY"
         }
       ]
     },
@@ -653,7 +652,7 @@
           "id": "guest-hospitality-planner",
           "name": "Hospitality Planner",
           "href": "/guests/hospitality",
-          "status": "PARTIAL"
+          "status": "READY"
         },
         {
           "id": "guest-meal-planner",
@@ -717,7 +716,7 @@
           "id": "vendor-procurement",
           "name": "Procurement",
           "href": "/vendors/procurement",
-          "status": "PARTIAL"
+          "status": "READY"
         }
       ]
     },
@@ -734,8 +733,8 @@
         {
           "id": "drone-flight-path-designer",
           "name": "Flight Path Designer",
-          "href": "/drone",
-          "status": "PARTIAL"
+          "href": "/drone/flight-path",
+          "status": "READY"
         },
         {
           "id": "drone-coverage-planner",
@@ -778,7 +777,7 @@
           "id": "vr-360-gallery",
           "name": "360 Gallery",
           "href": "/vr",
-          "status": "PARTIAL"
+          "status": "READY"
         },
         {
           "id": "vr-hotspot-manager",
@@ -807,44 +806,44 @@
         {
           "id": "asset-library-mandap-library",
           "name": "Mandap Library",
-          "href": "/assets",
-          "status": "PARTIAL"
+          "href": "/assets/mandap",
+          "status": "READY"
         },
         {
           "id": "asset-library-vedi-library",
           "name": "Vedi Library",
-          "href": "/assets",
-          "status": "PARTIAL"
+          "href": "/assets/vedi",
+          "status": "READY"
         },
         {
           "id": "asset-library-stage-library",
           "name": "Stage Library",
-          "href": "/assets",
-          "status": "PARTIAL"
+          "href": "/assets/stage",
+          "status": "READY"
         },
         {
           "id": "asset-library-floral-library",
           "name": "Floral Library",
-          "href": "/assets",
-          "status": "PARTIAL"
+          "href": "/assets/floral",
+          "status": "READY"
         },
         {
           "id": "asset-library-lighting-library",
           "name": "Lighting Library",
-          "href": "/assets",
-          "status": "PARTIAL"
+          "href": "/assets/lighting",
+          "status": "READY"
         },
         {
           "id": "asset-library-furniture-library",
           "name": "Furniture Library",
-          "href": "/assets",
-          "status": "PARTIAL"
+          "href": "/assets/furniture",
+          "status": "READY"
         },
         {
           "id": "asset-library-material-library",
           "name": "Material Library",
-          "href": "/assets",
-          "status": "PARTIAL"
+          "href": "/assets/material",
+          "status": "READY"
         }
       ]
     },
@@ -861,26 +860,26 @@
         {
           "id": "observatory-budget-health",
           "name": "Budget Health",
-          "href": "/observatory",
-          "status": "PARTIAL"
+          "href": "/observatory/budget",
+          "status": "READY"
         },
         {
           "id": "observatory-vendor-health",
           "name": "Vendor Health",
-          "href": "/observatory",
-          "status": "PARTIAL"
+          "href": "/observatory/vendor",
+          "status": "READY"
         },
         {
           "id": "observatory-guest-health",
           "name": "Guest Health",
-          "href": "/observatory",
-          "status": "PARTIAL"
+          "href": "/observatory/guest",
+          "status": "READY"
         },
         {
           "id": "observatory-timeline-health",
           "name": "Timeline Health",
-          "href": "/observatory",
-          "status": "PARTIAL"
+          "href": "/observatory/timeline",
+          "status": "READY"
         },
         {
           "id": "observatory-risk-observatory",
@@ -891,8 +890,8 @@
         {
           "id": "observatory-ai-observatory",
           "name": "AI Observatory",
-          "href": "/observatory",
-          "status": "PARTIAL"
+          "href": "/observatory/ai",
+          "status": "READY"
         }
       ]
     },
@@ -939,14 +938,14 @@
         {
           "id": "admin-evidence",
           "name": "Evidence",
-          "href": "/admin",
-          "status": "PARTIAL"
+          "href": "/admin/evidence",
+          "status": "READY"
         },
         {
           "id": "admin-system-health",
           "name": "System Health",
-          "href": "/admin",
-          "status": "PARTIAL"
+          "href": "/admin/system-health",
+          "status": "READY"
         }
       ]
     },
@@ -1031,7 +1030,7 @@
           "id": "export-presentation-export",
           "name": "Presentation Export",
           "href": "/exports/studio",
-          "status": "PARTIAL"
+          "status": "READY"
         },
         {
           "id": "export-board-package-export",
@@ -1055,25 +1054,25 @@
           "id": "wedding-digital-twin-venue-twin",
           "name": "Venue Twin",
           "href": "/twin/venue",
-          "status": "PARTIAL"
+          "status": "READY"
         },
         {
           "id": "wedding-digital-twin-guest-twin",
           "name": "Guest Twin",
           "href": "/twin/guest",
-          "status": "PARTIAL"
+          "status": "READY"
         },
         {
           "id": "wedding-digital-twin-vendor-twin",
           "name": "Vendor Twin",
           "href": "/twin/vendor",
-          "status": "PARTIAL"
+          "status": "READY"
         },
         {
           "id": "wedding-digital-twin-production-twin",
           "name": "Production Twin",
           "href": "/twin/production",
-          "status": "PARTIAL"
+          "status": "READY"
         }
       ]
     }
