@@ -144,7 +144,7 @@ export type DroneZoneFrame = {
 export type ExportJobFrame = {
   id: string;
   label: string;
-  format: "json" | "pdf-board" | "dwg" | "dxf";
+  format: "json" | "hkd" | "pdf-board" | "dwg" | "dxf";
   status: "READY" | "PARTIAL" | "BLOCKED";
   evidence: string;
 };
@@ -360,7 +360,8 @@ export const droneZones: DroneZoneFrame[] = [
 export const exportJobs: ExportJobFrame[] = [
   { id: "export-json", label: "Scene JSON", format: "json", status: "READY", evidence: "Local scene serialization is implemented in /cad/editor." },
   { id: "export-pdf", label: "Printable board package", format: "pdf-board", status: "READY", evidence: "Local binary PDF board package generation writes release/board-packages/hemant-samwat-board-package.pdf from scene/render data." },
-  { id: "export-dwg", label: "DWG export", format: "dwg", status: "BLOCKED", evidence: "No real DWG exporter exists." },
+  { id: "export-hkd", label: "HKD native scene export", format: "hkd", status: "READY", evidence: "Local .hkd (TLPS Heritage-CAD Data) container is implemented end to end — a versioned, checksum-verified, round-trippable scene format owned by the platform. Not a DWG/DXF or production CAD interchange format." },
+  { id: "export-dwg", label: "DWG export", format: "dwg", status: "BLOCKED", evidence: "No native DWG writer, round-trip compatibility, or AutoCAD-validated fixtures exist. Use the .hkd native export for round-trip; DWG remains blocked." },
   { id: "export-dxf", label: "Preview DXF footprint export", format: "dxf", status: "READY", evidence: "Local ASCII DXF footprint export is implemented for preview geometry; production CAD handoff remains blocked by DWG/compliance gaps." }
 ];
 

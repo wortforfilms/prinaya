@@ -16,6 +16,82 @@ export function createSceneJsonExport(objects: CadObjectFrame[]): ExportArtifact
   };
 }
 
+/**
+ * .hkd — TLPS Heritage-CAD Data: the native wedding-CAD scene container.
+ *
+ * A documented, versioned, JSON-based envelope we fully own and round-trip:
+ *   { magic:"HKD", version, generator, productionReady:false, project, units,
+ *     layers[], objects[], checksum }
+ * The checksum (FNV-1a/32 over {project,units,layers,objects}) guards integrity
+ * on load. This is NOT DWG/DXF or a production CAD interchange format — native
+ * DWG export remains BLOCKED; .hkd is our supported alternative.
+ */
+export const HKD_MAGIC = "HKD";
+export const HKD_VERSION = 1;
+
+function fnv1a(input: string): string {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < input.length; i += 1) {
+    h ^= input.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return (h >>> 0).toString(16).padStart(8, "0");
+}
+
+export type HkdScene = {
+  magic: string;
+  version: number;
+  generator: string;
+  productionReady: false;
+  note: string;
+  project: string;
+  units: string;
+  layers: LayerFrame[];
+  objects: CadObjectFrame[];
+  checksum: string;
+};
+
+export function sceneToHkd(objects: CadObjectFrame[], layers: LayerFrame[]): string {
+  const body = { project: projectSummary.id, units: "ft", layers, objects };
+  const checksum = fnv1a(JSON.stringify(body));
+  return JSON.stringify(
+    {
+      magic: HKD_MAGIC,
+      version: HKD_VERSION,
+      generator: "TLPS Wedding OS",
+      productionReady: false,
+      note: "Native TLPS heritage-CAD scene container. Round-trippable; not a DWG/DXF or production CAD format.",
+      ...body,
+      checksum
+    },
+    null,
+    2
+  );
+}
+
+export function parseHkd(text: string): HkdScene {
+  let doc: HkdScene;
+  try {
+    doc = JSON.parse(text) as HkdScene;
+  } catch {
+    throw new Error("HKD: file is not valid JSON");
+  }
+  if (doc.magic !== HKD_MAGIC) throw new Error("HKD: bad magic (not an .hkd file)");
+  if (doc.version !== HKD_VERSION) throw new Error(`HKD: unsupported version ${doc.version}`);
+  if (!Array.isArray(doc.objects) || !Array.isArray(doc.layers)) throw new Error("HKD: missing layers/objects");
+  const checksum = fnv1a(JSON.stringify({ project: doc.project, units: doc.units, layers: doc.layers, objects: doc.objects }));
+  if (checksum !== doc.checksum) throw new Error("HKD: checksum mismatch (file corrupted or edited)");
+  return doc;
+}
+
+export function createHkdExport(objects: CadObjectFrame[], layers: LayerFrame[]): ExportArtifact {
+  return {
+    fileName: `${projectSummary.id}.hkd`,
+    mimeType: "application/x-hkd",
+    content: sceneToHkd(objects, layers)
+  };
+}
+
 export function createPreviewDxfExport(objects: CadObjectFrame[], layers: LayerFrame[]): ExportArtifact {
   return {
     fileName: `${projectSummary.id}-preview-footprint.dxf`,

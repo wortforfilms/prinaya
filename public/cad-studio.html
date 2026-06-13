@@ -36,7 +36,7 @@
   <nav class="tabs">
     <button class="tab active" onclick="setView('2d',this)">2D PLAN</button><button class="tab" onclick="setView('3d',this)">3D VIEW</button><button class="tab" onclick="setView('elevation',this)">ELEVATION</button><button class="tab" onclick="setView('sections',this)">SECTIONS</button><button class="tab" onclick="setView('details',this)">DETAILS</button><button class="tab" onclick="setView('renders',this)">RENDERS</button>
   </nav>
-  <div style="margin-left:auto;display:flex;gap:10px;align-items:center"><span class="badge">SAVED</span><button class="btn" onclick="downloadScene()">Export JSON</button><button class="btn" onclick="resetScene()">Reset View</button><button class="btn gold" onclick="goExports()">Generate Board</button></div>
+  <div style="margin-left:auto;display:flex;gap:10px;align-items:center"><span class="badge" id="saveState">SAVED</span><button class="btn gold" onclick="exportHkd()" title="Download native .hkd scene (checksum-verified)">Export .hkd</button><button class="btn" onclick="exportSceneJson()" title="Download full scene as JSON">Export JSON</button><button class="btn" onclick="importSceneFile()" title="Load a .hkd or .json scene from disk">Import</button><button class="btn" onclick="saveLocal()" title="Save to this browser">Save</button><button class="btn" onclick="restoreLocal()" title="Restore last browser save">Restore</button><button class="btn" onclick="resetScene()">Reset View</button><button class="btn gold" onclick="goExports()">Generate Board</button></div>
 </header>
 <div class="workspace">
 <aside class="left">
@@ -46,7 +46,7 @@
     <div class="toolitem" title="Select then use arrow keys">✥<span>Move</span></div><div class="toolitem" onclick="duplicateSelected()">⧉<span>Copy</span></div><div class="toolitem" onclick="rotateSelected()">↻<span>Rotate</span></div><div class="toolitem" onclick="scaleSelected(1.1)">⤢<span>Scale</span></div><div class="toolitem" onclick="duplicateSelected()">▦<span>Array</span></div><div class="toolitem" onclick="deleteSelected()">⌫<span>Delete</span></div></div></div>
   <div class="panel"><h3>Blocks / Assets</h3><div class="toolgrid">
     <div class="toolitem" onclick="addMandap()">𑁍<span>Mandap</span></div><div class="toolitem" onclick="addStage()">▰<span>Stage</span></div><div class="toolitem" onclick="addChairRows()">▣<span>Seating</span></div><div class="toolitem" onclick="addTrees()">♣<span>Trees</span></div><div class="toolitem" onclick="addLights()">✦<span>Lights</span></div><div class="toolitem" onclick="addRooms()">▥<span>Rooms</span></div></div></div>
-  <div class="panel"><h3>Honest Export Gate</h3><p style="font-size:12px;color:#c8baa1">Preview JSON and printable boards are allowed. Production DXF/DWG and certified engineering remain blocked.</p><span class="badge">JSON READY</span> <span class="badge blocked">DWG BLOCKED</span></div>
+  <div class="panel"><h3>Honest Export Gate</h3><p style="font-size:12px;color:#c8baa1">Native .hkd (checksum round-trip), JSON, and printable boards are allowed. Native DWG and production DXF remain blocked.</p><span class="badge">.hkd READY</span> <span class="badge">JSON READY</span> <span class="badge blocked">DWG BLOCKED</span></div>
 </aside>
 <main class="center">
   <div class="toolbar"><button class="tool active" title="Select">↖</button><button class="tool" title="Move — use arrow keys on a selection">↔</button><button class="tool" onclick="rotateSelected()" title="Rotate 15°">↻</button><button class="tool" onclick="scaleSelected(1.1)" title="Scale up">⤢</button><button class="tool" onclick="duplicateSelected()" title="Copy">⧉</button><button class="tool" onclick="deleteSelected()" title="Delete">🗑</button><button class="tool" onclick="undo()" title="Undo">↶</button><button class="tool" title="Redo">↷</button><button class="tool" title="Snap">⌖</button><button class="tool" title="Array">▦</button><select class="btn"><option>ByLayer</option></select><select class="btn"><option>0.30 mm</option></select><select class="btn" onchange="setColor(this.value)"><option>Magenta</option><option>Gold</option><option>Cyan</option><option>Red</option><option>Green</option></select></div>
@@ -109,11 +109,64 @@ function nudge(dx,dz){if(selected){selected.position.x+=dx;selected.position.z+=
 function undo(){const o=history.pop();if(!o)return;root.remove(o);const i=objects.indexOf(o);if(i>=0)objects.splice(i,1);if(selected===o)deselect()}
 function setColor(name){const m={Magenta:0xff39d4,Gold:0xd9a84a,Cyan:0x3cc7ff,Red:0xff4658,Green:0x1fb94f}[name];if(m!==undefined&&selected&&selected.material&&selected.material.color){selected.material.color.setHex(m)}}
 function goExports(){try{(window.top||window).location.href='/exports'}catch(_){window.location.href='/exports'}}
-function downloadScene(){const data={project:'Royal Heritage Wedding',status:'CONTROLLED_PREVIEW_READY',productionReady:false,objects:objects.map(o=>({name:o.userData.name,layer:o.userData.layer,position:o.position}))};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='tlps-cad-scene-preview.json';a.click();URL.revokeObjectURL(url)}
+/* --- scene serialize / export / import (round-trippable JSON; no production CAD claim) --- */
+const SCENE_KEY='tlps-cad-scene';
+function serializeObject(o){
+  const p=o.position,r=o.rotation,s=o.scale,g=o.geometry;
+  const base={name:(o.userData&&o.userData.name)||'Object',layer:(o.userData&&o.userData.layer)||'0',
+    pos:[p.x,p.y,p.z],rot:[r.x,r.y,r.z],scale:[s.x,s.y,s.z],
+    color:(o.material&&o.material.color)?o.material.color.getHex():0xffffff};
+  if(o.isLine){base.geo='Line';base.points=Array.from(g.getAttribute('position').array)}
+  else{base.geo=(g&&g.type)||'BoxGeometry';base.params=(g&&g.parameters)?{...g.parameters}:{}}
+  return base;
+}
+function buildSceneData(){return {format:'tlps-cad-scene',version:1,project:'Royal Heritage Wedding',
+  status:'CONTROLLED_PREVIEW_READY',productionReady:false,exportedAt:new Date().toISOString(),
+  camera:{target:[cam.target.x,cam.target.y,cam.target.z],radius:cam.radius,theta:cam.theta,phi:cam.phi},
+  objects:objects.map(serializeObject)}}
+function geomFrom(d){const pr=d.params||{};
+  if(d.geo==='BoxGeometry')return new THREE.BoxGeometry(pr.width,pr.height,pr.depth);
+  if(d.geo==='CircleGeometry')return new THREE.CircleGeometry(pr.radius,pr.segments);
+  if(d.geo==='CylinderGeometry')return new THREE.CylinderGeometry(pr.radiusTop,pr.radiusBottom,pr.height,pr.radialSegments);
+  if(d.geo==='SphereGeometry')return new THREE.SphereGeometry(pr.radius,pr.widthSegments,pr.heightSegments);
+  return new THREE.BoxGeometry(pr.width||10,pr.height||10,pr.depth||10)}
+function rebuildObject(d){let obj;
+  if(d.geo==='Line'){const pts=[];for(let i=0;i+2<d.points.length;i+=3)pts.push(new THREE.Vector3(d.points[i],d.points[i+1],d.points[i+2]));
+    obj=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),lineMat(d.color))}
+  else{obj=new THREE.Mesh(geomFrom(d),mat(d.color))}
+  obj.position.fromArray(d.pos);obj.rotation.set(d.rot[0],d.rot[1],d.rot[2]);obj.scale.fromArray(d.scale);
+  obj.userData={name:d.name,layer:d.layer};root.add(obj);objects.push(obj);return obj}
+function clearUserObjects(){objects.slice().forEach(o=>root.remove(o));objects.length=0;history.length=0;deselect()}
+function loadSceneData(data){if(!data||!Array.isArray(data.objects))throw new Error('not a TLPS scene file');
+  clearUserObjects();building=true;data.objects.forEach(rebuildObject);building=false;
+  if(data.camera){cam.target.fromArray(data.camera.target);cam.radius=data.camera.radius;cam.theta=data.camera.theta;cam.phi=data.camera.phi;updateCamera()}
+  setSaved('LOADED ('+data.objects.length+')')}
+function setSaved(t){const el=document.getElementById('saveState');if(el)el.textContent=t||'SAVED'}
+function exportSceneJson(){const blob=new Blob([JSON.stringify(buildSceneData(),null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='tlps-cad-scene.json';a.click();URL.revokeObjectURL(url);setSaved('EXPORTED')}
+/* --- .hkd native container (HKD = TLPS Heritage-CAD Data; checksum-verified, not DWG/DXF) --- */
+function fnv1a(str){let h=0x811c9dc5;for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,0x01000193)}return (h>>>0).toString(16).padStart(8,'0')}
+function buildHkd(){const layersOut=layerData.map(([id,color])=>({id,color,visible:layerVisible[id]!==false}));
+  const body={project:'hemant-samwat',units:'ft',layers:layersOut,objects:objects.map(serializeObject)};
+  const checksum=fnv1a(JSON.stringify(body));
+  return JSON.stringify({magic:'HKD',version:1,generator:'TLPS Wedding OS',productionReady:false,
+    note:'Native TLPS heritage-CAD scene container. Round-trippable; not a DWG/DXF or production CAD format.',
+    ...body,checksum},null,2)}
+function exportHkd(){const blob=new Blob([buildHkd()],{type:'application/x-hkd'});const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download='hemant-samwat-scene.hkd';a.click();URL.revokeObjectURL(url);setSaved('EXPORTED .hkd')}
+function parseHkd(doc){if(doc.magic!=='HKD')throw new Error('not an .hkd file');if(doc.version!==1)throw new Error('unsupported .hkd version '+doc.version);
+  const checksum=fnv1a(JSON.stringify({project:doc.project,units:doc.units,layers:doc.layers,objects:doc.objects}));
+  if(checksum!==doc.checksum)throw new Error('checksum mismatch (file corrupted or edited)');return doc}
+function importSceneFile(){const inp=document.createElement('input');inp.type='file';inp.accept='.hkd,.json,application/json,application/x-hkd';
+  inp.onchange=()=>{const f=inp.files&&inp.files[0];if(!f)return;const rd=new FileReader();
+    rd.onload=()=>{try{const doc=JSON.parse(rd.result);if(doc&&doc.magic==='HKD')parseHkd(doc);loadSceneData(doc)}catch(err){alert('Could not load scene: '+err.message)}};rd.readAsText(f)};inp.click()}
+function saveLocal(){try{localStorage.setItem(SCENE_KEY,JSON.stringify(buildSceneData()));setSaved('SAVED TO BROWSER')}catch(err){alert('Could not save: '+err.message)}}
+function restoreLocal(){try{const raw=localStorage.getItem(SCENE_KEY);if(!raw){alert('No saved scene in this browser yet.');return}loadSceneData(JSON.parse(raw))}catch(err){alert('Could not restore: '+err.message)}}
+function downloadScene(){exportSceneJson()}
 function resize(){const mount=document.getElementById('three');if(!renderer)return;camera.aspect=mount.clientWidth/mount.clientHeight;camera.updateProjectionMatrix();renderer.setSize(mount.clientWidth,mount.clientHeight)}
 function animate(){requestAnimationFrame(animate);if(selHelper)selHelper.update();renderer.render(scene,camera)}
 // Expose handlers referenced by inline onclick= attributes (module scope is not global).
-Object.assign(window,{setView,downloadScene,resetScene,duplicateSelected,addRect,addCircle,addLine,addStage,addMandap,addChairRows,addRooms,addTrees,addLights,deleteSelected,rotateSelected,scaleSelected,undo,setColor,goExports});
+Object.assign(window,{setView,downloadScene,exportSceneJson,exportHkd,importSceneFile,saveLocal,restoreLocal,resetScene,duplicateSelected,addRect,addCircle,addLine,addStage,addMandap,addChairRows,addRooms,addTrees,addLights,deleteSelected,rotateSelected,scaleSelected,undo,setColor,goExports});
 init();
 </script>
 </body>
