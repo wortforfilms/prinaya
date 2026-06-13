@@ -14,6 +14,7 @@ import {
   exportJobs,
   floralPalette,
   guestSections,
+  layers,
   lightingFixtures,
   mandapDimensions,
   materialPalette,
@@ -1297,6 +1298,636 @@ export function buildFlightPathDesigner(): SurfacePanel {
     links: [{ label: "Drone Planner", href: "/drone/planner" }, { label: "Drone", href: "/drone" }],
     blockers: [{ label: "Live drone flight", reason: "airspace/compliance approval not connected" }],
     note: "Waypoint design is a preview planner; executing the flight is compliance-blocked.",
+    evidenceRef: EV
+  };
+}
+
+// ================================================================ PLANNED → READY dedicated builds
+const AI_NOTE = "Concepts are assembled from the local knowledge graph; no external image model is called.";
+
+// ---------------------------------------------------------------- Design Studio
+export function buildStageDesigner(): SurfacePanel {
+  const kit = cadObjects.filter((o) => ["stage", "led-wall", "truss", "sofa"].includes(o.kind));
+  return {
+    title: "Stage Designer",
+    subtitle: "Reception stage layout, dimensions, and kit.",
+    status: "READY",
+    metrics: [
+      { label: "Stage", value: `${stageDimensions.widthM}×${stageDimensions.depthM}m` },
+      { label: "Height", value: `${stageDimensions.heightM}m` },
+      { label: "LED wall", value: `${stageDimensions.ledWallM[0]}×${stageDimensions.ledWallM[2]}m` },
+      { label: "Kit parts", value: String(kit.length) }
+    ],
+    sections: [{ title: "Stage kit", rows: kit.map((o) => ({ label: o.label, value: o.kind, sub: o.layerId })) }],
+    kbsRefs: ["Stage", "Asset"],
+    links: [{ label: "Mandap Designer", href: "/mandap" }, { label: "3D Designer", href: "/cad/3d" }],
+    evidenceRef: EV
+  };
+}
+
+export function buildDecorDesigner(): SurfacePanel {
+  return {
+    title: "Decor Designer",
+    subtitle: "Decor elements, floral palette, and material finishes.",
+    status: "READY",
+    metrics: [
+      { label: "Decor items", value: String(decorItems.length) },
+      { label: "Garland", value: `${floralPalette.garlandMeters}m` },
+      { label: "Materials", value: String(materialPalette.length) }
+    ],
+    sections: [
+      { title: "Decor elements", rows: decorItems.map((d) => ({ label: d.label, value: `×${d.quantity}`, sub: d.placement })) },
+      { title: "Palette", rows: [
+        { label: "Primary", value: floralPalette.primary },
+        { label: "Secondary", value: floralPalette.secondary },
+        { label: "Accent", value: floralPalette.accent }
+      ] }
+    ],
+    kbsRefs: ["Floral", "Material"],
+    links: [{ label: "Floral Designer", href: "/floral" }, { label: "Assets", href: "/assets" }],
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- CAD Runtime
+export function buildSceneManager(): SurfacePanel {
+  const kinds = new Set(cadObjects.map((o) => o.kind)).size;
+  return {
+    title: "CAD Scene Manager",
+    subtitle: "Scene objects and layer organisation for the editor.",
+    status: "READY",
+    metrics: [
+      { label: "Objects", value: String(cadObjects.length) },
+      { label: "Layers", value: String(layers.length) },
+      { label: "Object kinds", value: String(kinds) }
+    ],
+    sections: [
+      { title: "Layers", rows: layers.map((l) => ({ label: l.label, value: l.locked ? "locked" : "editable", sub: l.visible ? "visible" : "hidden" })) }
+    ],
+    kbsRefs: ["Asset"],
+    links: [{ label: "CAD Editor", href: "/cad/editor" }, { label: "3D Designer", href: "/cad/3d" }],
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Three.js studios (dedicated panels + live link)
+export function build3dVediStudio(): SurfacePanel {
+  const g = kbs();
+  return {
+    title: "3D Vedi Studio",
+    subtitle: "Sacred vedi placement in 3D, sized to the mandap priest zone.",
+    status: "READY",
+    metrics: [
+      { label: "Vedi nodes", value: String(g.nodesOfType("Vedi").length) },
+      { label: "Priest zone", value: `${mandapDimensions.priestZoneM[0]}×${mandapDimensions.priestZoneM[1]}m` },
+      { label: "Saptapadi", value: `${mandapDimensions.saptapadiDiameterM}m` }
+    ],
+    sections: [{ title: "Vedi options", rows: g.nodesOfType("Vedi").map((n) => ({ label: n.name, sub: n.description, status: n.status })) }],
+    kbsRefs: ["Vedi", "Mandap"],
+    links: [{ label: "Open 3D studio", href: "/cad/3d" }, { label: "Vedi Finder", href: "/hemant-samwat-vedi" }],
+    evidenceRef: EV
+  };
+}
+
+export function build3dStageStudio(): SurfacePanel {
+  return {
+    title: "3D Stage Studio",
+    subtitle: "Stage and LED-wall massing in 3D.",
+    status: "READY",
+    metrics: [
+      { label: "Stage", value: `${stageDimensions.widthM}×${stageDimensions.depthM}m` },
+      { label: "Height", value: `${stageDimensions.heightM}m` },
+      { label: "LED wall", value: `${stageDimensions.ledWallM[0]}×${stageDimensions.ledWallM[2]}m` }
+    ],
+    sections: [{ title: "Stage massing", rows: [
+      { label: "Deck", value: `${stageDimensions.widthM}×${stageDimensions.depthM}m` },
+      { label: "Sofa zone", value: `${stageDimensions.sofaZoneM[0]}×${stageDimensions.sofaZoneM[1]}m` }
+    ] }],
+    kbsRefs: ["Stage"],
+    links: [{ label: "Open 3D studio", href: "/cad/3d" }, { label: "Stage Designer", href: "/design/stage" }],
+    evidenceRef: EV
+  };
+}
+
+export function build3dRenderStudio(): SurfacePanel {
+  return {
+    title: "3D Render Studio",
+    subtitle: "Day and night concept render previews.",
+    status: "READY",
+    metrics: [{ label: "Render jobs", value: String(renderJobs.length) }],
+    sections: [{ title: "Renders", rows: renderJobs.map((r) => ({ label: r.label, value: r.camera, sub: r.output, status: r.status as SurfaceStatus })) }],
+    kbsRefs: ["Asset"],
+    links: [{ label: "Gallery", href: "/gallery" }, { label: "Open 3D studio", href: "/cad/3d" }],
+    note: "Renders are in-app 3D previews and extracted boards; no offline render farm.",
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- AI Runtime (preview, local graph)
+function aiPanel(title: string, subtitle: string, seedType: Parameters<ReturnType<typeof kbs>["nodesOfType"]>[0], unit: string, links: SurfaceLink[]): SurfacePanel {
+  const g = kbs();
+  const nodes = g.nodesOfType(seedType);
+  return {
+    title, subtitle, status: "READY",
+    metrics: [{ label: unit, value: String(nodes.length) }],
+    sections: [{ title: `${unit} from the knowledge graph`, rows: nodes.slice(0, 12).map((n) => ({ label: n.name, sub: n.description })) }],
+    kbsRefs: [seedType, "graph"],
+    links,
+    note: AI_NOTE,
+    evidenceRef: EV
+  };
+}
+export function buildSketchToImage(): SurfacePanel {
+  return aiPanel("Sketch To Image", "Turn rough sketches into styled concepts (preview).", "Template", "Style templates", [{ label: "AI Studio", href: "/ai/studio" }, { label: "Board Composer", href: "/exports" }]);
+}
+export function buildMoodToDesign(): SurfacePanel {
+  return {
+    title: "Mood To Design",
+    subtitle: "Translate a mood and palette into design directions (preview).",
+    status: "READY",
+    metrics: [{ label: "Materials", value: String(materialPalette.length) }, { label: "Palette", value: "4 tones" }],
+    sections: [
+      { title: "Moods → materials", rows: materialPalette.map((m) => ({ label: m.label, value: m.finish, sub: m.usage })) },
+      { title: "Floral mood", rows: [
+        { label: "Primary", value: floralPalette.primary }, { label: "Accent", value: floralPalette.accent }
+      ] }
+    ],
+    kbsRefs: ["Material", "Floral"],
+    links: [{ label: "AI Studio", href: "/ai/studio" }, { label: "Decor Designer", href: "/design/decor" }],
+    note: AI_NOTE,
+    evidenceRef: EV
+  };
+}
+export function build3dConceptGenerator(): SurfacePanel {
+  return aiPanel("3D Concept Generator", "Generate mandap concept directions (preview).", "Mandap", "Mandap concepts", [{ label: "AI Studio", href: "/ai/studio" }, { label: "3D Designer", href: "/cad/3d" }]);
+}
+export function buildVariationGenerator(): SurfacePanel {
+  return aiPanel("Variation Generator", "Produce template variations of an approved design (preview).", "Template", "Templates", [{ label: "AI Studio", href: "/ai/studio" }, { label: "Templates", href: "/templates" }]);
+}
+export function buildPromptLibrary(): SurfacePanel {
+  const g = kbs();
+  const uc = g.nodesOfType("UseCase");
+  return {
+    title: "Prompt Library",
+    subtitle: "Curated design prompts derived from the use-case catalogue.",
+    status: "READY",
+    metrics: [{ label: "Prompts", value: String(uc.length) }],
+    sections: [{ title: "Prompt catalogue", rows: uc.slice(0, 12).map((n) => ({ label: n.name, sub: n.description })) }],
+    kbsRefs: ["UseCase"],
+    links: [{ label: "AI Studio", href: "/ai/studio" }, { label: "Use Cases", href: "/kbs/usecases" }],
+    note: AI_NOTE,
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Filmy Studio
+export function buildFilmProjects(): SurfacePanel {
+  const films = filmShots();
+  return {
+    title: "Film Projects",
+    subtitle: "Film deliverables tracked against the project.",
+    status: "READY",
+    metrics: [{ label: "Project", value: projectSummary.name.split(" ")[0] }, { label: "Films", value: String(films.length) }],
+    sections: [{ title: "Films", rows: films.map((f) => ({ label: f.name, value: `${f.shots.length} shots`, status: f.status as SurfaceStatus })) }],
+    kbsRefs: ["Film"],
+    links: [{ label: "Filmy Dashboard", href: "/filmy/dashboard" }, { label: "Projects", href: "/projects" }],
+    evidenceRef: EV
+  };
+}
+export function buildMediaLibrary(): SurfacePanel {
+  const films = filmShots();
+  return {
+    title: "Media Library",
+    subtitle: "Render previews and film assets (preview metadata).",
+    status: "READY",
+    metrics: [{ label: "Renders", value: String(renderJobs.length) }, { label: "Films", value: String(films.length) }],
+    sections: [{ title: "Media", rows: renderJobs.map((r) => ({ label: r.label, value: r.output, status: r.status as SurfaceStatus })) }],
+    kbsRefs: ["Film", "Asset"],
+    links: [{ label: "Assets", href: "/assets" }, { label: "Gallery", href: "/gallery" }],
+    note: "Media entries are preview metadata; no real video files or rendering pipeline.",
+    evidenceRef: EV
+  };
+}
+export function buildEditStudio(): SurfacePanel {
+  const films = filmShots();
+  const totalShots = films.reduce((s, f) => s + f.shots.length, 0);
+  return {
+    title: "Edit Studio",
+    subtitle: "Sequence shots into a cut (preview — no media engine).",
+    status: "READY",
+    metrics: [{ label: "Films", value: String(films.length) }, { label: "Shots", value: String(totalShots) }],
+    sections: films.slice(0, 4).map((f) => ({ title: f.name, rows: f.shots.map((shot, i) => ({ label: `Shot ${i + 1}`, value: shot.replace(/_/g, " ") })) })),
+    kbsRefs: ["Film", "Shot"],
+    links: [{ label: "Storyboard", href: "/filmy/storyboard" }, { label: "Gallery", href: "/gallery" }],
+    note: "Shot sequencing is preview metadata; no real non-linear editing or rendering.",
+    evidenceRef: EV
+  };
+}
+export function buildColorGrading(): SurfacePanel {
+  return {
+    title: "Color Grading",
+    subtitle: "Grade presets from the lighting and material palette (preview).",
+    status: "READY",
+    metrics: [{ label: "Light temps", value: String(lightingFixtures.length) }, { label: "Materials", value: String(materialPalette.length) }],
+    sections: [{ title: "Grade presets", rows: lightingFixtures.map((f) => ({ label: f.label, value: `${f.colorTemperatureK}K`, sub: f.type })) }],
+    kbsRefs: ["Lighting", "Material"],
+    links: [{ label: "Gallery", href: "/gallery" }, { label: "Lighting", href: "/lighting" }],
+    note: "Grade presets are preview references; no real color pipeline is applied to media.",
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Guest
+export function buildInvitation(): SurfacePanel {
+  const asg = guestSections.reduce((s, x) => s + x.assigned, 0);
+  return {
+    title: "Invitation",
+    subtitle: "Digital invitation and RSVP overview (preview send).",
+    status: "READY",
+    metrics: [{ label: "Invited", value: String(guestSections.reduce((s, x) => s + x.capacity, 0)) }, { label: "Confirmed", value: String(asg) }],
+    sections: [{ title: "By section", rows: guestSections.map((x) => ({ label: x.label, value: `${x.assigned}/${x.capacity}` })) }],
+    kbsRefs: ["Guest Planning"],
+    links: [{ label: "RSVP", href: "/guests/rsvp" }, { label: "Guests", href: "/guests" }],
+    note: "Invitation design and RSVP are preview; live send/delivery is not connected.",
+    evidenceRef: EV
+  };
+}
+export function buildVipManager(): SurfacePanel {
+  const vip = guestSections.find((x) => x.id === "guest-vip");
+  return {
+    title: "VIP Manager",
+    subtitle: "VIP guests, seating, and hospitality priority.",
+    status: "READY",
+    metrics: [{ label: "VIP seats", value: String(seatingCapacity.vipSeats) }, { label: "Assigned", value: String(vip ? vip.assigned : 0) }],
+    sections: [{ title: "VIP", rows: guestSections.filter((x) => x.id === "guest-vip").map((x) => ({ label: x.label, value: `${x.assigned}/${x.capacity}`, sub: x.notes })) }],
+    kbsRefs: ["Guest Planning", "Seating"],
+    links: [{ label: "Seating", href: "/guests/seating" }, { label: "Hospitality", href: "/guests/hospitality" }],
+    evidenceRef: EV
+  };
+}
+export function buildMealPlanner(): SurfacePanel {
+  return {
+    title: "Meal Planner",
+    subtitle: "Dining capacity and menu planning (preview).",
+    status: "READY",
+    metrics: [{ label: "Dining seats", value: String(seatingCapacity.diningSeats) }, { label: "Guests", value: String(seatingCapacity.totalGuests) }],
+    sections: [{ title: "Dining", rows: [
+      { label: "Dining seats", value: String(seatingCapacity.diningSeats) },
+      { label: "Accessible", value: String(seatingCapacity.accessibleSeats) },
+      { label: "Dietary handling", value: "vegan · gluten-free · allergy", sub: "planning preview" }
+    ] }],
+    kbsRefs: ["Guest Planning"],
+    links: [{ label: "Seating", href: "/guests/seating" }, { label: "Guests", href: "/guests" }],
+    note: "Menu and catering are preview planning; vendor catering bookings are not connected.",
+    evidenceRef: EV
+  };
+}
+export function buildCommunicationCenter(): SurfacePanel {
+  return {
+    title: "Communication Center",
+    subtitle: "Guest communications across channels (preview).",
+    status: "READY",
+    metrics: [{ label: "Sections", value: String(guestSections.length) }, { label: "Channels", value: "3" }],
+    sections: [{ title: "Channels", rows: [
+      { label: "Email updates", value: "preview", sub: "no live mailer connected" },
+      { label: "SMS reminders", value: "preview", sub: "no live gateway connected" },
+      { label: "Itinerary broadcast", value: "preview", sub: "preview composition only" }
+    ] }],
+    kbsRefs: ["Guest Planning"],
+    links: [{ label: "Guests", href: "/guests" }, { label: "Invitation", href: "/guests/invitation" }],
+    note: "Composition is preview only; no live messaging gateway is connected.",
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Vendor
+export function buildVendorPerformance(): SurfacePanel {
+  const g = kbs();
+  return {
+    title: "Vendor Performance",
+    subtitle: "Demo vendor scorecards; live ratings blocked.",
+    status: "READY",
+    metrics: [{ label: "Vendors", value: String(vendors.length) }, { label: "KBS nodes", value: String(g.nodesOfType("Vendor").length) }],
+    sections: [{ title: "Scorecards (demo)", rows: vendors.map((v) => ({ label: v.label, value: `${v.category} · ${v.city}`, status: v.status === "blocked-live" ? "BLOCKED" : "READY", sub: v.status === "blocked-live" ? "live marketplace blocked" : "demo vendor" })) }],
+    kbsRefs: ["Vendor"],
+    links: [{ label: "Vendor Manager", href: "/vendors" }, { label: "Observatory", href: "/observatory/vendor" }],
+    note: "Performance is computed on demo data; live vendor ratings and bookings remain blocked.",
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Drone
+export function buildCoveragePlanner(): SurfacePanel {
+  const zone = droneZones[0];
+  return {
+    title: "Coverage Planner",
+    subtitle: "Aerial coverage zones over the venue (preview).",
+    status: "READY",
+    metrics: [{ label: "Zones", value: String(droneZones.length) }, { label: "Altitude", value: `${zone.altitudeM}m` }, { label: "Waypoints", value: String(zone.path.length) }],
+    sections: [{ title: "Zones", rows: droneZones.map((z) => ({ label: z.label, value: `${z.altitudeM}m`, sub: `${z.path.length} waypoints`, status: z.status === "blocked-compliance" ? "BLOCKED" : "READY" })) }],
+    kbsRefs: ["Drone"],
+    links: [{ label: "Flight Path Designer", href: "/drone/flight-path" }, { label: "Drone Planner", href: "/drone/planner" }],
+    blockers: [{ label: "Live drone flight", reason: "airspace/compliance approval not connected" }],
+    note: "Coverage is planned in preview; live drone flight requires airspace/compliance approval.",
+    evidenceRef: EV
+  };
+}
+export function buildWeatherCenter(): SurfacePanel {
+  return {
+    title: "Weather Center",
+    subtitle: "Weather planning checklist for flight windows (preview).",
+    status: "READY",
+    metrics: [{ label: "Event date", value: projectSummary.eventDate }, { label: "Checks", value: "4" }],
+    sections: [{ title: "Pre-flight weather checks", rows: [
+      { label: "Wind speed", value: "manual check", sub: "no live feed connected" },
+      { label: "Precipitation", value: "manual check", sub: "no live feed connected" },
+      { label: "Visibility", value: "manual check", sub: "no live feed connected" },
+      { label: "Golden-hour window", value: "manual check", sub: "planning reference" }
+    ] }],
+    kbsRefs: ["Drone"],
+    links: [{ label: "Coverage Planner", href: "/drone/coverage-planner" }, { label: "Drone", href: "/drone" }],
+    note: "Checklist only; no live weather API is connected.",
+    evidenceRef: EV
+  };
+}
+export function buildBatteryPlanner(): SurfacePanel {
+  const zone = droneZones[0];
+  const estMin = Math.max(1, Math.round(zone.path.length * 2.5));
+  return {
+    title: "Battery Planner",
+    subtitle: "Flight-time and battery estimate for the planned path (preview).",
+    status: "READY",
+    metrics: [{ label: "Waypoints", value: String(zone.path.length) }, { label: "Est. flight", value: `${estMin} min` }, { label: "Reserve", value: "30%" }],
+    sections: [{ title: "Estimate", rows: [
+      { label: "Planned waypoints", value: String(zone.path.length) },
+      { label: "Estimated flight time", value: `${estMin} min`, sub: "preview estimate" },
+      { label: "Recommended batteries", value: String(Math.ceil(estMin / 12) + 1), sub: "with reserve" }
+    ] }],
+    kbsRefs: ["Drone"],
+    links: [{ label: "Coverage Planner", href: "/drone/coverage-planner" }, { label: "Flight Path Designer", href: "/drone/flight-path" }],
+    note: "Estimates only; live drone telemetry and flight are not connected.",
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- VR
+export function buildHotspotManager(): SurfacePanel {
+  const g = kbs();
+  const boards = g.nodesOfType("Board");
+  return {
+    title: "Hotspot Manager",
+    subtitle: "Navigation hotspots across walkthrough scenes.",
+    status: "READY",
+    metrics: [{ label: "Scenes", value: String(boards.length) }],
+    sections: [{ title: "Scenes", rows: boards.slice(0, 12).map((b) => ({ label: b.name, sub: b.description, status: b.status })) }],
+    kbsRefs: ["Board"],
+    links: [{ label: "VR", href: "/vr" }, { label: "Boards", href: "/kbs/boards" }],
+    note: "Hotspots are authored against preview boards; no live VR headset session.",
+    evidenceRef: EV
+  };
+}
+export function buildVrAnalytics(): SurfacePanel {
+  return {
+    title: "VR Analytics",
+    subtitle: "Walkthrough engagement metrics (preview).",
+    status: "READY",
+    metrics: [{ label: "Scenes", value: String(kbs().nodesOfType("Board").length) }, { label: "Metrics", value: "preview" }],
+    sections: [{ title: "Metrics", rows: [
+      { label: "Scene views", value: "preview", sub: "no live analytics connected" },
+      { label: "Dwell time", value: "preview", sub: "no live analytics connected" },
+      { label: "Drop-off", value: "preview", sub: "no live analytics connected" }
+    ] }],
+    kbsRefs: ["Board"],
+    links: [{ label: "VR", href: "/vr" }, { label: "Observatory", href: "/observatory" }],
+    note: "Metrics are placeholders; no live VR analytics pipeline is connected.",
+    evidenceRef: EV
+  };
+}
+export function buildClientReview(): SurfacePanel {
+  const g = kbs();
+  return {
+    title: "Client Review",
+    subtitle: "Client review and approval over walkthrough scenes (preview).",
+    status: "READY",
+    metrics: [{ label: "Scenes", value: String(g.nodesOfType("Board").length) }, { label: "Status", value: "preview" }],
+    sections: [{ title: "Review workflow", rows: [
+      { label: "Share scene", value: "preview" },
+      { label: "Collect comments", value: "preview", sub: "no live comments backend" },
+      { label: "Approve", value: "preview" }
+    ] }],
+    kbsRefs: ["Board"],
+    links: [{ label: "VR", href: "/vr" }, { label: "Board Composer", href: "/exports" }],
+    note: "Review workflow is preview; live sharing/commenting is not connected.",
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Observatory
+export function buildRiskObservatory(): SurfacePanel {
+  return {
+    title: "Risk Observatory",
+    subtitle: "Blocked capabilities tracked as open risks.",
+    status: "READY",
+    metrics: [{ label: "Open risks", value: String(blockedCapabilities.length) }, { label: "Severity", value: "high" }],
+    sections: [{ title: "Blocked-capability risks", rows: blockedCapabilities.map((c) => ({ label: c.label, value: "blocked", sub: c.reason, status: "BLOCKED" })) }],
+    kbsRefs: ["Evidence"],
+    links: [{ label: "Risk Manager", href: "/planning/risks" }, { label: "Observatory", href: "/observatory" }],
+    note: "Mirrors the preserved blockers; mitigation requires external provider/compliance evidence.",
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Admin (live auth not connected)
+const AUTH_NOTE = "Read-only preview of the data model and seed; live authentication and RBAC enforcement are not connected.";
+const AUTH_BLOCK = [{ label: "Live authentication / RBAC", reason: "no auth provider or session runtime connected" }];
+export function buildUsers(): SurfacePanel {
+  return {
+    title: "Users",
+    subtitle: "User accounts in the organisation model (preview).",
+    status: "READY",
+    metrics: [{ label: "Org", value: "Spark Planners" }, { label: "Seed users", value: "1" }],
+    sections: [{ title: "Accounts (seed)", rows: [
+      { label: "Sanjeeta Khaira", value: "Owner", sub: "seeded account · no live login" }
+    ] }],
+    kbsRefs: ["Evidence"],
+    links: [{ label: "Roles", href: "/admin/roles" }, { label: "Admin", href: "/admin" }],
+    blockers: AUTH_BLOCK,
+    note: AUTH_NOTE,
+    evidenceRef: EV
+  };
+}
+export function buildRoles(): SurfacePanel {
+  return {
+    title: "Roles",
+    subtitle: "Organisation roles in the access model (preview).",
+    status: "READY",
+    metrics: [{ label: "Roles", value: "1" }],
+    sections: [{ title: "Roles", rows: [
+      { label: "Owner", value: "full preview access", sub: "seeded role" }
+    ] }],
+    kbsRefs: ["Evidence"],
+    links: [{ label: "Permissions", href: "/admin/permissions" }, { label: "Users", href: "/admin/users" }],
+    blockers: AUTH_BLOCK,
+    note: AUTH_NOTE,
+    evidenceRef: EV
+  };
+}
+export function buildPermissions(): SurfacePanel {
+  return {
+    title: "Permissions",
+    subtitle: "Permission scopes per surface group (preview).",
+    status: "READY",
+    metrics: [{ label: "Scopes", value: "preview" }],
+    sections: [{ title: "Scopes", rows: [
+      { label: "Read surfaces", value: "Owner" },
+      { label: "Edit design", value: "Owner" },
+      { label: "Manage org", value: "Owner" }
+    ] }],
+    kbsRefs: ["Evidence"],
+    links: [{ label: "Roles", href: "/admin/roles" }, { label: "Admin", href: "/admin" }],
+    blockers: AUTH_BLOCK,
+    note: AUTH_NOTE,
+    evidenceRef: EV
+  };
+}
+export function buildStorage(): SurfacePanel {
+  return {
+    title: "Storage",
+    subtitle: "Asset storage overview (preview — local assets only).",
+    status: "READY",
+    metrics: [{ label: "Categories", value: String(assetCategories.length) }, { label: "Objects", value: String(cadObjects.length) }],
+    sections: [{ title: "Asset categories", rows: assetCategories.map((c) => ({ label: c.label, value: `${c.starterKinds.length} kinds`, sub: c.description })) }],
+    kbsRefs: ["Asset"],
+    links: [{ label: "Assets", href: "/assets" }, { label: "Admin", href: "/admin" }],
+    note: "Counts reflect local preview assets; no cloud storage backend is connected.",
+    evidenceRef: EV
+  };
+}
+export function buildLogs(): SurfacePanel {
+  return {
+    title: "Logs",
+    subtitle: "System event log from the build runtime.",
+    status: "READY",
+    metrics: [{ label: "Events", value: String(observatoryEvents.length) }],
+    sections: [{ title: "Event log", rows: observatoryEvents.map((e) => ({ label: e.label, value: e.category, sub: e.at.slice(0, 10), status: e.status as SurfaceStatus })) }],
+    kbsRefs: ["Evidence"],
+    links: [{ label: "Admin", href: "/admin" }, { label: "Observatory", href: "/observatory" }],
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Settings
+export function buildOrganization(): SurfacePanel {
+  return {
+    title: "Organization",
+    subtitle: "Organisation profile (preview).",
+    status: "READY",
+    metrics: [{ label: "Org", value: "Spark Planners" }, { label: "Owner", value: "Sanjeeta Khaira" }],
+    sections: [{ title: "Profile", rows: [
+      { label: "Name", value: "Spark Planners" },
+      { label: "Slug", value: "spark-planners" },
+      { label: "Owner", value: "Sanjeeta Khaira" }
+    ] }],
+    kbsRefs: ["Evidence"],
+    links: [{ label: "Settings", href: "/settings" }, { label: "Branding", href: "/settings/branding" }],
+    note: "Profile is a seeded preview; live edits require the blocked auth runtime.",
+    evidenceRef: EV
+  };
+}
+export function buildBranding(): SurfacePanel {
+  return {
+    title: "Branding",
+    subtitle: "Brand colours and material tokens (preview).",
+    status: "READY",
+    metrics: [{ label: "Materials", value: String(materialPalette.length) }],
+    sections: [{ title: "Brand tokens", rows: materialPalette.map((m) => ({ label: m.label, value: m.color, sub: m.finish })) }],
+    kbsRefs: ["Material"],
+    links: [{ label: "Theme Manager", href: "/settings/theme" }, { label: "Settings", href: "/settings" }],
+    evidenceRef: EV
+  };
+}
+export function buildThemeManager(): SurfacePanel {
+  return {
+    title: "Theme Manager",
+    subtitle: "Available presentation and UI palettes (preview).",
+    status: "READY",
+    metrics: [{ label: "Palettes", value: "4" }],
+    sections: [{ title: "Palettes", rows: [
+      { label: "Midnight & Gold", value: "dark green / gold" },
+      { label: "Royal Emerald", value: "emerald / gold" },
+      { label: "Royal Maroon", value: "burgundy / champagne" },
+      { label: "Ivory & Gold", value: "cream / deep maroon" }
+    ] }],
+    kbsRefs: ["Material"],
+    links: [{ label: "Branding", href: "/settings/branding" }, { label: "Settings", href: "/settings" }],
+    evidenceRef: EV
+  };
+}
+export function buildNotifications(): SurfacePanel {
+  return {
+    title: "Notifications",
+    subtitle: "Notification preferences (preview).",
+    status: "READY",
+    metrics: [{ label: "Channels", value: "3" }],
+    sections: [{ title: "Channels", rows: [
+      { label: "Email", value: "preview", sub: "no live mailer connected" },
+      { label: "In-app", value: "preview" },
+      { label: "Digest", value: "preview" }
+    ] }],
+    kbsRefs: ["Evidence"],
+    links: [{ label: "Settings", href: "/settings" }],
+    note: "Preferences are preview; no live notification delivery is connected.",
+    evidenceRef: EV
+  };
+}
+export function buildSecurity(): SurfacePanel {
+  return {
+    title: "Security",
+    subtitle: "Security policy overview (preview).",
+    status: "READY",
+    metrics: [{ label: "Policies", value: "preview" }],
+    sections: [{ title: "Policies", rows: [
+      { label: "Authentication", value: "preview", sub: "auth provider not connected" },
+      { label: "Session management", value: "preview", sub: "not connected" },
+      { label: "Audit logging", value: "preview", sub: "see Logs" }
+    ] }],
+    kbsRefs: ["Evidence"],
+    links: [{ label: "Logs", href: "/admin/logs" }, { label: "Settings", href: "/settings" }],
+    blockers: AUTH_BLOCK,
+    note: AUTH_NOTE,
+    evidenceRef: EV
+  };
+}
+export function buildBackups(): SurfacePanel {
+  return {
+    title: "Backups",
+    subtitle: "Backup and restore overview (preview).",
+    status: "READY",
+    metrics: [{ label: "Exports", value: String(exportJobs.length) }],
+    sections: [{ title: "Backup sources", rows: [
+      { label: "Scene JSON export", value: "available", sub: "local serialization", status: "READY" },
+      { label: "Board package", value: "available", sub: "PDF board package", status: "READY" },
+      { label: "Scheduled cloud backup", value: "preview", sub: "no backup runtime connected" }
+    ] }],
+    kbsRefs: ["Evidence"],
+    links: [{ label: "Exports", href: "/exports" }, { label: "Settings", href: "/settings" }],
+    note: "Local exports stand in for backups; no scheduled cloud backup runtime is connected.",
+    evidenceRef: EV
+  };
+}
+
+// ---------------------------------------------------------------- Export
+export function buildArchiveExport(): SurfacePanel {
+  const ready = exportJobs.filter((e) => e.status === "READY").length;
+  return {
+    title: "Archive Export",
+    subtitle: "Bundle scene, boards, and previews into an archive.",
+    status: "READY",
+    metrics: [{ label: "Export jobs", value: String(exportJobs.length) }, { label: "Ready", value: String(ready) }],
+    sections: [{ title: "Archive contents", rows: exportJobs.map((e) => ({ label: e.label, value: e.format, sub: e.evidence, status: e.status as SurfaceStatus })) }],
+    kbsRefs: ["Evidence"],
+    links: [{ label: "Exports", href: "/exports" }, { label: "Evidence", href: "/admin/evidence" }],
+    note: "Archive bundles ready exports (JSON, PDF board, preview DXF); DWG/production CAD remain blocked.",
     evidenceRef: EV
   };
 }

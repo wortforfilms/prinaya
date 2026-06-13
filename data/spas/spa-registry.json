@@ -1,14 +1,13 @@
 {
-  "generatedAt": "2026-06-13T03:44:26.084148+00:00",
+  "generatedAt": "2026-06-13T05:36:25.519097+00:00",
   "verdict": "CONTROLLED_PREVIEW_READY",
   "productionReady": false,
   "note": "SPA surface registry. READY=dedicated build; PARTIAL=preview frame; PLANNED=named surface routing to nearest existing route; BLOCKED=requires provider/payment/compliance evidence. No production claims.",
   "summary": {
     "total": 156,
     "byStatus": {
-      "READY": 110,
-      "BLOCKED": 7,
-      "PLANNED": 39
+      "READY": 149,
+      "BLOCKED": 7
     },
     "groupCount": 20
   },
@@ -105,14 +104,14 @@
         {
           "id": "design-studio-stage-designer",
           "name": "Stage Designer",
-          "href": "/mandap",
-          "status": "PLANNED"
+          "href": "/design/stage",
+          "status": "READY"
         },
         {
           "id": "design-studio-decor-designer",
           "name": "Decor Designer",
-          "href": "/floral",
-          "status": "PLANNED"
+          "href": "/design/decor",
+          "status": "READY"
         }
       ]
     },
@@ -159,8 +158,8 @@
         {
           "id": "cad-runtime-cad-scene-manager",
           "name": "CAD Scene Manager",
-          "href": "/cad",
-          "status": "PLANNED"
+          "href": "/cad/scene-manager",
+          "status": "READY"
         }
       ]
     },
@@ -183,14 +182,14 @@
         {
           "id": "three-js-designer-3d-vedi-studio",
           "name": "3D Vedi Studio",
-          "href": "/hemant-samwat-vedi",
-          "status": "PLANNED"
+          "href": "/cad/3d/vedi",
+          "status": "READY"
         },
         {
           "id": "three-js-designer-3d-stage-studio",
           "name": "3D Stage Studio",
-          "href": "/cad/3d",
-          "status": "PLANNED"
+          "href": "/cad/3d/stage",
+          "status": "READY"
         },
         {
           "id": "three-js-designer-3d-walkthrough",
@@ -201,8 +200,8 @@
         {
           "id": "three-js-designer-3d-render-studio",
           "name": "3D Render Studio",
-          "href": "/gallery",
-          "status": "PLANNED"
+          "href": "/cad/3d/render",
+          "status": "READY"
         }
       ]
     },
@@ -231,32 +230,32 @@
         {
           "id": "ai-runtime-sketch-to-image",
           "name": "Sketch To Image",
-          "href": "/ai/studio",
-          "status": "PLANNED"
+          "href": "/ai/sketch",
+          "status": "READY"
         },
         {
           "id": "ai-runtime-mood-to-design",
           "name": "Mood To Design",
-          "href": "/ai/studio",
-          "status": "PLANNED"
+          "href": "/ai/mood",
+          "status": "READY"
         },
         {
           "id": "ai-runtime-3d-concept-generator",
           "name": "3D Concept Generator",
-          "href": "/ai/studio",
-          "status": "PLANNED"
+          "href": "/ai/concept-3d",
+          "status": "READY"
         },
         {
           "id": "ai-runtime-variation-generator",
           "name": "Variation Generator",
-          "href": "/ai/studio",
-          "status": "PLANNED"
+          "href": "/ai/variations",
+          "status": "READY"
         },
         {
           "id": "ai-runtime-prompt-library",
           "name": "Prompt Library",
-          "href": "/ai",
-          "status": "PLANNED"
+          "href": "/ai/prompts",
+          "status": "READY"
         }
       ]
     },
@@ -513,8 +512,8 @@
         {
           "id": "filmy-studio-film-projects",
           "name": "Film Projects",
-          "href": "/projects",
-          "status": "PLANNED"
+          "href": "/filmy/projects",
+          "status": "READY"
         },
         {
           "id": "filmy-studio-shot-planner",
@@ -537,20 +536,20 @@
         {
           "id": "filmy-studio-media-library",
           "name": "Media Library",
-          "href": "/assets",
-          "status": "PLANNED"
+          "href": "/filmy/media",
+          "status": "READY"
         },
         {
           "id": "filmy-studio-edit-studio",
           "name": "Edit Studio",
-          "href": "/gallery",
-          "status": "PLANNED"
+          "href": "/filmy/edit",
+          "status": "READY"
         },
         {
           "id": "filmy-studio-color-grading",
           "name": "Color Grading",
-          "href": "/gallery",
-          "status": "PLANNED"
+          "href": "/filmy/color",
+          "status": "READY"
         },
         {
           "id": "filmy-studio-delivery-manager",
@@ -627,8 +626,8 @@
         {
           "id": "guest-invitation",
           "name": "Invitation",
-          "href": "/guests",
-          "status": "PLANNED"
+          "href": "/guests/invitation",
+          "status": "READY"
         },
         {
           "id": "guest-rsvp",
@@ -645,8 +644,8 @@
         {
           "id": "guest-vip-manager",
           "name": "VIP Manager",
-          "href": "/guests",
-          "status": "PLANNED"
+          "href": "/guests/vip",
+          "status": "READY"
         },
         {
           "id": "guest-hospitality-planner",
@@ -657,14 +656,14 @@
         {
           "id": "guest-meal-planner",
           "name": "Meal Planner",
-          "href": "/guests",
-          "status": "PLANNED"
+          "href": "/guests/meals",
+          "status": "READY"
         },
         {
           "id": "guest-communication-center",
           "name": "Communication Center",
-          "href": "/guests",
-          "status": "PLANNED"
+          "href": "/guests/comms",
+          "status": "READY"
         }
       ]
     },
@@ -709,8 +708,8 @@
         {
           "id": "vendor-vendor-performance",
           "name": "Vendor Performance",
-          "href": "/vendors",
-          "status": "PLANNED"
+          "href": "/vendors/performance",
+          "status": "READY"
         },
         {
           "id": "vendor-procurement",
@@ -739,20 +738,20 @@
         {
           "id": "drone-coverage-planner",
           "name": "Coverage Planner",
-          "href": "/drone",
-          "status": "PLANNED"
+          "href": "/drone/coverage-planner",
+          "status": "READY"
         },
         {
           "id": "drone-weather-center",
           "name": "Weather Center",
-          "href": "/drone",
-          "status": "PLANNED"
+          "href": "/drone/weather",
+          "status": "READY"
         },
         {
           "id": "drone-battery-planner",
           "name": "Battery Planner",
-          "href": "/drone",
-          "status": "PLANNED"
+          "href": "/drone/battery",
+          "status": "READY"
         },
         {
           "id": "drone-compliance-center",
@@ -782,20 +781,20 @@
         {
           "id": "vr-hotspot-manager",
           "name": "Hotspot Manager",
-          "href": "/vr",
-          "status": "PLANNED"
+          "href": "/vr/hotspots",
+          "status": "READY"
         },
         {
           "id": "vr-vr-analytics",
           "name": "VR Analytics",
-          "href": "/vr",
-          "status": "PLANNED"
+          "href": "/vr/analytics",
+          "status": "READY"
         },
         {
           "id": "vr-client-review",
           "name": "Client Review",
-          "href": "/vr",
-          "status": "PLANNED"
+          "href": "/vr/review",
+          "status": "READY"
         }
       ]
     },
@@ -884,8 +883,8 @@
         {
           "id": "observatory-risk-observatory",
           "name": "Risk Observatory",
-          "href": "/observatory",
-          "status": "PLANNED"
+          "href": "/observatory/risk",
+          "status": "READY"
         },
         {
           "id": "observatory-ai-observatory",
@@ -908,32 +907,32 @@
         {
           "id": "admin-users",
           "name": "Users",
-          "href": "/admin",
-          "status": "PLANNED"
+          "href": "/admin/users",
+          "status": "READY"
         },
         {
           "id": "admin-roles",
           "name": "Roles",
-          "href": "/admin",
-          "status": "PLANNED"
+          "href": "/admin/roles",
+          "status": "READY"
         },
         {
           "id": "admin-permissions",
           "name": "Permissions",
-          "href": "/admin",
-          "status": "PLANNED"
+          "href": "/admin/permissions",
+          "status": "READY"
         },
         {
           "id": "admin-storage",
           "name": "Storage",
-          "href": "/admin",
-          "status": "PLANNED"
+          "href": "/admin/storage",
+          "status": "READY"
         },
         {
           "id": "admin-logs",
           "name": "Logs",
-          "href": "/admin",
-          "status": "PLANNED"
+          "href": "/admin/logs",
+          "status": "READY"
         },
         {
           "id": "admin-evidence",
@@ -962,26 +961,26 @@
         {
           "id": "settings-organization",
           "name": "Organization",
-          "href": "/settings",
-          "status": "PLANNED"
+          "href": "/settings/organization",
+          "status": "READY"
         },
         {
           "id": "settings-branding",
           "name": "Branding",
-          "href": "/settings",
-          "status": "PLANNED"
+          "href": "/settings/branding",
+          "status": "READY"
         },
         {
           "id": "settings-theme-manager",
           "name": "Theme Manager",
-          "href": "/settings",
-          "status": "PLANNED"
+          "href": "/settings/theme",
+          "status": "READY"
         },
         {
           "id": "settings-notifications",
           "name": "Notifications",
-          "href": "/settings",
-          "status": "PLANNED"
+          "href": "/settings/notifications",
+          "status": "READY"
         },
         {
           "id": "settings-integrations",
@@ -993,14 +992,14 @@
         {
           "id": "settings-security",
           "name": "Security",
-          "href": "/settings",
-          "status": "PLANNED"
+          "href": "/settings/security",
+          "status": "READY"
         },
         {
           "id": "settings-backups",
           "name": "Backups",
-          "href": "/settings",
-          "status": "PLANNED"
+          "href": "/settings/backups",
+          "status": "READY"
         }
       ]
     },
@@ -1041,8 +1040,8 @@
         {
           "id": "export-archive-export",
           "name": "Archive Export",
-          "href": "/exports",
-          "status": "PLANNED"
+          "href": "/exports/archive",
+          "status": "READY"
         }
       ]
     },
