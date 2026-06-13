@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>TLPS Wedding OS — Themes Gallery</title>
+<style>
+:root{--ink:#02100e;--panel:#0a1f1b;--card:#10241c;--gold:#d9aa46;--gold2:#f8d78b;--ivory:#fff6df;--muted:#c8b98e;--line:rgba(217,170,70,.28)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 50% -10%,#13241f,#02100e 55%);color:var(--ivory);font-family:Inter,system-ui,Arial,sans-serif}
+.wrap{max-width:1280px;margin:0 auto;padding:48px 28px 80px}
+header h1{font-family:Georgia,serif;color:var(--gold2);font-size:40px;margin:0 0 6px;letter-spacing:.01em}
+header p{color:var(--muted);margin:0 0 4px;font-size:15px}
+.gate{display:inline-block;margin-top:10px;font-size:12px;border:1px solid var(--line);color:var(--gold);padding:5px 12px;border-radius:999px}
+h2{font-family:Georgia,serif;color:var(--gold2);font-size:26px;margin:52px 0 6px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.sub{color:var(--muted);font-size:14px;margin:0 0 22px}
+.grid{display:grid;gap:20px}
+.g8{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.g6{grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}
+.g9{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:200px;object-fit:cover;display:block;background:#071010;border-bottom:1px solid var(--line)}
+.card .body{padding:14px 16px}
+.card h3{margin:0 0 4px;font-family:Georgia,serif;color:var(--gold2);font-size:18px}
+.card .meta{color:var(--gold);font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 6px}
+.card p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+.badge{display:inline-block;margin-top:8px;font-size:11px;border:1px solid rgba(99,153,34,.5);color:#9fe07a;background:rgba(99,153,34,.12);padding:3px 9px;border-radius:999px}
+footer{margin-top:60px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Themes Gallery</h1>
+  <p>TLPS Wedding OS · Spark Planners — every design theme, style language, and signature stage in one view.</p>
+  <span class="gate">CONTROLLED PREVIEW · PRODUCTION_READY = false</span>
+</header>
+
+<h2>CAD Theme Templates</h2>
+<p class="sub">Eight presets that load a full scene into the CAD editor — objects, budget, asset list, and a board package — and export to .hkd / JSON / PDF.</p>
+<div class="grid g8" id="templates"></div>
+
+<h2>Design Languages</h2>
+<p class="sub">Six aesthetics we design in — traditional to avant-garde. Any style, beautifully executed.</p>
+<div class="grid g6" id="languages"></div>
+
+<h2>Bespoke Signature Stages</h2>
+<p class="sub">Nine signature stage concepts — "an evening that feels like a dream."</p>
+<div class="grid g9" id="stages"></div>
+
+<footer>
+  Preview imagery: design boards and concept renders are local controlled-preview references, not production-certified media.
+  CAD templates load real scene data; native DWG / production DXF and certified engineering remain blocked.
+</footer>
+</div>
+
+<script>
+const templates=[
+  ["Hemant Samwat Wedding","Vedic lotus · royal heritage","generated/royal-heritage-mandap.png","8 objects · 6 assets"],
+  ["Vedic Lotus","Lotus motifs, ivory & gold","extracted-boards/vedic-lotus-all-pages-board.png","6 objects · 5 assets"],
+  ["Royal Palace","Rajasthani heritage grandeur","extracted-boards/traditional-royal-cad-presentation.png","6 objects · 5 assets"],
+  ["Temple Mandap","Nagara temple-inspired","generated/spark/stages/option-7-temple-inspired.png","5 objects · 5 assets"],
+  ["Sci-Fi Galactic Portal","Contemporary neon futurism","extracted-boards/sci-fi-futuristic-options.png","6 objects · 5 assets"],
+  ["Garden Mandap","Celestial garden, natural","generated/spark/stages/option-1-celestial-garden.png","5 objects · 5 assets"],
+  ["Navagraha","Nine-planet sacred grid","extracted-boards/vedic-sacred-design-options.png","6 objects · 5 assets"],
+  ["Panch Tatva","Five-element traditional","extracted-boards/vedic-sacred-traditional-options.png","6 objects · 5 assets"],
+];
+const languages=[
+  ["Royal Heritage","Palatial, opulent, gold","extracted-boards/traditional-royal-cad-presentation.png"],
+  ["Vedic Sacred","Ritual-true, timeless","extracted-boards/vedic-sacred-traditional-options.png"],
+  ["Lotus & Pastel","Soft, romantic, ivory","extracted-boards/vedic-lotus-all-pages-board.png"],
+  ["Contemporary","Modern, dramatic lighting","extracted-boards/sci-fi-futuristic-options.png"],
+  ["Garden & Natural","Foliage, fresh, airy","extracted-boards/general-design-options.png"],
+  ["Bespoke Signature","Bespoke, one-of-a-kind","extracted-boards/unique-design-options.png"],
+];
+const stages=[
+  ["Celestial Garden","option-1-celestial-garden.png"],["Royal Rajasthani","option-2-royal-rajasthani-courtyard.png"],
+  ["Mystic Forest","option-3-mystic-forest.png"],["Minimal Monochrome","option-4-minimal-monochrome.png"],
+  ["Moroccan Nights","option-5-moroccan-nights.png"],["Floating Floral","option-6-floating-floral-cloud.png"],
+  ["Temple Inspired","option-7-temple-inspired.png"],["Contemporary Curves","option-8-contemporary-curves.png"],
+  ["Beach Front Bliss","option-9-beach-front-bliss.png"],
+];
+const card=(img,title,meta,desc,badge)=>`<div class="card"><img src="${img}" alt="${title}" loading="lazy"/><div class="body"><div class="meta">${meta}</div><h3>${title}</h3>${desc?`<p>${desc}</p>`:""}${badge?`<span class="badge">${badge}</span>`:""}</div></div>`;
+document.getElementById("templates").innerHTML=templates.map(([t,d,img,c])=>card(img,t,"CAD template",d,c+" · READY")).join("");
+document.getElementById("languages").innerHTML=languages.map(([t,d,img])=>card(img,t,"Design language",d,"")).join("");
+document.getElementById("stages").innerHTML=stages.map(([t,f])=>card("generated/spark/stages/"+f,t,"Signature stage","","")).join("");
+</script>
+</body>
+</html>

@@ -48,6 +48,9 @@ export function WeddingOsNav() {
           <Link href="/" className="rounded px-3 py-2 text-sm text-white/80 transition hover:text-[#f8d78b]">
             Home
           </Link>
+          <Link href="/themes" className="rounded px-3 py-2 text-sm text-white/80 transition hover:text-[#f8d78b]">
+            Themes
+          </Link>
           {navGroups.map((group) => (
             <div key={group.label} className="relative" onMouseEnter={() => setOpen(group.label)}>
               <button
@@ -129,6 +132,9 @@ export function WeddingOsNav() {
         <div className="max-h-[75vh] overflow-y-auto border-t border-white/10 bg-[#02100e] px-5 py-4 lg:hidden">
           <Link href="/" onClick={() => setMobile(false)} className="block rounded px-2 py-2 text-sm font-semibold text-white/85">
             Home
+          </Link>
+          <Link href="/themes" onClick={() => setMobile(false)} className="block rounded px-2 py-2 text-sm font-semibold text-white/85">
+            Themes
           </Link>
           {navGroups.map((group) => (
             <div key={group.label} className="mt-2">
