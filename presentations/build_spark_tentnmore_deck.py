@@ -19,6 +19,7 @@ import build_spark_deck as E  # themed engine (helpers + THEMES)
 
 BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "spark-tentnmore-profile")
 T = lambda f: os.path.join(E.PUB, "generated", "tentnmore", f)  # TentnMore asset
+SP = lambda f: os.path.join(E.PUB, "generated", "spark", f)  # Spark inspiration photo
 FOOT = "Spark Planners · in association with TentnMore"
 
 # ---- Service content (condensed from the notes) -----------------------------
@@ -160,12 +161,116 @@ def build_deck(out_path):
         E.txt(s, x + 0.22, y + 0.3, cw - 0.44, 1.1, c, 15, TI, bold=True, font=E.HEAD, spacing=1.05)
     E.footer(s, FOOT)
 
+    # 4b Design languages — style range (not a single theme)
+    s = E.slide(PANEL)
+    E.kicker(s, "DESIGN LANGUAGES")
+    E.title(s, "Any style, beautifully executed")
+    styles = [
+        ("Royal Heritage", "extracted-boards/traditional-royal-cad-presentation.png"),
+        ("Vedic Sacred", "extracted-boards/vedic-sacred-traditional-options.png"),
+        ("Lotus & Pastel", "extracted-boards/vedic-lotus-all-pages-board.png"),
+        ("Contemporary", "extracted-boards/sci-fi-futuristic-options.png"),
+        ("Garden & Natural", "extracted-boards/general-design-options.png"),
+        ("Bespoke Signature", "extracted-boards/unique-design-options.png"),
+    ]
+    cw, ch, gx, gy = 3.78, 1.78, 0.32, 0.18
+    for i, (label, img) in enumerate(styles):
+        r, c = divmod(i, 3)
+        x = 0.92 + c * (cw + gx); y = 2.15 + r * (ch + gy + 0.32)
+        E.pic_cover(s, E.P(img), x, y, cw, ch)
+        E.txt(s, x, y + ch + 0.02, cw, 0.3, label, 12.5, TI, bold=True, font=E.HEAD, align=PP_ALIGN.CENTER)
+    E.txt(s, 0.92, 6.55, 11.5, 0.4,
+          "Traditional or avant-garde, intimate or grand — we design in your language, not ours.",
+          13, MU, italic=True)
+    E.footer(s, FOOT)
+
+    # 4c Bespoke signature stages — "An evening that feels like a dream" (2 slides, 4 images each)
+    def stage_slide(part, items):
+        s = E.slide()
+        E.kicker(s, "BESPOKE SIGNATURE STAGES · " + part)
+        E.title(s, "An evening that feels like a dream")
+        tw, th, gx, gy = 5.55, 2.05, 0.2, 0.36
+        for i, (label, img) in enumerate(items):
+            r, c = divmod(i, 2)
+            x = 0.92 + c * (tw + gx); y = 2.0 + r * (th + gy)
+            E.pic_cover(s, E.G("spark/stages/" + img), x, y, tw, th)
+            E.txt(s, x, y + th + 0.02, tw, 0.3, label, 12.5, TI, bold=True, font=E.HEAD, align=PP_ALIGN.CENTER)
+        E.footer(s, FOOT)
+    stage_slide("I", [
+        ("Floating Floral", "option-6-floating-floral-cloud.png"),
+        ("Celestial Garden", "option-1-celestial-garden.png"),
+        ("Royal Rajasthani", "option-2-royal-rajasthani-courtyard.png"),
+        ("Beach Front Bliss", "option-9-beach-front-bliss.png"),
+    ])
+    stage_slide("II", [
+        ("Mystic Forest", "option-3-mystic-forest.png"),
+        ("Moroccan Nights", "option-5-moroccan-nights.png"),
+        ("Contemporary Curves", "option-8-contemporary-curves.png"),
+        ("Minimal Monochrome", "option-4-minimal-monochrome.png"),
+    ])
+
+    # 4d Invitations & stationery
+    s = E.slide(PANEL)
+    E.kicker(s, "INVITATIONS & STATIONERY")
+    E.title(s, "The first glimpse of the dream")
+    E.pic_cover(s, E.prefer(SP("invitation.png"), T("acc-florals.png")), 7.5, 1.95, 4.9, 4.5)
+    invites = [
+        ("Custom suites", "Foil-pressed & laser-cut stationery, monogrammed end to end."),
+        ("Digital wedding website", "Interactive site with the full itinerary and story."),
+        ("Real-time RSVP", "Live headcount, meal choice and travel tracking."),
+        ("Gourmet hampers", "Invitations packaged with artisanal treats and keepsakes."),
+    ]
+    for i, (h, d) in enumerate(invites):
+        y = 2.15 + i * 1.05
+        E.rect(s, 0.92, y, 6.2, 0.92, CARD, A, 0.6)
+        E.rect(s, 0.92, y, 0.07, 0.92, A)
+        E.txt(s, 1.2, y + 0.14, 5.7, 0.4, h, 14.5, TI, bold=True, font=E.HEAD)
+        E.txt(s, 1.2, y + 0.52, 5.7, 0.35, d, 11.5, MU)
+    E.footer(s, FOOT)
+
+    # 4e Fun & activities
+    s = E.slide()
+    E.kicker(s, "FUN & ACTIVITIES")
+    E.title(s, "Joy in every corner")
+    acts = [
+        ("Photo booths & 360° cam", "Instant prints and slow-motion spins."),
+        ("Lac bangle & mehndi stalls", "Interactive artisan corners for guests."),
+        ("Live food counters", "Chaat, paan and regional street-food carts."),
+        ("Caricaturist & tarot", "Personal keepsakes and playful readings."),
+        ("Flash mob & lawn games", "Surprise performances and group fun."),
+        ("Sky lanterns & fireworks", "A luminous finale — subject to permissions."),
+    ]
+    cw, ch, gx, gy = 3.78, 1.5, 0.32, 0.34
+    for i, (h, d) in enumerate(acts):
+        r, c = divmod(i, 3)
+        x = 0.92 + c * (cw + gx); y = 2.15 + r * (ch + gy)
+        E.rect(s, x, y, cw, ch, CARD, A, 0.75)
+        E.rect(s, x, y, cw, 0.06, A)
+        E.txt(s, x + 0.26, y + 0.2, cw - 0.5, 0.5, h, 14.5, TI, bold=True, font=E.HEAD)
+        E.txt(s, x + 0.26, y + 0.72, cw - 0.5, 0.7, d, 12, MU, spacing=1.1)
+    E.txt(s, 0.92, 6.5, 11.5, 0.4, "Designed to keep every guest delighted, from welcome to after-party.", 13, TX, italic=True)
+    E.footer(s, FOOT)
+
     # 5-9 Service detail slides
-    service_slide("PLANNING & COORDINATION", "From scouting to seamless logistics", PLANNING, T("acc-venue-wide.png"), PANEL)
-    service_slide("CEREMONIES & FUNCTIONS", "Every ritual, beautifully staged", CEREMONIES, T("g7-outdoor-stage.png"))
-    service_slide("DESIGN, DÉCOR & FLORALS", "Visual storytelling, drawn to scale", DESIGN, T("g2-floral-wall.png"), PANEL)
-    service_slide("CATERING, MENU & CAKE", "A dining experience to remember", FOOD, T("g4-golden-dining.png"))
-    service_slide("FILMS, ENTERTAINMENT & GUEST EXPERIENCE", "The day, captured and celebrated", EXPERIENCE, T("acc-reception.png"), PANEL)
+    service_slide("PLANNING & COORDINATION", "From scouting to seamless logistics", PLANNING, E.prefer(SP("udaipur.png"), T("acc-venue-wide.png")), PANEL)
+    service_slide("CEREMONIES & FUNCTIONS", "Every ritual, beautifully staged", CEREMONIES, E.prefer(SP("haldi.png"), T("g7-outdoor-stage.png")))
+    service_slide("DESIGN, DÉCOR & FLORALS", "Visual storytelling, drawn to scale", DESIGN, E.prefer(SP("mandap.png"), T("g2-floral-wall.png")), PANEL)
+    service_slide("CATERING, MENU & CAKE", "A dining experience to remember", FOOD, E.prefer(SP("reception.png"), T("g4-golden-dining.png")))
+    service_slide("FILMS, ENTERTAINMENT & GUEST EXPERIENCE", "The day, captured and celebrated", EXPERIENCE, E.prefer(SP("aisle.png"), T("acc-reception.png")), PANEL)
+
+    # 9b Destination weddings
+    s = E.slide()
+    E.kicker(s, "DESTINATION WEDDINGS")
+    E.title(s, "Weddings anywhere you dream")
+    dests = ["spark/udaipur.png", "spark/jaipur.png", "spark/goa.png", "spark/himachal.png", "spark/thailand.png"]
+    tw, gap = 2.156, 0.18
+    for i, d in enumerate(dests):
+        x = 0.92 + i * (tw + gap)
+        E.pic_cover(s, E.G(d), x, 2.25, tw, 4.0)
+    E.txt(s, 0.92, 6.4, 11.5, 0.4,
+          "Palace, beach, mountain, or international — we scout the venue, manage guest travel and stay, and execute end to end.",
+          13, E.MUTED, italic=True)
+    E.footer(s, FOOT)
 
     # 10 Beyond weddings
     s = E.slide()

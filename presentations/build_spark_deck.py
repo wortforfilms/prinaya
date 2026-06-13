@@ -96,7 +96,8 @@ def txt(s, l, t, w, h, text, size, color=None, bold=False, font=None, align=PP_A
     return tb
 
 
-def pic_cover(s, path, l, t, w, h):
+def pic_cover(s, path, l, t, w, h, focus=0.5):
+    """focus biases the cropped axis: 0=keep top/left, 0.5=center, 1=keep bottom/right."""
     if not path or not os.path.exists(path):
         rect(s, l, t, w, h, CARD, ACCENT, 0.75)
         return
@@ -105,9 +106,9 @@ def pic_cover(s, path, l, t, w, h):
     box_ar = w / h; img_ar = iw / ih
     pic = s.shapes.add_picture(path, Inches(l), Inches(t), Inches(w), Inches(h))
     if img_ar > box_ar:
-        crop = (1 - box_ar / img_ar) / 2; pic.crop_left = crop; pic.crop_right = crop
+        crop = 1 - box_ar / img_ar; pic.crop_left = crop * focus; pic.crop_right = crop * (1 - focus)
     else:
-        crop = (1 - img_ar / box_ar) / 2; pic.crop_top = crop; pic.crop_bottom = crop
+        crop = 1 - img_ar / box_ar; pic.crop_top = crop * focus; pic.crop_bottom = crop * (1 - focus)
     pic.line.color.rgb = ACCENT; pic.line.width = Pt(1)
     return pic
 
@@ -239,28 +240,69 @@ def build_deck(out_path):
         txt(s, x + 0.25, y + 0.78, 3.3, 0.7, d, 12.5, MUTED)
     footer(s)
 
-    # 6 Proposal divider
+    # 5b Destination weddings
     s = slide()
-    pic_cover(s, P("extracted-boards/vedic-lotus-all-pages-board.png"), 6.9, 0, 6.43, SH)
-    rect(s, 0, 0, 7.0, SH, BG)
-    rect(s, 6.98, 0, 0.02, SH, ACCENT)
-    txt(s, 0.92, 2.5, 5.8, 0.4, "WEDDING PROPOSAL", 14, ACCENT, bold=True)
-    txt(s, 0.92, 3.0, 5.9, 1.6, "Royal Heritage Wedding", 42, TITLE, bold=True, font=HEAD)
-    txt(s, 0.95, 4.55, 5.9, 0.6, "Udaipur Palace  ·  December 12, 2026", 18, TEXT, font=HEAD, italic=True)
-    txt(s, 0.95, 5.2, 5.9, 0.5, "A celebration of love, culture & grandeur.", 14, MUTED)
+    kicker(s, "DESTINATION WEDDINGS")
+    title(s, "Weddings anywhere you dream")
+    dests = ["spark/udaipur.png", "spark/jaipur.png", "spark/goa.png", "spark/himachal.png", "spark/thailand.png"]
+    tw, gap = 2.156, 0.18
+    for i, d in enumerate(dests):
+        x = 0.92 + i * (tw + gap)
+        pic_cover(s, G(d), x, 2.25, tw, 4.0)
+    txt(s, 0.92, 6.4, 11.5, 0.4,
+        "Palace, beach, mountain, or international — we scout the venue, manage guest travel and stay, and execute end to end.",
+        13, MUTED, italic=True)
+    footer(s)
+
+    # 6 Proposal divider — dreamy full-bleed
+    s = slide()
+    _dream = prefer(G("spark/aisle.png"), G("udaipur-palace-night-hero.png"), P("extracted-boards/vedic-lotus-all-pages-board.png"))
+    if _dream:
+        pic_cover(s, _dream, 0, 0, SW, SH); overlay(s, 0, 0, SW, SH, 58)
+    txt(s, 0, 1.75, SW, 0.4, "THE PROPOSAL", 13, ACCENT, bold=True, align=PP_ALIGN.CENTER)
+    rect(s, SW / 2 - 1.2, 2.4, 2.4, 0.025, ACCENT)
+    txt(s, 0, 2.8, SW, 1.3, "A Dream in Ivory & Gold", 48, TITLE, bold=True, font=HEAD, align=PP_ALIGN.CENTER)
+    txt(s, 0, 4.3, SW, 0.5, "Royal Heritage Wedding  ·  Udaipur Palace  ·  December 12, 2026", 17, TEXT, italic=True, font=HEAD, align=PP_ALIGN.CENTER)
+    txt(s, 0, 5.0, SW, 0.5, "Where the lake holds the sky, and every light is a wish.", 14, MUTED, italic=True, align=PP_ALIGN.CENTER)
 
     # 7 Concept
     s = slide()
     kicker(s, "CONCEPT & VISION")
-    title(s, "Vedic lotus, royal heritage")
+    title(s, "An evening that feels like a dream")
     txt(s, 0.92, 2.1, 6.1, 3.6,
-        "A regal celebration set against the lake palaces of Udaipur. The design language "
-        "pairs Vedic lotus motifs with royal heritage architecture, in a restrained palette "
-        "of ivory and gold lit for the night.\n\n"
-        "Timeless tradition, contemporary elegance — every detail drawn before it is built.",
-        16, TEXT, spacing=1.15)
-    txt(s, 0.95, 5.25, 6.1, 0.4, "Palette: Ivory · Gold · Lotus pink     Mood: Royal · candle-lit night", 13, TITLE, italic=True)
-    pic_cover(s, P("extracted-boards/vedic-sacred-design-options.png"), 7.45, 1.9, 4.95, 4.0)
+        "Picture arriving by candlelit boat as the lake mirrors a sky of gold. A canopy of "
+        "suspended lotus and orchids drifts above the saptapadi, and the palace glows like a "
+        "lantern at dusk.\n\n"
+        "We pair timeless Vedic ritual with quiet innovation — every detail drawn to scale, "
+        "previewed in 3D, and lit to shift with your muhurat.",
+        16, TEXT, spacing=1.18)
+    txt(s, 0.95, 5.35, 6.1, 0.4, "Palette: Ivory · Gold · Lotus pink     Mood: candle-lit · ethereal · royal", 13, TITLE, italic=True)
+    _concept_top = prefer(G("spark/invitation.png"), P("extracted-boards/vedic-sacred-design-options.png"))
+    pic_cover(s, _concept_top, 7.45, 1.9, 4.95, 1.92)
+    pic_cover(s, prefer(G("spark/carts.png"), _concept_top), 7.45, 3.98, 4.95, 1.92)
+    footer(s)
+
+    # 7b Signature experiences — innovative & dreamy moments
+    s = slide(PANEL)
+    kicker(s, "SIGNATURE EXPERIENCES")
+    title(s, "Moments made to be remembered")
+    exps = [
+        ("Candlelit lake baraat", "Arrive by boat across the lake at golden hour."),
+        ("Floating lotus canopy", "Suspended lotus & orchids drifting above the saptapadi."),
+        ("Celestial lighting", "Uplighting that shifts to your sacred muhurat window."),
+        ("Mirror saptapadi", "A reflecting pool ringed with floating diyas."),
+        ("Scent design", "Jasmine entry · sandalwood mandap · rose dining."),
+        ("Starlit finale", "A drone-lit night sky — subject to airspace clearance."),
+    ]
+    cw, ch, gx, gy = 3.78, 1.5, 0.32, 0.34
+    for i, (h, d) in enumerate(exps):
+        r, c = divmod(i, 3)
+        x = 0.92 + c * (cw + gx); y = 2.15 + r * (ch + gy)
+        rect(s, x, y, cw, ch, CARD, ACCENT, 0.75)
+        rect(s, x, y, cw, 0.06, ACCENT)
+        txt(s, x + 0.26, y + 0.22, cw - 0.5, 0.5, h, 15.5, TITLE, bold=True, font=HEAD)
+        txt(s, x + 0.26, y + 0.72, cw - 0.5, 0.7, d, 12.5, MUTED, spacing=1.1)
+    txt(s, 0.92, 6.5, 11.5, 0.4, "Designed for you — sensory, cinematic, and unmistakably yours.", 13, TEXT, italic=True)
     footer(s)
 
     # 8 Venue & layout
@@ -284,8 +326,8 @@ def build_deck(out_path):
     kicker(s, "MANDAP DESIGN")
     title(s, "Royal Heritage Mandap")
     _mandap = prefer(G("royal-heritage-mandap.png"), P("extracted-boards/vedic-sacred-traditional-options.png"))
-    pic_cover(s, _mandap, 6.6, 1.95, 5.8, 4.35)
-    _mcap = ("Royal Heritage Mandap — concept render." if _mandap and "generated" in _mandap
+    pic_cover(s, _mandap, 6.6, 1.95, 5.8, 4.35, focus=0.66)
+    _mcap = ("Royal Heritage Mandap — design direction." if _mandap and "generated" in _mandap
              else "Sacred mandap design language — shortlisted directions.")
     txt(s, 6.6, 6.34, 5.8, 0.3, _mcap, 10.5, MUTED, italic=True)
     for i, (n, l) in enumerate([("12 × 7.5 m", "footprint"), ("8", "carved pillars"),
